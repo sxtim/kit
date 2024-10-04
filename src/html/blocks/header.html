@@ -1,11 +1,23 @@
 <header class="header">
-    <div class="container">
-        <div class="header__row">
-            <div class="logo">Logo</div>
-            <button class="mobile-nav-btn">
-                <div class="nav-icon"></div>
-            </button>
-        </div>
+  <div class="container">
+    <div class="header__row">
+      <div class="logo"><a href="#!"><img src="./img/logo/logo.svg" alt="logo"></a>
+      </div>
+      <div class="header__nav-list nav-list">
+        <ul>
+          <li><a href="#!">Destinations</a></li>
+          <li><a href="#!">Activities</a></li>
+          <li><a href="#!">About Us</a></li>
+          <li><a href="#!">Contact</a></li>
+        </ul>
+      </div>
+      <button class="mobile-nav-btn">
+        <div class="nav-icon"></div>
+      </button>
     </div>
+  </div>
+  <div class="header__socials">
+    @@include('socials.html')
+  </div>
+  @@include('mobile-nav.html')
 </header>
-@@include('mobile-nav.html')
