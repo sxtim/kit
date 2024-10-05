@@ -1,23 +1,67 @@
 <header class="header">
-  <div class="container">
-    <div class="header__row">
-      <div class="logo"><a href="#!"><img src="./img/logo/logo.svg" alt="logo"></a>
-      </div>
-      <div class="header__nav-list nav-list">
-        <ul>
-          <li><a href="#!">Destinations</a></li>
-          <li><a href="#!">Activities</a></li>
-          <li><a href="#!">About Us</a></li>
-          <li><a href="#!">Contact</a></li>
-        </ul>
-      </div>
-      <button class="mobile-nav-btn">
-        <div class="nav-icon"></div>
-      </button>
+
+  <!--Swiper-->
+  <!--Slider content-->
+  <!-- Slider main container -->
+  <div class="swiper">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide">@@include('header/slide-01.html')</div>
+      <!--      <div class="swiper-slide">@@include('blocks/slides/slide-02.html')</div>-->
+      <!--      <div class="swiper-slide">@@include('blocks/slides/slide-03.html')</div>-->
+      <!--      <div class="swiper-slide">@@include('blocks/slides/slide-04.html')</div>-->
+      <!--      <div class="swiper-slide">@@include('blocks/slides/slide-05.html')</div>-->
     </div>
   </div>
-  <div class="header__socials">
-    @@include('socials.html')
+  <!--Header content-->
+
+  <div class="header__content">
+
+    <div class="container">
+      <div class="header__nav">
+        <nav class="nav">
+
+          <a href="#!" class="nav__logo">
+            <img src="./img/icons/logo.svg" alt="Logo">
+          </a>
+          <div class="nav__list">
+            <ul>
+              <li><a href="#!">Destinations</a></li>
+              <li><a href="#!">Activities</a></li>
+              <li><a href="#!">About Us</a></li>
+              <li><a href="#!">Contact</a></li>
+            </ul>
+          </div>
+          <button class="mobile-nav-btn">
+            <div class="nav-icon"></div>
+          </button>
+          @@include('header/mobile-nav.html')
+
+          <!--        <div class="nav__mobile-nav">-->
+          <!--          <button id="modalOpen" class="nav-btn">-->
+          <!--            <img src="./img/icons/nav-btn.svg" alt="Nav button">-->
+          <!--          </button>-->
+          <!--        </div>-->
+
+        </nav>
+      </div>
+    </div>
+    <div class="header__socials">
+      @@include('header/socials.html')
+    </div>
+    <div class="header__see-more">
+      <a href="#!" class="see-more">SEE MORE</a>
+    </div>
+    <div class="header__slider-controls">
+      @@include('header/slider-controls.html')
+    </div>
+    <div class="header__scrollbar">
+      <div class="swiper-scrollbar"></div>
+    </div>
   </div>
-  @@include('mobile-nav.html')
+
+
 </header>
+
+
