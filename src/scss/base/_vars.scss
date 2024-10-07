@@ -6,7 +6,8 @@
 	--font-accent: 'Playfair Display', serif;
 
 	--page-bg: #fff;
-	--text-color: #000;
+	--text-color-black: #000;
+	--text-color-white: #fff;
 	--accent: #ac182c;
 
     --laptop-size: 1199px;
@@ -16,5 +17,5 @@
 
 .dark {
     --page-bg: #252526;
-    --text-color: #fff;
+    --text-color-black: #fff;
 }

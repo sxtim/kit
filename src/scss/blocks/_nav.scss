@@ -1,8 +1,8 @@
 .nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-  column-gap: 30px;
+  column-gap: 50px;
 }
 
 .nav__logo {
@@ -10,13 +10,15 @@
 }
 
 .nav__list {
+  width: 1240px;
   ul {
     display: flex;
     align-items: center;
-    column-gap: 65px;
+    justify-content: space-between;
+    gap: 15px;
     font-weight: 600;
-    font-size: 18px;
-    line-height: 1.22;
+    font-size: 20px;
+    line-height: 50%;
   }
   @media (max-width: 1200px) {
     display: none;
@@ -24,6 +26,10 @@
 }
 
 .nav__list a {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 50%;
   position: relative;
   pointer-events: all;
   &::before {
@@ -45,6 +51,7 @@
 }
 
 .mobile-nav-btn {
+  display: none;
   pointer-events: all;
   z-index: 10;
 }
