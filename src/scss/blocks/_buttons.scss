@@ -1,0 +1,50 @@
+.btn {
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  //text-transform: uppercase;
+  margin: 3px 0;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 140%;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 3px;
+  box-shadow: 0 3px 5px #777777, inset 0 0 0px #777777;
+  transition: 0.1s;
+  pointer-events: all;
+
+  &:hover {
+    background-color: var(--sand-transparent);
+  }
+
+  @media (max-width: 998px) {
+    font-size: 16px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
+
+}
+
+.btn:active {
+  background-color: rgba(205, 170, 82, 0.75);
+  box-shadow: 0 0px 0px #777777, inset 0 0 10px #777777;
+  transition: .1s;
+  //transition: 1ms;
+  //transform: translateY(20px);
+  transform: scale(0.998);
+}
+
+
+.btn-sand {
+  background-color: var(--sand);
+  width: 100%;
+  height: auto;
+  max-width: 295px;
+  //height: 70px;
+}

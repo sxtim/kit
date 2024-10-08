@@ -5,8 +5,15 @@
 
 .slider-controls__arrows {
   display: flex;
-  column-gap: 5px;
+  column-gap: 25px;
+}
+
+.slider__arr-hover {
   opacity: 0.3;
+  transition: .3s;
+  &:hover {
+    opacity: 1;
+  }
 }
 
 .slider-controls__count {

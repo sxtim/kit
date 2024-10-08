@@ -32,6 +32,7 @@
   line-height: 50%;
   position: relative;
   pointer-events: all;
+
   &::before {
     position: absolute;
     content: '';
@@ -48,6 +49,11 @@
     transform-origin: left;
     transform: scaleX(1);
   }
+
+  @media (max-width: 1250px) {
+    font-size: 18px;
+  }
+
 }
 
 .mobile-nav-btn {
