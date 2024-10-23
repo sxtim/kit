@@ -17,22 +17,34 @@
 }
 
 .slider-controls__count {
+  font-family: "Oswald", sans-serif;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
   column-gap: 6px;
   color: rgba(255, 255, 255, 0.3);
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1;
   text-align: right;
 }
 
 .swiper-pagination-current {
-  font-size: 32px;
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  font-size: 38px;
   line-height: 0.75;
   color: white;
 }
+
+.slider-arrow {
+  @media (max-width: 998px) {
+    width: 30px;
+    height: 30px;
+  }
+
+}
+
 
 
 
