@@ -2,48 +2,80 @@
   <div class="filter">
     <div data-tab-component>
       <div role="tablist" aria-label="Tabbed content">
-        <button role="tab"
+        <button class="filter__tab-btn" role="tab"
                 aria-selected="true"
                 aria-controls="tab1-content"
                 id="tab1">
-          Tab One
+          <h3 class="filter__tab-title">Подобрать квартиру</h3>
         </button>
 
-        <button role="tab"
+        <button class="filter__tab-btn" role="tab"
                 aria-selected="false"
                 aria-controls="tab2-content"
                 id="tab2">
-          Tab Two
+          <h3 class="filter__tab-title">Коммерческую недвижимость</h3>
         </button>
 
       </div>
 
-      <section id="tab1-content"
+      <section class="filter__tab-content" id="tab1-content"
                role="tabpanel"
                aria-labelledby="tab1"
                tabindex="0">
-        <h3>Tab One</h3>
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce arcu turpis, varius quis mauris sit amet,
-          fringilla commodo eros. Vivamus nec elit justo. Quisque faucibus auctor libero at laoreet. Mauris tempor, eros
-          id molestie tempor, ex nibh porttitor ex, quis tempor odio ipsum nec dolor. Sed at fringilla mi. Proin sed
-          nisi
-          laoreet nisl mollis placerat. Nulla nisl magna, varius eu scelerisque a, euismod a magna. Proin quis fringilla
-          nisl. Phasellus convallis varius nibh sed fringilla.</p>
+        <div class="filter__tab-row">
+          <div class="filter__row-el">
+            <h4 class="filter__row-title">Комнатность</h4>
+            <div class="filter__row-el-btns-container">
+              <button class="filter__row-el-btn btn-small">1к</button>
+              <button class="filter__row-el-btn btn-small">2к</button>
+              <button class="filter__row-el-btn btn-small">3к</button>
+            </div>
+
+          </div>
+          <div class="filter__row-el">
+            <h4 class="filter__row-title">Цена, руб.</h4>
+            <div class="filter-price__inputs">
+              <label class="filter-price__label">
+                <span class="filter-price__text">От</span>
+                <input type="number" min="500" max="25000" class="filter-price__input">
+              </label>
+
+              <label class="filter-price__label">
+                <span class="filter-price__text">До</span>
+                <input type="number"  min="500" max="25000" class="filter-price__input">
+              </label>
+            </div>
+            <div class="filter-price__slider filter__slider" id="range-slider">
+              <div class="filter__slider-progress"></div>
+            </div>
+          </div>
+          <div class="filter__row-el">
+            <h4 class="filter__row-title">Площадь, м2</h4>
+          </div>
+        </div>
+        <!--        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce arcu turpis, varius quis mauris sit amet,-->
+        <!--          fringilla commodo eros. Vivamus nec elit justo. Quisque faucibus auctor libero at laoreet. Mauris tempor, eros-->
+        <!--          id molestie tempor, ex nibh porttitor ex, quis tempor odio ipsum nec dolor. Sed at fringilla mi. Proin sed-->
+        <!--          nisi-->
+        <!--          laoreet nisl mollis placerat. Nulla nisl magna, varius eu scelerisque a, euismod a magna. Proin quis fringilla-->
+        <!--          nisl. Phasellus convallis varius nibh sed fringilla.</p>-->
       </section>
 
-      <section id="tab2-content"
+      <section class="filter__tab-content" id="tab2-content"
                role="tabpanel"
                aria-labelledby="tab2"
                tabindex="0"
                aria-hidden="true">
-        <h3>Tab Two</h3>
 
-        <p>Quisque id augue sagittis, ullamcorper arcu a, commodo est. Sed dictum fringilla augue sit amet condimentum.
-          Donec sagittis tincidunt mattis. Aliquam eget tellus placerat, luctus odio sit amet, scelerisque ligula.
-          Nullam
-          in magna at erat porttitor lacinia. Donec placerat lacus vitae arcu efficitur sollicitudin. Nunc laoreet ex
-          tempus, fringilla nisl sit amet, varius odio. Nunc vel orci ut neque ullamcorper facilisis.</p>
+        <div class="filter__tab-row">
+
+        </div>
+        <!--        <p>Quisque id augue sagittis, ullamcorper arcu a, commodo est. Sed dictum fringilla augue sit amet condimentum.-->
+        <!--          Donec sagittis tincidunt mattis. Aliquam eget tellus placerat, luctus odio sit amet, scelerisque ligula.-->
+        <!--          Nullam-->
+        <!--          in magna at erat porttitor lacinia. Donec placerat lacus vitae arcu efficitur sollicitudin. Nunc laoreet ex-->
+        <!--          tempus, fringilla nisl sit amet, varius odio. Nunc vel orci ut neque ullamcorper facilisis.</p>-->
       </section>
 
     </div>
