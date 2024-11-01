@@ -1,6 +1,7 @@
 import mobileNav from './modules/mobile-nav.js';
 mobileNav();
 import  './modules/tabs';
+import  './modules/range-slider';
 
 
 

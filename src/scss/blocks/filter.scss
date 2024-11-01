@@ -1,3 +1,7 @@
+.filter {
+  background-color: #5d71dd;
+}
+
 [data-tab-component] {
 
   margin-left: auto;
@@ -79,3 +83,37 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+.noUi-connect {
+  background-color: #5d71dd !important;
+}
+
+.noUi-target {
+  background-color: #bfbfbf !important;
+  border: none !important;
+  border-radius: 100px !important;
+  box-shadow: none !important;
+  height: 3px !important;
+}
+
+.noUi-handle::after,
+.noUi-handle::before {
+  display: none !important;
+}
+
+.noUi-handle {
+  box-shadow: none !important;
+  border-radius: 100% !important;
+  background-color: #5d71dd !important;
+  border: 3px solid #5d71dd !important;
+}
+
+
+.noUi-horizontal .noUi-handle {
+  width: 22px !important;
+  height: 22px !important;
+  top: -10px !important;
+}
+
+.noUi-horizontal .noUi-handle-upper {
+  //right: 0 !important;
+}
