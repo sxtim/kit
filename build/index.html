@@ -233,7 +233,7 @@
                tabindex="0">
 
         <div class="filter__tab-row">
-          <div class="filter__row-el">
+          <div class="filter__el">
             <h4 class="filter__row-title">Комнатность</h4>
             <div class="filter__row-el-btns-container">
               <button class="filter__row-el-btn btn-small">1к</button>
@@ -242,25 +242,37 @@
             </div>
 
           </div>
-          <div class="filter__row-el">
+          <div class="filter__el">
             <h4 class="filter__row-title">Цена, руб.</h4>
-            <div class="filter-price__inputs">
-              <label class="filter-price__label">
-                <span class="filter-price__text">От</span>
-                <input type="number"  min="40" max="120" class="filter-price__input" id="input-0">
+            <div class="filter-slider__inputs">
+              <label class="filter-slider__label">
+                <span class="filter-slider__text">От</span>
+                <input type="number"  min="4000000" max="120000000" class="filter-slider__input" id="input-price-min">
               </label>
 
-              <label class="filter-price__label">
-                <span class="filter-price__text">До</span>
-                <input type="number" min="40" max="120" class="filter-price__input" id="input-1">
+              <label class="filter-slider__label">
+                <span class="filter-slider__text">До</span>
+                <input type="number" min="4000000" max="120000000" class="filter-slider__input" id="input-price-max">
               </label>
             </div>
-            <div class="filter-price__slider filter__slider" id="range-slider">
-<!--              <div class="filter__slider-progress"></div>-->
+            <div class="filter-price__slider filter__slider" id="price-slider">
             </div>
           </div>
           <div class="filter__row-el">
             <h4 class="filter__row-title">Площадь, м2</h4>
+            <div class="filter-slider__inputs">
+              <label class="filter-slider__label">
+                <span class="filter-slider__text">От</span>
+                <input type="number"  min="40" max="120" class="filter-slider__input" id="input-square-min">
+              </label>
+
+              <label class="filter-slider__label">
+                <span class="filter-slider__text">До</span>
+                <input type="number" min="40" max="120" class="filter-slider__input" id="input-square-max">
+              </label>
+            </div>
+            <div class="filter-price__slider filter__slider" id="square-slider">
+            </div>
           </div>
         </div>
         <!--        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce arcu turpis, varius quis mauris sit amet,-->
