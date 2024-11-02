@@ -6,7 +6,6 @@
 
   margin-left: auto;
   margin-right: auto;
-  max-width: 960px;
   position: relative;
 
   /*   // Tab navigation */
@@ -65,9 +64,68 @@
   }
 }
 
-.filter-price__input {
-  border: 1px solid black;
+.filter {
+  font-family: "Montserrat", sans-serif;
 }
+
+.filter__tab-row {
+  color: var(--text-color-black);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.filter__tab-title {
+  color: var(--text-color-black);
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 130%;
+}
+
+.filter__el {
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  //align-items: center;
+}
+
+.filter__row-title {
+  color: var(--text-color-black);
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 130%;
+}
+
+.filter-slider__text {
+  color: var(--text-color-black);
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 40%;
+}
+
+.filter-slider__input {
+  font-weight: 500;
+  font-size: 25px;
+  color: rgba(27, 27, 27, 0.25);
+}
+
+.filter__range-slider {
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.filter__el-btn {
+  color: var(--text-color-black);
+  font-weight: 500;
+  font-size: 25px;
+}
+
+.filter__btn-container {
+  max-width: 335px;
+  //width: 100%;
+}
+
 
 //Range slider
 
@@ -84,6 +142,7 @@ input[type=number] {
 }
 
 .noUi-connect {
+  cursor: pointer;
   background-color: #5d71dd !important;
 }
 
@@ -101,6 +160,7 @@ input[type=number] {
 }
 
 .noUi-handle {
+  cursor: pointer !important;
   box-shadow: none !important;
   border-radius: 100% !important;
   background-color: #5d71dd !important;

@@ -27,9 +27,9 @@
           <div class="filter__el">
             <h4 class="filter__row-title">Комнатность</h4>
             <div class="filter__row-el-btns-container">
-              <button class="filter__row-el-btn btn-small">1к</button>
-              <button class="filter__row-el-btn btn-small">2к</button>
-              <button class="filter__row-el-btn btn-small">3к</button>
+              <button class="filter__el-btn btn-small">1к</button>
+              <button class="filter__el-btn btn-small">2к</button>
+              <button class="filter__el-btn btn-small">3к</button>
             </div>
 
           </div>
@@ -38,40 +38,41 @@
             <div class="filter-slider__inputs">
               <label class="filter-slider__label">
                 <span class="filter-slider__text">От</span>
-                <input type="number"  min="4000000" max="120000000" class="filter-slider__input" id="input-price-min">
+                <input type="number" min="4000000" max="12000000" class="filter-slider__input"
+                       id="input-price-min">
               </label>
 
               <label class="filter-slider__label">
                 <span class="filter-slider__text">До</span>
-                <input type="number" min="4000000" max="120000000" class="filter-slider__input" id="input-price-max">
+                <input type="number" min="4000000" max="12000000" class="filter-slider__input"
+                       id="input-price-max">
               </label>
             </div>
-            <div class="filter-price__slider filter__slider" id="price-slider">
+            <div class="filter__range-slider" id="price-slider">
             </div>
           </div>
-          <div class="filter__row-el">
+          <div class="filter__el">
             <h4 class="filter__row-title">Площадь, м2</h4>
             <div class="filter-slider__inputs">
               <label class="filter-slider__label">
                 <span class="filter-slider__text">От</span>
-                <input type="number"  min="40" max="120" class="filter-slider__input" id="input-square-min">
+                <input type="number" min="40" max="120" class="filter-slider__input"
+                       id="input-square-min">
               </label>
 
               <label class="filter-slider__label">
                 <span class="filter-slider__text">До</span>
-                <input type="number" min="40" max="120" class="filter-slider__input" id="input-square-max">
+                <input type="number" min="40" max="120" class="filter-slider__input"
+                       id="input-square-max">
               </label>
             </div>
-            <div class="filter-price__slider filter__slider" id="square-slider">
+            <div class="filter__range-slider" id="square-slider">
             </div>
           </div>
+          <div class="filter__el filter__btn-container">
+            <button class="filter__btn btn btn-green">Показать</button>
+          </div>
         </div>
-        <!--        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce arcu turpis, varius quis mauris sit amet,-->
-        <!--          fringilla commodo eros. Vivamus nec elit justo. Quisque faucibus auctor libero at laoreet. Mauris tempor, eros-->
-        <!--          id molestie tempor, ex nibh porttitor ex, quis tempor odio ipsum nec dolor. Sed at fringilla mi. Proin sed-->
-        <!--          nisi-->
-        <!--          laoreet nisl mollis placerat. Nulla nisl magna, varius eu scelerisque a, euismod a magna. Proin quis fringilla-->
-        <!--          nisl. Phasellus convallis varius nibh sed fringilla.</p>-->
       </section>
 
       <section class="filter__tab-content" id="tab2-content"
