@@ -88,7 +88,7 @@
 .slide__tagline {
   font-family: "Oswald", sans-serif;
   font-weight: 300;
-  font-size: 3.56vw;
+  font-size: 2.56vw;
   line-height: 1.23;
   letter-spacing: 0.55em;
   color: rgba(255, 255, 255, 0.7);
@@ -101,9 +101,9 @@
 .slide__title {
   font-family: "Oswald", sans-serif;
   margin-top: -20px;
-  font-size: 12vw;
+  font-size: 8vw;
   font-weight: 700;
-  line-height: 1.22;
+  line-height: 140%;
 
   @media(max-width: 767px) {
     margin-top: 0;
