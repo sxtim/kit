@@ -72,13 +72,19 @@
 }
 
 .filter__tab-btn-container {
-  max-width: 70%;
+  max-width: 75%;
 
   @media (max-width: 1200px) {
     max-width: 100%;
   }
 
+  @media (max-width: 998px) {
+    flex-direction: column;
+    gap: 20px;
+  }
+
 }
+
 
 .filter__tab-row {
   color: var(--text-color-black);
@@ -97,6 +103,12 @@
   font-weight: 500;
   font-size: 24px;
   line-height: 130%;
+
+  @media (max-width: 998px) {
+    text-align: left;
+    font-size: 20px;
+  }
+
 }
 
 .filter__el {
@@ -116,6 +128,11 @@
   font-weight: 500;
   font-size: 20px;
   line-height: 130%;
+
+  @media (max-width: 998px) {
+    font-size: 18px;
+  }
+
 }
 
 .filter-slider__text {
@@ -123,12 +140,22 @@
   font-weight: 500;
   font-size: 20px;
   line-height: 40%;
+
+  @media (max-width: 998px) {
+    font-size: 18px;
+  }
+
 }
 
 .filter-slider__input {
   font-weight: 500;
   font-size: 20px;
   color: rgba(27, 27, 27, 0.25);
+
+  @media (max-width: 998px) {
+    font-size: 16px;
+  }
+
 }
 
 .filter__range-slider {
@@ -140,6 +167,11 @@
   color: var(--text-color-black);
   font-weight: 500;
   font-size: 20px;
+
+  @media (max-width: 998px) {
+    font-size: 18px;
+  }
+
 }
 
 .filter__btn-container {
@@ -159,6 +191,10 @@
   max-width: 295px;
   width: 100%;
   font-size: 20px;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
 
 }
 
