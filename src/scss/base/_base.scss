@@ -7,3 +7,28 @@ body {
 	color: var(--text-color-black);
     font-family: var(--font-main);
 }
+
+.title {
+
+	position: relative;
+	font-family: "Oswald", sans-serif;
+	font-weight: 400;
+	font-size: 40px;
+
+	margin-bottom: 40px;
+
+
+	&:after {
+		position: absolute;
+		content: "";
+		height: 2px;
+		width: 100vw;
+		background-color: rgba(181, 151, 109, 0.2);;
+		margin-left: 3%;
+		top: 50%;
+	}
+}
+
+.section {
+	margin-top: 70px;
+}
