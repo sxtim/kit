@@ -433,42 +433,43 @@
     </div>
   </div>
 </section>
-			<section class="section about">
+			<section class="section about-company">
   <div class="container">
-    <div class="title title-about">О КОМПАНИИ</div>
+    <div class="title about-title">О КОМПАНИИ</div>
     <div data-tab-component>
       <div role="tablist" aria-label="Tabbed content">
-        <button role="tab"
+        <button class="about-company-tab__btn" role="tab"
                 aria-selected="true"
                 aria-controls="tab3-content"
                 id="tab3">
-          Tab One
+        <h3 class="filter__tab-title">Большой <br> опыт</h3>
         </button>
 
         <button role="tab"
                 aria-selected="false"
                 aria-controls="tab4-content"
                 id="tab4">
-          Tab Two
+          <h3 class="filter__tab-title">Сервисное <br> обслуживание</h3>
         </button>
 
         <button role="tab"
                 aria-selected="false"
                 aria-controls="tab5-content"
                 id="tab5">
-          Tab Three
+          <h3 class="filter__tab-title">Удобство и <br> комфорт</h3>
         </button>
 
         <button role="tab"
                 aria-selected="false"
                 aria-controls="tab6-content"
                 id="tab6">
-          Tab Four
-        </button><button role="tab"
+          <h3 class="filter__tab-title">Высокий <br> рейтинг</h3>
+        </button>
+        <button role="tab"
                 aria-selected="false"
                 aria-controls="tab7-content"
                 id="tab7">
-          Tab Four
+          <h3 class="filter__tab-title">Автоклавное <br> производство</h3>
         </button>
       </div>
 
@@ -476,48 +477,76 @@
                role="tabpanel"
                aria-labelledby="tab3"
                tabindex="0">
-        <h3>Tab 3</h3>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce arcu turpis, varius quis mauris sit amet, fringilla commodo eros. Vivamus nec elit justo. Quisque faucibus auctor libero at laoreet. Mauris tempor, eros id molestie tempor, ex nibh porttitor ex, quis tempor odio ipsum nec dolor. Sed at fringilla mi. Proin sed nisi laoreet nisl mollis placerat. Nulla nisl magna, varius eu scelerisque a, euismod a magna. Proin quis fringilla nisl. Phasellus convallis varius nibh sed fringilla
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce arcu turpis, varius quis mauris sit amet, fringilla commodo eros. Vivamus nec elit justo. Quisque faucibus auctor libero at laoreet. Mauris tempor, eros id molestie tempor, ex nibh porttitor ex, quis tempor odio ipsum nec dolor. Sed at fringilla mi. Proin sed nisi laoreet nisl mollis placerat. Nulla nisl magna, varius eu scelerisque a, euismod a magna. Proin quis fringilla nisl. Phasellus convallis varius nibh sed fringilla.</p>
+
+        <div class="tab3__inner">
+          <img src="./img/about-company/company1.jpg" alt="company">
+          <div class="tab3__content">
+            <h3 class="tab3__inner-title">Большой опыт</h3>
+            <p>ООО предприятие «ИП К.И.Т.» уже 33 года осуществляет продажу квартир в Воронеже в комфортном квартале.
+            </p>
+            <p>За это время сотрудникам удалось приобрести ценный опыт, повысить свою квалификацию и освоить все сложные моменты строительных работ в новостройках.
+            </p>
+          </div>
+        </div>
       </section>
+        <section id="tab4-content"
+                 role="tabpanel"
+                 aria-labelledby="tab4"
+                 tabindex="0"
+                 aria-hidden="true">
+          <h3>Tab 4</h3>
 
-      <section id="tab4-content"
-               role="tabpanel"
-               aria-labelledby="tab4"
-               tabindex="0"
-               aria-hidden="true">
-        <h3>Tab 4</h3>
+          <p>Quisque id augue sagittis, ullamcorper arcu a, commodo est. Sed dictum fringilla augue sit amet
+            condimentum.
+            Donec sagittis tincidunt mattis. Aliquam eget tellus placerat, luctus odio sit amet, scelerisque ligula.
+            Nullam in magna at erat porttitor lacinia. Donec placerat lacus vitae arcu efficitur sollicitudin. Nunc
+            laoreet ex tempus, fringilla nisl sit amet, varius odio. Nunc vel orci ut neque ullamcorper facilisis.</p>
+        </section>
 
-        <p>Quisque id augue sagittis, ullamcorper arcu a, commodo est. Sed dictum fringilla augue sit amet condimentum. Donec sagittis tincidunt mattis. Aliquam eget tellus placerat, luctus odio sit amet, scelerisque ligula. Nullam in magna at erat porttitor lacinia. Donec placerat lacus vitae arcu efficitur sollicitudin. Nunc laoreet ex tempus, fringilla nisl sit amet, varius odio. Nunc vel orci ut neque ullamcorper facilisis.</p>
-      </section>
+        <section id="tab5-content"
+                 role="tabpanel"
+                 aria-labelledby="tab5"
+                 tabindex="0"
+                 aria-hidden="true">
+          <h3>Tab 5</h3>
 
-      <section id="tab5-content"
-               role="tabpanel"
-               aria-labelledby="tab5"
-               tabindex="0"
-               aria-hidden="true">
-        <h3>Tab 5</h3>
+          <p>Maecenas interdum est vel dui bibendum ullamcorper. Sed vel diam rhoncus, aliquam nibh ac, facilisis ipsum.
+            Nulla eu arcu hendrerit, iaculis magna at, commodo turpis. Quisque dignissim aliquet metus, ut iaculis
+            tellus
+            varius at. Quisque in aliquam felis. Suspendisse potenti. Nulla augue erat, porttor a massa sit amet,
+            vehicula
+            accumsan lacus. Mauris massa mi, maximus nec lectus sit amet, ornare faucibus ante. Nam ac eleifend
+            dolor.</p>
+        </section>
 
-        <p>Maecenas interdum est vel dui bibendum ullamcorper. Sed vel diam rhoncus, aliquam nibh ac, facilisis ipsum. Nulla eu arcu hendrerit, iaculis magna at, commodo turpis. Quisque dignissim aliquet metus, ut iaculis tellus varius at. Quisque in aliquam felis. Suspendisse potenti. Nulla augue erat, porttor a massa sit amet, vehicula accumsan lacus. Mauris massa mi, maximus nec lectus sit amet, ornare faucibus ante. Nam ac eleifend dolor.</p>
-      </section>
+        <section id="tab6-content"
+                 role="tabpanel"
+                 aria-labelledby="tab6"
+                 tabindex="0"
+                 aria-hidden="true">
+          <h3>Tab 6</h3>
 
-      <section id="tab6-content"
-               role="tabpanel"
-               aria-labelledby="tab6"
-               tabindex="0"
-               aria-hidden="true">
-        <h3>Tab 6</h3>
+          <p>Aenean id purus et lectus scelerisque bibendum. Nunc laoreet laoreet sapien, ut sollicitudin orci tincidunt
+            nec. Duis et mi ultrices, iaculis dolor luctus, dignissim sapien. Ut in porttitor augue. Aenean a libero vel
+            ligula tempor consectetur. Pellentesque quam tortor, interdum vel posuere at, sollicitudin et arcu. Quisque
+            et
+            semper nisl. Curabitur vitae accumsan eros. Mauris hendrerit sodales purus vel maximus. Donec interdum velit
+            arcu, eu condimentum odio pharetra id.</p>
+        </section>
+        <section id="tab7-content"
+                 role="tabpanel"
+                 aria-labelledby="tab7"
+                 tabindex="0"
+                 aria-hidden="true">
+          <h3>Tab 7</h3>
 
-        <p>Aenean id purus et lectus scelerisque bibendum. Nunc laoreet laoreet sapien, ut sollicitudin orci tincidunt nec. Duis et mi ultrices, iaculis dolor luctus, dignissim sapien. Ut in porttitor augue. Aenean a libero vel ligula tempor consectetur. Pellentesque quam tortor, interdum vel posuere at, sollicitudin et arcu. Quisque et semper nisl. Curabitur vitae accumsan eros. Mauris hendrerit sodales purus vel maximus. Donec interdum velit arcu, eu condimentum odio pharetra id.</p>
-      </section><section id="tab7-content"
-               role="tabpanel"
-               aria-labelledby="tab7"
-               tabindex="0"
-               aria-hidden="true">
-        <h3>Tab 7</h3>
-
-        <p>Aenean id purus et lectus scelerisque bibendum. Nunc laoreet laoreet sapien, ut sollicitudin orci tincidunt nec. Duis et mi ultrices, iaculis dolor luctus, dignissim sapien. Ut in porttitor augue. Aenean a libero vel ligula tempor consectetur. Pellentesque quam tortor, interdum vel posuere at, sollicitudin et arcu. Quisque et semper nisl. Curabitur vitae accumsan eros. Mauris hendrerit sodales purus vel maximus. Donec interdum velit arcu, eu condimentum odio pharetra id.</p>
-      </section>
+          <p>Aenean id purus et lectus scelerisque bibendum. Nunc laoreet laoreet sapien, ut sollicitudin orci tincidunt
+            nec. Duis et mi ultrices, iaculis dolor luctus, dignissim sapien. Ut in porttitor augue. Aenean a libero vel
+            ligula tempor consectetur. Pellentesque quam tortor, interdum vel posuere at, sollicitudin et arcu. Quisque
+            et
+            semper nisl. Curabitur vitae accumsan eros. Mauris hendrerit sodales purus vel maximus. Donec interdum velit
+            arcu, eu condimentum odio pharetra id.</p>
+        </section>
     </div>
   </div>
 </section>
