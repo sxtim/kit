@@ -107,17 +107,20 @@
   font-weight: 700;
   line-height: 140%;
 
+  padding: 0 10px;
+  background: linear-gradient(180deg, #ffffff 25%, #646464 100%);
+  //background: linear-gradient(47.06deg, #000000 -3.87%, rgba(255, 255, 255, 0) 20.89%), #FFFFFF;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+
   @media(max-width: 767px) {
     margin-top: 0;
     font-size: 17vw;
   }
 
   & span {
-    padding: 0 10px;
-    background: linear-gradient(180deg, #ffffff 25%, #646464 100%);
-    //background: linear-gradient(47.06deg, #000000 -3.87%, rgba(255, 255, 255, 0) 20.89%), #FFFFFF;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+
   }
 }
 

@@ -1,37 +1,25 @@
-.card-promotion {
-  font-family: "Montserrat", sans-serif;
-  border-radius: 4px;
-  max-width: 530px;
-  position: relative;
-  width: 100%;
-}
+.promotions__cards-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, calc(100% / 3 - 20px / 3 * (3 - 1)));
+  column-gap: 20px;
+  row-gap: 40px;
+  //display: grid;
+  place-content: center;
+  place-items: center;
+  //grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  //grid-row-gap: 20px;
+  //grid-column-gap: 15px;
 
-.card-promotion img {
-  width: 100%;
-  display: block;
-  max-height: 300px;
-}
+  @media (max-width: 998px) {
+    grid-column-gap: 8px;
+    grid-template-columns: repeat(2, calc(100% / 2 - 8px / 2 * (2 - 1)));
+    row-gap: 24px;
+  }
 
-.card-promotion__txt-top {
-  position: absolute;
-  font-weight: 700;
-  font-size: 17px;
-  color: white;
-  padding: 5px 10px;
-  border-radius: 5px;
-  background: var(--sand-transparent);
-  top: 8%;
-  left: 7%;
-}
-
-.card-promotion__txt-bottom {
-  position: absolute;
-  font-weight: 700;
-  font-size: 30px;
-  color: white;
-  padding: 5px 10px;
-  border-radius: 5px;
-  bottom: 8px;
-  left: 6%;
+  @media (max-width: 768px) {
+    grid-column-gap: 8px;
+    grid-template-columns: none;
+    row-gap: 24px;
+  }
 }
 
