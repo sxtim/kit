@@ -1,0 +1,35 @@
+.banner-rent {
+  position: relative;
+}
+
+.banner-rent__content-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.banner-rent__content {
+  color: var(--text-color-white);
+  font-family: "Montserrat", sans-serif;
+}
+
+.banner-rent__title {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 100%;
+}
+
+.banner-rent__content p {
+
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 146%;
+
+}
+
+
+.banner-rent__btn {
+  color: var(--text-color-white);
+  background-color: transparent !important;
+}
