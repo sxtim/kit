@@ -1,12 +1,12 @@
 .form-contact__container {
-  max-width: 610px;
+  max-width: 500px;
 }
 
 .form-contact {
 display: flex;
 flex-direction: column;
   font-family: "Montserrat", sans-serif;
-  font-size: calc(1.3rem + 8*(100vw - 360px) / 1200);
+  font-size: calc(1.1rem + 8*(100vw - 360px) / 1400);
 }
 
 .form-contact__label {
