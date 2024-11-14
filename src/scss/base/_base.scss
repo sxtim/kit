@@ -15,9 +15,7 @@ body {
 	font-family: "Oswald", sans-serif;
 	font-weight: 400;
 	font-size: 40px;
-
 	margin-bottom: 40px;
-
 
 	&:after {
 		position: absolute;
@@ -27,6 +25,10 @@ body {
 		background-color: rgba(181, 151, 109, 0.2);;
 		margin-left: 3%;
 		top: 50%;
+	}
+
+	@media (max-width: 768px) {
+		font-size: 24px;
 	}
 }
 
