@@ -24,6 +24,7 @@
     opacity: 1;
     transition: 0.3s;
     border-radius: 4px;
+    z-index: 1;
   }
 
   &:hover {
@@ -48,8 +49,8 @@
 
 .card-complex-main__status {
   position: absolute;
-  top: 4%;
-  left: 6%;
+  bottom: 4%;
+  right: 6%;
   font-weight: 700;
   font-size: 18px;
   line-height: 114%;
@@ -67,7 +68,7 @@
 }
 
 .card-complex-main__picture {
-
+  position: relative;
 }
 
 .card-complex-main__picture img {
@@ -79,7 +80,7 @@
 }
 
 .card-complex-main__desc {
-  margin-top: 20px;
+  margin-top: 10px;
   z-index: 15;
 }
 
@@ -90,11 +91,11 @@
 }
 
 .card-complex-main__title {
-  margin-top: 20px;
   font-weight: 700;
-  font-size: 30px;
-  line-height: 125%;
+  font-size: 24px;
+  line-height: 100%;
   color: var(--text-color-black);
+  margin-bottom: 10px;
 
 
   @media (max-width: 1200px) {
@@ -106,16 +107,18 @@
 
 .card-complex-main__sub-title {
   font-weight: 500;
-  font-size: 25px;
+  font-size: 18px;
+  color: #444444;
 
   @media (max-width: 1200px) {
-    font-size: 20px;
+    font-size: 16px;
   }
+
 
 }
 
 .card-complex-main__price-container {
-  margin-top: 25px;
+  margin-top: 10px;
   //@media (max-width: 768px) {
   //  display: flex;
   //  flex-direction: column;
@@ -125,10 +128,10 @@
 .card-complex-main__price {
   color: var(--sand);
   font-weight: 500;
-  font-size: 25px;
+  font-size: 18px;
 
   @media (max-width: 1200px) {
-    font-size: 20px;
+    font-size: 16px;
   }
 
 }
@@ -136,11 +139,11 @@
 
 .card__btn {
   position: relative;
-  font-size: 22px;
+  font-size: 18px;
   z-index: 10;
-  max-width: 236px;
+  max-width: 200px;
   width: 100%;
-  max-height: 60px;
+  max-height: 40px;
   margin-top: 25px;
 
   @media (max-width: 1200px) {

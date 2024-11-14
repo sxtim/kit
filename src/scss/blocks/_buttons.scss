@@ -7,7 +7,7 @@
   font-weight: 500;
   letter-spacing: .1rem;
   font-size: 25px;
-  line-height: 140%;
+  //line-height: 140%;
   text-align: center;
   cursor: pointer;
   border: none;
@@ -38,6 +38,8 @@
 
 
 .btn-sand {
+  font-family: "PP Pangram Sans", sans-serif;
+  font-size: 18px;
   background-color: var(--sand);
   width: 100%;
   height: auto;

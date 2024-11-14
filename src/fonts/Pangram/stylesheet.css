@@ -1,150 +1,206 @@
 @font-face {
-    font-family: 'PP Pangram Sans Rounded Compact Exlight Reclined';
-    src: url('PPPangramSansRounded-CompactExtralightReclined.woff2') format('woff2');
-    font-weight: 200;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'PP Pangram Sans Rounded Narrow';
-    src: url('PPPangramSansRounded-Bold.woff2') format('woff2');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'PP Pangram Sans Rounded Compact';
-    src: url('PPPangramSansRounded-CompactRegular.woff2') format('woff2');
+    font-family: 'Pangram';
+    src: url('Pangram-Regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'PP Pangram Sans Rounded';
-    src: url('PPPangramSansRounded-Light.woff2') format('woff2');
+    font-family: 'PangramMedium';
+    src: url('Pangram-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Pangram';
+    src: url('Pangram-Light.woff2') format('woff2');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'PP Pangram Sans Rounded Compressed ExBd';
-    src: url('PPPangramSansRounded-CompressedExtrabold.woff2') format('woff2');
+    font-family: 'Pangram';
+    src: url('Pangram-ExtraBold.woff2') format('woff2');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'PP Pangram Sans Rounded Compressed Medium Reclined';
-    src: url('PPPangramSansRounded-CompressedMediumReclined.woff2') format('woff2');
-    font-weight: 500;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'PP Pangram Sans Rounded Compact';
-    src: url('PPPangramSansRounded-CompactThinItalic.woff2') format('woff2');
-    font-weight: 100;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'PP Pangram Sans Rounded Cond';
-    src: url('PPPangramSansRounded-CondensedThin.woff2') format('woff2');
-    font-weight: 100;
+    font-family: 'Pangram';
+    src: url('Pangram-Bold.woff2') format('woff2');
+    font-weight: bold;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'PP Pangram Sans Rounded Exbold';
-    src: url('PPPangramSansRounded-ExtraboldItalic.woff2') format('woff2');
-    font-weight: bold;
-    font-style: italic;
+    font-family: 'Pangram';
+    src: url('Pangram-ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'PP Pangram Sans Rounded Narrow ExBd';
-    src: url('PPPangramSansRounded-NarrowExtraboldItalic.woff2') format('woff2');
-    font-weight: bold;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'PP Pangram Sans Rounded';
-    src: url('PPPangramSansRounded-Medium.woff2') format('woff2');
+    font-family: 'Pangram';
+    src: url('Pangram-Medium.woff2') format('woff2');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'PP Pangram Sans Rounded Slim SmBd';
-    src: url('PPPangramSansRounded-SlimSemiboldItalic.woff2') format('woff2');
+    font-family: 'PP Pangram Sans';
+    src: url('PPPangramSans-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Pangram Sans';
+    src: url('PPPangramSans-ExtraboldItalic.woff2') format('woff2');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Pangram Sans Narrow Smbold';
+    src: url('PPPangramSans-NarrowSemiboldItalic.woff2') format('woff2');
     font-weight: 600;
     font-style: italic;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'PP Pangram Sans Rounded';
-    src: url('PPPangramSansRounded-Thin.woff2') format('woff2');
+    font-family: 'PP Pangram Sans';
+    src: url('PPPangramSans-Semibold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Pangram Sans Compact';
+    src: url('PPPangramSans-CompactThinItalic.woff2') format('woff2');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Pangram Sans Narrow Exbold';
+    src: url('PPPangramSans-NarrowExtraboldItalic.woff2') format('woff2');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Pangram Sans';
+    src: url('PPPangramSans-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Pangram Sans Compact';
+    src: url('PPPangramSans-CompactRegular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Pangram Sans Condensed';
+    src: url('PPPangramSans-CondensedThin.woff2') format('woff2');
     font-weight: 100;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'PP Pangram Sans Rounded Narrow Exlight Reclined';
-    src: url('PPPangramSansRounded-NarrowExtralightReclined.woff2') format('woff2');
+    font-family: 'PP Pangram Sans Compressed Medium Reclined';
+    src: url('PPPangramSans-CompressedMediumReclined.woff2') format('woff2');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Pangram Sans Narrow';
+    src: url('PPPangramSans-NarrowSemibold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Pangram Sans Compact Exlight Reclined';
+    src: url('PPPangramSans-CompactExtralightReclined.woff2') format('woff2');
     font-weight: 200;
     font-style: italic;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'PP Pangram Sans Rounded Smbold';
-    src: url('PPPangramSansRounded-Semibold.woff2') format('woff2');
-    font-weight: 600;
+    font-family: 'PP Pangram Sans Compressed ExBd';
+    src: url('PPPangramSans-CompressedExtrabold.woff2') format('woff2');
+    font-weight: bold;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'PP Pangram Sans Rounded Narrow SmBd';
-    src: url('PPPangramSansRounded-NarrowSemiboldItalic.woff2') format('woff2');
-    font-weight: 600;
+    font-family: 'PP Pangram Sans Narrow Exlight Reclined';
+    src: url('PPPangramSans-NarrowExtralightReclined.woff2') format('woff2');
+    font-weight: 200;
     font-style: italic;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'PP Pangram Sans Rounded Slim Medium Reclined';
-    src: url('PPPangramSansRounded-SlimMediumReclined.woff2') format('woff2');
+    font-family: 'PP Pangram Sans Narrow';
+    src: url('PPPangramSans-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Pangram Sans';
+    src: url('PPPangramSans-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PP Pangram Sans Slim Medium Reclined';
+    src: url('PPPangramSans-SlimMediumReclined.woff2') format('woff2');
     font-weight: 500;
     font-style: italic;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'PP Pangram Sans Rounded Narrow SmBd';
-    src: url('PPPangramSansRounded-NarrowSemibold.woff2') format('woff2');
+    font-family: 'PP Pangram Sans Slim';
+    src: url('PPPangramSans-SlimSemiboldItalic.woff2') format('woff2');
     font-weight: 600;
-    font-style: normal;
+    font-style: italic;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'PP Pangram Sans Rounded Slim Exlight';
-    src: url('PPPangramSansRounded-SlimExtralight.woff2') format('woff2');
+    font-family: 'PP Pangram Sans Slim';
+    src: url('PPPangramSans-SlimExtralight.woff2') format('woff2');
     font-weight: 200;
     font-style: normal;
     font-display: swap;

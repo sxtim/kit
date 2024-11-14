@@ -10,14 +10,14 @@
 }
 
 .nav__list {
-  width: 1240px;
+  width: 900px;
   ul {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 15px;
-    font-weight: 600;
-    font-size: 20px;
+    font-weight: 500;
+    font-size: 18px;
     line-height: 50%;
   }
   @media (max-width: 1200px) {
@@ -26,9 +26,12 @@
 }
 
 .nav__list a {
+  font-family: "PP Pangram Sans", sans-serif;
+
+
+
   font-weight: 500;
-  font-size: 20px;
-  line-height: 50%;
+  line-height: 150%;
   position: relative;
   pointer-events: all;
 

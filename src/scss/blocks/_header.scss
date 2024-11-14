@@ -1,5 +1,5 @@
 .header {
-	height: 80vh;
+	height: 60vh;
 	position: relative;
 	background-color: #c4c4c4;
 	color: hsl(0, 0%, 100%);
@@ -15,7 +15,7 @@
 .header__content {
 	position: absolute;
 	z-index: 9;
-	top: 50px;
+	top: 20px;
 	left: 70px;
 	right: 70px;
 	bottom: 80px;
