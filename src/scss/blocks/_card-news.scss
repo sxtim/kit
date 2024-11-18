@@ -75,9 +75,14 @@
 
 .card-news__date {
   font-weight: 500;
-  font-size: 25px;
+  font-size: 16px;
   line-height: 100%;
   color: rgba(27, 27, 27, 0.25);
+
+  @media (max-width: 998px ) {
+    font-size: 12px;
+  }
+
 }
 
 

@@ -1,6 +1,6 @@
 .section-questions {
   position: relative;
-  height: 740px;
+  height: 540px;
 }
 
 .section-questions__inner {
@@ -12,11 +12,16 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+  gap: 25px;
   width: 100%;
+
+  @media (max-width: 998px) {
+    flex-direction: column;
+  }
+
 }
 
 .section-questions__content {
-  font-family: "Montserrat", SansSerif;
   color: var(--text-color-black);
   max-width: 500px;
 }
@@ -40,7 +45,7 @@
   width: 100%;
   filter: opacity(.2) blur(2px);
   object-fit: cover;
-  height: 740px;
+  height: 540px;
 }
 
 

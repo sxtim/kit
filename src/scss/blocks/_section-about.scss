@@ -1,5 +1,5 @@
 .about-company {
-  margin-bottom: 70px;
+
 }
 
 .about-company__tabpanel {
@@ -95,7 +95,7 @@
 
 .tab3__inner-title {
   font-weight: 700;
-  font-size: 30px;
+  font-size: 28px;
   line-height: 120%;
   margin-bottom: 50px;
 
@@ -107,8 +107,8 @@
 
 .tab3__content p {
   font-weight: 500;
-  font-size: calc(1.4rem + 8 * (100vw - 360px) / 1200);
-  line-height: 146%;
+  font-size: calc(1.4rem + 6 * (100vw - 360px) / 1200);
+  line-height: 120%;
   margin-bottom: 50px;
 
   @media (max-width: 1200px) {

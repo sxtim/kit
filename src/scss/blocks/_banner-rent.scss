@@ -2,7 +2,7 @@
   @media (max-width: 998px) {
     padding: 0 !important;
     margin: 0 !important;
-    width: 100vw !important;
+    //width: 100vw !important;
     border-radius: 0px;
   }
 }
@@ -42,6 +42,7 @@
 
 
   @media (max-width: 998px) {
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     padding:15px 20px 0 30px;
@@ -87,7 +88,10 @@
 
 
 .banner-rent__btn {
-  color: var(--text-color-white);
-  background-color: transparent !important;
-  border: 1px solid white !important;
+  font-size: 16px;
+  max-width: 200px;
+  //font-size: 18px;
+  //color: var(--text-color-white);
+  //background-color: transparent !important;
+  //border: 1px solid white !important;
 }
