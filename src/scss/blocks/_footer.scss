@@ -1,33 +1,26 @@
-.container {
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-start;
-	padding: 20px;
-}
-
-.logo img {
+.footer__logo img {
 	width: 150px; /* Adjust size as needed */
 }
 
-.menu {
-	display: flex;
-	gap: 50px;
-}
-
-.nav {
-	list-style: none;
-	padding: 0;
-}
-
-.nav li {
-	margin-bottom: 10px;
-}
-
-.contact {
-	list-style: none;
-	padding: 0;
-}
-
-.contact li {
-	margin-bottom: 10px;
-}
+//.menu {
+//	display: flex;
+//	gap: 50px;
+//}
+//
+//.nav {
+//	list-style: none;
+//	padding: 0;
+//}
+//
+//.nav li {
+//	margin-bottom: 10px;
+//}
+//
+//.contact {
+//	list-style: none;
+//	padding: 0;
+//}
+//
+//.contact li {
+//	margin-bottom: 10px;
+//}
