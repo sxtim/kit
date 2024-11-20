@@ -1,5 +1,42 @@
+.footer__wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 25px;
+}
+
 .footer__logo img {
 	width: 150px; /* Adjust size as needed */
+}
+
+.footer__col {
+	display: flex;
+	//align-items: center;
+	justify-content: space-between;
+	gap: 80px;
+}
+
+.footer__list-link {
+	color: var(--text-color-black);
+	font-size: 16px;
+	line-height: 200%;
+}
+
+.footer__col-phone-item {
+	display: flex;
+	gap: 25px;
+}
+
+.footer__col-phone-item li {
+	color: var(--text-color-black);
+	font-size: 16px;
+	line-height: 200%;
+}
+
+.footer__phone {
+	color: var(--text-color-black);
+	font-size: 16px;
+	line-height: 200%;
 }
 
 //.menu {
