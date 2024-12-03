@@ -8,7 +8,7 @@
 	justify-content: space-between;
 	gap: 25px;
 
-	@media (max-width: 998px) {
+	@media (max-width: 1200px) {
 		flex-direction: column;
 		align-items: center;
 	}
@@ -26,9 +26,19 @@
 	@media (max-width: 768px) {
 		flex-direction: column;
 		align-items: center;
+		row-gap: 20px;
 	}
 
 }
+
+
+.footer-socials {
+	display: flex;
+	gap: 16px;
+	justify-content: center;
+	margin-top: 10px;
+}
+
 
 .footer__list {
 	text-align: center;
