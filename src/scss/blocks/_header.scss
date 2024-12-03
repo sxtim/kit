@@ -1,4 +1,4 @@
-.header {
+.header-main {
 	height: 70vh;
 	position: relative;
 	background-color: #c4c4c4;
@@ -12,7 +12,7 @@
 }
 
 
-.header__content {
+.header-main__content {
 	position: absolute;
 	z-index: 9;
 	top: 20px;
@@ -49,7 +49,7 @@
 	pointer-events: none;
 }
 
-.header__socials {
+.header-main__socials {
 	position: absolute;
 	left: 0;
 	top: 50%;
@@ -66,7 +66,7 @@
 
 }
 
-.header__see-more {
+.header-main__see-more {
 	position: absolute;
 	left: 0;
 	bottom: 0;
@@ -99,7 +99,7 @@
 }
 
 
-.header__slider-controls {
+.header-main__slider-controls {
 	position: absolute;
 	right: 0;
 	bottom: 0;
@@ -111,7 +111,7 @@
 
 }
 
-.header__scrollbar {
+.header-main__scrollbar {
 	pointer-events: all;
 	position: absolute;
 	right: 0;
@@ -125,9 +125,18 @@
 
 }
 
+.header {
+	padding: 10px 0;
+	box-shadow: 0 0 6px 3px rgba(0, 0, 0, 0.1);
+}
+
 .slide__header-img {
 	position: absolute;
 	top: 0;
 	left: 0;
 }
 
+
+.nav__logo-dark img {
+	color: black;
+}

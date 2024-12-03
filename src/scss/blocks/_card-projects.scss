@@ -1,0 +1,31 @@
+.card-projects__info-container {
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-between;
+  gap: 5px;
+  padding-right: 10px;
+}
+
+.card-projects__info-item {
+
+}
+
+.card-projects__info-title {
+  font-size: 14px;
+  color: var(--text-color-gray);
+
+  @media (max-width: 420px) {
+    font-size: 12px;
+  }
+
+}
+
+.card-projects__info-value {
+  font-size: 14px;
+  color: var(--text-color-black);
+
+  @media (max-width: 420px) {
+    font-size: 12px;
+  }
+
+}

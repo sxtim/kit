@@ -18,6 +18,7 @@
 
   @media (max-width: 998px) {
     flex-direction: column;
+    justify-content: center;
   }
 
 }
@@ -25,13 +26,19 @@
 .section-questions__content {
   color: var(--text-color-black);
   max-width: 500px;
+  @media (max-width: 998px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 }
 
 .section-questions__title {
   font-weight: 700;
   font-size: calc(1.5rem + 8*(100vw - 360px) / 1200);
   line-height: 100%;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 .section-questions__txt {
