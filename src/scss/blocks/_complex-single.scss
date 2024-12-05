@@ -1,7 +1,20 @@
+.complex-single__title {
+  font-size: 60px;
+}
+
 .single-banner {
   position: relative;
 }
 
+.single-banner img {
+    width: 100%;
+    object-fit: cover;
+
+  @media (max-width: 1200px) {
+    height: 500px;
+  }
+
+}
 
 .single-banner::before {
   content: "";
@@ -23,23 +36,88 @@
   position: absolute;
   font-family: "Pangram", sans-serif;
   color: var(--text-color-white);
-  display: flex;
-  justify-content: space-around;
-  column-gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(4, calc(25% - 25px));
+  column-gap: 20px;
+  row-gap: 20px;
+  place-content: center;
+  place-items: center;
   width: 100%;
+  padding: 0 20px;
   right: 0;
-  bottom: 0;
+  bottom: 20px;
   left: 0;
+
+  @media (max-width: 1200px) {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    grid-template-columns: repeat(2, calc(50% - 4px));
+  }
+
+  @media (max-width: 768px) {
+    padding: 0 2px;
+    grid-template-columns: repeat(1, calc(100% - 4px));
+  }
+
 }
 
 .single-banner__item {
+  max-width: 303px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 10px 16px;
+  flex-direction: column;
+  background-image: url("../img/icons/single-banner-item.svg");
+  background-position:  10px 50%;
+  background-size: auto;
+  background-repeat: no-repeat;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, .4);
+    border-radius: 5px;
+    filter: blur(2px);
+    transition: all .2s ease-in;
+  }
+
+  &:hover::before {
+    opacity: 0.8;
+    filter: blur(5px);
+  }
+
+  @media (max-width: 768px) {
+    max-width: 260px;
+    width: 100%;
+    background-size: 12%;
+    padding: 4px 8px;
+  }
 
 }
 
 .single-banner__item-title {
-  font-size: 24px;
+  margin-left: 70px;
+  font-size: 18px;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+    margin-left: 40px;
+  }
+
 }
 
 .single-banner__item-text {
-  font-size: 22px;
+  margin-left: 70px;
+  font-size: 16px;
+
+  @media (max-width: 768px) {
+    font-size: 10px;
+    margin-left: 40px;
+  }
+
 }

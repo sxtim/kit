@@ -13,9 +13,9 @@
 <body>
 @@include('blocks/header/header.html')
 <main class="main complex-single">
-  <section class="complex-single__top-banner section">
+  <section class="complex-single__top-banner section section-single">
     <div class="container">
-      <h1 class="title">ЖК СПУТНИК</h1>
+      <h1 class="title complex-single__title">ЖК СПУТНИК</h1>
       <div class="single-banner">
         <img src="./img/complexes/zhk-sputnik.jpg" alt="">
         <div class="single-banner__row">
@@ -23,23 +23,227 @@
             <div class="single-banner__item-title">Преимущество</div>
             <div class="single-banner__item-text">Описание преимущества</div>
           </div>
-          <div class="single-banner-item">
+          <div class="single-banner__item">
             <div class="single-banner__item-title">Преимущество</div>
             <div class="single-banner__item-text">Описание преимущества</div>
           </div>
-          <div class="single-banner-item">
+          <div class="single-banner__item">
             <div class="single-banner__item-title">Преимущество</div>
             <div class="single-banner__item-text">Описание преимущества</div>
           </div>
-          <div class="single-banner-item">
+          <div class="single-banner__item">
             <div class="single-banner__item-title">Преимущество</div>
             <div class="single-banner__item-text">Описание преимущества</div>
           </div>
         </div>
       </div>
     </div>
-
+    @@include('blocks/filter.html')
   </section>
+  <div class="container">
+    <h3 class="title">ОСОБЕННОСТИ ОБЪЕКТА</h3>
+    <div data-tab-component>
+      <div class="tab-btns-container" role="tablist" aria-label="Tabbed content">
+        <button role="tab"
+                aria-selected="true"
+                aria-controls="tab3-content"
+                id="tab3">
+          <h3 class="tab-title">Архитектура</h3>
+        </button>
+
+        <button role="tab"
+                aria-selected="false"
+                aria-controls="tab4-content"
+                id="tab4">
+          <h3 class="tab-title">Паркинг</h3>
+        </button>
+
+        <button role="tab"
+                aria-selected="false"
+                aria-controls="tab5-content"
+                id="tab5">
+          <h3 class="tab-title">Инфраструктура</h3>
+        </button>
+
+        <button role="tab"
+                aria-selected="false"
+                aria-controls="tab6-content"
+                id="tab6">
+          <h3 class="tab-title">Террасы</h3>
+        </button>
+        <button role="tab"
+                aria-selected="false"
+                aria-controls="tab7-content"
+                id="tab7">
+          <h3 class="tab-title">Балкон</h3>
+        </button>
+      </div>
+
+
+      <section id="tab3-content"
+               role="tabpanel"
+               aria-labelledby="tab3"
+               tabindex="0">
+        <div class="tab3__inner">
+          <img src="./img/about-company/company1.jpg" alt="company">
+          <div class="tab3__content-wrapper">
+            <div class="tab3__content">
+              <h3 class="tab3__inner-title">Архитектура</h3>
+              <p>Lorem ipsum dolor sit amet consectetur. Euismod cursus nec vitae fames blandit.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="tab4-content"
+               role="tabpanel"
+               aria-labelledby="tab4"
+               tabindex="0"
+               aria-hidden="true">
+        <div class="tab4__content">
+          <h3 class="tab4__inner-title">Паркинг</h3>
+
+          <p>Lorem ipsum dolor sit amet consectetur. Euismod cursus nec vitae fames blandit.</p>
+        </div>
+      </section>
+
+      <section id="tab5-content"
+               role="tabpanel"
+               aria-labelledby="tab5"
+               tabindex="0"
+               aria-hidden="true">
+        <div class="tab5__content">
+          <h3 class="tab5__inner-title">Инфраструктура</h3>
+
+          <p>Lorem ipsum dolor sit amet consectetur. Euismod cursus nec vitae fames blandit.</p>
+        </div>
+      </section>
+
+      <section id="tab6-content"
+               role="tabpanel"
+               aria-labelledby="tab6"
+               tabindex="0"
+               aria-hidden="true">
+        <div class="tab6__content">
+          <h3 class="tab6__inner-title">Террасы</h3>
+          <p>Lorem ipsum dolor sit amet consectetur. Euismod cursus nec vitae fames blandit.</p>
+        </div>
+      </section>
+
+      <section id="tab7-content"
+               role="tabpanel"
+               aria-labelledby="tab7"
+               tabindex="0"
+               aria-hidden="true">
+        <div class="tab7__content">
+          <h3 class="tab7__inner-title">Балкон</h3>
+
+          <p>Lorem ipsum dolor sit amet consectetur. Euismod cursus nec vitae fames blandit.</p>
+        </div>
+      </section>
+    </div>
+  </div>
+  <div class="container">
+    <h3 class="title">Отделка квартир</h3>
+    <div data-tab-component>
+      <div class="tab-btns-container" role="tablist" aria-label="Tabbed content">
+        <button role="tab"
+                aria-selected="true"
+                aria-controls="tab8-content"
+                id="tab8">
+          <h3 class="tab-title">Прихожая</h3>
+        </button>
+
+        <button role="tab"
+                aria-selected="false"
+                aria-controls="tab9-content"
+                id="tab9">
+          <h3 class="tab-title">Кухня</h3>
+        </button>
+
+        <button role="tab"
+                aria-selected="false"
+                aria-controls="tab10-content"
+                id="tab10">
+          <h3 class="tab-title">Спальня</h3>
+        </button>
+
+        <button role="tab"
+                aria-selected="false"
+                aria-controls="tab11-content"
+                id="tab11">
+          <h3 class="tab-title">Санузел</h3>
+        </button>
+        <button role="tab"
+                aria-selected="false"
+                aria-controls="tab12-content"
+                id="tab12">
+          <h3 class="tab-title">Балкон</h3>
+        </button>
+      </div>
+
+      <section id="tab8-content"
+               role="tabpanel"
+               aria-labelledby="tab8"
+               tabindex="0">
+
+        <div class="tab8__inner">
+          <img src="./img/about-company/company1.jpg" alt="company">
+          <div class="tab8__content-wrapper">
+            <div class="tab8__content">
+              <h3 class="tab8__inner-title">Архитектура</h3>
+              <p>Lorem ipsum dolor sit amet consectetur. Euismod cursus nec vitae fames blandit.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="tab9-content"
+               role="tabpanel"
+               aria-labelledby="tab9"
+               tabindex="0"
+               aria-hidden="true">
+        <div class="tab9__content">
+          <h3 class="tab9__inner-title">Паркинг</h3>
+
+          <p>Lorem ipsum dolor sit amet consectetur. Euismod cursus nec vitae fames blandit.</p>
+        </div>
+      </section>
+
+      <section id="tab10-content"
+               role="tabpanel"
+               aria-labelledby="tab10"
+               tabindex="0"
+               aria-hidden="true">
+        <div class="tab10__content">
+          <h3 class="tab10__inner-title">Инфраструктура</h3>
+
+          <p>Lorem ipsum dolor sit amet consectetur. Euismod cursus nec vitae fames blandit.</p>
+        </div>
+      </section>
+
+      <section id="tab11-content"
+               role="tabpanel"
+               aria-labelledby="tab11"
+               tabindex="0"
+               aria-hidden="true">
+        <div class="tab11__content">
+          <h3 class="tab11__inner-title">Террасы</h3>
+
+          <p>Lorem ipsum dolor sit amet consectetur. Euismod cursus nec vitae fames blandit.</p>
+        </div>
+      </section>
+      <section id="tab12-content"
+               role="tabpanel"
+               aria-labelledby="tab12"
+               tabindex="0"
+               aria-hidden="true">
+        <div class="tab12__content">
+          <h3 class="tab12__inner-title">Балкон</h3>
+
+          <p>Lorem ipsum dolor sit amet consectetur. Euismod cursus nec vitae fames blandit.</p>
+        </div>
+      </section>
+    </div>
   </div>
   @@include('blocks/section-questions.html')
 </main>
