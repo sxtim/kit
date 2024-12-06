@@ -10,7 +10,7 @@
   //grid-row-gap: 20px;
   //grid-column-gap: 15px;
 
-  @media (max-width: 998px) {
+  @media (max-width: 1200px) {
     grid-column-gap: 8px;
     grid-template-columns: repeat(2, calc(100% / 2 - 8px / 2 * (2 - 1)));
     row-gap: 24px;
@@ -20,6 +20,7 @@
     grid-column-gap: 8px;
     grid-template-columns: none;
     row-gap: 24px;
+    place-content: normal;
   }
 
 }
