@@ -175,9 +175,24 @@
   border-radius: 4px;
   width: 100%;;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+  @media (max-width: 1200px) {
+    flex-direction: column;
+  }
+
+
+}
+
+.apartment-form {
+  color: var(--text-color-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
 }
 
 .apartment-form__content {
+  padding: 30px 0 30px 60px;
   color: #ffffff;
 }
 
@@ -188,16 +203,9 @@
 
 
 
-input[type="text"],
-input[type="tel"] {
-  //padding: 10px;
-  //border: 1px solid #B0C4DE;
-  //border-radius: 4px;
-  //font-size: 16px;
-  //width: 150px;
-}
-
-.apartment-form__image img {
-  max-width: 150px;
+.apartment-form__image {
+  max-width: 360px;
+  width: 100%;
+  height: auto;
   //border-radius: 4px;
 }
