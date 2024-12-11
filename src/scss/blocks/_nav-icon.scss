@@ -28,7 +28,7 @@
 	position: relative;
 	width: var(--width);
 	height: var(--line-height);
-	background-color: var(--color);
+	background-color: var(--text-color-white);
 	border-radius: var(--radius);
 	z-index: 999;
 }
@@ -45,7 +45,7 @@
 	height: var(--line-height);
 
 	border-radius: var(--radius);
-	background-color: var(--color);
+	background-color: var(--text-color-white);
 	transition: transform var(--time) ease-in,
 		top var(--time) linear var(--time);
 }
@@ -79,6 +79,17 @@
 	transform: rotate(-45deg);
 }
 
+
+.nav-icon-black {
+	background-color: var(--text-color-black);
+}
+
+.nav-icon-black::before,
+.nav-icon-black::after {
+
+	background-color: var(--text-color-black);
+
+}
 /* Layout */
 
 .mobile-nav-btn {

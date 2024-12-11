@@ -49,6 +49,14 @@
 	pointer-events: none;
 }
 
+.header__nav-list-white ul li a {
+	color: var(--text-color-black);
+}
+
+.header__phone-white {
+	color: var(--text-color-black);
+}
+
 .header-main__socials {
 	position: absolute;
 	left: 0;
