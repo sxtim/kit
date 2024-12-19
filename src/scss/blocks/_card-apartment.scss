@@ -112,13 +112,14 @@
 
 
 
-.card-apartment__favorite svg {
-  width: auto;
-  height: 41px;
+.card-apartment__favorite  {
+  width: 41px;
+  height: auto;
   //color: #ccc;
   cursor: pointer;
 }
 
-.card-apartment__favorite:hover svg path {
+.card-apartment__favorite:hover path {
   stroke: red;
+  fill: red;
 }
