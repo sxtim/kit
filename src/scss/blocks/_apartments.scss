@@ -81,3 +81,119 @@ color: var(--text-color-gray);
   width: 40px;
   height: auto;
 }
+
+
+
+
+.section-tabs {
+  padding-top: 15px
+}
+.swiper-container {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  z-index: 1;
+}
+.swiper-container-android .swiper-slide, .swiper-wrapper {
+  transform: translate3d(0px,0,0);
+}
+
+.swiper-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  transition-property: transform;
+  box-sizing: content-box;
+}
+.swiper-slide {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition-property: transform;
+}
+
+.section-tabs .swiper-tabs-nav .swiper-slide {
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f4f6f5;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer
+}
+
+.section-tabs .swiper-tabs-nav .swiper-slide.swiper-slide-thumb-active {
+  font-weight: 700;
+  color: #CB0001;
+  border-color: #CB0001
+}
+
+.section-tabs .swiper-tabs-content .swiper-slide {
+  padding: 25px 15px
+}
+
+.section-tabs .swiper-tabs-content .swiper-slide .full-height {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(65vh - 25px)
+}
+
+.section-tabs .swiper-tabs-content .swiper-slide .row {
+  margin: 0 -5px
+}
+
+.section-tabs .swiper-tabs-content .swiper-slide .row .col-6,
+.section-tabs .swiper-tabs-content .swiper-slide .row .col {
+  padding: 0 5px
+}
+
+.section-tabs .swiper-tabs-content .swiper-slide .custom-select {
+  border-radius: 0
+}
+
+.section-tabs .swiper-tabs-content .swiper-slide textarea.form-control {
+  border-radius: 0;
+  background-color: #FFF
+}
+
+.section-tabs .swiper-tabs-content .swiper-slide .radio-courier .item-radio input~label {
+  border-radius: 0;
+  text-align: center
+}
+
+.section-tabs .swiper-tabs-content .swiper-slide .radio-courier .item-radio input~label h6 {
+  color: #b8026f
+}
+
+.section-tabs .swiper-tabs-content .swiper-slide .radio-courier .item-radio input~label p {
+  color: #989898
+}
+
+.section-tabs .swiper-tabs-content .swiper-slide .bottom {
+  margin-top: auto
+}
+
+.section-tabs .swiper-tabs-content .swiper-slide .bottom .btn {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: 'Cairo', sans-serif !important;
+  position: relative
+}
+
+.section-tabs .swiper-tabs-content .swiper-slide .bottom .btn .icon {
+  position: absolute;
+  left: 15px;
+  top: 60%;
+  transform: translateY(-50%)
+}
+
+.section-tabs .swiper-tabs-content .swiper-slide .bottom .btn .icon img {
+  height: 20px;
+  width: auto;
+  filter: invert(1)
+}

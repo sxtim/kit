@@ -40,3 +40,32 @@ const swiper = new Swiper('.swiper', {
         el: '.swiper-scrollbar',
     },
 });
+
+
+
+const swiperTabsNav = new Swiper('.swiper-tabs-nav', {
+    spaceBetween: 0,
+    slidesPerView: 3,
+    loop: false,
+    loopedSlides: 5,
+    autoHeight: false,
+    resistanceRatio: 0,
+    watchOverflow: true,
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
+});
+
+// Swiper Content
+const swiperTabsContent = new Swiper('.swiper-tabs-content', {
+    spaceBetween: 0,
+    allowTouchMove: false,
+    loop:false,
+    autoHeight: true,
+    longSwipes: true,
+    resistanceRatio: 0, // Disable First and Last Swiper
+    watchOverflow: true,
+    loopedSlides: 5,
+    thumbs: {
+        swiper: swiperTabsNav,
+    },
+});
