@@ -44,15 +44,8 @@ const swiper = new Swiper('.swiper', {
 
 
 const swiperTabsNav = new Swiper('.swiper-tabs-nav', {
-    spaceBetween: 0,
-    slidesPerView: 3,
-    loop: false,
-    loopedSlides: 5,
-    autoHeight: false,
-    resistanceRatio: 0,
-    watchOverflow: true,
-    watchSlidesVisibility: true,
-    watchSlidesProgress: true,
+    spaceBetween: 30,
+    slidesPerView: 6,
 });
 
 // Swiper Content
