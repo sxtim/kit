@@ -4,7 +4,7 @@ import  './modules/tabs';
 import  './modules/range-slider';
 
 
-
+//SLIDER MAIN
 // import Swiper bundle with all modules installed
 import Swiper from 'swiper/bundle';
 
@@ -42,9 +42,9 @@ const swiper = new Swiper('.swiper', {
 });
 
 
-
+//SLIDER TABS APARTMENT
 const swiperTabsNav = new Swiper('.swiper-tabs-nav', {
-    spaceBetween: 5,
+    spaceBetween: 16,
     slidesPerView: 4,
 });
 
@@ -62,3 +62,34 @@ const swiperTabsContent = new Swiper('.swiper-tabs-content', {
         swiper: swiperTabsNav,
     },
 });
+
+//MODAL TABS APARTMENT
+
+// Открыть модальное окно
+document.getElementById("open-modal-btn").addEventListener("click", function() {
+  document.getElementById("my-modal").classList.add("open")
+})
+
+// Закрыть модальное окно
+document.getElementById("close-my-modal-btn").addEventListener("click", function() {
+  document.getElementById("my-modal").classList.remove("open")
+})
+
+// Закрыть модальное окно при нажатии на Esc
+window.addEventListener('keydown', (e) => {
+  if (e.key === "Escape") {
+    document.getElementById("my-modal").classList.remove("open")
+  }
+});
+
+// Закрыть модальное окно при клике вне его
+document.querySelector("#my-modal .modal__box").addEventListener('click', event => {
+  event._isClickWithInModal = true;
+});
+document.getElementById("my-modal").addEventListener('click', event => {
+  if (event._isClickWithInModal) return;
+  event.currentTarget.classList.remove('open');
+});
+
+
+
