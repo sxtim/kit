@@ -2,6 +2,7 @@ import mobileNav from './modules/mobile-nav.js';
 mobileNav();
 import  './modules/tabs';
 import  './modules/range-slider';
+require("fslightbox");
 
 
 //SLIDER MAIN
@@ -91,5 +92,21 @@ document.getElementById("my-modal").addEventListener('click', event => {
   event.currentTarget.classList.remove('open');
 });
 
+
+
+//FSLIGHTBOX
+function wrap(el) {
+  const wrappingElement = document.createElement('a');
+  wrappingElement.href = el.src;
+  wrappingElement.setAttribute('data-fslightbox', 'gallery');
+  el.parentElement.insertBefore(wrappingElement, el);
+  wrappingElement.appendChild(el);
+}
+
+document.querySelectorAll('img').forEach(el => {
+  wrap(el);
+})
+
+refreshFsLightbox();
 
 
