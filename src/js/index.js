@@ -95,17 +95,6 @@ document.getElementById("my-modal").addEventListener('click', event => {
 
 
 //FSLIGHTBOX
-function wrap(el) {
-  const wrappingElement = document.createElement('a');
-  wrappingElement.href = el.src;
-  wrappingElement.setAttribute('data-fslightbox', 'gallery');
-  el.parentElement.insertBefore(wrappingElement, el);
-  wrappingElement.appendChild(el);
-}
-
-document.querySelectorAll('img').forEach(el => {
-  wrap(el);
-})
 
 refreshFsLightbox();
 
