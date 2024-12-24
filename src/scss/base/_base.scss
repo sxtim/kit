@@ -29,12 +29,19 @@ body {
 
 	@media (max-width: 768px) {
 		font-size: 24px;
+		margin-bottom: 20px;
 	}
 }
 
 .section {
 	margin-top: 70px;
 	margin-bottom: 70px;
+
+	@media (max-width: 768px) {
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+
 }
 
 .section-single {

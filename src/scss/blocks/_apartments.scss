@@ -107,10 +107,6 @@ color: var(--text-color-gray);
 
 }
 
-.apartment-info__slider .section-tabs {
-  padding-top: 15px;
-}
-
 .apartment-info__slider .swiper-container {
   margin-left: auto;
   margin-right: auto;
@@ -130,11 +126,12 @@ color: var(--text-color-gray);
 
 
   @media (max-width: 640px) {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+    display: grid !important;
+    grid-template-columns: repeat(2, calc(100% / 2 - 10px / 2 * (2 - 1)));
+    column-gap: 20px;
+    row-gap: 40px;
+    place-content: center;
+    place-items: center;
   }
 
 }
@@ -188,23 +185,28 @@ color: var(--text-color-gray);
   max-width: 110px !important;
   text-align: center;
   font-size: 16px;
+  font-weight: 400;
   padding-bottom: 10px;
   border-bottom: 2px solid #f4f6f5;
-  font-weight: 500;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
 
 
 }
 
 .apartment-info__slider .swiper-tabs-nav .swiper-slide.swiper-slide-thumb-active {
-  font-weight: 700;
-  color: #CB0001;
-  border-color: #CB0001
+  font-weight: 400;
+  color: var(--sand);
+  border-color: var(--sand);
 }
 
 .apartment-info__slider .swiper-tabs-content .swiper-slide {
-  padding: 25px 15px
+  padding: 25px 15px;
 }
 
 .apartment-info__slider .swiper-tabs-content .swiper-slide .full-height {
@@ -264,7 +266,7 @@ color: var(--text-color-gray);
 }
 
 .modal__close-btn:hover svg path {
-  fill: blue;
+  fill: var(--sand);
 }
 
 .modal__close-btn:active svg path {
