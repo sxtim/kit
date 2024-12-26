@@ -282,3 +282,29 @@ color: var(--text-color-gray);
   transform: scale(1);
 }
 
+.apartment-gallery__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.apartment-gallery__pic {
+  height: 330px;
+  background: grey;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.apartment-gallery__pic img {
+  width: 100%;
+object-fit: cover;
+  height: 330px;
+
+  transition: .5s;
+
+}
+
+.apartment-gallery__pic img:hover {
+  transform: scale(1.2);
+}
+
