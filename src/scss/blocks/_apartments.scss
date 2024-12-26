@@ -285,6 +285,16 @@ color: var(--text-color-gray);
 .apartment-gallery__wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  @media (max-width: 1360px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @media (max-width: 568px) {
+    display: block;
+    grid-template-columns: none;
+  }
+
 }
 
 .apartment-gallery__pic {
@@ -293,14 +303,22 @@ color: var(--text-color-gray);
   position: relative;
   cursor: pointer;
   overflow: hidden;
+
+  @media (max-width: 998px) {
+    height: 200px;
+  }
+
 }
 
 .apartment-gallery__pic img {
   width: 100%;
 object-fit: cover;
   height: 330px;
-
   transition: .5s;
+
+  @media (max-width: 998px) {
+    height: 200px;
+  }
 
 }
 

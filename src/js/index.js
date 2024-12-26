@@ -67,9 +67,10 @@ const swiperTabsContent = new Swiper('.swiper-tabs-content', {
 //MODAL TABS APARTMENT
 
 // Открыть модальное окно
-document.getElementById("open-modal-btn").addEventListener("click", function() {
+document.getElementById("open-modal-btn1").addEventListener("click", function() {
   document.getElementById("my-modal").classList.add("open")
 })
+
 
 // Закрыть модальное окно
 document.getElementById("close-my-modal-btn").addEventListener("click", function() {
