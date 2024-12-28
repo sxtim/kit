@@ -326,3 +326,14 @@ object-fit: cover;
   transform: scale(1.2);
 }
 
+
+.apartment-tabs__img {
+  position: relative;
+}
+
+.apartment-tabs__link {
+  color: white;
+  position: absolute;
+  bottom: 100px;
+  left: 130px;
+}
