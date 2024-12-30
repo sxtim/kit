@@ -20,20 +20,6 @@
         <div class="apartment-info__slider">
 
 
-          <div class="modal" id="my-modal">
-            <div class="modal__box">
-              <button class="modal__close-btn" id="close-my-modal-btn">
-                <svg width="23" height="25" viewBox="0 0 23 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M2.09082 0.03125L22.9999 22.0294L20.909 24.2292L-8.73579e-05 2.23106L2.09082 0.03125Z"
-                        fill="#333333"/>
-                  <path d="M0 22.0295L20.9091 0.0314368L23 2.23125L2.09091 24.2294L0 22.0295Z" fill="#333333"/>
-                </svg>
-              </button>
-              <img class="modal__box-img" src="./img/apartments/sputnik/01.png" alt="img">
-            </div>
-          </div>
-
-
           <div class="section-tabs">
             <!-- Swiper Tab -->
             <div class="swiper-container swiper-tabs-nav">
@@ -55,24 +41,24 @@
             <!-- Swiper Content -->
             <div class="swiper-container swiper-tabs-content">
               <div class="swiper-wrapper">
-                <div class="swiper-slide">
+                <a class="swiper-slide" data-fslightbox="apartment-info-tab1" href="./img/apartments/sputnik/01.png">
                   <img id="open-modal-btn1" class="apartment-info__slider-img" src="./img/apartments/sputnik/01.png"
                        alt="img">
-                </div>
-                <div class="swiper-slide">
+                </a>
+                <a class="swiper-slide" data-fslightbox="apartment-info-tab2" href="./img/apartments/sputnik/apartment-razmery.jpg">
                   <img id="open-modal-btn2" class="apartment-info__slider-img"
                        src="./img/apartments/sputnik/apartment-razmery.jpg"
                        alt="img">
-                </div>
-                <div class="swiper-slide">
+                </a>
+                <a class="swiper-slide" data-fslightbox="apartment-info-tab3" href="./img/apartments/sputnik/na-etage.jpg" >
                   <img id="open-modal-btn3" class="apartment-info__slider-img"
                        src="./img/apartments/sputnik/na-etage.jpg"
                        alt="img">
-                </div>
-                <div class="swiper-slide">
+                </a>
+                <a class="swiper-slide" data-fslightbox="apartment-info-tab4" href="./img/apartments/sputnik/gen.png">
                   <img id="open-modal-btn4" class="apartment-info__slider-img" src="./img/apartments/sputnik/gen.png"
                        alt="img">
-                </div>
+                </a>
               </div>
             </div>
 
@@ -167,7 +153,7 @@
       </a>
     </div>
   </section>
-  <div class="section apartment-tabs">
+  <section class="section apartment-tabs">
     <div class="container">
       <h3 class="title">Отделка</h3>
       <div data-tab-component>
@@ -207,20 +193,20 @@
           </button>
         </div>
 
-        <section id="tab8-content"
+        <div id="tab8-content"
                  role="tabpanel"
                  aria-labelledby="tab8"
                  tabindex="0">
           <div class="apartment-tabs__wrapper">
             <div class="apartment-tabs__content">
               <img class="apartment-tabs__img" src="./img/complex-single/prihozhaya.jpg" alt="company">
-              <a href="https://planoplan.com/ru/preview/a094a07106638eb0d9409c84fe4f9aab/" class="btn btn-sand apartment-tabs__link">3D-Тур</a>
+              <a href="https://planoplan.com/ru/preview/a094a07106638eb0d9409c84fe4f9aab/" class="btn btn-sand apartment-tabs__link" target="_blank">3D-Тур</a>
             </div>
           </div>
-        </section>
+        </div>
 
 
-        <section id="tab9-content"
+        <div id="tab9-content"
                  role="tabpanel"
                  aria-labelledby="tab9"
                  tabindex="0"
@@ -228,12 +214,12 @@
           <div class="apartment-tabs__wrapper">
             <div class="apartment-tabs__content">
               <img class="apartment-tabs__img" src="./img/complex-single/kuhnya.jpg" alt="company">
-              <a href="https://planoplan.com/ru/preview/ea707c5159fb6a8d65211959b5bce8c2/" class="btn btn-sand apartment-tabs__link">3D-Тур</a>
+              <a href="https://planoplan.com/ru/preview/ea707c5159fb6a8d65211959b5bce8c2/" class="btn btn-sand apartment-tabs__link" target="_blank">3D-Тур</a>
             </div>
           </div>
-        </section>
+        </div>
 
-        <section id="tab10-content"
+        <div id="tab10-content"
                  role="tabpanel"
                  aria-labelledby="tab10"
                  tabindex="0"
@@ -241,12 +227,12 @@
           <div class="apartment-tabs__wrapper">
             <div class="apartment-tabs__content">
               <img class="apartment-tabs__img" src="./img/complex-single/gostin.jpg" alt="company">
-              <a href="https://planoplan.com/ru/preview/e34b8665176011f6737223fc6399a777/" class="btn btn-sand apartment-tabs__link">3D-Тур</a>
+              <a href="https://planoplan.com/ru/preview/e34b8665176011f6737223fc6399a777/" class="btn btn-sand apartment-tabs__link" target="_blank">3D-Тур</a>
             </div>
           </div>
-        </section>
+        </div>
 
-        <section id="tab11-content"
+        <div id="tab11-content"
                  role="tabpanel"
                  aria-labelledby="tab11"
                  tabindex="0"
@@ -254,11 +240,11 @@
           <div class="apartment-tabs__wrapper">
             <div class="apartment-tabs__content">
               <img class="apartment-tabs__img" src="./img/complex-single/vannaya.jpg" alt="company">
-<!--              <a href="https://planoplan.com/ru/preview/a094a07106638eb0d9409c84fe4f9aab/" class="btn btn-sand apartment-tabs__link">3D-Тур</a>-->
+<!--              <a href="https://planoplan.com/ru/preview/a094a07106638eb0d9409c84fe4f9aab/" class="btn btn-sand apartment-tabs__link" target="_blank">3D-Тур</a>-->
             </div>
           </div>
-        </section>
-        <section id="tab12-content"
+        </div>
+        <div id="tab12-content"
                  role="tabpanel"
                  aria-labelledby="tab12"
                  tabindex="0"
@@ -266,14 +252,32 @@
           <div class="apartment-tabs__wrapper">
             <div class="apartment-tabs__content">
               <img class="apartment-tabs__img" src="./img/complex-single/balkon.jpg" alt="company">
-<!--              <a href="https://planoplan.com/ru/preview/a094a07106638eb0d9409c84fe4f9aab/" class="btn btn-sand apartment-tabs__link">3D-Тур</a>-->
+<!--              <a href="https://planoplan.com/ru/preview/a094a07106638eb0d9409c84fe4f9aab/" class="btn btn-sand apartment-tabs__link" target="_blank">3D-Тур</a>-->
             </div>
           </div>
-        </section>
+        </div>
       </div>
     </div>
+  </section>
+<section class="apartment-similar section">
+  <div class="container">
+    <h3 class="title">Похожие Квартиры</h3>
+    <div class="swiperApartmentSimilar">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">@@include('./blocks/cards/card-apartment.html')</div>
+        <div class="swiper-slide">@@include('./blocks/cards/card-apartment.html')</div>
+        <div class="swiper-slide">@@include('./blocks/cards/card-apartment.html')</div>
+        <div class="swiper-slide">@@include('./blocks/cards/card-apartment.html')</div>
+        <div class="swiper-slide">@@include('./blocks/cards/card-apartment.html')</div>
+        <div class="swiper-slide">@@include('./blocks/cards/card-apartment.html')</div>
+        <div class="swiper-slide">@@include('./blocks/cards/card-apartment.html')</div>
+        <div class="swiper-slide">@@include('./blocks/cards/card-apartment.html')</div>
+        <div class="swiper-slide">@@include('./blocks/cards/card-apartment.html')</div>
+      </div>
+      <div class="ap-sim-swiper-pagination"></div>
+    </div>
   </div>
-
+</section>
 
   @@include('blocks/section-questions.html')
 </main>
