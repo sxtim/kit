@@ -285,3 +285,48 @@ object-fit: cover;
 .apartment-similar-swiper-pag .swiper-pagination-bullet {
   background-color: var(--green);
 }
+
+.complex-this__wrap {
+  display: grid;
+  grid-template-columns: repeat(3, calc(33.3333333333% - 13.3333333333px));
+  column-gap: 20px;
+  row-gap: 40px;
+  place-content: center;
+  place-items: center;
+
+  @media (max-width: 998px) {
+    grid-column-gap: 8px;
+    grid-template-columns: repeat(2, calc(50% - 4px));
+    row-gap: 24px;
+  }
+
+}
+
+.complex-this__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  //width: calc((100% - 24px * 3) / 4);
+  max-width: 300px;
+  height: 400px;
+  background-color: #162C44;
+  border-radius: 4px;
+
+  &:hover {
+    background-color: #5587af;
+    border-radius: 16px;
+  }
+
+  transition: all 0.5s ease;
+}
+
+.complex-this__content {
+  margin-bottom: 40px;
+}
+
+.complex-this__title {
+  color: var(--text-color-white);
+  font-size: 32px;
+  font-weight: 500;
+  text-align: center;
+}
