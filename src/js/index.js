@@ -64,11 +64,11 @@ const swiperTabsContent = new Swiper('.swiper-tabs-content', {
     },
 });
 
-var swiperApartmentSimilar = new Swiper(".swiperApartmentSimilar", {
+var swiperApartmentSimilar = new Swiper(".apartment-similar-swiper", {
     slidesPerView: 3,
     spaceBetween: 30,
     pagination: {
-        el: ".ap-sim-swiper-pagination",
+        el: ".apartment-similar-swiper-pag",
         clickable: true,
     },
 });

@@ -7,6 +7,15 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   border: 1px solid #ddd;
   overflow: hidden;
+  margin: 5px;
+
+  &:hover {
+    transition: .1s;
+    box-shadow: 0 3px 5px #777777, inset 0 0 0 #777777;
+    //transform: scale(1.02);
+    transform: translateY(-2px);
+  }
+
 }
 
 .card-apartment_header {
