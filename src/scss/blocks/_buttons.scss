@@ -18,7 +18,7 @@
   pointer-events: all;
 
   &:hover {
-    background-color: #2F6957C4;
+    background-color: var(--green-light);
   }
 
   @media (max-width: 998px) {

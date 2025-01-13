@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>КИТ</title>
+  <link rel="stylesheet" href="./css/main.css"/>
+  <link rel="stylesheet" href="./fonts/Montserrat/stylesheet.css"/>
+  <link rel="stylesheet" href="./fonts/Oswald/stylesheet.css"/>
+  <link rel="stylesheet" href="./fonts/Pangram1/stylesheet.css"/>
+</head>
+<body>
+<header class="header">
+  <div class="container">
+  <div class="header__nav">
+    <nav class="nav">
+
+      <a href="index.html" class="nav__logo nav__logo-dark">
+        <img src="./img/logo/logo-dark.svg" alt="Logo">
+      </a>
+      <div class="nav__list header__nav-list-white">
+        <ul>
+          <li><a href="#!">О компании</a></li>
+          <li><a href="projects.html">Жилые комплексы</a></li>
+          <li><a href="#!">Квартиры</a></li>
+          <li><a href="#!">Акции</a></li>
+          <li><a href="#!">Новости</a></li>
+          <li><a href="#!">Ипотека</a></li>
+          <li><a href="#!">Коммерция</a></li>
+          <li><a href="#!">Контакты</a></li>
+          <a class="header__phone phone header__phone-white" href="tel:+7 (473) 274-38-84">+7 (473) 274-38-84</a>
+<!--          <li><a class="header__address" href="#!">г. Воронеж, ул. Владимира Невского, 17Б</a></li>-->
+        </ul>
+      </div>
+      <div class="mobile-nav-btn">
+        <div class="nav-icon nav-icon-black"></div>
+      </div>
+      <div class="mobile-nav">
+		<ul class="mobile-nav__list">
+			<li><a href="#!">О компании</a></li>
+			<li><a href="projects.html">Жилые комплексы</a></li>
+			<li><a href="#!">Квартиры</a></li>
+			<li><a href="#!">Акции</a></li>
+			<li><a href="#!">Новости</a></li>
+			<li><a href="#!">Ипотека</a></li>
+			<li><a href="#!">Коммерция</a></li>
+			<li><a href="#!">Контакты</a></li>
+			<a class="header__phone phone header__phone-white" href="tel:+7 (473) 274-38-84">+7 (473) 274-38-84</a>
+			<!--              <li><a class="header__address" href="#!">г. Воронеж, ул. Владимира Невского, 17Б</a></li>-->
+		</ul>
+</div>
+
+    </nav>
+  </div>
+  </div>
+</header>
+<main class="main">
+  <section class="apartment section">
+    <section class="filter section">
+  <div class="container">
+    <div data-tab-component>
+      <div class="filter__tab-btn-container" role="tablist" aria-label="Tabbed content">
+        <button class="filter__tab-btn" role="tab"
+                aria-selected="true"
+                aria-controls="tab1-content"
+                id="tab1">
+          <h3 class="tab-title">Подобрать квартиру</h3>
+        </button>
+
+        <button class="filter__tab-btn" role="tab"
+                aria-selected="false"
+                aria-controls="tab2-content"
+                id="tab2">
+          <h3 class="tab-title">Коммерческую недвижимость</h3>
+        </button>
+
+      </div>
+
+      <section class="filter__tab-content" id="tab1-content"
+               role="tabpanel"
+               aria-labelledby="tab1"
+               tabindex="0">
+
+        <div class="filter__tab-row">
+          <div class="filter__el">
+            <h4 class="filter__row-title">Комнатность</h4>
+            <div class="filter__row-el-btns-container">
+              <button class="filter__el-btns btn-small">1к</button>
+              <button class="filter__el-btns btn-small">2к</button>
+              <button class="filter__el-btns btn-small">3к</button>
+            </div>
+
+          </div>
+          <div class="filter__el">
+            <h4 class="filter__row-title">Цена, руб.</h4>
+            <div class="filter-slider__inputs">
+              <label class="filter-slider__label">
+                <span class="filter-slider__text">От</span>
+                <input type="number" min="4000000" max="12000000" class="filter-slider__input"
+                       id="input-price-min">
+              </label>
+
+              <label class="filter-slider__label">
+                <span class="filter-slider__text">До</span>
+                <input type="number" min="4000000" max="12000000" class="filter-slider__input"
+                       id="input-price-max">
+              </label>
+            </div>
+            <div class="filter__range-slider" id="price-slider">
+            </div>
+          </div>
+          <div class="filter__el">
+            <h4 class="filter__row-title">Площадь, м2</h4>
+            <div class="filter-slider__inputs">
+              <label class="filter-slider__label">
+                <span class="filter-slider__text">От</span>
+                <input type="number" min="40" max="120" class="filter-slider__input"
+                       id="input-square-min">
+              </label>
+
+              <label class="filter-slider__label">
+                <span class="filter-slider__text">До</span>
+                <input type="number" min="40" max="120" class="filter-slider__input"
+                       id="input-square-max">
+              </label>
+            </div>
+            <div class="filter__range-slider" id="square-slider">
+            </div>
+          </div>
+          <div class="filter__el filter__btn-container">
+            <button class="filter__btn btn btn-green">Показать</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="filter__tab-content" id="tab2-content"
+               role="tabpanel"
+               aria-labelledby="tab2"
+               tabindex="0"
+               aria-hidden="true">
+
+        <div class="filter__tab-row">
+
+        </div>
+        <!--        <p>Quisque id augue sagittis, ullamcorper arcu a, commodo est. Sed dictum fringilla augue sit amet condimentum.-->
+        <!--          Donec sagittis tincidunt mattis. Aliquam eget tellus placerat, luctus odio sit amet, scelerisque ligula.-->
+        <!--          Nullam-->
+        <!--          in magna at erat porttitor lacinia. Donec placerat lacus vitae arcu efficitur sollicitudin. Nunc laoreet ex-->
+        <!--          tempus, fringilla nisl sit amet, varius odio. Nunc vel orci ut neque ullamcorper facilisis.</p>-->
+      </section>
+
+    </div>
+  </div>
+</section>
+  </section>
+</main>
+</body>
+</html>

@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>КИТ</title>
+  <link rel="stylesheet" href="./css/main.css"/>
+  <link rel="stylesheet" href="./fonts/Montserrat/stylesheet.css"/>
+  <link rel="stylesheet" href="./fonts/Oswald/stylesheet.css"/>
+  <link rel="stylesheet" href="./fonts/Pangram1/stylesheet.css"/>
+</head>
+<body>
+<header class="header">
+  <div class="container">
+  <div class="header__nav">
+    <nav class="nav">
+
+      <a href="index.html" class="nav__logo nav__logo-dark">
+        <img src="./img/logo/logo-dark.svg" alt="Logo">
+      </a>
+      <div class="nav__list header__nav-list-white">
+        <ul>
+          <li><a href="#!">О компании</a></li>
+          <li><a href="projects.html">Жилые комплексы</a></li>
+          <li><a href="#!">Квартиры</a></li>
+          <li><a href="#!">Акции</a></li>
+          <li><a href="#!">Новости</a></li>
+          <li><a href="#!">Ипотека</a></li>
+          <li><a href="#!">Коммерция</a></li>
+          <li><a href="#!">Контакты</a></li>
+          <a class="header__phone phone header__phone-white" href="tel:+7 (473) 274-38-84">+7 (473) 274-38-84</a>
+<!--          <li><a class="header__address" href="#!">г. Воронеж, ул. Владимира Невского, 17Б</a></li>-->
+        </ul>
+      </div>
+      <div class="mobile-nav-btn">
+        <div class="nav-icon nav-icon-black"></div>
+      </div>
+      <div class="mobile-nav">
+		<ul class="mobile-nav__list">
+			<li><a href="#!">О компании</a></li>
+			<li><a href="projects.html">Жилые комплексы</a></li>
+			<li><a href="#!">Квартиры</a></li>
+			<li><a href="#!">Акции</a></li>
+			<li><a href="#!">Новости</a></li>
+			<li><a href="#!">Ипотека</a></li>
+			<li><a href="#!">Коммерция</a></li>
+			<li><a href="#!">Контакты</a></li>
+			<a class="header__phone phone header__phone-white" href="tel:+7 (473) 274-38-84">+7 (473) 274-38-84</a>
+			<!--              <li><a class="header__address" href="#!">г. Воронеж, ул. Владимира Невского, 17Б</a></li>-->
+		</ul>
+</div>
+
+    </nav>
+  </div>
+  </div>
+</header>
+<main class="main complex-single">
+  <section class="complex-single__top-banner section section-single">
+    <div class="container">
+      <h1 class="title complex-single__title">ЖК СПУТНИК</h1>
+      <div class="single-banner">
+        <img src="./img/complexes/zhk-sputnik.jpg" alt="">
+        <div class="single-banner__row">
+          <div class="single-banner__item">
+            <div class="single-banner__item-title">Преимущество</div>
+            <div class="single-banner__item-text">Описание преимущества</div>
+          </div>
+          <div class="single-banner__item">
+            <div class="single-banner__item-title">Преимущество</div>
+            <div class="single-banner__item-text">Описание преимущества</div>
+          </div>
+          <div class="single-banner__item">
+            <div class="single-banner__item-title">Преимущество</div>
+            <div class="single-banner__item-text">Описание преимущества</div>
+          </div>
+          <div class="single-banner__item">
+            <div class="single-banner__item-title">Преимущество</div>
+            <div class="single-banner__item-text">Описание преимущества</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section class="filter section">
+  <div class="container">
+    <div data-tab-component>
+      <div class="filter__tab-btn-container" role="tablist" aria-label="Tabbed content">
+        <button class="filter__tab-btn" role="tab"
+                aria-selected="true"
+                aria-controls="tab1-content"
+                id="tab1">
+          <h3 class="tab-title">Подобрать квартиру</h3>
+        </button>
+
+        <button class="filter__tab-btn" role="tab"
+                aria-selected="false"
+                aria-controls="tab2-content"
+                id="tab2">
+          <h3 class="tab-title">Коммерческую недвижимость</h3>
+        </button>
+
+      </div>
+
+      <section class="filter__tab-content" id="tab1-content"
+               role="tabpanel"
+               aria-labelledby="tab1"
+               tabindex="0">
+
+        <div class="filter__tab-row">
+          <div class="filter__el">
+            <h4 class="filter__row-title">Комнатность</h4>
+            <div class="filter__row-el-btns-container">
+              <button class="filter__el-btns btn-small">1к</button>
+              <button class="filter__el-btns btn-small">2к</button>
+              <button class="filter__el-btns btn-small">3к</button>
+            </div>
+
+          </div>
+          <div class="filter__el">
+            <h4 class="filter__row-title">Цена, руб.</h4>
+            <div class="filter-slider__inputs">
+              <label class="filter-slider__label">
+                <span class="filter-slider__text">От</span>
+                <input type="number" min="4000000" max="12000000" class="filter-slider__input"
+                       id="input-price-min">
+              </label>
+
+              <label class="filter-slider__label">
+                <span class="filter-slider__text">До</span>
+                <input type="number" min="4000000" max="12000000" class="filter-slider__input"
+                       id="input-price-max">
+              </label>
+            </div>
+            <div class="filter__range-slider" id="price-slider">
+            </div>
+          </div>
+          <div class="filter__el">
+            <h4 class="filter__row-title">Площадь, м2</h4>
+            <div class="filter-slider__inputs">
+              <label class="filter-slider__label">
+                <span class="filter-slider__text">От</span>
+                <input type="number" min="40" max="120" class="filter-slider__input"
+                       id="input-square-min">
+              </label>
+
+              <label class="filter-slider__label">
+                <span class="filter-slider__text">До</span>
+                <input type="number" min="40" max="120" class="filter-slider__input"
+                       id="input-square-max">
+              </label>
+            </div>
+            <div class="filter__range-slider" id="square-slider">
+            </div>
+          </div>
+          <div class="filter__el filter__btn-container">
+            <button class="filter__btn btn btn-green">Показать</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="filter__tab-content" id="tab2-content"
+               role="tabpanel"
+               aria-labelledby="tab2"
+               tabindex="0"
+               aria-hidden="true">
+
+        <div class="filter__tab-row">
+
+        </div>
+        <!--        <p>Quisque id augue sagittis, ullamcorper arcu a, commodo est. Sed dictum fringilla augue sit amet condimentum.-->
+        <!--          Donec sagittis tincidunt mattis. Aliquam eget tellus placerat, luctus odio sit amet, scelerisque ligula.-->
+        <!--          Nullam-->
+        <!--          in magna at erat porttitor lacinia. Donec placerat lacus vitae arcu efficitur sollicitudin. Nunc laoreet ex-->
+        <!--          tempus, fringilla nisl sit amet, varius odio. Nunc vel orci ut neque ullamcorper facilisis.</p>-->
+      </section>
+
+    </div>
+  </div>
+</section>
+    <div class="container">
+      <div class="cards-wrapper-col3">
+        <article class="card-apartment">
+  <div class="card-apartment_header">
+    <div class="card-apartment__info">
+      <p><span>1-комнатная</span></p>
+      <p><span>50,4 м²</span></p>
+    </div>
+    <div class="card-apartment__delivery">
+<!--      <p>Сдача <span>2 кв. 2024г.</span></p>-->
+    </div>
+    <div class="card-apartment__price">5 700 000 ₽</div>
+  </div>
+  <div class="card-apartment__body">
+    <img src="./img/apartments/apartment-one.png" alt="Floor Plan">
+    <div class="card-apartment__details">
+      <p>Кв. № <span>5</span></p>
+      <p>Этаж <span>5 из 25</span></p>
+    </div>
+  </div>
+  <div class="card-apartment__footer">
+    <div class="card-apartment__address">
+      <span>ЖК Спутник</span><br>
+      ул. Летчика Филипова д.6
+    </div>
+    <div class="card-apartment__btns-wrap">
+      <a href="apartments.html" class="btn btn-green">Выбрать</a>
+      <div class="card-apartment__favorite"><svg width="63" height="63" viewBox="0 0 63 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="31.5" cy="31.5" r="31.5" fill="#F9F9F9"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M31.5924 24.0407C28.8131 20.8018 24.1689 19.8008 20.6866 22.7667C17.2044 25.7326 16.7141 30.6914 19.4488 34.1993C21.7224 37.1157 28.6033 43.2669 30.8585 45.2578C31.1108 45.4805 31.237 45.5919 31.3842 45.6356C31.5125 45.6737 31.6531 45.6737 31.7816 45.6356C31.9288 45.5919 32.0548 45.4805 32.3072 45.2578C34.5624 43.2669 41.4432 37.1157 43.7169 34.1993C46.4515 30.6914 46.0211 25.7014 42.479 22.7667C38.9369 19.832 34.3716 20.8018 31.5924 24.0407Z" stroke="#8C8C8C" stroke-width="3.0891" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+        <article class="card-apartment">
+  <div class="card-apartment_header">
+    <div class="card-apartment__info">
+      <p><span>1-комнатная</span></p>
+      <p><span>50,4 м²</span></p>
+    </div>
+    <div class="card-apartment__delivery">
+<!--      <p>Сдача <span>2 кв. 2024г.</span></p>-->
+    </div>
+    <div class="card-apartment__price">5 700 000 ₽</div>
+  </div>
+  <div class="card-apartment__body">
+    <img src="./img/apartments/apartment-one.png" alt="Floor Plan">
+    <div class="card-apartment__details">
+      <p>Кв. № <span>5</span></p>
+      <p>Этаж <span>5 из 25</span></p>
+    </div>
+  </div>
+  <div class="card-apartment__footer">
+    <div class="card-apartment__address">
+      <span>ЖК Спутник</span><br>
+      ул. Летчика Филипова д.6
+    </div>
+    <div class="card-apartment__btns-wrap">
+      <a href="apartments.html" class="btn btn-green">Выбрать</a>
+      <div class="card-apartment__favorite"><svg width="63" height="63" viewBox="0 0 63 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="31.5" cy="31.5" r="31.5" fill="#F9F9F9"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M31.5924 24.0407C28.8131 20.8018 24.1689 19.8008 20.6866 22.7667C17.2044 25.7326 16.7141 30.6914 19.4488 34.1993C21.7224 37.1157 28.6033 43.2669 30.8585 45.2578C31.1108 45.4805 31.237 45.5919 31.3842 45.6356C31.5125 45.6737 31.6531 45.6737 31.7816 45.6356C31.9288 45.5919 32.0548 45.4805 32.3072 45.2578C34.5624 43.2669 41.4432 37.1157 43.7169 34.1993C46.4515 30.6914 46.0211 25.7014 42.479 22.7667C38.9369 19.832 34.3716 20.8018 31.5924 24.0407Z" stroke="#8C8C8C" stroke-width="3.0891" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+        <article class="card-apartment">
+  <div class="card-apartment_header">
+    <div class="card-apartment__info">
+      <p><span>1-комнатная</span></p>
+      <p><span>50,4 м²</span></p>
+    </div>
+    <div class="card-apartment__delivery">
+<!--      <p>Сдача <span>2 кв. 2024г.</span></p>-->
+    </div>
+    <div class="card-apartment__price">5 700 000 ₽</div>
+  </div>
+  <div class="card-apartment__body">
+    <img src="./img/apartments/apartment-one.png" alt="Floor Plan">
+    <div class="card-apartment__details">
+      <p>Кв. № <span>5</span></p>
+      <p>Этаж <span>5 из 25</span></p>
+    </div>
+  </div>
+  <div class="card-apartment__footer">
+    <div class="card-apartment__address">
+      <span>ЖК Спутник</span><br>
+      ул. Летчика Филипова д.6
+    </div>
+    <div class="card-apartment__btns-wrap">
+      <a href="apartments.html" class="btn btn-green">Выбрать</a>
+      <div class="card-apartment__favorite"><svg width="63" height="63" viewBox="0 0 63 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="31.5" cy="31.5" r="31.5" fill="#F9F9F9"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M31.5924 24.0407C28.8131 20.8018 24.1689 19.8008 20.6866 22.7667C17.2044 25.7326 16.7141 30.6914 19.4488 34.1993C21.7224 37.1157 28.6033 43.2669 30.8585 45.2578C31.1108 45.4805 31.237 45.5919 31.3842 45.6356C31.5125 45.6737 31.6531 45.6737 31.7816 45.6356C31.9288 45.5919 32.0548 45.4805 32.3072 45.2578C34.5624 43.2669 41.4432 37.1157 43.7169 34.1993C46.4515 30.6914 46.0211 25.7014 42.479 22.7667C38.9369 19.832 34.3716 20.8018 31.5924 24.0407Z" stroke="#8C8C8C" stroke-width="3.0891" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+        <article class="card-apartment">
+  <div class="card-apartment_header">
+    <div class="card-apartment__info">
+      <p><span>1-комнатная</span></p>
+      <p><span>50,4 м²</span></p>
+    </div>
+    <div class="card-apartment__delivery">
+<!--      <p>Сдача <span>2 кв. 2024г.</span></p>-->
+    </div>
+    <div class="card-apartment__price">5 700 000 ₽</div>
+  </div>
+  <div class="card-apartment__body">
+    <img src="./img/apartments/apartment-one.png" alt="Floor Plan">
+    <div class="card-apartment__details">
+      <p>Кв. № <span>5</span></p>
+      <p>Этаж <span>5 из 25</span></p>
+    </div>
+  </div>
+  <div class="card-apartment__footer">
+    <div class="card-apartment__address">
+      <span>ЖК Спутник</span><br>
+      ул. Летчика Филипова д.6
+    </div>
+    <div class="card-apartment__btns-wrap">
+      <a href="apartments.html" class="btn btn-green">Выбрать</a>
+      <div class="card-apartment__favorite"><svg width="63" height="63" viewBox="0 0 63 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="31.5" cy="31.5" r="31.5" fill="#F9F9F9"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M31.5924 24.0407C28.8131 20.8018 24.1689 19.8008 20.6866 22.7667C17.2044 25.7326 16.7141 30.6914 19.4488 34.1993C21.7224 37.1157 28.6033 43.2669 30.8585 45.2578C31.1108 45.4805 31.237 45.5919 31.3842 45.6356C31.5125 45.6737 31.6531 45.6737 31.7816 45.6356C31.9288 45.5919 32.0548 45.4805 32.3072 45.2578C34.5624 43.2669 41.4432 37.1157 43.7169 34.1993C46.4515 30.6914 46.0211 25.7014 42.479 22.7667C38.9369 19.832 34.3716 20.8018 31.5924 24.0407Z" stroke="#8C8C8C" stroke-width="3.0891" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+        <article class="card-apartment">
+  <div class="card-apartment_header">
+    <div class="card-apartment__info">
+      <p><span>1-комнатная</span></p>
+      <p><span>50,4 м²</span></p>
+    </div>
+    <div class="card-apartment__delivery">
+<!--      <p>Сдача <span>2 кв. 2024г.</span></p>-->
+    </div>
+    <div class="card-apartment__price">5 700 000 ₽</div>
+  </div>
+  <div class="card-apartment__body">
+    <img src="./img/apartments/apartment-one.png" alt="Floor Plan">
+    <div class="card-apartment__details">
+      <p>Кв. № <span>5</span></p>
+      <p>Этаж <span>5 из 25</span></p>
+    </div>
+  </div>
+  <div class="card-apartment__footer">
+    <div class="card-apartment__address">
+      <span>ЖК Спутник</span><br>
+      ул. Летчика Филипова д.6
+    </div>
+    <div class="card-apartment__btns-wrap">
+      <a href="apartments.html" class="btn btn-green">Выбрать</a>
+      <div class="card-apartment__favorite"><svg width="63" height="63" viewBox="0 0 63 63" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="31.5" cy="31.5" r="31.5" fill="#F9F9F9"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M31.5924 24.0407C28.8131 20.8018 24.1689 19.8008 20.6866 22.7667C17.2044 25.7326 16.7141 30.6914 19.4488 34.1993C21.7224 37.1157 28.6033 43.2669 30.8585 45.2578C31.1108 45.4805 31.237 45.5919 31.3842 45.6356C31.5125 45.6737 31.6531 45.6737 31.7816 45.6356C31.9288 45.5919 32.0548 45.4805 32.3072 45.2578C34.5624 43.2669 41.4432 37.1157 43.7169 34.1993C46.4515 30.6914 46.0211 25.7014 42.479 22.7667C38.9369 19.832 34.3716 20.8018 31.5924 24.0407Z" stroke="#8C8C8C" stroke-width="3.0891" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+      </div>
+    </div>
+  </section>
+  <div class="container">
+    <h3 class="title">ОСОБЕННОСТИ ОБЪЕКТА</h3>
+    <div data-tab-component>
+      <div class="tab-btns-container" role="tablist" aria-label="Tabbed content">
+        <button role="tab"
+                aria-selected="true"
+                aria-controls="tab3-content"
+                id="tab3">
+          <h3 class="tab-title">Архитектура</h3>
+        </button>
+
+        <button role="tab"
+                aria-selected="false"
+                aria-controls="tab4-content"
+                id="tab4">
+          <h3 class="tab-title">Паркинг</h3>
+        </button>
+
+        <button role="tab"
+                aria-selected="false"
+                aria-controls="tab5-content"
+                id="tab5">
+          <h3 class="tab-title">Инфраструктура</h3>
+        </button>
+
+        <button role="tab"
+                aria-selected="false"
+                aria-controls="tab6-content"
+                id="tab6">
+          <h3 class="tab-title">Материалы</h3>
+        </button>
+        <button role="tab"
+                aria-selected="false"
+                aria-controls="tab7-content"
+                id="tab7">
+          <h3 class="tab-title">Уникальность</h3>
+        </button>
+      </div>
+
+
+      <section id="tab3-content"
+               role="tabpanel"
+               aria-labelledby="tab3"
+               tabindex="0">
+        <div class="tab-company__inner">
+          <img src="./img/about-company/company1.jpg" alt="company">
+          <div class="tab-company__content-wrapper">
+            <div class="tab3__content">
+<!--              <h3 class="tab3__inner-title">Архитектура</h3>-->
+<!--              <p>Lorem ipsum dolor sit amet consectetur. Euismod cursus nec vitae fames blandit.</p>-->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="tab4-content"
+               role="tabpanel"
+               aria-labelledby="tab4"
+               tabindex="0"
+               aria-hidden="true">
+        <div class="tab4__content">
+          <h3 class="tab4__inner-title">Паркинг</h3>
+
+          <p>Lorem ipsum dolor sit amet consectetur. Euismod cursus nec vitae fames blandit.</p>
+        </div>
+      </section>
+
+      <section id="tab5-content"
+               role="tabpanel"
+               aria-labelledby="tab5"
+               tabindex="0"
+               aria-hidden="true">
+        <div class="tab5__content">
+          <h3 class="tab5__inner-title">Инфраструктура</h3>
+
+          <p>Lorem ipsum dolor sit amet consectetur. Euismod cursus nec vitae fames blandit.</p>
+        </div>
+      </section>
+
+      <section id="tab6-content"
+               role="tabpanel"
+               aria-labelledby="tab6"
+               tabindex="0"
+               aria-hidden="true">
+        <div class="tab6__content">
+          <h3 class="tab6__inner-title">Материалы</h3>
+          <p>Lorem ipsum dolor sit amet consectetur. Euismod cursus nec vitae fames blandit.</p>
+        </div>
+      </section>
+
+      <section id="tab7-content"
+               role="tabpanel"
+               aria-labelledby="tab7"
+               tabindex="0"
+               aria-hidden="true">
+        <div class="tab7__content">
+          <h3 class="tab7__inner-title">Уникальность</h3>
+
+          <p>Lorem ipsum dolor sit amet consectetur. Euismod cursus nec vitae fames blandit.</p>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <section class="construction-feature section">
+    <div class="container">
+      <h3 class="title">УНИКАЛЬНОСТЬ СТРОИТЕЛЬСТВА</h3>
+      <div class="construction-feature__wrap">
+        <div class="construction-feature__col">
+          <div class="construction-feature__col-item">
+            <p class="construction-feature__item-title">Умные счетчики</p>
+            <p class="construction-feature__item-text">Lorem ipsum dolor sit amet consectetur. Euismod cursus nec vitae fames blandit.</p>
+          </div>
+          <div class="construction-feature__col-item">
+            <p class="construction-feature__item-title">Умные счетчики</p>
+            <p class="construction-feature__item-text">Lorem ipsum dolor sit amet consectetur. Euismod cursus nec vitae fames blandit.</p>
+          </div>
+        </div>
+        <div class="construction-feature__col">
+          <img src="./img/complex-single/room.png" alt="Room layout" class="construction-feature__img">
+        </div>
+        <div class="construction-feature__col">
+        <div class="construction-feature__col-item">
+          <p class="construction-feature__item-title">Умные счетчики</p>
+          <p class="construction-feature__item-text">Lorem ipsum dolor sit amet consectetur. Euismod cursus nec vitae fames blandit.</p>
+        </div>
+          <div class="construction-feature__col-item">
+            <p class="construction-feature__item-title">Умные счетчики</p>
+            <p class="construction-feature__item-text">Lorem ipsum dolor sit amet consectetur. Euismod cursus nec vitae fames blandit.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <div class="container">
+    <h3 class="title">Отделка квартир</h3>
+    <div data-tab-component>
+      <div class="tab-btns-container" role="tablist" aria-label="Tabbed content">
+        <button role="tab"
+                aria-selected="true"
+                aria-controls="tab8-content"
+                id="tab8">
+          <h3 class="tab-title">Прихожая</h3>
+        </button>
+
+        <button role="tab"
+                aria-selected="false"
+                aria-controls="tab9-content"
+                id="tab9">
+          <h3 class="tab-title">Кухня</h3>
+        </button>
+
+        <button role="tab"
+                aria-selected="false"
+                aria-controls="tab10-content"
+                id="tab10">
+          <h3 class="tab-title">Спальня</h3>
+        </button>
+
+        <button role="tab"
+                aria-selected="false"
+                aria-controls="tab11-content"
+                id="tab11">
+          <h3 class="tab-title">Санузел</h3>
+        </button>
+        <button role="tab"
+                aria-selected="false"
+                aria-controls="tab12-content"
+                id="tab12">
+          <h3 class="tab-title">Балкон</h3>
+        </button>
+      </div>
+
+      <section id="tab8-content"
+               role="tabpanel"
+               aria-labelledby="tab8"
+               tabindex="0">
+
+        <div class="tab8__inner">
+<!--          <img src="./img/about-company/company1.jpg" alt="company">-->
+          <div class="tab8__content-wrapper">
+            <div class="tab8__content">
+<!--              <h3 class="tab8__inner-title">Прихожая</h3>-->
+              <img src="./img/complex-single/prihozhaya.jpg" alt="company">
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section id="tab9-content"
+               role="tabpanel"
+               aria-labelledby="tab9"
+               tabindex="0"
+               aria-hidden="true">
+        <div class="tab9__content">
+<!--          <h3 class="tab9__inner-title">Кухня</h3>-->
+
+          <img src="./img/complex-single/kuhnya.jpg" alt="company">
+        </div>
+      </section>
+
+      <section id="tab10-content"
+               role="tabpanel"
+               aria-labelledby="tab10"
+               tabindex="0"
+               aria-hidden="true">
+        <div class="tab10__content">
+<!--          <h3 class="tab10__inner-title">Спальня</h3>-->
+          <img src="./img/complex-single/gostin.jpg" alt="company">
+        </div>
+      </section>
+
+      <section id="tab11-content"
+               role="tabpanel"
+               aria-labelledby="tab11"
+               tabindex="0"
+               aria-hidden="true">
+        <div class="tab11__content">
+<!--          <h3 class="tab11__inner-title">Санузел</h3>-->
+          <img src="./img/complex-single/vannaya.jpg" alt="company">
+        </div>
+      </section>
+      <section id="tab12-content"
+               role="tabpanel"
+               aria-labelledby="tab12"
+               tabindex="0"
+               aria-hidden="true">
+        <div class="tab12__content">
+<!--          <h3 class="tab12__inner-title">Балкон</h3>-->
+
+          <img src="./img/complex-single/balkon.jpg" alt="company">
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div class="section">
+  <div class="container">
+    <div class="apartment-form__wrap">
+      <div class="apartment-form__content">
+        <h3>Получите персональную подборку планировок</h3>
+        <form class="apartment-form">
+          <input type="text" id="name" placeholder="Имя" required>
+          <input type="tel" id="phone" placeholder="+7 999 999 99 99" required>
+          <button class="btn btn-green" type="submit">Отправить</button>
+        </form>
+      </div>
+        <div class="apartment-form__image"> </div>
+    </div>
+  </div>
+  </div>
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__wrapper">
+      <div class="footer__logo logo">
+        <img src="./img/logo/logo.svg" alt="Logo">
+      </div>
+      <nav class="footer__col">
+        <ul class="footer__list">
+          <li><p class="footer__list-link">Мы в соц. сетях</p></li>
+          <div class="footer-socials">
+            <li><a href="#!"><img src="./img/icons/vk.svg" alt="vk-icon"></a></li>
+            <li><a href="#!"><img src="./img/icons/tg.svg" alt="tg-icon"></a></li>
+          </div>
+        </ul>
+        <ul class="footer__list">
+          <li><a class="footer__list-link" href="!#">О компании</a></li>
+          <li><a class="footer__list-link" href="!#">Жилые комплексы</a></li>
+          <li><a class="footer__list-link" href="!#">Акции</a></li>
+          <li><a class="footer__list-link" href="!#">Новости</a></li>
+        </ul>
+        <ul class="footer__list">
+          <li><a class="footer__list-link" href="!#">Квартиры</a></li>
+          <li><a class="footer__list-link" href="!#">Однокомнатные</a></li>
+          <li><a class="footer__list-link" href="!#">Двухкомнатные</a></li>
+          <li><a class="footer__list-link" href="!#">Трехкомнатные</a></li>
+        </ul>
+        <ul class="footer__list">
+          <li><a class="footer__list-link" href="!#">Ипотека</a></li>
+          <li><a class="footer__list-link" href="!#">Контакты</a></li>
+          <li><a class="footer__list-link" href="!#">Коммерция</a></li>
+          <li><a class="footer__list-link" href="!#">УК</a></li>
+        </ul>
+      </nav>
+      <div class="footer__col-phone">
+        <ul>
+          <div class="footer__col-phone-item">
+            <li>Отдел продаж</li>
+            <a class="footer__phone phone" href="tel:+7 (473) 274-38-84">+7 (473) 274-38-84</a></div>
+          <div class="footer__col-phone-item">
+            <li>Многоканальный</li>
+            <a class="footer__phone phone" href="tel:+7 (473) 273-80-46">+7 (473) 273-80-46</a></div>
+          <div class="footer__col-phone-item">
+            <li>Отдел снабжения</li>
+            <a class="footer__phone phone" href="tel:+7 (473) 274-34-92">+7 (473) 274-34-92</a></div>
+          <div class="footer__col-phone-item">
+            <li>Факс</li>
+            <a class="footer__phone phone" href="tel:+7 (473) 274-38-84">+7 (473) 274-38-84</a></div>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script src="./js/index.bundle.js"></script>
+</body>
+</html>
