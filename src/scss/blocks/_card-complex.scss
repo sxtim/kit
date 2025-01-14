@@ -1,4 +1,4 @@
-.card-projects__info-container {
+.card-complex__info-container {
   display: flex;
   margin-top: 10px;
   justify-content: space-between;
@@ -6,11 +6,11 @@
   padding-right: 10px;
 }
 
-.card-projects__info-item {
+.card-complex__info-item {
 
 }
 
-.card-projects__info-title {
+.card-complex__info-title {
   font-size: 14px;
   color: var(--text-color-gray);
 
@@ -20,7 +20,7 @@
 
 }
 
-.card-projects__info-value {
+.card-complex__info-value {
   font-size: 14px;
   color: var(--text-color-black);
 

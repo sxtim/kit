@@ -46,13 +46,13 @@ const swiper = new Swiper('.swiper', {
 
 
 //SLIDER TABS APARTMENT
-const swiperTabsNav = new Swiper('.swiper-tabs-nav', {
-  spaceBetween: 16,
+const swiperTabsNav = new Swiper('.apartment-swiper-tabs-nav', {
+  spaceBetween: 20,
   slidesPerView: 4,
 });
 
 // Swiper Content
-const swiperTabsContent = new Swiper('.swiper-tabs-content', {
+const swiperTabsContent = new Swiper('.apartment-swiper-tabs-content', {
   spaceBetween: 0,
   allowTouchMove: false,
   loop: false,

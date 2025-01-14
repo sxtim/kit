@@ -26,12 +26,22 @@ body {
 		margin-left: 3%;
 		top: 50%;
 	}
+	@media (max-width: 768px) {
+		font-size: 24px;
+		margin-bottom: 20px;
+	}
+}
+
+.title-page {
+	font-size: 50px;
+	margin-top: 20px;
 
 	@media (max-width: 768px) {
 		font-size: 24px;
 		margin-bottom: 20px;
 	}
 }
+
 
 .section {
 	margin-top: 70px;

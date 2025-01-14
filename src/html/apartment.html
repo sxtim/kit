@@ -13,16 +13,17 @@
 <body>
 @@include('blocks/header/header.html')
 <main class="main">
-  <section class="apartment section">
+  <section class="apartment">
+    @@include('blocks/breadcrumb.html')
     <div class="container">
-      <h3 class="title">Квартира №235</h3>
+<!--      <h3 class="title title-page">Квартира №235</h3>-->
       <div class="apartment-info">
         <div class="apartment-info__slider">
 
 
           <div class="section-tabs">
             <!-- Swiper Tab -->
-            <div class="swiper-container swiper-tabs-nav">
+            <div class="swiper-container apartment-swiper-tabs-nav">
               <div class="swiper-wrapper apartment-info-tabs-wrapper">
                 <div class="swiper-slide">
                   <p>Планировка</p>
@@ -39,27 +40,39 @@
               </div>
             </div>
             <!-- Swiper Content -->
-            <div class="swiper-container swiper-tabs-content">
+            <div class="swiper-container apartment-swiper-tabs-content">
               <div class="swiper-wrapper">
                 <a class="swiper-slide" data-fslightbox="apartment-info-tab1" href="./img/apartments/sputnik/01.png">
-                  <img id="open-modal-btn1" class="apartment-info__slider-img" src="./img/apartments/sputnik/01.png"
+                  <img class="apartment-info__slider-img" src="./img/apartments/sputnik/01.png"
                        alt="img">
+                  <div class="apartment-info__slider-pic-hover">
+                    <img src="./img/icons/search.svg" alt="">
+                  </div>
                 </a>
                 <a class="swiper-slide" data-fslightbox="apartment-info-tab2"
                    href="./img/apartments/sputnik/apartment-razmery.jpg">
-                  <img id="open-modal-btn2" class="apartment-info__slider-img"
+                  <img class="apartment-info__slider-img"
                        src="./img/apartments/sputnik/apartment-razmery.jpg"
                        alt="img">
+                  <div class="apartment-info__slider-pic-hover">
+                    <img src="./img/icons/search.svg" alt="">
+                  </div>
                 </a>
                 <a class="swiper-slide" data-fslightbox="apartment-info-tab3"
                    href="./img/apartments/sputnik/na-etage.jpg">
-                  <img id="open-modal-btn3" class="apartment-info__slider-img"
+                  <img class="apartment-info__slider-img"
                        src="./img/apartments/sputnik/na-etage.jpg"
                        alt="img">
+                  <div class="apartment-info__slider-pic-hover">
+                    <img src="./img/icons/search.svg" alt="">
+                  </div>
                 </a>
                 <a class="swiper-slide" data-fslightbox="apartment-info-tab4" href="./img/apartments/sputnik/gen.png">
-                  <img id="open-modal-btn4" class="apartment-info__slider-img" src="./img/apartments/sputnik/gen.png"
+                  <img class="apartment-info__slider-img" src="./img/apartments/sputnik/gen.png"
                        alt="img">
+                  <div class="apartment-info__slider-pic-hover">
+                    <img src="./img/icons/search.svg" alt="">
+                  </div>
                 </a>
               </div>
             </div>
@@ -71,7 +84,7 @@
         <div class="apartment-info__content">
           <div class="apartment-info__header">
             <h4 class="apartment-info__title">Однокомнатная</h4>
-            <p>Кв. 12</p>
+            <p>№ 353</p>
           </div>
           <div class="apartment-info__columns">
             <div class="apartment-info__column">

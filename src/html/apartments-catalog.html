@@ -13,9 +13,26 @@
 <body>
 @@include('blocks/header/header.html')
 <main class="main">
-  <section class="apartment section">
+  <section class="section-apartments-catalog">
+    <div class="container">
+<!--      <breadcrumbs></breadcrumbs>-->
+
+      <h1 class="title title-page">Выбрать квартиру</h1>
+    </div>
     @@include('blocks/filter.html')
+    <div class="container">
+      <div class="cards-wrapper-col3">
+        @@include('blocks/cards/card-apartment.html')
+        @@include('blocks/cards/card-apartment.html')
+        @@include('blocks/cards/card-apartment.html')
+        @@include('blocks/cards/card-apartment.html')
+        @@include('blocks/cards/card-apartment.html')
+      </div>
+    </div>
   </section>
+  @@include('blocks/section-questions.html')
 </main>
+@@include('blocks/footer.html')
+<script src="./js/index.bundle.js"></script>
 </body>
 </html>
