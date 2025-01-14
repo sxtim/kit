@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>КИТ</title>
-  <link rel="stylesheet" href="./css/main.css" />
+  <link rel="stylesheet" href="./css/main.css"/>
   <link rel="stylesheet" href="./fonts/Montserrat/stylesheet.css"/>
   <link rel="stylesheet" href="./fonts/Oswald/stylesheet.css"/>
   <link rel="stylesheet" href="./fonts/Pangram1/stylesheet.css"/>
@@ -27,7 +27,7 @@
           <li><a href="#!">Акции</a></li>
           <li><a href="#!">Новости</a></li>
           <li><a href="#!">Ипотека</a></li>
-          <li><a href="#!">Коммерция</a></li>
+          <li><a href="commerce-catalog.html">Коммерция</a></li>
           <li><a href="#!">Контакты</a></li>
           <a class="header__phone phone header__phone-white" href="tel:+7 (473) 274-38-84">+7 (473) 274-38-84</a>
 <!--          <li><a class="header__address" href="#!">г. Воронеж, ул. Владимира Невского, 17Б</a></li>-->
@@ -44,7 +44,7 @@
 			<li><a href="#!">Акции</a></li>
 			<li><a href="#!">Новости</a></li>
 			<li><a href="#!">Ипотека</a></li>
-			<li><a href="#!">Коммерция</a></li>
+			<li><a href="commerce-catalog.html">Коммерция</a></li>
 			<li><a href="#!">Контакты</a></li>
 			<a class="header__phone phone header__phone-white" href="tel:+7 (473) 274-38-84">+7 (473) 274-38-84</a>
 			<!--              <li><a class="header__address" href="#!">г. Воронеж, ул. Владимира Невского, 17Б</a></li>-->
@@ -56,11 +56,24 @@
   </div>
 </header>
 <main class="main">
-  <section class="section-projects">
+  <nav class="nav-breadcrumb">
   <div class="container">
-    <h1 class="title title-page">ЖИЛЫЕ КОМПЛЕКСЫ</h1>
-    <div class="section-projects__cards-wrapper">
-      <article class="card-complex-main">
+    <ul class="breadcrumb">
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="apartments-catalog.html">Выбрать квартиру</a></li>
+      <li><a href="complex.html">ЖК Спутник</a></li>
+      <li>1-комнатная квартира №353</li>
+    </ul>
+  </div>
+</nav>
+  <div class="container">
+    <h1 class="title">ЖИЛЫЕ КОМПЛЕКСЫ</h1>
+    </div>
+  <div class="container">
+    <section class="section-projects section">
+
+      <div class="section-projects__cards-wrapper">
+        <article class="card-complex-main">
   <div class="card-complex-main__picture">
 
     <!--      <div class="card-zhk-main__status">@@status</div>-->
@@ -104,7 +117,7 @@
     </div>
   </div>
 </article>
-      <article class="card-complex-main">
+        <article class="card-complex-main">
   <div class="card-complex-main__picture">
 
     <!--      <div class="card-zhk-main__status">@@status</div>-->
@@ -148,7 +161,7 @@
     </div>
   </div>
 </article>
-      <article class="card-complex-main">
+        <article class="card-complex-main">
   <div class="card-complex-main__picture">
 
     <!--      <div class="card-zhk-main__status">@@status</div>-->
@@ -192,7 +205,7 @@
     </div>
   </div>
 </article>
-      <article class="card-complex-main">
+        <article class="card-complex-main">
   <div class="card-complex-main__picture">
 
     <!--      <div class="card-zhk-main__status">@@status</div>-->
@@ -236,7 +249,7 @@
     </div>
   </div>
 </article>
-      <article class="card-complex-main">
+        <article class="card-complex-main">
   <div class="card-complex-main__picture">
 
     <!--      <div class="card-zhk-main__status">@@status</div>-->
@@ -280,7 +293,7 @@
     </div>
   </div>
 </article>
-      <article class="card-complex-main">
+        <article class="card-complex-main">
   <div class="card-complex-main__picture">
 
     <!--      <div class="card-zhk-main__status">@@status</div>-->
@@ -324,11 +337,10 @@
     </div>
   </div>
 </article>
-    </div>
+      </div>
+    </section>
   </div>
-  </section>
-
-  <section class="section-questions section">
+  <section class="section-questions">
     <img src="./img/question.jpg" alt="card-img">
     <div class="section-questions__inner container">
       <div class="section-questions__content">

@@ -5,13 +5,18 @@
 
 }
 ul.breadcrumb {
-  padding: 10px 16px;
+  //padding: 20px 0;
   list-style: none;
 }
 ul.breadcrumb li {
   display: inline;
   font-size: 16px;
   color: var(--text-color-gray);
+
+  @media (max-width: 768px) {
+    font-size: 10px;
+  }
+
 }
 ul.breadcrumb li+li:before {
   padding: 8px;
@@ -20,6 +25,7 @@ ul.breadcrumb li+li:before {
 }
 ul.breadcrumb li a {
   color: var(--text-color-black);
+  line-height: 300%;
   text-decoration: none;
 }
 ul.breadcrumb li a:hover {
