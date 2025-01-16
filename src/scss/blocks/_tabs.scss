@@ -8,7 +8,7 @@
     margin-bottom: 0;
     padding-left: 0;
 
-    @media (min-width: 568px) {
+    @media (min-width: 768px) {
       display: flex;
     }
   }
@@ -22,6 +22,7 @@
 
   /*   // Tab navigation links */
   [role="tab"]{
+    display: flex;
     align-items: center;
     background-color: transparent;
     border: none;
@@ -58,6 +59,10 @@
 
     &[aria-hidden="true"] {
       display: none;
+    }
+
+    @media (max-width: 768px) {
+      padding: 16px 0;
     }
   }
 }

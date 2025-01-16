@@ -51,14 +51,14 @@
   }
 
   @media (max-width: 768px) {
-    padding: 0 2px;
+    width: 100%;
     grid-template-columns: repeat(1, calc(100% - 4px));
   }
 
 }
 
 .single-banner__item {
-  max-width: 303px;
+  width: 100%;
   position: relative;
   display: flex;
   justify-content: center;
@@ -88,9 +88,10 @@
   }
 
   @media (max-width: 768px) {
-    max-width: 260px;
+    height: 50px;
+    max-width: 600px;
     width: 100%;
-    background-size: 12%;
+    background-size: 40px;
     padding: 4px 8px;
   }
 
@@ -102,7 +103,7 @@
 
   @media (max-width: 768px) {
     font-size: 12px;
-    margin-left: 40px;
+    //margin-left: 40px;
   }
 
 }
@@ -113,7 +114,7 @@
 
   @media (max-width: 768px) {
     font-size: 10px;
-    margin-left: 40px;
+    //margin-left: 40px;
   }
 
 }
@@ -248,7 +249,7 @@
 
   @media (max-width: 998px) {
     grid-column-gap: 8px;
-    grid-template-columns: repeat(2, calc(50% - 4px));
+    grid-template-columns: repeat(1, 100%);
     row-gap: 24px;
   }
 

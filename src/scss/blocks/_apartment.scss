@@ -1,4 +1,5 @@
 .apartment-info {
+  background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -69,12 +70,14 @@
 }
 
 .apartment-info__price {
+  font-family: 'Pangram-bold', sans-serif;
   font-size: 28px;
   font-weight: 600;
   margin-bottom: 10px;
 }
 
 .apartment-info__price span {
+  font-family: 'Pangram-bold', sans-serif;
   color: var(--text-color-gray);
   font-size: 18px;
 }

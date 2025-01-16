@@ -81,102 +81,65 @@
         </div>
       </div>
     </div>
-    <section class="filter">
-  <div class="container">
-    <div data-tab-component>
-      <div class="filter__tab-btn-container" role="tablist" aria-label="Tabbed content">
-        <button class="filter__tab-btn" role="tab"
-                aria-selected="true"
-                aria-controls="tab1-content"
-                id="tab1">
-          <h3 class="tab-title">Подобрать квартиру</h3>
-        </button>
-
-        <button class="filter__tab-btn" role="tab"
-                aria-selected="false"
-                aria-controls="tab2-content"
-                id="tab2">
-          <h3 class="tab-title">Коммерческую недвижимость</h3>
-        </button>
-
+    <div class="section">
+      <div class="container">
+        <h1 class="title">Выбрать квартиру</h1>
       </div>
+      <div class="filter-apartments-cat">
+        <div class="container">
+          <div class="filter__tab-row">
+            <div class="filter__el">
+              <h4 class="filter__row-title">Комнатность</h4>
+              <div class="filter__row-el-btns-container">
+                <button class="filter__el-btns btn-small">1к</button>
+                <button class="filter__el-btns btn-small">2к</button>
+                <button class="filter__el-btns btn-small">3к</button>
+              </div>
 
-      <section class="filter__tab-content" id="tab1-content"
-               role="tabpanel"
-               aria-labelledby="tab1"
-               tabindex="0">
-
-        <div class="filter__tab-row">
-          <div class="filter__el">
-            <h4 class="filter__row-title">Комнатность</h4>
-            <div class="filter__row-el-btns-container">
-              <button class="filter__el-btns btn-small">1к</button>
-              <button class="filter__el-btns btn-small">2к</button>
-              <button class="filter__el-btns btn-small">3к</button>
             </div>
+            <div class="filter__el">
+              <h4 class="filter__row-title">Цена, руб.</h4>
+              <div class="filter-slider__inputs">
+                <label class="filter-slider__label">
+                  <span class="filter-slider__text">От</span>
+                  <input type="number" min="4000000" max="12000000" class="filter-slider__input"
+                         id="input-price-min">
+                </label>
 
+                <label class="filter-slider__label">
+                  <span class="filter-slider__text">До</span>
+                  <input type="number" min="4000000" max="12000000" class="filter-slider__input"
+                         id="input-price-max">
+                </label>
+              </div>
+              <div class="filter__range-slider" id="price-slider">
+              </div>
+            </div>
+            <div class="filter__el">
+              <h4 class="filter__row-title">Площадь, м2</h4>
+              <div class="filter-slider__inputs">
+                <label class="filter-slider__label">
+                  <span class="filter-slider__text">От</span>
+                  <input type="number" min="40" max="120" class="filter-slider__input"
+                         id="input-square-min">
+                </label>
+
+                <label class="filter-slider__label">
+                  <span class="filter-slider__text">До</span>
+                  <input type="number" min="40" max="120" class="filter-slider__input"
+                         id="input-square-max">
+                </label>
+              </div>
+              <div class="filter__range-slider" id="square-slider">
+              </div>
+            </div>
+            <div class="filter__el filter__btn-container">
+              <button class="filter__btn btn btn-green">Показать</button>
+            </div>
           </div>
-          <div class="filter__el">
-            <h4 class="filter__row-title">Цена, руб.</h4>
-            <div class="filter-slider__inputs">
-              <label class="filter-slider__label">
-                <span class="filter-slider__text">От</span>
-                <input type="number" min="4000000" max="12000000" class="filter-slider__input"
-                       id="input-price-min">
-              </label>
-
-              <label class="filter-slider__label">
-                <span class="filter-slider__text">До</span>
-                <input type="number" min="4000000" max="12000000" class="filter-slider__input"
-                       id="input-price-max">
-              </label>
-            </div>
-            <div class="filter__range-slider" id="price-slider">
-            </div>
-          </div>
-          <div class="filter__el">
-            <h4 class="filter__row-title">Площадь, м2</h4>
-            <div class="filter-slider__inputs">
-              <label class="filter-slider__label">
-                <span class="filter-slider__text">От</span>
-                <input type="number" min="40" max="120" class="filter-slider__input"
-                       id="input-square-min">
-              </label>
-
-              <label class="filter-slider__label">
-                <span class="filter-slider__text">До</span>
-                <input type="number" min="40" max="120" class="filter-slider__input"
-                       id="input-square-max">
-              </label>
-            </div>
-            <div class="filter__range-slider" id="square-slider">
-            </div>
-          </div>
-          <div class="filter__el filter__btn-container">
-            <button class="filter__btn btn btn-green">Показать</button>
-          </div>
-        </div>
-      </section>
-
-      <section class="filter__tab-content" id="tab2-content"
-               role="tabpanel"
-               aria-labelledby="tab2"
-               tabindex="0"
-               aria-hidden="true">
-
-        <div class="filter__tab-row">
-
-        </div>
-        <!--        <p>Quisque id augue sagittis, ullamcorper arcu a, commodo est. Sed dictum fringilla augue sit amet condimentum.-->
-        <!--          Donec sagittis tincidunt mattis. Aliquam eget tellus placerat, luctus odio sit amet, scelerisque ligula.-->
-        <!--          Nullam-->
-        <!--          in magna at erat porttitor lacinia. Donec placerat lacus vitae arcu efficitur sollicitudin. Nunc laoreet ex-->
-        <!--          tempus, fringilla nisl sit amet, varius odio. Nunc vel orci ut neque ullamcorper facilisis.</p>-->
-      </section>
-
     </div>
   </div>
-</section>
+    </div>
     <div class="container">
       <div class="cards-wrapper-col3">
         <article class="card-apartment">
@@ -186,7 +149,7 @@
       <p><span>50,4 м²</span></p>
     </div>
     <div class="card-apartment__delivery">
-      <!--      <p>Сдача <span>2 кв. 2024г.</span></p>-->
+            <p>Сдача <span>2 кв. 2024г.</span></p>
     </div>
 
   </div>
@@ -224,7 +187,7 @@
       <p><span>50,4 м²</span></p>
     </div>
     <div class="card-apartment__delivery">
-      <!--      <p>Сдача <span>2 кв. 2024г.</span></p>-->
+            <p>Сдача <span>2 кв. 2024г.</span></p>
     </div>
 
   </div>
@@ -262,7 +225,7 @@
       <p><span>50,4 м²</span></p>
     </div>
     <div class="card-apartment__delivery">
-      <!--      <p>Сдача <span>2 кв. 2024г.</span></p>-->
+            <p>Сдача <span>2 кв. 2024г.</span></p>
     </div>
 
   </div>
@@ -300,7 +263,7 @@
       <p><span>50,4 м²</span></p>
     </div>
     <div class="card-apartment__delivery">
-      <!--      <p>Сдача <span>2 кв. 2024г.</span></p>-->
+            <p>Сдача <span>2 кв. 2024г.</span></p>
     </div>
 
   </div>
@@ -338,7 +301,7 @@
       <p><span>50,4 м²</span></p>
     </div>
     <div class="card-apartment__delivery">
-      <!--      <p>Сдача <span>2 кв. 2024г.</span></p>-->
+            <p>Сдача <span>2 кв. 2024г.</span></p>
     </div>
 
   </div>
@@ -420,8 +383,8 @@
           <img src="./img/about-company/company1.jpg" alt="company">
           <div class="tab-company__content-wrapper">
             <div class="tab3__content">
-<!--              <h3 class="tab3__inner-title">Архитектура</h3>-->
-<!--              <p>Lorem ipsum dolor sit amet consectetur. Euismod cursus nec vitae fames blandit.</p>-->
+              <!--              <h3 class="tab3__inner-title">Архитектура</h3>-->
+              <!--              <p>Lorem ipsum dolor sit amet consectetur. Euismod cursus nec vitae fames blandit.</p>-->
             </div>
           </div>
         </div>
@@ -483,24 +446,28 @@
         <div class="construction-feature__col">
           <div class="construction-feature__col-item">
             <p class="construction-feature__item-title">Умные счетчики</p>
-            <p class="construction-feature__item-text">Lorem ipsum dolor sit amet consectetur. Euismod cursus nec vitae fames blandit.</p>
+            <p class="construction-feature__item-text">Lorem ipsum dolor sit amet consectetur. Euismod cursus nec vitae
+              fames blandit.</p>
           </div>
           <div class="construction-feature__col-item">
             <p class="construction-feature__item-title">Умные счетчики</p>
-            <p class="construction-feature__item-text">Lorem ipsum dolor sit amet consectetur. Euismod cursus nec vitae fames blandit.</p>
+            <p class="construction-feature__item-text">Lorem ipsum dolor sit amet consectetur. Euismod cursus nec vitae
+              fames blandit.</p>
           </div>
         </div>
         <div class="construction-feature__col">
           <img src="./img/complex-single/room.png" alt="Room layout" class="construction-feature__img">
         </div>
         <div class="construction-feature__col">
-        <div class="construction-feature__col-item">
-          <p class="construction-feature__item-title">Умные счетчики</p>
-          <p class="construction-feature__item-text">Lorem ipsum dolor sit amet consectetur. Euismod cursus nec vitae fames blandit.</p>
-        </div>
           <div class="construction-feature__col-item">
             <p class="construction-feature__item-title">Умные счетчики</p>
-            <p class="construction-feature__item-text">Lorem ipsum dolor sit amet consectetur. Euismod cursus nec vitae fames blandit.</p>
+            <p class="construction-feature__item-text">Lorem ipsum dolor sit amet consectetur. Euismod cursus nec vitae
+              fames blandit.</p>
+          </div>
+          <div class="construction-feature__col-item">
+            <p class="construction-feature__item-title">Умные счетчики</p>
+            <p class="construction-feature__item-text">Lorem ipsum dolor sit amet consectetur. Euismod cursus nec vitae
+              fames blandit.</p>
           </div>
         </div>
       </div>
@@ -553,10 +520,10 @@
                tabindex="0">
 
         <div class="tab8__inner">
-<!--          <img src="./img/about-company/company1.jpg" alt="company">-->
+          <!--          <img src="./img/about-company/company1.jpg" alt="company">-->
           <div class="tab8__content-wrapper">
             <div class="tab8__content">
-<!--              <h3 class="tab8__inner-title">Прихожая</h3>-->
+              <!--              <h3 class="tab8__inner-title">Прихожая</h3>-->
               <img src="./img/complex-single/prihozhaya.jpg" alt="company">
             </div>
           </div>
@@ -570,7 +537,7 @@
                tabindex="0"
                aria-hidden="true">
         <div class="tab9__content">
-<!--          <h3 class="tab9__inner-title">Кухня</h3>-->
+          <!--          <h3 class="tab9__inner-title">Кухня</h3>-->
 
           <img src="./img/complex-single/kuhnya.jpg" alt="company">
         </div>
@@ -582,7 +549,7 @@
                tabindex="0"
                aria-hidden="true">
         <div class="tab10__content">
-<!--          <h3 class="tab10__inner-title">Спальня</h3>-->
+          <!--          <h3 class="tab10__inner-title">Спальня</h3>-->
           <img src="./img/complex-single/gostin.jpg" alt="company">
         </div>
       </section>
@@ -593,7 +560,7 @@
                tabindex="0"
                aria-hidden="true">
         <div class="tab11__content">
-<!--          <h3 class="tab11__inner-title">Санузел</h3>-->
+          <!--          <h3 class="tab11__inner-title">Санузел</h3>-->
           <img src="./img/complex-single/vannaya.jpg" alt="company">
         </div>
       </section>
@@ -603,7 +570,7 @@
                tabindex="0"
                aria-hidden="true">
         <div class="tab12__content">
-<!--          <h3 class="tab12__inner-title">Балкон</h3>-->
+          <!--          <h3 class="tab12__inner-title">Балкон</h3>-->
 
           <img src="./img/complex-single/balkon.jpg" alt="company">
         </div>
@@ -612,19 +579,19 @@
   </div>
 
   <div class="section">
-  <div class="container">
-    <div class="apartment-form__wrap">
-      <div class="apartment-form__content">
-        <h3>Получите персональную подборку планировок</h3>
-        <form class="apartment-form">
-          <input type="text" id="name" placeholder="Имя" required>
-          <input type="tel" id="phone" placeholder="+7 999 999 99 99" required>
-          <button class="btn btn-green" type="submit">Отправить</button>
-        </form>
+    <div class="container">
+      <div class="apartment-form__wrap">
+        <div class="apartment-form__content">
+          <h3>Получите персональную подборку планировок</h3>
+          <form class="apartment-form">
+            <input type="text" id="name" placeholder="Имя" required>
+            <input type="tel" id="phone" placeholder="+7 999 999 99 99" required>
+            <button class="btn btn-green" type="submit">Отправить</button>
+          </form>
+        </div>
+        <div class="apartment-form__image"></div>
       </div>
-        <div class="apartment-form__image"> </div>
     </div>
-  </div>
   </div>
   <section class="complex-this section">
     <div class="container">

@@ -1,3 +1,17 @@
+body::-webkit-scrollbar {
+	width: 5px; /* Ширина всего элемента навигации */
+}
+
+body::-webkit-scrollbar-track {
+	background: #fff; /* Цвет дорожки */
+}
+
+body::-webkit-scrollbar-thumb {
+	background-color: #727b89; /* Цвет бегунка */
+	border-radius: 1px; /* Округление бегунка */
+	//border: 3px solid #050c26; /* Оформление границ бегунка */
+}
+
 html {
 	scroll-behavior: smooth;
 	font-size: 10px;

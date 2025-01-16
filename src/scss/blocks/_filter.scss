@@ -42,7 +42,7 @@
   justify-content: space-between;
 
   @media (max-width: 1200px) {
-    width: 100%;
+    width: 95%;
   }
   //align-items: center;
 }
@@ -173,6 +173,7 @@ input[type=number] {
   width: 22px !important;
   height: 22px !important;
   top: -10px !important;
+  right: -11px !important;
 }
 
 .noUi-horizontal .noUi-handle-upper {
