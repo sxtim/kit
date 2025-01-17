@@ -81,7 +81,7 @@ var swiperApartmentSimilar = new Swiper(".apartment-similar-swiper", {
       slidesPerView: 2
     },
     998: {
-      slidesPerView: 3
+      slidesPerView: 3.2
     }
   },
 });
