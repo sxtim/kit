@@ -1,0 +1,21 @@
+.commerce-info {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  @media (max-width: 1200px) {
+    flex-direction: column;
+  }
+
+}
+
+.apartment-info__slider {
+  max-width: 50%;
+
+  @media (max-width: 1200px) {
+    max-width: 100%;
+  }
+
+}
