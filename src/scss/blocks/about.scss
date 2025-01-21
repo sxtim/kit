@@ -1,0 +1,35 @@
+.about-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.column {
+  background-color: #fff;
+  padding: 20px;
+  margin: 10px;
+  flex-basis: calc(50% - 40px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 16px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+p {
+  margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+  .column {
+    flex-basis: 100%;
+  }
+}
