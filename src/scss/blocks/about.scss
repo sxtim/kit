@@ -1,27 +1,43 @@
-.about-wrap {
+.contacts-wrap {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
   padding: 20px;
 }
 
-.column {
+.contacts-column {
   background-color: #fff;
   padding: 20px;
   margin: 10px;
-  flex-basis: calc(50% - 40px);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
-  font-size: 18px;
+.contacts-column-title {
+  font-family: "Pangram medium", sans-serif;
+  font-size: 22px;
   margin-bottom: 10px;
 }
 
-h3 {
-  font-size: 16px;
+.contacts-column-subtitle {
+  font-family: "Pangram medium", sans-serif;
+  font-size: 20px;
   margin-top: 15px;
   margin-bottom: 5px;
+}
+
+.contacts-column-txt {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.contacts-column-txt p{
+  font-family: "Pangram medium", sans-serif;
+  font-size: 16px;
+}
+
+.contacts-column-txt img{
+  height: 16px;
 }
 
 p {
