@@ -66,7 +66,7 @@ const swiperTabsContent = new Swiper('.apartment-swiper-tabs-content', {
   },
 });
 
-//SLIDER APARTMENT SIMILAR
+//SLIDER APARTMENT
 var swiperApartmentSimilar = new Swiper(".apartment-similar-swiper", {
   slidesPerView: 1.2,
   spaceBetween: 30,
@@ -87,11 +87,15 @@ var swiperApartmentSimilar = new Swiper(".apartment-similar-swiper", {
   },
 });
 
-//SLIDER COMMERCE INFO
-
-
 
 //FSLIGHTBOX
 refreshFsLightbox();
 
+let sliderOne = new Swiper(".commerce-info__slider", {
+  pagination: {
+    el: ".commerce-info__slider-pagination",
+    clickable: true
+  },
+  loop: true
+});
 

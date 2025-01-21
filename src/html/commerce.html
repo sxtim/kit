@@ -18,35 +18,65 @@
     <div class="container">
       <!--      <h3 class="title title-page">Квартира №235</h3>-->
       <div class="commerce-info">
-        <div class="commerce-info__slider">
+        <div class="commerce-info__slider-wrap">
 
+          <div class="commerce-info__slider">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><a class="commerce-info__pic" data-fslightbox="commerce-info" href="./img/apartments/sputnik/sp-g-07.jpg">
+                <img class="commerce-info__img" src="./img/apartments/sputnik/sp-g-07.jpg" alt="img">
+
+                <div class="commerce-info__pic-hover">
+                  <img src="./img/icons/search.svg" alt="">
+                </div>
+              </a></div>
+              <div class="swiper-slide"><a class="commerce-info__pic" data-fslightbox="commerce-info" href="./img/apartments/sputnik/sp-g-09.jpg">
+                <img class="commerce-info__img" src="./img/apartments/sputnik/sp-g-09.jpg" alt="img">
+
+                <div class="commerce-info__pic-hover">
+                  <img src="./img/icons/search.svg" alt="">
+                </div>
+              </a></div>
+              <div class="swiper-slide"><a class="commerce-info__pic" data-fslightbox="commerce-info" href="./img/apartments/sputnik/sp-g-06.jpg">
+                <img class="commerce-info__img" src="./img/apartments/sputnik/sp-g-06.jpg" alt="img">
+
+                <div class="commerce-info__pic-hover">
+                  <img src="./img/icons/search.svg" alt="">
+                </div>
+              </a></div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="commerce-info__slider-pagination"></div>
+          </div>
 
 
 
         </div>
         <div class="apartment-info__content">
           <div class="apartment-info__header">
-            <h4 class="apartment-info__title">Однокомнатная</h4>
-            <p>№ 353</p>
+            <h4 class="apartment-info__title">Нежилое помещение</h4>
+            <p>№ 189</p>
           </div>
           <div class="apartment-info__columns">
             <div class="apartment-info__column">
-              <p><span>ЖК</span><br>Спутник</p>
-              <p><span>Этаж</span><br>5/16</p>
-              <p><span>Жилая площадь</span><br>45</p>
-              <p><span>Высота потолков</span><br>2,65</p>
-              <p><span>Срок сдачи</span><br>2 кв. 2024г</p>
+              <p>Вид сделки </p>
+              <p>ЖК</p>
+              <p>Адрес</p>
+              <p>Площадь, м2</p>
+              <p>Комнатность</p>
+              <p>Этаж</p>
             </div>
             <div class="apartment-info__column">
-              <p><span>Адрес</span><br>Летчика Филиппова, д.6</p>
-              <p><span>Площадь, м²</span><br>48,7</p>
-              <p><span>Площадь кухни</span><br>15</p>
-              <p><span>Вид из окна</span><br>улица</p>
+              <p>Аренда / Продажа</p>
+              <p>Спутник</p>
+              <p>Летчика Филлипова, д.6</p>
+              <p>50</p>
+              <p>2</p>
+              <p>2/10</p>
             </div>
           </div>
           <div class="apartment-info__price">
-            <p>5 700 000 ₽</p>
-            <span>119 000 за м²</span>
+            <p>200 000 ₽/мес</p>
+<!--            <span>119 000 за м²</span>-->
           </div>
           <div class="apartment-info__btns-container">
             <button class="btn btn-green">Забронировать</button>
@@ -68,13 +98,28 @@
                       d="M34.5387 21.7037C34.5387 19.1059 36.6543 17 39.2638 17C41.8734 17 43.9889 19.1059 43.9889 21.7037C43.9889 24.3015 41.8734 26.4074 39.2638 26.4074C37.9461 26.4074 36.7553 25.8702 35.8992 25.0059L29.3581 29.4594C29.4185 29.76 29.4502 30.0704 29.4502 30.3875C29.4502 31.0155 29.3261 31.6158 29.1011 32.1644L36.2734 36.8767C37.0875 36.2139 38.129 35.8148 39.2638 35.8148C41.8734 35.8148 43.9889 37.9208 43.9889 40.5186C43.9889 43.1163 41.8734 45.2223 39.2638 45.2223C36.6543 45.2223 34.5387 43.1163 34.5387 40.5186C34.5387 39.8382 34.6843 39.1905 34.9461 38.6057L27.8318 33.9315C27.0019 34.6528 25.9148 35.0912 24.7251 35.0912C22.1155 35.0912 20 32.9852 20 30.3875C20 27.7897 22.1155 25.6838 24.7251 25.6838C26.2257 25.6838 27.5615 26.38 28.4264 27.4637L34.7658 23.1474C34.6183 22.6919 34.5387 22.2064 34.5387 21.7037Z"
                       fill="#8C8C8C"/>
               </svg>
-
-
             </div>
           </div>
-
-
         </div>
+      </div>
+    </div>
+  </section>
+  <section class="apartment-similar section">
+    <div class="container">
+      <h3 class="title">ПОХОЖИЕ ОБЪЕКТЫ</h3>
+      <div class="apartment-similar-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">@@include('./blocks/cards/card-commerce.html')</div>
+          <div class="swiper-slide">@@include('./blocks/cards/card-commerce.html')</div>
+          <div class="swiper-slide">@@include('./blocks/cards/card-commerce.html')</div>
+          <div class="swiper-slide">@@include('./blocks/cards/card-commerce.html')</div>
+          <div class="swiper-slide">@@include('./blocks/cards/card-commerce.html')</div>
+          <div class="swiper-slide">@@include('./blocks/cards/card-commerce.html')</div>
+          <div class="swiper-slide">@@include('./blocks/cards/card-commerce.html')</div>
+          <div class="swiper-slide">@@include('./blocks/cards/card-commerce.html')</div>
+          <div class="swiper-slide">@@include('./blocks/cards/card-commerce.html')</div>
+        </div>
+        <div class="apartment-similar-swiper-pag"></div>
       </div>
     </div>
   </section>
