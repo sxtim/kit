@@ -1,0 +1,26 @@
+.about__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+
+}
+
+.about__img {
+  max-width: 100%;
+  height: auto;
+}
+
+.about__content {
+  max-width: 550px;
+  margin-right: 10px;
+}
+
+.about__content p{
+  color: var(--text-color-black);
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 130%;
+  text-align: justify;
+}
+

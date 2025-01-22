@@ -33,26 +33,37 @@
 }
 
 .contacts-column-title {
-  font-family: "Pangram medium", sans-serif;
   font-size: 22px;
   margin-bottom: 10px;
 }
 
 .contacts-column-subtitle {
-  font-family: "Pangram medium", sans-serif;
   font-size: 20px;
   margin-top: 15px;
   margin-bottom: 5px;
 }
 
 .contacts-column-txt {
+  font-family: "Pangram", sans-serif;
   display: flex;
   align-items: center;
   gap: 7px;
 }
 
-.contacts-column-txt p, a{
-  font-family: "Pangram medium", sans-serif;
+.contacts-column-txt p{
+  font-family: "Pangram", sans-serif;
+  font-size: 16px;
+  margin: 5px 0;
+  color: var(--text-color-black);
+
+  @media (max-width: 768px) {
+    font-size: 14px
+  }
+
+}
+
+.contacts-column-txt a{
+  font-family: "Pangram", sans-serif;
   font-size: 16px;
   margin: 5px 0;
   color: var(--text-color-black);
