@@ -1,99 +1,99 @@
 [
     {
         "id": 1,
-        "rooms": "3",
+        "rooms": "3-комнатная",
         "square": "120.5",
-        "d-date": "2кв. 2024г",
+        "deliveryDate": "2кв. 2024г",
         "number": "5",
         "floor": "17",
         "project": "ЖК Спутник",
         "address": "Летчика Филиппова, д.6",
         "price": "10000200",
-        "img": "./img/apartments/apartment-one.png"
+        "img": "apartment-one.png"
     },
     {
         "id": 2,
-        "rooms": "1",
+        "rooms": "1-комнатная",
         "square": "40.5",
-        "d-date": "2кв. 2024г",
+        "deliveryDate": "2кв. 2024г",
         "number": "5",
         "floor": "14",
         "project": "ЖК Спутник",
         "address": "Летчика Филиппова, д.6",
         "price": "10000200",
-        "img": "./img/apartments/apartment-one.png"
+        "img": "apartment-one.png"
     },
     {
         "id": 3,
-        "rooms": "1",
+        "rooms": "1-комнатная",
         "square": "40.5",
-        "d-date": "2кв. 2024г",
+        "deliveryDate": "2кв. 2024г",
         "number": "5",
         "floor": "13",
         "project": "ЖК Спутник",
         "address": "Летчика Филиппова, д.6",
         "price": "10000200",
-        "img": "./img/apartments/apartment-one.png"
+        "img": "apartment-one.png"
     },
     {
         "id": 4,
-        "rooms": "3",
+        "rooms": "3-комнатная",
         "square": "120.2",
-        "d-date": "2кв. 2024г",
+        "deliveryDate": "2кв. 2024г",
         "number": "5",
         "floor": "15",
         "project": "ЖК Спутник",
         "address": "Летчика Филиппова, д.6",
         "price": "10000200",
-        "img": "./img/apartments/apartment-one.png"
+        "img": "apartment-one.png"
     },
     {
         "id": 5,
-        "rooms": "3",
+        "rooms": "3-комнатная",
         "square": "30.2",
-        "d-date": "2кв. 2024г",
+        "deliveryDate": "2кв. 2024г",
         "number": "5",
         "floor": "11",
         "project": "ЖК Спутник",
         "address": "Летчика Филиппова, д.6",
         "price": "1040000",
-        "img": "./img/apartments/apartment-one.png"
+        "img": "apartment-one.png"
     },
     {
         "id": 6,
-        "rooms": "1",
+        "rooms": "1-комнатная",
         "square": "30.2",
-        "d-date": "2кв. 2024г",
+        "deliveryDate": "2кв. 2024г",
         "number": "5",
         "floor": "17",
         "project": "ЖК Спутник",
         "address": "Летчика Филиппова, д.6",
         "price": "5600000",
-        "img": "./img/apartments/apartment-one.png"
+        "img": "apartment-one.png"
     },
     {
         "id": 7,
-        "rooms": "2",
+        "rooms": "2-комнатная",
         "square": "60.7",
-        "d-date": "2кв. 2024г",
+        "deliveryDate": "2кв. 2024г",
         "number": "5",
         "floor": "11",
         "project": "ЖК Спутник",
         "address": "Летчика Филиппова, д.6",
         "price": "5800000",
-        "img": "./img/apartments/apartment-one.png"
+        "img": "apartment-one.png"
     },
     {
         "id": 8,
-        "rooms": "2",
+        "rooms": "2-комнатная",
         "square": "60.7",
-        "d-date": "2кв. 2024г",
+        "deliveryDate": "2кв. 2024г",
         "number": "5",
         "floor": "12",
         "project": "ЖК Спутник",
         "address": "Летчика Филиппова, д.6",
         "price": "5400000",
-        "img": "./img/apartments/apartment-one.png"
+        "img": "apartment-one.png"
     }
 ]
 
