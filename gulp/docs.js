@@ -105,6 +105,13 @@ gulp.task('files:docs', function () {
 		.pipe(gulp.dest('./docs/files/'));
 });
 
+gulp.task('json:dev', function () {
+	return gulp
+			.src('./src/**/*.json')
+			.pipe(changed('./docs/'))
+			.pipe(gulp.dest('./docs/'));
+});
+
 gulp.task('js:docs', function () {
 	return gulp
 		.src('./src/js/*.js')

@@ -84,6 +84,13 @@ gulp.task('files:dev', function () {
 		.pipe(gulp.dest('./build/files/'));
 });
 
+gulp.task('json:dev', function () {
+	return gulp
+			.src('./src/**/*.json')
+			.pipe(changed('./build/'))
+			.pipe(gulp.dest('./build/'));
+});
+
 gulp.task('js:dev', function () {
 	return gulp
 		.src('./src/js/*.js')
@@ -110,4 +117,5 @@ gulp.task('watch:dev', function () {
 	gulp.watch('./src/fonts/**/*', gulp.parallel('fonts:dev'));
 	gulp.watch('./src/files/**/*', gulp.parallel('files:dev'));
 	gulp.watch('./src/js/**/*.js', gulp.parallel('js:dev'));
+	gulp.watch('./src/**/*.json', gulp.parallel('json:dev'));
 });
