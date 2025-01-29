@@ -105,7 +105,7 @@ gulp.task('files:docs', function () {
 		.pipe(gulp.dest('./docs/files/'));
 });
 
-gulp.task('json:dev', function () {
+gulp.task('json:docs', function () {
 	return gulp
 			.src('./src/**/*.json')
 			.pipe(changed('./docs/'))

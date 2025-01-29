@@ -40,6 +40,7 @@ yarn-error.log
 /.settings/*
 /.idea
 /docker
+/.vscode
 
 #swagger
 storage/api-docs/api-docs.json
