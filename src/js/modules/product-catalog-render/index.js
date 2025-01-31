@@ -1,5 +1,7 @@
 "use strict"
 //==========================================
+import './product-detail'
+
 import {
   showErrorMessage,
   setBasketLocalStorage,
@@ -23,7 +25,10 @@ let productsData = [];
 getProducts()
 
 // Обработка клика по кнопке "Показать еще"
+if  (btnShowCards){
 btnShowCards.addEventListener('click', sliceArrCards);
+}
+
 // Обработка клика по кнопке "В корзину"
 // cards.addEventListener('click', handleCardClick);
 
@@ -52,8 +57,8 @@ async function getProducts() {
   } catch (err) {
 
     // TODO
-    // showErrorMessage(ERROR_SERVER);
-    // console.log(err.message);
+    showErrorMessage(ERROR_SERVER);
+    console.log(err.message);
   }
 }
 

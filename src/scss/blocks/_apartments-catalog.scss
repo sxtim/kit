@@ -2,8 +2,30 @@
   //background-color: var(--gray);
 }
 
+.btn-show-cards {
+  margin: 20px auto !important;
+}
+
 .filter-apartments-cat {
   background-color: var(--gray);
   padding-top: 40px;
   padding-bottom: 20px;
+}
+
+.error{
+  display: block;
+  margin: 20px auto;
+  width: 400px;
+  font-size: 20px;
+  padding: 30px;
+}
+
+.error p {
+  color:green; 
+  font-size:18px;
+  text-align: center;
+}
+
+.error p a {
+  color: var(--text-color-black);
 }
