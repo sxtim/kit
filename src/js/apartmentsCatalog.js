@@ -1,19 +1,17 @@
 "use strict"
 //==========================================
-import './product-detail'
-
 import {
   showErrorMessage,
   setBasketLocalStorage,
   getBasketLocalStorage,
   checkingRelevanceValueBasket
-} from './utils.js';
+} from './modules/product-catalog-render/utils.js';
 
 import {
   COUNT_SHOW_CARDS_CLICK,
   ERROR_SERVER,
   NO_PRODUCTS_IN_THIS_CATEGORY
-} from './constants.js';
+} from './modules/product-catalog-render/constants.js';
 
 const cards = document.querySelector('.cards-catalog');
 const btnShowCards = document.querySelector('.btn-show-cards');
@@ -23,7 +21,7 @@ let productsData = [];
 
 // Загрузка товаров
 getProducts()
-
+console.log('hello');
 // Обработка клика по кнопке "Показать еще"
 if  (btnShowCards){
 btnShowCards.addEventListener('click', sliceArrCards);

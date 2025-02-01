@@ -1,8 +1,9 @@
 const config = {
 	mode: 'none',
 	entry: {
-		index: './src/js/index.js'
-		// contacts: './src/js/contacts.js',
+		index: './src/js/index.js',
+		apartmentsCatalog: './src/js/apartmentsCatalog.js',
+		productDetail: './src/js/productDetail.js',
 		// about: './src/js/about.js',
 	},
 	output: {
