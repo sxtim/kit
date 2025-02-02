@@ -9,7 +9,10 @@
     "project": "ЖК Спутник",
     "address": "Летчика Филиппова, д.6",
     "price": "10000200",
-    "img": "apartment-one.png"
+    "img1": "./img/apartments/sputnik/sp-g-02.jpg",
+    "img2": "./img/apartments/sputnik/sp-g-02.jpg",
+    "img3": "./img/apartments/sputnik/sp-g-02.jpg",
+    "img4": "./img/apartments/sputnik/sp-g-02.jpg"
   },
   {
     "id": 2,

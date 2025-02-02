@@ -1,5 +1,5 @@
 const config = {
-	mode: 'none',
+	mode: 'development',
 	entry: {
 		index: './src/js/index.js',
 		apartmentsCatalog: './src/js/apartmentsCatalog.js',

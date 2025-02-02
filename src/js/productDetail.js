@@ -1,22 +1,20 @@
 'use strict'
 //==========================================
+import Swiper from 'swiper/bundle';
+
+// import styles bundle
+import 'swiper/css/bundle';
 import mobileNav from './modules/mobile-nav.js';
 mobileNav();
 import './modules/tabs';
 import './modules/range-slider';
 import './modules/sliders';
-//FSLIGHTBOX
-require("fslightbox");
-refreshFsLightbox();
-
-
-
 
 import { ERROR_SERVER, PRODUCT_INFORMATION_NOT_FOUND } from './modules/product-catalog-render/constants.js'
 import { showErrorMessage, checkingRelevanceValueBasket } from './modules/product-catalog-render/utils.js'
 
 
-const apartmentInfoContent = document.querySelector('.apartment-info__content-wrapper')
+const apartmentInfoContent = document.querySelector('.apartment-info-wrapper')
 let productsData = []
 
 getProducts()
@@ -70,6 +68,7 @@ function loadProductDetails(data) {
 }
 
 function renderInfoProduct(product) {
+  
 	const {
 		rooms,
 		square,
@@ -79,17 +78,78 @@ function renderInfoProduct(product) {
 		project,
 		address,
 		price,
-		img,
+		img1,
 	} = product
 	// const priceDiscount = price - (price * discount) / 100;
+
 	const productItem = `
+        <div class="apartment-info">
+        <div class="apartment-info__slider">
 
 
-  
-    
+          <div class="section-tabs">
+            <!-- Swiper Tab -->
+            <div class="swiper-container apartment-swiper-tabs-nav">
+              <div class="swiper-wrapper apartment-info-tabs-wrapper">
+                <div class="swiper-slide">
+                  <p>Планировка</p>
+                </div>
+                <div class="swiper-slide">
+                  <p>С размерами</p>
+                </div>
+                <div class="swiper-slide">
+                  <p>На этаже</p>
+                </div>
+                <div class="swiper-slide">
+                  <p>На генплане</p>
+                </div>
+              </div>
+            </div>
+            <!-- Swiper Content -->
+            <div class="swiper-container apartment-swiper-tabs-content">
+              <div class="swiper-wrapper">
+                <a class="swiper-slide" data-fslightbox="apartment-info-tab" href="${img1}">
+                  <img class="apartment-info__slider-img" src="${img1}"
+                       alt="img">
+                  <div class="apartment-info__slider-pic-hover">
+                    <img src="./img/icons/search.svg" alt="">
+                  </div>
+                </a>
+                <a class="swiper-slide" data-fslightbox="apartment-info-tab"
+                   href="${img1}">
+                  <img class="apartment-info__slider-img"
+                       src="${img1}"
+                       alt="img">
+                  <div class="apartment-info__slider-pic-hover">
+                    <img src="./img/icons/search.svg" alt="">
+                  </div>
+                </a>
+                <a class="swiper-slide" data-fslightbox="apartment-info-tab"
+                   href="${img1}">
+                  <img class="apartment-info__slider-img"
+                       src="${img1}"
+                       alt="img">
+                  <div class="apartment-info__slider-pic-hover">
+                    <img src="./img/icons/search.svg" alt="">
+                  </div>
+                </a>
+                <a class="swiper-slide" data-fslightbox="apartment-info-tab" href="${img1}">
+                  <img class="apartment-info__slider-img" src="${img1}"
+                       alt="img">
+                  <div class="apartment-info__slider-pic-hover">
+                    <img src="./img/icons/search.svg" alt="">
+                  </div>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+
+        </div>
         <div class="apartment-info__content">
           <div class="apartment-info__header">
-            <h4 class="apartment-info__title">${rooms}</h4>
+            <h4 class="apartment-info__title">Однокомнатная</h4>
             <p>№ 353</p>
           </div>
           <div class="apartment-info__columns">
@@ -135,6 +195,35 @@ function renderInfoProduct(product) {
 
             </div>
           </div>
+
+
+        </div>
+      </div>
         `
 	apartmentInfoContent.insertAdjacentHTML('beforeend', productItem)
+
+  const swiperTabsNav = new Swiper('.apartment-swiper-tabs-nav', {
+    spaceBetween: 20,
+    slidesPerView: 4,
+  });
+  
+  // Swiper Content
+  const swiperTabsContent = new Swiper('.apartment-swiper-tabs-content', {
+    spaceBetween: 0,
+    allowTouchMove: false,
+    loop: false,
+    autoHeight: true,
+    longSwipes: true,
+    resistanceRatio: 0, // Disable First and Last Swiper
+    watchOverflow: true,
+    loopedSlides: 5,
+    thumbs: {
+      swiper: swiperTabsNav,
+    },
+  });
+
+//FSLIGHTBOX
+  require("fslightbox");
+  refreshFsLightbox();
+
 }

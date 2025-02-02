@@ -37,25 +37,7 @@ const swiper = new Swiper('.swiper', {
 
 
 //SLIDER TABS APARTMENT
-const swiperTabsNav = new Swiper('.apartment-swiper-tabs-nav', {
-  spaceBetween: 20,
-  slidesPerView: 4,
-});
 
-// Swiper Content
-const swiperTabsContent = new Swiper('.apartment-swiper-tabs-content', {
-  spaceBetween: 0,
-  allowTouchMove: false,
-  loop: false,
-  autoHeight: true,
-  longSwipes: true,
-  resistanceRatio: 0, // Disable First and Last Swiper
-  watchOverflow: true,
-  loopedSlides: 5,
-  thumbs: {
-    swiper: swiperTabsNav,
-  },
-});
 
 //SLIDER APARTMENT
 var swiperApartmentSimilar = new Swiper(".apartment-similar-swiper", {

@@ -1,5 +1,6 @@
 "use strict"
 //==========================================
+import './modules/range-slider';
 import {
   showErrorMessage,
   setBasketLocalStorage,
@@ -54,7 +55,7 @@ async function getProducts() {
 
   } catch (err) {
 
-    // TODO
+    
     showErrorMessage(ERROR_SERVER);
     console.log(err.message);
   }
