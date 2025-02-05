@@ -5,6 +5,7 @@
 .uk-banner img {
 	width: 100%;
 	object-fit: cover;
+	rotate: 180;
 
 	@media (max-width: 1200px) {
 		height: 500px;
@@ -222,4 +223,56 @@
 			}
 		}
 	}
+}
+//Accordion
+.contents{
+  max-width: 1000px;
+  padding: 0 40px;
+  margin: 0 auto;
+}
+
+.accordion-single  {
+  border-bottom: 1px solid #efefef;
+  margin-top: 10px;
+}
+
+.accordion-single-title {
+  border-top: 1px solid #efefef;
+  padding: 20px;
+  cursor: pointer;
+  position: relative;
+  font-size: 20px;
+  margin: 0;
+}
+
+.accordion-single-title::after{
+  content: "";
+  position: absolute;
+  right: 25px;
+  top: 50%;
+  transition: all 0.2s ease-in-out;
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-top: solid 2px #999;
+  border-right: solid 2px #999;
+  transform: translateY(-50%) rotate(135deg);
+}
+
+.accordion-single-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .3s ease-in-out;
+}
+
+.accordion-single-content p {
+  padding: 20px;
+}
+
+.accordion-single-item.is-open .accordion-single-content  {
+  max-height: 10000px;
+}
+
+.accordion-single-item.is-open .accordion-single-title::after  {
+  transform: translateY(-50%) rotate(315deg);
 }

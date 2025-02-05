@@ -1,0 +1,1 @@
+!function(){function e(){const e=document.querySelectorAll(".js-acc-item"),c=this.parentNode;e.forEach((e=>{c!=e?e.classList.remove("is-open"):c.classList.toggle("is-open")}))}document.querySelectorAll(".js-acc-single-trigger").forEach((c=>c.addEventListener("click",e)))}();
