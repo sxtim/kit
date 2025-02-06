@@ -225,54 +225,95 @@
 	}
 }
 //Accordion
-.contents{
-  max-width: 1000px;
-  padding: 0 40px;
-  margin: 0 auto;
-}
+$spacing: 24px;
+$plus-size: 16px;
+$plus-thickness: 2px;
+$speed: 300ms;
+$easing: ease-in-out;
+$gray-dark: #546e7a;
+$gray: #cfd8dc;
+$gray-light: #eceff1;
+$primary: #00acc1;
 
-.accordion-single  {
-  border-bottom: 1px solid #efefef;
-  margin-top: 10px;
-}
+.details {
+	overflow: hidden;
+	border-bottom: 1px solid $gray;
+	transition: height $speed $easing;
 
-.accordion-single-title {
-  border-top: 1px solid #efefef;
-  padding: 20px;
-  cursor: pointer;
-  position: relative;
-  font-size: 20px;
-  margin: 0;
-}
+	&:last-child {
+		border-bottom: 0;
+	}
 
-.accordion-single-title::after{
-  content: "";
-  position: absolute;
-  right: 25px;
-  top: 50%;
-  transition: all 0.2s ease-in-out;
-  display: block;
-  width: 8px;
-  height: 8px;
-  border-top: solid 2px #999;
-  border-right: solid 2px #999;
-  transform: translateY(-50%) rotate(135deg);
-}
+	&__summary,
+	&__content {
+		padding: $spacing;
+	}
 
-.accordion-single-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height .3s ease-in-out;
-}
+	&__summary {
+		position: relative;
+		list-style: none; // Hide the marker (proper method)
+		padding-left: $spacing * 2;
+		outline: 0;
+		font-family: "Pangram-bold", sans-serif;
+		cursor: pointer;
+		font-size: 22px;
+		text-transform: uppercase;
+		transition: color $speed $easing;
 
-.accordion-single-content p {
-  padding: 20px;
-}
+		[open] > & {
+			color: var(--sand);
+		}
 
-.accordion-single-item.is-open .accordion-single-content  {
-  max-height: 10000px;
-}
+		// Hide the marker in Webkit
+		&::-webkit-details-marker {
+			display: none;
+		}
 
-.accordion-single-item.is-open .accordion-single-title::after  {
-  transform: translateY(-50%) rotate(315deg);
+		// Our replacement marker
+		&:before,
+		&:after {
+			content: "";
+			position: absolute;
+		}
+
+		&:before {
+			left: $spacing/2 + $plus-size/2;
+			top: 50%;
+			height: $plus-thickness;
+			margin-top: -$plus-thickness/2;
+			width: $plus-size;
+			background: var(--sand);
+		}
+
+		&:after {
+			left: $spacing/2 + $plus-size;
+			top: 50%;
+			height: $plus-size;
+			margin-top: -$plus-size/2;
+			width: $plus-thickness;
+			margin-left: -$plus-thickness/2;
+			background: var(--sand);
+			transition: all $speed $easing;
+		}
+
+		[open] &:after {
+			opacity: 0;
+			transform: translateY(25%);
+		}
+
+		@media (max-width: 768px) {
+			font-size: 16px;
+		}
+	}
+
+	&__content {
+		font-family: "PP Pangram Sans", sans-serif;
+		font-size: 18px;
+		padding-top: 0;
+		padding-left: $spacing * 2;
+
+		@media (max-width: 768px) {
+			font-size: 14px;
+		}
+	}
 }
