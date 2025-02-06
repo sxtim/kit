@@ -1,0 +1,30 @@
+.promo-detail__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+
+}
+
+.promo-detail__img {
+  max-width: 100%;
+  height: auto;
+}
+
+.promo-detail__content {
+  max-width: 550px;
+  margin-right: 10px;
+}
+
+.promo-detail__content p{
+  color: var(--text-color-black);
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 130%;
+  text-align: justify;
+}
+
+.promo-detail__btn{
+  margin-top: 30px;
+}
+

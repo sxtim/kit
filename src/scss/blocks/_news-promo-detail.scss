@@ -1,4 +1,4 @@
-.about__inner {
+.news-detail__inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -6,21 +6,25 @@
 
 }
 
-.about__img {
+.news-detail__img {
   max-width: 100%;
   height: auto;
 }
 
-.about__content {
+.news-detail__content {
   max-width: 550px;
   margin-right: 10px;
 }
 
-.about__content p{
+.news-detail__content p{
   color: var(--text-color-black);
   font-size: 24px;
   font-weight: 300;
   line-height: 130%;
   text-align: justify;
+}
+
+.news-detail__btn{
+  margin-top: 30px;
 }
 
