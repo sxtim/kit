@@ -31,7 +31,7 @@
 	font-family: "Pangram", sans-serif;
 	color: var(--text-color-white);
 	display: grid;
-	grid-template-columns: repeat(4, calc(25% - 25px));
+	grid-template-columns: repeat(5, 1fr);
 	column-gap: 20px;
 	row-gap: 20px;
 	place-content: center;
@@ -48,7 +48,7 @@
 		grid-template-columns: repeat(2, calc(50% - 4px));
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 568px) {
 		width: 100%;
 		grid-template-columns: repeat(1, calc(100% - 4px));
 	}
@@ -73,7 +73,7 @@
 		top: 0;
 		width: 100%;
 		height: 100%;
-		background: rgba(255, 255, 255, 0.4);
+		// background: rgba(255, 255, 255, 0.4);
 		border-radius: 5px;
 		filter: blur(2px);
 		transition: all 0.2s ease-in;
@@ -84,9 +84,17 @@
 		filter: blur(5px);
 	}
 
-	@media (max-width: 768px) {
+	@media (max-width: 1200px) {
 		height: 50px;
-		max-width: 600px;
+		max-width: 300px;
+		width: 100%;
+		background-size: 40px;
+		padding: 4px 8px;
+	}
+
+	@media (max-width: 528px) {
+		height: 50px;
+		max-width: 200px;
 		width: 100%;
 		background-size: 40px;
 		padding: 4px 8px;
@@ -96,31 +104,31 @@
 .ci-01 {
   background-image: url("../img/about-company/about-page/ab-ic5.svg");
   background-position: 10px 50%;
-	background-size: auto;
+
 	background-repeat: no-repeat;
 }
 .ci-02 {
   background-image: url("../img/about-company/about-page/ab-ic3.svg");
   background-position: 10px 50%;
-	background-size: auto;
+
 	background-repeat: no-repeat;
 }
 .ci-03 {
   background-image: url("../img/about-company/about-page/ab-ic4.svg");
   background-position: 10px 50%;
-	background-size: auto;
+
 	background-repeat: no-repeat;
 }
 .ci-04 {
   background-image: url("../img/about-company/about-page/ab-ic2.svg");
   background-position: 10px 50%;
-	background-size: auto;
+
 	background-repeat: no-repeat;
 }
 .ci-05 {
   background-image: url("../img/about-company/about-page/ab-ic1.svg");
   background-position: 10px 50%;
-	background-size: auto;
+
 	background-repeat: no-repeat;
 }
 
@@ -143,3 +151,76 @@
 		//margin-left: 40px;
 	}
 }
+
+
+.about-company-content {
+	overflow-y: hidden;
+}
+
+.about-company-content-wrap {
+	display: flex;
+	// overflow-y: hidden;
+	// align-items: center;
+	justify-content: space-between;
+	gap: 40px;
+	margin-bottom: 60px;
+}
+.about-company-content-img {
+	max-width: 600px;
+	width: 100%;
+}
+
+.about-company-content-number {
+	position: relative;
+	height: 500px;
+	width: 10%;
+} 
+
+.circle {
+	position: absolute;
+	font-size: 30px;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 50px;
+	height: 50px;
+	background-color: #2b7a78;
+	color: white;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: bold;
+}
+.line {
+	position: absolute;
+	top: 50px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 2px;
+	height: 100vh;
+	background-color: #2b7a78;
+}
+
+
+.about-company-content-item {
+	
+}
+
+.about-company-text-year {
+	font-family: Pangram-bold, sans-serif ;
+	font-size: 30px;
+}
+
+.about-company-text {
+	max-width: 600px;
+	font-family: "Pangram", sans-serif;
+	font-size: 24px;
+	text-align: justify;
+}
+
+.about-company-text p:not(:last-child) {
+	margin-bottom: 20px;
+}
+
+
