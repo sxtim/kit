@@ -66,6 +66,7 @@
 
 .nav-icon.nav-icon--active::before,
 .nav-icon.nav-icon--active::after {
+	background-color: var(--text-color-white);
 	top: 0;
 	transition: top var(--time) linear,
 		transform var(--time) ease-in var(--time);
@@ -73,10 +74,12 @@
 
 .nav-icon.nav-icon--active::before {
 	transform: rotate(45deg);
+	background-color: var(--text-color-white);
 }
 
 .nav-icon.nav-icon--active::after {
 	transform: rotate(-45deg);
+	background-color: var(--text-color-white);
 }
 
 
