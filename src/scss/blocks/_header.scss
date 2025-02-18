@@ -40,7 +40,7 @@
 	// justify-content: center;
 	pointer-events: none;
 	max-width: 1440px;
-	height: 44px;
+	height: 50px;
 	margin: 0 auto;
 }
 
@@ -74,6 +74,16 @@
 	margin: 0 0 6px 2px;
 }
 
+.header__count-fav-black {
+	width: 16px;
+	height: 16px;
+	color: var(--text-color-black);
+	font-family: Pangram, sans-serif;
+	font-size: 12px;
+	line-height: 14px;
+	text-align: center;
+	margin: 0 0 6px 2px;
+}
 .header-main__socials {
 	position: absolute;
 	left: 0;
