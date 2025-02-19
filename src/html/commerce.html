@@ -1,133 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>КИТ</title>
-  <link rel="stylesheet" href="./css/main.css"/>
-  <link rel="stylesheet" href="./fonts/Montserrat/stylesheet.css"/>
-  <link rel="stylesheet" href="./fonts/Oswald/stylesheet.css"/>
-  <link rel="stylesheet" href="./fonts/Pangram1/stylesheet.css"/>
-</head>
-<body>
-@@include('blocks/header/header.html')
-<main class="main">
-  @@include('blocks/breadcrumb.html')
-  <section class="commerce section">
-    <div class="container">
-      <!--      <h3 class="title title-page">Квартира №235</h3>-->
-      <div class="commerce-info">
-        <div class="commerce-info__slider-wrap">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>КИТ</title>
+		<link rel="stylesheet" href="./css/main.css" />
+		<link rel="stylesheet" href="./fonts/Montserrat/stylesheet.css" />
+		<link rel="stylesheet" href="./fonts/Oswald/stylesheet.css" />
+		<link rel="stylesheet" href="./fonts/Pangram1/stylesheet.css" />
+	</head>
+	<body>
+		@@include('blocks/header/header.html')
+		<main class="main">
+			@@include('blocks/breadcrumb.html')
+			<section class="commerce section">
+				<div class="container">
+					<!--      <h3 class="title title-page">Квартира №235</h3>-->
+					<div class="commerce-info">
+						<div class="commerce-info__slider-wrap">
+							<div class="commerce-info__slider">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<a
+											class="commerce-info__pic"
+											data-fslightbox="commerce-info"
+											href="./img/apartments/sputnik/sp-g-07.jpg"
+										>
+											<img
+												class="commerce-info__img"
+												src="./img/apartments/sputnik/sp-g-07.jpg"
+												alt="img"
+											/>
 
-          <div class="commerce-info__slider">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide"><a class="commerce-info__pic" data-fslightbox="commerce-info" href="./img/apartments/sputnik/sp-g-07.jpg">
-                <img class="commerce-info__img" src="./img/apartments/sputnik/sp-g-07.jpg" alt="img">
+											<div class="commerce-info__pic-hover">
+												<img src="./img/icons/search.svg" alt="" />
+											</div>
+										</a>
+									</div>
+									<div class="swiper-slide">
+										<a
+											class="commerce-info__pic"
+											data-fslightbox="commerce-info"
+											href="./img/apartments/sputnik/sp-g-09.jpg"
+										>
+											<img
+												class="commerce-info__img"
+												src="./img/apartments/sputnik/sp-g-09.jpg"
+												alt="img"
+											/>
 
-                <div class="commerce-info__pic-hover">
-                  <img src="./img/icons/search.svg" alt="">
-                </div>
-              </a></div>
-              <div class="swiper-slide"><a class="commerce-info__pic" data-fslightbox="commerce-info" href="./img/apartments/sputnik/sp-g-09.jpg">
-                <img class="commerce-info__img" src="./img/apartments/sputnik/sp-g-09.jpg" alt="img">
+											<div class="commerce-info__pic-hover">
+												<img src="./img/icons/search.svg" alt="" />
+											</div>
+										</a>
+									</div>
+									<div class="swiper-slide">
+										<a
+											class="commerce-info__pic"
+											data-fslightbox="commerce-info"
+											href="./img/apartments/sputnik/sp-g-06.jpg"
+										>
+											<img
+												class="commerce-info__img"
+												src="./img/apartments/sputnik/sp-g-06.jpg"
+												alt="img"
+											/>
 
-                <div class="commerce-info__pic-hover">
-                  <img src="./img/icons/search.svg" alt="">
-                </div>
-              </a></div>
-              <div class="swiper-slide"><a class="commerce-info__pic" data-fslightbox="commerce-info" href="./img/apartments/sputnik/sp-g-06.jpg">
-                <img class="commerce-info__img" src="./img/apartments/sputnik/sp-g-06.jpg" alt="img">
+											<div class="commerce-info__pic-hover">
+												<img src="./img/icons/search.svg" alt="" />
+											</div>
+										</a>
+									</div>
+								</div>
+								<!-- Add Pagination -->
+								<div class="commerce-info__slider-pagination"></div>
+							</div>
+						</div>
+						<div class="apartment-info__content">
+							<div class="apartment-info__header">
+								<h4 class="apartment-info__title">Нежилое помещение</h4>
+								<p>№ 189</p>
+							</div>
+							<div class="apartment-info__columns">
+								<div class="apartment-info__column">
+									<p>Вид сделки</p>
+									<p>ЖК</p>
+									<p>Адрес</p>
+									<p>Площадь, м2</p>
+									<p>Комнатность</p>
+									<p>Этаж</p>
+								</div>
+								<div class="apartment-info__column">
+									<p>Аренда / Продажа</p>
+									<p>Спутник</p>
+									<p>Летчика Филлипова, д.6</p>
+									<p>50</p>
+									<p>2</p>
+									<p>2/10</p>
+								</div>
+							</div>
+							<div class="apartment-info__price-wrap">
+								<p>200 000 ₽/мес</p>
+								<!--            <span>119 000 за м²</span>-->
+							</div>
+							<div class="apartment-info__btns-container">
+								<button class="btn btn-green">Забронировать</button>
+								<div class="apartment-info__icons">
+									<svg
+										class="card-apartment__favorite"
+										width="63"
+										height="63"
+										viewBox="0 0 63 63"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<circle cx="31.5" cy="31.5" r="31.5" fill="#F9F9F9" />
+										<path
+											fill-rule="evenodd"
+											clip-rule="evenodd"
+											d="M31.5924 24.0407C28.8131 20.8018 24.1689 19.8008 20.6866 22.7667C17.2044 25.7326 16.7141 30.6914 19.4488 34.1993C21.7224 37.1157 28.6033 43.2669 30.8585 45.2578C31.1108 45.4805 31.237 45.5919 31.3842 45.6356C31.5125 45.6737 31.6531 45.6737 31.7816 45.6356C31.9288 45.5919 32.0548 45.4805 32.3072 45.2578C34.5624 43.2669 41.4432 37.1157 43.7169 34.1993C46.4515 30.6914 46.0211 25.7014 42.479 22.7667C38.9369 19.832 34.3716 20.8018 31.5924 24.0407Z"
+											stroke="#8C8C8C"
+											stroke-width="3.0891"
+											stroke-linecap="round"
+											stroke-linejoin="round"
+										/>
+									</svg>
 
-                <div class="commerce-info__pic-hover">
-                  <img src="./img/icons/search.svg" alt="">
-                </div>
-              </a></div>
-            </div>
-            <!-- Add Pagination -->
-            <div class="commerce-info__slider-pagination"></div>
-          </div>
+									<svg
+										class="card-apartment__favorite"
+										width="63"
+										height="63"
+										viewBox="0 0 63 63"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+									>
+										<circle cx="31.5" cy="31.5" r="31.5" fill="#F9F9F9" />
+										<path
+											fill-rule="evenodd"
+											clip-rule="evenodd"
+											d="M34.5387 21.7037C34.5387 19.1059 36.6543 17 39.2638 17C41.8734 17 43.9889 19.1059 43.9889 21.7037C43.9889 24.3015 41.8734 26.4074 39.2638 26.4074C37.9461 26.4074 36.7553 25.8702 35.8992 25.0059L29.3581 29.4594C29.4185 29.76 29.4502 30.0704 29.4502 30.3875C29.4502 31.0155 29.3261 31.6158 29.1011 32.1644L36.2734 36.8767C37.0875 36.2139 38.129 35.8148 39.2638 35.8148C41.8734 35.8148 43.9889 37.9208 43.9889 40.5186C43.9889 43.1163 41.8734 45.2223 39.2638 45.2223C36.6543 45.2223 34.5387 43.1163 34.5387 40.5186C34.5387 39.8382 34.6843 39.1905 34.9461 38.6057L27.8318 33.9315C27.0019 34.6528 25.9148 35.0912 24.7251 35.0912C22.1155 35.0912 20 32.9852 20 30.3875C20 27.7897 22.1155 25.6838 24.7251 25.6838C26.2257 25.6838 27.5615 26.38 28.4264 27.4637L34.7658 23.1474C34.6183 22.6919 34.5387 22.2064 34.5387 21.7037Z"
+											fill="#8C8C8C"
+										/>
+									</svg>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="apartment-similar section">
+				<div class="container">
+					<h3 class="title">ПОХОЖИЕ ОБЪЕКТЫ</h3>
+					<div class="apartment-similar-swiper">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								@@include('./blocks/cards/card-commerce.html')
+							</div>
+							<div class="swiper-slide">
+								@@include('./blocks/cards/card-commerce.html')
+							</div>
+							<div class="swiper-slide">
+								@@include('./blocks/cards/card-commerce.html')
+							</div>
+							<div class="swiper-slide">
+								@@include('./blocks/cards/card-commerce.html')
+							</div>
+							<div class="swiper-slide">
+								@@include('./blocks/cards/card-commerce.html')
+							</div>
+							<div class="swiper-slide">
+								@@include('./blocks/cards/card-commerce.html')
+							</div>
+							<div class="swiper-slide">
+								@@include('./blocks/cards/card-commerce.html')
+							</div>
+							<div class="swiper-slide">
+								@@include('./blocks/cards/card-commerce.html')
+							</div>
+							<div class="swiper-slide">
+								@@include('./blocks/cards/card-commerce.html')
+							</div>
+						</div>
+						<div class="apartment-similar-swiper-pag"></div>
+					</div>
+				</div>
+			</section>
 
-
-
-        </div>
-        <div class="apartment-info__content">
-          <div class="apartment-info__header">
-            <h4 class="apartment-info__title">Нежилое помещение</h4>
-            <p>№ 189</p>
-          </div>
-          <div class="apartment-info__columns">
-            <div class="apartment-info__column">
-              <p>Вид сделки </p>
-              <p>ЖК</p>
-              <p>Адрес</p>
-              <p>Площадь, м2</p>
-              <p>Комнатность</p>
-              <p>Этаж</p>
-            </div>
-            <div class="apartment-info__column">
-              <p>Аренда / Продажа</p>
-              <p>Спутник</p>
-              <p>Летчика Филлипова, д.6</p>
-              <p>50</p>
-              <p>2</p>
-              <p>2/10</p>
-            </div>
-          </div>
-          <div class="apartment-info__price">
-            <p>200 000 ₽/мес</p>
-<!--            <span>119 000 за м²</span>-->
-          </div>
-          <div class="apartment-info__btns-container">
-            <button class="btn btn-green">Забронировать</button>
-            <div class="apartment-info__icons">
-
-              <svg class="card-apartment__favorite" width="63" height="63" viewBox="0 0 63 63" fill="none"
-                   xmlns="http://www.w3.org/2000/svg">
-                <circle cx="31.5" cy="31.5" r="31.5" fill="#F9F9F9"/>
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                      d="M31.5924 24.0407C28.8131 20.8018 24.1689 19.8008 20.6866 22.7667C17.2044 25.7326 16.7141 30.6914 19.4488 34.1993C21.7224 37.1157 28.6033 43.2669 30.8585 45.2578C31.1108 45.4805 31.237 45.5919 31.3842 45.6356C31.5125 45.6737 31.6531 45.6737 31.7816 45.6356C31.9288 45.5919 32.0548 45.4805 32.3072 45.2578C34.5624 43.2669 41.4432 37.1157 43.7169 34.1993C46.4515 30.6914 46.0211 25.7014 42.479 22.7667C38.9369 19.832 34.3716 20.8018 31.5924 24.0407Z"
-                      stroke="#8C8C8C" stroke-width="3.0891" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-
-
-              <svg class="card-apartment__favorite" width="63" height="63" viewBox="0 0 63 63" fill="none"
-                   xmlns="http://www.w3.org/2000/svg">
-                <circle cx="31.5" cy="31.5" r="31.5" fill="#F9F9F9"/>
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                      d="M34.5387 21.7037C34.5387 19.1059 36.6543 17 39.2638 17C41.8734 17 43.9889 19.1059 43.9889 21.7037C43.9889 24.3015 41.8734 26.4074 39.2638 26.4074C37.9461 26.4074 36.7553 25.8702 35.8992 25.0059L29.3581 29.4594C29.4185 29.76 29.4502 30.0704 29.4502 30.3875C29.4502 31.0155 29.3261 31.6158 29.1011 32.1644L36.2734 36.8767C37.0875 36.2139 38.129 35.8148 39.2638 35.8148C41.8734 35.8148 43.9889 37.9208 43.9889 40.5186C43.9889 43.1163 41.8734 45.2223 39.2638 45.2223C36.6543 45.2223 34.5387 43.1163 34.5387 40.5186C34.5387 39.8382 34.6843 39.1905 34.9461 38.6057L27.8318 33.9315C27.0019 34.6528 25.9148 35.0912 24.7251 35.0912C22.1155 35.0912 20 32.9852 20 30.3875C20 27.7897 22.1155 25.6838 24.7251 25.6838C26.2257 25.6838 27.5615 26.38 28.4264 27.4637L34.7658 23.1474C34.6183 22.6919 34.5387 22.2064 34.5387 21.7037Z"
-                      fill="#8C8C8C"/>
-              </svg>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="apartment-similar section">
-    <div class="container">
-      <h3 class="title">ПОХОЖИЕ ОБЪЕКТЫ</h3>
-      <div class="apartment-similar-swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">@@include('./blocks/cards/card-commerce.html')</div>
-          <div class="swiper-slide">@@include('./blocks/cards/card-commerce.html')</div>
-          <div class="swiper-slide">@@include('./blocks/cards/card-commerce.html')</div>
-          <div class="swiper-slide">@@include('./blocks/cards/card-commerce.html')</div>
-          <div class="swiper-slide">@@include('./blocks/cards/card-commerce.html')</div>
-          <div class="swiper-slide">@@include('./blocks/cards/card-commerce.html')</div>
-          <div class="swiper-slide">@@include('./blocks/cards/card-commerce.html')</div>
-          <div class="swiper-slide">@@include('./blocks/cards/card-commerce.html')</div>
-          <div class="swiper-slide">@@include('./blocks/cards/card-commerce.html')</div>
-        </div>
-        <div class="apartment-similar-swiper-pag"></div>
-      </div>
-    </div>
-  </section>
-
-
-  @@include('blocks/section-questions.html')
-</main>
-@@include('blocks/footer.html')
-<script src="./js/index.bundle.js"></script>
-</body>
+			@@include('blocks/section-questions.html')
+		</main>
+		@@include('blocks/footer.html')
+		<script src="./js/index.bundle.js"></script>
+	</body>
 </html>
