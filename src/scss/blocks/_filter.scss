@@ -1,181 +1,248 @@
+.filter-apartments-cat {
 
+}
 
 .filter {
-  background-color: var(--gray) !important;
+	background-color: var(--gray) !important;
 }
 
 .filter__tab-content {
-  background-color: var(--gray) !important;
+	background-color: var(--gray) !important;
 }
 
 .filter__tab-btn-container {
-  max-width: 75%;
+	max-width: 75%;
 
-  @media (max-width: 1200px) {
-    max-width: 100%;
-  }
+	@media (max-width: 1200px) {
+		max-width: 100%;
+	}
 
-  @media (max-width: 998px) {
-    flex-direction: column;
-    gap: 20px;
-  }
-
+	@media (max-width: 998px) {
+		flex-direction: column;
+		gap: 20px;
+	}
 }
 
-
 .filter__tab-row {
-  color: var(--text-color-black);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+	color: var(--text-color-black);
+	height: 900px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 
-  @media (max-width: 1200px) {
-    flex-direction: column;
-    gap: 30px;
-  }
+	@media (max-width: 1200px) {
+		flex-direction: column;
+		gap: 30px;
+	}
+}
+
+.filter__col {
+	display: flex;
+	flex-direction: column;
 }
 
 .filter__el {
-  height: 100px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 
-  @media (max-width: 1200px) {
-    width: 95%;
-  }
-  //align-items: center;
+	@media (max-width: 1200px) {
+		width: 95%;
+	}
+	//align-items: center;
 }
 
 .filter__row-title {
-  color: var(--text-color-black);
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 130%;
+	color: var(--text-color-black);
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 130%;
 
-  @media (max-width: 998px) {
-    font-size: 18px;
-  }
-
+	@media (max-width: 998px) {
+		font-size: 18px;
+	}
 }
 
 .filter-slider__text {
-  color: var(--text-color-black);
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 40%;
+	color: var(--text-color-black);
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 40%;
 
-  @media (max-width: 998px) {
-    font-size: 18px;
-  }
-
+	@media (max-width: 998px) {
+		font-size: 18px;
+	}
 }
 
 .filter-slider__input {
-  font-weight: 500;
-  font-size: 20px;
-  color: rgba(27, 27, 27, 0.25);
+	font-weight: 500;
+	font-size: 20px;
+	color: rgba(27, 27, 27, 0.25);
 
-  @media (max-width: 998px) {
-    font-size: 16px;
-  }
-
+	@media (max-width: 998px) {
+		font-size: 16px;
+	}
 }
 
 .filter__range-slider {
-  cursor: pointer;
-  margin-bottom: 10px;
+	cursor: pointer;
+	margin-bottom: 10px;
 }
 
 .filter__el-btns {
-  color: var(--text-color-black);
-  font-weight: 500;
-  font-size: 20px;
+	color: var(--text-color-black);
+	font-weight: 500;
+	font-size: 20px;
 
-  @media (max-width: 998px) {
-    font-size: 18px;
-  }
-
+	@media (max-width: 998px) {
+		font-size: 18px;
+	}
 }
 
 .filter__btn-container {
-  position: relative;
-  max-width: 295px;
-  width: 100%;
+	position: relative;
+	max-width: 295px;
+	width: 100%;
 
-  @media (max-width: 1400px) {
-    max-width: 200px;
-  }
-
+	@media (max-width: 1400px) {
+		max-width: 200px;
+	}
 }
 
 .filter__btn {
-  position: absolute;
-  bottom: 0;
-  max-width: 260px;
-  min-height: 40px;
-  width: 100%;
-  font-size: 20px;
+	position: absolute;
+	bottom: 0;
+	max-width: 260px;
+	min-height: 40px;
+	width: 100%;
+	font-size: 20px;
 
-  @media (max-width: 1200px) {
-    font-size: 18px;
-  }
+	@media (max-width: 1200px) {
+		font-size: 18px;
+	}
 
-  @media (max-width: 768px) {
-    font-size: 16px;
-  }
-
+	@media (max-width: 768px) {
+		font-size: 16px;
+	}
 }
-
 
 //Range slider
 
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+	-webkit-appearance: none;
+	margin: 0;
 }
 
 /* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
+input[type="number"] {
+	-moz-appearance: textfield;
 }
 
 .noUi-connect {
-  cursor: pointer;
-  background-color: var(--sand) !important;
+	cursor: pointer;
+	background-color: var(--sand) !important;
 }
 
 .noUi-target {
-  background-color: #bfbfbf !important;
-  border: none !important;
-  border-radius: 100px !important;
-  box-shadow: none !important;
-  height: 3px !important;
+	background-color: #bfbfbf !important;
+	border: none !important;
+	border-radius: 100px !important;
+	box-shadow: none !important;
+	height: 3px !important;
 }
 
 .noUi-handle::after,
 .noUi-handle::before {
-  display: none !important;
+	display: none !important;
 }
 
 .noUi-handle {
-  cursor: pointer !important;
-  box-shadow: none !important;
-  border-radius: 100% !important;
-  background-color: var(--sand) !important;
-  border: 3px solid var(--sand) !important;
+	cursor: pointer !important;
+	box-shadow: none !important;
+	border-radius: 100% !important;
+	background-color: var(--sand) !important;
+	border: 3px solid var(--sand) !important;
 }
 
-
 .noUi-horizontal .noUi-handle {
-  width: 22px !important;
-  height: 22px !important;
-  top: -10px !important;
-  right: -11px !important;
+	width: 22px !important;
+	height: 22px !important;
+	top: -10px !important;
+	right: -11px !important;
 }
 
 .noUi-horizontal .noUi-handle-upper {
-  //right: 0 !important;
+	//right: 0 !important;
+}
+
+//DROPDOWN
+.container .output_field {
+	width: 450px;
+	font-size: 20px;
+	letter-spacing: 1px;
+}
+
+form h4 {
+	font-size: 20px;
+	padding: 10px;
+	letter-spacing: 1.2px;
+	border-bottom: 1px solid lightgray;
+}
+
+form .input_field,
+form .selectAll {
+	padding: 10px;
+	border-bottom: 1px solid lightgray;
+	display: flex;
+	align-items: center;
+	transition: 0.3s;
+}
+
+form .selectAll {
+	font-size: 22px;
+	font-weight: 500;
+	padding-left: 14px;
+}
+
+form .selectAll:hover {
+	background: lightcyan;
+}
+
+form .selectAll input {
+	transform: scale(1.5);
+}
+
+form .input_field:last-child {
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+form .input_field:hover {
+	background: lightblue;
+}
+
+form input,
+form label {
+	cursor: pointer;
+}
+
+form label {
+	margin-left: 10px;
+}
+
+.output_field > div {
+	padding: 10px;
+	border-bottom: 1px solid lightgray;
+}
+
+.output_field .skills {
+	word-wrap: break-word;
+}
+
+.quantity span,
+.skills span {
+	font-weight: bold;
 }
