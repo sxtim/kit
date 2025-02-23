@@ -25,7 +25,7 @@
 
 .filter__tab-row {
 	color: var(--text-color-black);
-	height: 900px;
+	height: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -39,6 +39,7 @@
 .filter__col {
 	display: flex;
 	flex-direction: column;
+	max-width: 200px;
 }
 
 .filter__el {
@@ -93,25 +94,31 @@
 .filter__el-btns {
 	color: var(--text-color-black);
 	font-weight: 500;
-	font-size: 20px;
+	font-size: 18px;
 
 	@media (max-width: 998px) {
-		font-size: 18px;
+		font-size: 16px;
 	}
+}
+
+.filter__el-btns.active {
+	background-color: var(--green-light);
+	color: var(--text-color-white);
+  border: 2px solid var(--green-light); /* Зеленая рамка для активной кнопки */
 }
 
 .filter__btn-container {
-	position: relative;
-	max-width: 295px;
-	width: 100%;
+	// position: relative;
+	// max-width: 295px;
+	// width: 100%;
 
-	@media (max-width: 1400px) {
-		max-width: 200px;
-	}
+	// @media (max-width: 1400px) {
+	// 	max-width: 200px;
+	// }
 }
 
 .filter__btn {
-	position: absolute;
+	// position: absolute;
 	bottom: 0;
 	max-width: 260px;
 	min-height: 40px;
@@ -179,70 +186,87 @@ input[type="number"] {
 }
 
 //DROPDOWN
-.container .output_field {
-	width: 450px;
-	font-size: 20px;
-	letter-spacing: 1px;
+.filter__dropdown {
+  position: relative;
+  display: inline-block;
+  margin-right: 20px; /* Отступ между меню */
 }
 
-form h4 {
-	font-size: 20px;
-	padding: 10px;
-	letter-spacing: 1.2px;
-	border-bottom: 1px solid lightgray;
+.filter__dropdown-menu-btn {
+  cursor: pointer;
+  padding: 10px;
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px;
 }
 
-form .input_field,
-form .selectAll {
-	padding: 10px;
-	border-bottom: 1px solid lightgray;
-	display: flex;
-	align-items: center;
-	transition: 0.3s;
+.filter__dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  z-index: 1;
+  width: 200px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-form .selectAll {
-	font-size: 22px;
-	font-weight: 500;
-	padding-left: 14px;
+.filter__dropdown-content.active {
+  display: block;
 }
 
-form .selectAll:hover {
-	background: lightcyan;
+.input_field {
+  margin: 5px 0;
+  padding: 5px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }
 
-form .selectAll input {
-	transform: scale(1.5);
+.input_field:hover {
+  background: lightblue;
 }
 
-form .input_field:last-child {
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
+.input_field.checked {
+  background-color: #d4edda; /* Зеленый цвет для выбранного элемента */
 }
 
-form .input_field:hover {
-	background: lightblue;
+.custom-checkbox {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  position: relative;
 }
 
-form input,
-form label {
-	cursor: pointer;
+.custom-checkbox.checked {
+  background-color: #28a745; /* Зеленый цвет для выбранного чекбокса */
+  border-color: #28a745;
 }
 
-form label {
-	margin-left: 10px;
+.custom-checkbox.checked::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 8px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: translate(-50%, -60%) rotate(45deg);
 }
 
-.output_field > div {
-	padding: 10px;
-	border-bottom: 1px solid lightgray;
+.input_field label {
+  cursor: pointer;
 }
 
-.output_field .skills {
-	word-wrap: break-word;
-}
-
-.quantity span,
-.skills span {
-	font-weight: bold;
-}

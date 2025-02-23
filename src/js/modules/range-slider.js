@@ -186,48 +186,111 @@ createSlider('square-slider', 'input-square-min', 'input-square-max', 40, 120, 1
 // manageCheckBox('.form2', '.selectAll input', '.skills2', "<span>Name of Skills: </span>");
 
 
-function manageCheckBox(formSelector, selectAllSelector, skillsSelector) {
-    const inputs = document.querySelectorAll(`${formSelector} .input_field input`);
-    const selectAll = document.querySelector(`${formSelector} ${selectAllSelector}`);
-    const skills = document.querySelector(skillsSelector);
-    let listArray = [];
-
-    skills.textContent = "ГОРОД"; // Изначальный текст
-
-    const updateSkills = () => {
-        const uniqueSkills = [...new Set(listArray)];
-        skills.textContent = uniqueSkills.length > 0 ? uniqueSkills.join(', ') : "ГОРОД";
-    };
-
-    const toggleSelectAll = () => {
-        inputs.forEach(input => {
-            input.checked = selectAll.checked;
-            input.classList.toggle("checked", selectAll.checked);
+document.addEventListener('DOMContentLoaded', function () {
+    const dropdowns = document.querySelectorAll('.filter__dropdown');
+  
+    dropdowns.forEach((dropdown) => {
+      const dropdownBtn = dropdown.querySelector('.filter__dropdown-menu-btn');
+      const dropdownContent = dropdown.querySelector('.filter__dropdown-content');
+      const inputFields = dropdownContent.querySelectorAll('.input_field');
+      const allInputField = dropdownContent.querySelector('.input_field[data-value="Все даты"]');
+      const initialText = dropdownBtn.textContent;
+  
+      // Открытие/закрытие меню по клику на кнопку
+      dropdownBtn.addEventListener('click', function (event) {
+        event.stopPropagation(); // Останавливаем всплытие
+  
+        // Закрываем все открытые меню, кроме текущего
+        dropdowns.forEach((otherDropdown) => {
+          if (otherDropdown !== dropdown) {
+            otherDropdown.querySelector('.filter__dropdown-content').classList.remove('active');
+          }
         });
-        listArray = selectAll.checked ? Array.from(inputs).map(input => input.value) : [];
-        updateSkills();
-    };
-
-    const toggleInput = (input) => {
-        input.classList.toggle("checked");
-
-        if (input.checked) {
-            listArray.push(input.value);
-        } else {
-            listArray = listArray.filter(val => val !== input.value);
-            selectAll.checked = false;
+  
+        // Открываем/закрываем текущее меню
+        dropdownContent.classList.toggle('active');
+      });
+  
+      // Закрытие меню по клику вне его области
+      document.addEventListener('click', function (event) {
+        if (!dropdownContent.contains(event.target)) {
+          dropdownContent.classList.remove('active');
         }
-        updateSkills();
-    };
-
-    selectAll.addEventListener('click', toggleSelectAll);
-
-    inputs.forEach(input => {
-        input.addEventListener('click', () => toggleInput(input));
+      });
+  
+      // Логика для "Все даты"
+      allInputField.addEventListener('click', function () {
+        // Переключаем состояние "Все даты"
+        allInputField.classList.toggle('checked');
+        allInputField.querySelector('.custom-checkbox').classList.toggle('checked');
+  
+        // Если "Все даты" активно, сбрасываем все остальные элементы
+        if (allInputField.classList.contains('checked')) {
+          inputFields.forEach((field) => {
+            if (field !== allInputField) {
+              field.classList.remove('checked');
+              field.querySelector('.custom-checkbox').classList.remove('checked');
+            }
+          });
+        }
+  
+        // Обновляем текст кнопки
+        if (allInputField.classList.contains('checked')) {
+          dropdownBtn.textContent = allInputField.getAttribute('data-value');
+        } else {
+          dropdownBtn.textContent = initialText;
+        }
+      });
+  
+      // Логика для остальных элементов
+      inputFields.forEach((inputField) => {
+        if (inputField !== allInputField) {
+          inputField.addEventListener('click', function () {
+            // Переключаем состояние текущего элемента
+            inputField.classList.toggle('checked');
+            inputField.querySelector('.custom-checkbox').classList.toggle('checked');
+  
+            // Если выбран любой другой элемент, снимаем выделение с "Все даты"
+            if (inputField.classList.contains('checked')) {
+              allInputField.classList.remove('checked');
+              allInputField.querySelector('.custom-checkbox').classList.remove('checked');
+            }
+  
+            // Обновляем текст кнопки
+            const selectedValues = Array.from(inputFields)
+              .filter((field) => field.classList.contains('checked'))
+              .map((field) => field.getAttribute('data-value'))
+              .join(', ');
+  
+            if (selectedValues) {
+              dropdownBtn.textContent = selectedValues;
+            } else {
+              dropdownBtn.textContent = initialText;
+            }
+          });
+        }
+      });
+  
+      // Инициализация текста кнопки по умолчанию
+      dropdownBtn.textContent = allInputField.classList.contains('checked')
+        ? allInputField.getAttribute('data-value')
+        : initialText;
     });
-}
+  });
 
-// Используйте функцию для каждой формы
-manageCheckBox('.form1', '.selectAll input', '.skills1');
-manageCheckBox('.form2', '.selectAll input', '.skills2');
 
+  document.addEventListener('DOMContentLoaded', function () {
+    const buttons = document.querySelectorAll('.filter__el-btns');
+  
+    buttons.forEach(button => {
+      button.addEventListener('click', function () {
+        // Если кнопка уже активна, снимаем активность
+        if (this.classList.contains('active')) {
+          this.classList.remove('active');
+        } else {
+          // Иначе добавляем активность только для этой кнопки
+          this.classList.add('active');
+        }
+      });
+    });
+  });
