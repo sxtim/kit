@@ -47,6 +47,7 @@ function createSlider(sliderId, idInpMin, idInpMax, startMin, startMax, step, ra
 
 createSlider('price-slider', 'input-price-min', 'input-price-max', 4000000, 12000000, 500, 4000000, 12000000 );
 createSlider('square-slider', 'input-square-min', 'input-square-max', 40, 120, 10, 40, 120 );
+createSlider('floor-slider', 'input-floor-min', 'input-floor-max', 2, 16, 1, 2, 16 );
 
 //DROPDOWN FILTER
 // var inputsDrop1 = document.querySelectorAll('.form1 .input_field input')
