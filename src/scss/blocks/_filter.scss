@@ -29,6 +29,9 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	overflow: hidden;
+	position: relative;
+	z-index: 5;
 
 	@media (max-width: 1200px) {
 		flex-direction: column;
@@ -39,16 +42,17 @@
 .filter__col {
 	display: flex;
 	flex-direction: column;
-	max-width: 310px;
+	align-items: center;
+	width: 330px;
 	gap: 40px;
 }
 
 .filter__el {
+	width: 100%;
 	height: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	gap: 16px;
 
 	@media (max-width: 1200px) {
 		width: 95%;
@@ -56,11 +60,17 @@
 	//align-items: center;
 }
 
+.filter__row-el-btns-container {
+	display: flex;
+	gap: 16px;
+}
+
 .filter__row-title {
-	color: var(--text-color-black);
+	font-family: "Pangram", sans-serif;
+  font-size: 16px;
 	font-weight: 500;
-	font-size: 20px;
 	line-height: 130%;
+	margin-bottom: 4px;
 
 	@media (max-width: 998px) {
 		font-size: 18px;
@@ -68,10 +78,10 @@
 }
 
 .filter-slider__text {
-	color: var(--text-color-black);
+	color: var(--text-color-gray);
+	font-size: 18px;
 	font-weight: 500;
-	font-size: 20px;
-	line-height: 40%;
+	line-height: 130%;
 
 	@media (max-width: 998px) {
 		font-size: 18px;
@@ -82,6 +92,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	margin-bottom: 10px;
 }
 
 .filter-slider__inputs .filter-slider__label {
@@ -89,9 +100,10 @@
 }
 
 .filter-slider__input {
+	margin-left: 5px;
 	font-weight: 500;
-	font-size: 20px;
-	color: rgba(27, 27, 27, 0.25);
+	font-size: 18px;
+	color: var(--text-color-black);
 
 	@media (max-width: 998px) {
 		font-size: 16px;
@@ -99,8 +111,10 @@
 }
 
 .filter__range-slider {
+	align-self: center;
 	cursor: pointer;
 	margin-bottom: 10px;
+	z-index: 0 !important;
 }
 
 .filter__el-btns {
@@ -166,7 +180,7 @@ input[type="number"] {
 }
 
 .noUi-target {
-	background-color: #bfbfbf !important;
+	width: 90%;
 	border: none !important;
 	border-radius: 100px !important;
 	box-shadow: none !important;
@@ -199,25 +213,32 @@ input[type="number"] {
 
 //DROPDOWN
 .filter__dropdown {
+	width: 100%;
   position: relative;
   display: inline-block;
-  margin-right: 20px; /* Отступ между меню */
+}
+
+.filter__dropdown label {
+	font-family: 'Pangram', sans-serif;
+	font-size: 16px;
 }
 
 .filter__dropdown-menu-btn {
+	font-family: 'Pangram', sans-serif;
+	font-size: 18px;
   cursor: pointer;
   padding: 10px;
   background-color: #f1f1f1;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border-bottom: 1px solid #ccc;
   margin: 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 150px;
+  width: 100%;
 }
 
 .filter__dropdown-content {
+	width: 100%;
   display: none;
   position: absolute;
   background-color: #f9f9f9;
@@ -225,7 +246,6 @@ input[type="number"] {
   border-radius: 4px;
   padding: 10px;
   z-index: 1;
-  width: 200px;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
 
