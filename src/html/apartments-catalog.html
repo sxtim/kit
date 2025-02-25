@@ -20,7 +20,7 @@
       <h1 class="title">Выбрать квартиру</h1>
     </div>
     <section class="filter-apartments-cat">
-      <div class="container">
+      <div class="filter__wrap">
         <div class="filter__tab-row">
           <div class="filter__col">
             <div class="filter__el">
@@ -63,15 +63,16 @@
               <div class="filter__range-slider" id="floor-slider">
               </div>
             </div>
-            
+          </div>
+          <div class="filter__col">
             <div class="filter__el">
               <div class='filter__dropdown'>
-                <label class="filter__dropdown-menu">Сдача</label>
-                <div class="filter__dropdown-menu-btn">Все даты</div>
+                <label class="filter__dropdown-menu">Проект</label>
+                <div class="filter__dropdown-menu-btn">Любой</div>
                 <div class="filter__dropdown-content">
-                  <div class="input_field" data-value="Все даты">
+                  <div class="input_field" data-value="allInputField">
                     <div class="custom-checkbox checked"></div>
-                    <label>Все даты</label>
+                    <label>Любой</label>
                   </div>
                   <div class="input_field" data-value="HTML">
                     <div class="custom-checkbox"></div>
@@ -88,14 +89,12 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div class="filter__col">
             <div class="filter__el">
               <div class='filter__dropdown'>
-                <label class="filter__dropdown-menu">Проект</label>
+                <label class="filter__dropdown-menu">Адрес</label>
                 <div class="filter__dropdown-menu-btn">Любой</div>
                 <div class="filter__dropdown-content">
-                  <div class="input_field" data-value="Все даты">
+                  <div class="input_field" data-value="allInputField">
                     <div class="custom-checkbox checked"></div>
                     <label>Все даты</label>
                   </div>
@@ -130,26 +129,52 @@
               <div class="filter__range-slider" id="price-slider">
               </div>
             </div>
+          </div>
+          <div class="filter__col">
             <div class="filter__el">
               <div class='filter__dropdown'>
-                <label class="filter__dropdown-menu">Адрес</label>
-                <div class="filter__dropdown-menu-btn">Любой</div>
+                <label class="filter__dropdown-menu">Сдача</label>
+                <div class="filter__dropdown-menu-btn">Все даты</div>
                 <div class="filter__dropdown-content">
-                  <div class="input_field" data-value="Все даты">
+                  <div class="input_field" data-value="allInputField">
                     <div class="custom-checkbox checked"></div>
                     <label>Все даты</label>
                   </div>
-                  <div class="input_field" data-value="HTML">
+                  <div class="input_field" data-value="2025">
                     <div class="custom-checkbox"></div>
-                    <label>HTML</label>
+                    <label>2025</label>
                   </div>
-                  <div class="input_field" data-value="CSS">
+                  <div class="input_field" data-value="2026">
                     <div class="custom-checkbox"></div>
-                    <label>CSS</label>
+                    <label>2026</label>
                   </div>
-                  <div class="input_field" data-value="Bootstrap">
+                  <div class="input_field" data-value="2027">
                     <div class="custom-checkbox"></div>
-                    <label>Bootstrap</label>
+                    <label>2027</label>
+                  </div>
+                  <div class="input_field" data-value="2028">
+                    <div class="custom-checkbox"></div>
+                    <label>2028</label>
+                  </div>
+                  <div class="input_field" data-value="2030">
+                    <div class="custom-checkbox"></div>
+                    <label>2030</label>
+                  </div>
+                  <div class="input_field" data-value="2031">
+                    <div class="custom-checkbox"></div>
+                    <label>2031</label>
+                  </div>
+                  <div class="input_field" data-value="2031">
+                    <div class="custom-checkbox"></div>
+                    <label>2031</label>
+                  </div>
+                  <div class="input_field" data-value="2031">
+                    <div class="custom-checkbox"></div>
+                    <label>2031</label>
+                  </div>
+                  <div class="input_field" data-value="2031">
+                    <div class="custom-checkbox"></div>
+                    <label>2031</label>
                   </div>
                 </div>
               </div>
@@ -159,7 +184,7 @@
                 <label>Особенности</label>
                 <div class="filter__dropdown-menu-btn">Все даты</div>
                 <div class="filter__dropdown-content">
-                  <div class="input_field" data-value="Все даты">
+                  <div class="input_field" data-value="allInputField">
                     <div class="custom-checkbox checked"></div>
                     <label>Все даты</label>
                   </div>
@@ -178,9 +203,7 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div class="filter__col">
-            <div class="filter__el filter__btn-container">
+            <div class="filter__el ">
               <button class="filter__btn btn btn-green">Показать</button>
             </div>
           </div>

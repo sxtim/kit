@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const dropdownBtn = dropdown.querySelector('.filter__dropdown-menu-btn');
       const dropdownContent = dropdown.querySelector('.filter__dropdown-content');
       const inputFields = dropdownContent.querySelectorAll('.input_field');
-      const allInputField = dropdownContent.querySelector('.input_field[data-value="Все даты"]');
+      const allInputField = dropdownContent.querySelector('.input_field[data-value="allInputField"]');
       const initialText = dropdownBtn.textContent;
   
       // Открытие/закрытие меню по клику на кнопку
