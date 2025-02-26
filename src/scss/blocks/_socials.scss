@@ -1,4 +1,4 @@
-.socials {
+.header-socials {
   display: flex;
   flex-direction: column;
   row-gap: 28px;
@@ -9,4 +9,36 @@
   display: flex;
   column-gap: 28px;
   align-items: center;
+}
+
+.section-questions__socials {
+  margin-left: 16px;
+}
+
+.section-questions__socials li{
+  display: inline-block;
+}
+
+.section-questions__socials img {
+  width: 25px;
+  height: 25px;
+}
+
+.section-questions__socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  width: 45px;
+  height: 45px;
+  background-color: #162C44;
+}
+
+.socials a svg path {
+  fill: white;
+  transition: .3s;
+}
+
+.socials a:hover svg path {
+  fill: var(--green-light);
 }

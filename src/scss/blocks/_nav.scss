@@ -86,8 +86,17 @@
   pointer-events: all;
   @media (max-width:1280px) {
     display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
+
+.nav__list-socials li a{
+  display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
 .nav__list-mobile ul {
   width: 100%;
@@ -96,7 +105,4 @@
   justify-content: space-between;
 }
 
-.nav__list-mobile img {
-  width: 21px;
-  height: 21px;
-}
+
