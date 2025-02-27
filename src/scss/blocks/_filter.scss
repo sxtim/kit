@@ -272,8 +272,8 @@ input[type="number"] {
 }
 
 .custom-checkbox.checked {
-	background-color: #28a745; /* Зеленый цвет для выбранного чекбокса */
-	border-color: #28a745;
+	background-color: var(--green-light); /* Зеленый цвет для выбранного чекбокса */
+	border-color: var(--green-light);
 }
 
 .custom-checkbox.checked::after {
