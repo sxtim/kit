@@ -1,7 +1,6 @@
 .card-promotion {
   overflow: hidden;
   font-family: "Montserrat", sans-serif;
-  border-radius: 4px;
   max-width: 530px;
   position: relative;
   width: 100%;
@@ -19,7 +18,6 @@
     background: #000;
     opacity: 0.3;
     transition: 0.3s;
-    border-radius: 4px;
   }
 
   &:hover {
@@ -42,7 +40,6 @@
   font-size: 16px;
   color: white;
   padding: 5px 10px;
-  border-radius: 5px;
   background: var(--sand-transparent);
   top: 8%;
   left: 7%;
@@ -59,7 +56,6 @@
   font-size: 24px;
   color: white;
   padding: 5px 10px;
-  border-radius: 5px;
   bottom: 8px;
   left: 6%;
 
