@@ -34,8 +34,14 @@
     display: none;
   }
 }
+.phone img {
+  width: 30px;
+  height: 30px;
+}
 
 .nav__list a {
+  display: flex;
+  align-items: center;
   font-weight: 500;
   line-height: 150%;
   position: relative;
