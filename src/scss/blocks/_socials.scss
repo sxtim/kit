@@ -39,6 +39,14 @@
   transition: .3s;
 }
 
+.socials-black a svg path {
+  fill: black;
+  transition: .3s;
+}
+
 .socials a:hover svg path {
+  fill: var(--green-light);
+}
+.socials-black a:hover svg path {
   fill: var(--green-light);
 }

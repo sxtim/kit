@@ -19,7 +19,7 @@
 	pointer-events: none;
 	//background-color: rgba(255, 255, 255, 0.3);
 
-	@media (max-width: 1400px) {
+	@media (max-width: 1450px) {
 		top: 20px;
 		left: 40px;
 		right: 40px;
@@ -40,7 +40,7 @@
 	// justify-content: center;
 	pointer-events: none;
 	max-width: 1440px;
-	height: 50px;
+	height: 55px;
 	margin: 0 auto;
 }
 
@@ -50,6 +50,12 @@
 
 .header__phone-white {
 	color: var(--text-color-black);
+}
+
+.img-point-header {
+	margin-right: 4px;
+	width: 21px;
+	height: 21px;
 }
 
 .header__fav {

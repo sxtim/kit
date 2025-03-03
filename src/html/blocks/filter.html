@@ -23,56 +23,236 @@
                aria-labelledby="tab1"
                tabindex="0">
 
-        <div class="filter__tab-row">
-          <div class="filter__el">
-            <h4 class="filter__row-title">Комнатность</h4>
-            <div class="filter__row-el-btns-container">
-              <button class="filter__el-btns btn-small">1к</button>
-              <button class="filter__el-btns btn-small">2к</button>
-              <button class="filter__el-btns btn-small">3к</button>
-            </div>
-
-          </div>
-          <div class="filter__el">
-            <h4 class="filter__row-title">Цена, руб.</h4>
-            <div class="filter-slider__inputs">
-              <label class="filter-slider__label">
-                <span class="filter-slider__text">От</span>
-                <input type="number" min="4000000" max="12000000" class="filter-slider__input"
-                       id="input-price-min">
-              </label>
-
-              <label class="filter-slider__label">
-                <span class="filter-slider__text">До</span>
-                <input type="number" min="4000000" max="12000000" class="filter-slider__input"
-                       id="input-price-max">
-              </label>
-            </div>
-            <div class="filter__range-slider" id="price-slider">
-            </div>
-          </div>
-          <div class="filter__el">
-            <h4 class="filter__row-title">Площадь, м2</h4>
-            <div class="filter-slider__inputs">
-              <label class="filter-slider__label">
-                <span class="filter-slider__text">От</span>
-                <input type="number" min="40" max="120" class="filter-slider__input"
-                       id="input-square-min">
-              </label>
-
-              <label class="filter-slider__label">
-                <span class="filter-slider__text">До</span>
-                <input type="number" min="40" max="120" class="filter-slider__input"
-                       id="input-square-max">
-              </label>
-            </div>
-            <div class="filter__range-slider" id="square-slider">
-            </div>
-          </div>
-          <div class="filter__el filter__btn-container">
-            <button class="filter__btn btn btn-green">Показать</button>
-          </div>
-        </div>
+               <div class="filter__wrap">
+                <div class="filter__tab-row">
+                  <div class="filter__col">
+                    <div class="filter__el">
+                      <h4 class="filter__row-title">Комнаты</h4>
+                      <div class="filter__row-el-btns-container">
+                        <button class="filter__el-btns btn-small">1к</button>
+                        <button class="filter__el-btns btn-small">2к</button>
+                        <button class="filter__el-btns btn-small">3к</button>
+                      </div>
+                    </div>
+                    <div class="filter__el">
+                      <h4 class="filter__row-title">Площадь, м2</h4>
+                      <div class="filter-slider__inputs">
+                        <label class="filter-slider__label">
+                          <span class="filter-slider__text">От</span>
+                          <input type="number" min="40" max="120" class="filter-slider__input" id="input-square-min">
+                        </label>
+        
+                        <label class="filter-slider__label">
+                          <span class="filter-slider__text">До</span>
+                          <input type="number" min="40" max="120" class="filter-slider__input" id="input-square-max">
+                        </label>
+                      </div>
+                      <div class="filter__range-slider" id="square-slider">
+                      </div>
+                    </div>
+                    <div class="filter__el">
+                      <h4 class="filter__row-title">Этаж</h4>
+                      <div class="filter-slider__inputs">
+                        <label class="filter-slider__label">
+                          <span class="filter-slider__text">От</span>
+                          <input type="number" min="2" max="16" class="filter-slider__input" id="input-floor-min">
+                        </label>
+        
+                        <label class="filter-slider__label">
+                          <span class="filter-slider__text">До</span>
+                          <input type="number" min="2" max="16" class="filter-slider__input" id="input-floor-max">
+                        </label>
+                      </div>
+                      <div class="filter__range-slider" id="floor-slider">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="filter__col">
+                    <div class="filter__el">
+                      <div class='filter__dropdown'>
+                        <label class="filter__dropdown-menu">Проект</label>
+                        <div class="filter__dropdown-menu-btn"></div>
+                        <div class="filter__dropdown-content">
+                          <div class="input_field all-input-field">
+                            <div class="custom-checkbox checked"></div>
+                            <label>Любой</label>
+                          </div>
+                          <div class="input_field">
+                            <div class="custom-checkbox"></div>
+                            <label>Проект 1</label>
+                          </div>
+                          <div class="input_field">
+                            <div class="custom-checkbox"></div>
+                            <label>Проект 2</label>
+                          </div>
+                          <div class="input_field">
+                            <div class="custom-checkbox"></div>
+                            <label>Проект 3</label>
+                          </div>
+                          <div class="input_field">
+                            <div class="custom-checkbox"></div>
+                            <label>Проект 4</label>
+                          </div>
+                          <div class="input_field">
+                            <div class="custom-checkbox"></div>
+                            <label>Проект 5</label>
+                          </div>
+                          <div class="input_field">
+                            <div class="custom-checkbox"></div>
+                            <label>Проект 6</label>
+                          </div>
+                          <div class="input_field">
+                            <div class="custom-checkbox"></div>
+                            <label>Проект 7</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="filter__el">
+                      <div class='filter__dropdown'>
+                        <label class="filter__dropdown-menu">Адрес</label>
+                        <div class="filter__dropdown-menu-btn"></div>
+                        <div class="filter__dropdown-content">
+                          <div class="input_field all-input-field">
+                            <div class="custom-checkbox checked"></div>
+                            <label>Любой</label>
+                          </div>
+                          <div class="input_field">
+                            <div class="custom-checkbox"></div>
+                            <label>Адрес 2</label>
+                          </div>
+                          <div class="input_field">
+                            <div class="custom-checkbox"></div>
+                            <label>Адрес 3</label>
+                          </div>
+                          <div class="input_field">
+                            <div class="custom-checkbox"></div>
+                            <label>Адрес 4</label>
+                          </div>
+                          <div class="input_field">
+                            <div class="custom-checkbox"></div>
+                            <label>Адрес 5</label>
+                          </div>
+                          <div class="input_field">
+                            <div class="custom-checkbox"></div>
+                            <label>Адрес 6</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="filter__el">
+                      <h4 class="filter__row-title">Цена, руб.</h4>
+                      <div class="filter-slider__inputs">
+                        <label class="filter-slider__label">
+                          <span class="filter-slider__text">От</span>
+                          <input type="number" min="4000000" max="12000000" class="filter-slider__input" id="input-price-min">
+                        </label>
+        
+                        <label class="filter-slider__label">
+                          <span class="filter-slider__text">До</span>
+                          <input type="number" min="4000000" max="12000000" class="filter-slider__input" id="input-price-max">
+                        </label>
+                      </div>
+                      <div class="filter__range-slider" id="price-slider">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="filter__col">
+                    <div class="filter__el">
+                      <div class='filter__dropdown'>
+                        <label class="filter__dropdown-menu">Сдача</label>
+                        <div class="filter__dropdown-menu-btn">Все даты</div>
+                        <div class="filter__dropdown-content">
+                          <div class="input_field all-input-field">
+                            <div class="custom-checkbox checked"></div>
+                            <label>Все даты</label>
+                          </div>
+                          <div class="input_field">
+                            <div class="custom-checkbox"></div>
+                            <label>2025</label>
+                          </div>
+                          <div class="input_field">
+                            <div class="custom-checkbox"></div>
+                            <label>2026</label>
+                          </div>
+                          <div class="input_field">
+                            <div class="custom-checkbox"></div>
+                            <label>2027</label>
+                          </div>
+                          <div class="input_field">
+                            <div class="custom-checkbox"></div>
+                            <label>2028</label>
+                          </div>
+                          <div class="input_field">
+                            <div class="custom-checkbox"></div>
+                            <label>2030</label>
+                          </div>
+                          <div class="input_field">
+                            <div class="custom-checkbox"></div>
+                            <label>2031</label>
+                          </div>
+                          <div class="input_field">
+                            <div class="custom-checkbox"></div>
+                            <label>2031</label>
+                          </div>
+                          <div class="input_field">
+                            <div class="custom-checkbox"></div>
+                            <label>2031</label>
+                          </div>
+                          <div class="input_field">
+                            <div class="custom-checkbox"></div>
+                            <label>2031</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="filter__el">
+                      <div class='filter__dropdown'>
+                        <label>Особенности</label>
+                        <div class="filter__dropdown-menu-btn"></div>
+                        <div class="filter__dropdown-content">
+                          <div class="input_field all-input-field">
+                            <div class="custom-checkbox"></div>
+                            <label>Все особенности</label>
+                          </div>
+                          <div class="input_field">
+                            <div class="custom-checkbox"></div>
+                            <label>Особенность 1</label>
+                          </div>
+                          <div class="input_field">
+                            <div class="custom-checkbox"></div>
+                            <label>Особенность 2</label>
+                          </div>
+                          <div class="input_field">
+                            <div class="custom-checkbox"></div>
+                            <label>Особенность 3</label>
+                          </div>
+                          <div class="input_field">
+                            <div class="custom-checkbox"></div>
+                            <label>Особенность 4</label>
+                          </div>
+                          <div class="input_field">
+                            <div class="custom-checkbox"></div>
+                            <label>Особенность 5</label>
+                          </div>
+                          <div class="input_field">
+                            <div class="custom-checkbox"></div>
+                            <label>Особенность 6</label>
+                          </div>
+                          <div class="input_field">
+                            <div class="custom-checkbox"></div>
+                            <label>Особенность 7</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="filter__el ">
+                      <button class="filter__btn btn btn-green">Показать</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
       </section>
 
       <section class="filter__tab-content" id="tab2-content"
