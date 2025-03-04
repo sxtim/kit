@@ -46,21 +46,29 @@ createSlider('floor-slider', 'input-floor-min', 'input-floor-max', 2, 16, 1, 2, 
 
 //DROPDOWN FILTER
 document.addEventListener('DOMContentLoaded', function () {
+  // Получаем все элементы с классом .filter__dropdown (списки выбора)
   const dropdowns = document.querySelectorAll('.filter__dropdown');
 
   dropdowns.forEach((dropdown) => {
+    // Кнопка, которая открывает выпадающее меню
     const dropdownBtn = dropdown.querySelector('.filter__dropdown-menu-btn');
+    // Контейнер с чекбоксами
     const dropdownContent = dropdown.querySelector('.filter__dropdown-content');
+    // Все элементы чекбоксов внутри списка
     const inputFields = dropdownContent.querySelectorAll('.input_field');
+    // Отдельный элемент "Любой" (если он есть)
     const allInputField = dropdownContent.querySelector('.input_field.all-input-field');
+    // Все чекбоксы внутри выпадающего списка
+    const checkboxes = dropdownContent.querySelectorAll('input[type="checkbox"]');
 
+    // Сохраняем начальный текст кнопки
     const initialText = dropdownBtn.textContent;
 
-    // Открытие/закрытие меню по клику на кнопку
+    // Открытие/закрытие выпадающего списка при клике на кнопку
     dropdownBtn.addEventListener('click', function (event) {
-      event.stopPropagation(); // Останавливаем всплытие
-
-      // Закрываем все открытые меню, кроме текущего
+      event.stopPropagation(); // Предотвращаем всплытие события (чтобы не закрывался сразу)
+      
+      // Закрываем другие открытые списки
       dropdowns.forEach((otherDropdown) => {
         if (otherDropdown !== dropdown) {
           otherDropdown.querySelector('.filter__dropdown-content').classList.remove('active');
@@ -69,114 +77,69 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // Открываем/закрываем текущее меню
       dropdownContent.classList.toggle('active');
+      dropdownBtn.classList.toggle('open')
     });
 
-    // Закрытие меню по клику вне его области
+    // Закрытие списка при клике вне него
     document.addEventListener('click', function (event) {
       if (!dropdownContent.contains(event.target)) {
         dropdownContent.classList.remove('active');
+        dropdownBtn.classList.remove('open');
       }
     });
 
-    // Функция для обновления текста кнопки
+    // Функция обновления текста кнопки в зависимости от выбранных чекбоксов
     const updateButtonText = () => {
+      // Получаем текст всех выбранных элементов и соединяем запятой
       const selectedValues = Array.from(inputFields)
-        .filter((field) => field.classList.contains('checked'))
+        .filter((field) => field.querySelector('input').checked)
         .map((field) => field.querySelector('label').textContent)
         .join(', ');
 
+      // Если ничего не выбрано, оставляем исходный текст
       dropdownBtn.textContent = selectedValues || initialText;
     };
 
-    // Функция для проверки и автоматического выбора "allInput"
+    // Функция проверки, нужно ли автоматически выбрать "Любой"
     const checkAndSelectAllInputField = () => {
       const isAnyChecked = Array.from(inputFields).some(
-        (field) => field !== allInputField && field.classList.contains('checked')
+        (field) => field !== allInputField && field.querySelector('input').checked
       );
 
-      // Если ни один чекбокс не выбран, выбираем "allInput"
+      // Если ни один чекбокс (кроме "Любой") не выбран, включаем его
       if (!isAnyChecked && allInputField) {
-        allInputField.classList.add('checked');
-        allInputField.querySelector('.custom-checkbox').classList.add('checked');
+        allInputField.querySelector('input').checked = true;
       }
     };
 
-    // Логика для "allInput"
-    if (allInputField) {
-      allInputField.addEventListener('click', function () {
-        // Переключаем состояние "allInput"
-        allInputField.classList.toggle('checked');
-        allInputField.querySelector('.custom-checkbox').classList.toggle('checked');
-
-        // Если "allInput" активно, сбрасываем все остальные элементы
-        if (allInputField.classList.contains('checked')) {
-          inputFields.forEach((field) => {
-            if (field !== allInputField) {
-              field.classList.remove('checked');
-              field.querySelector('.custom-checkbox').classList.remove('checked');
-            }
-          });
+    // Добавляем обработчики событий для чекбоксов
+    checkboxes.forEach((checkbox) => {
+      checkbox.addEventListener('change', function () {
+        // Если пользователь выбрал "Любой", снимаем отметку с остальных чекбоксов
+        if (this === allInputField.querySelector('input')) {
+          if (this.checked) {
+            checkboxes.forEach((cb) => {
+              if (cb !== this) cb.checked = false;
+            });
+          }
+        } else {
+          // Если пользователь выбрал любой другой вариант, снимаем отметку с "Любой"
+          allInputField.querySelector('input').checked = false;
         }
 
-        // Обновляем текст кнопки
+        // Проверяем, нужно ли включить "Любой" и обновляем текст кнопки
+        checkAndSelectAllInputField();
         updateButtonText();
       });
-    }
-
-    // Логика для остальных элементов
-    inputFields.forEach((inputField) => {
-      if (inputField !== allInputField) {
-        inputField.addEventListener('click', function () {
-          // Переключаем состояние текущего элемента
-          inputField.classList.toggle('checked');
-          inputField.querySelector('.custom-checkbox').classList.toggle('checked');
-
-          // Если выбран любой другой элемент, снимаем выделение с "allInput"
-          if (inputField.classList.contains('checked') && allInputField) {
-            allInputField.classList.remove('checked');
-            allInputField.querySelector('.custom-checkbox').classList.remove('checked');
-          }
-
-          // Проверяем, нужно ли выбрать "allInput"
-          checkAndSelectAllInputField();
-
-          // Обновляем текст кнопки
-          updateButtonText();
-        });
-      }
     });
 
-    // Инициализация текста кнопки по умолчанию
-    if (allInputField && allInputField.classList.contains('checked')) {
-      dropdownBtn.textContent = allInputField.querySelector('label').textContent;
-    } else {
-      dropdownBtn.textContent = initialText;
-    }
+    // Проверяем, есть ли выбранные элементы при загрузке страницы
+    const hasChecked = Array.from(inputFields).some((field) => field.querySelector('input').checked);
 
-    // По умолчанию выбираем "Все даты", если ничего не выбрано
-    const hasChecked = Array.from(inputFields).some((field) => field.classList.contains('checked'));
+    // Если ничего не выбрано, включаем "Любой" по умолчанию
     if (!hasChecked && allInputField) {
-      allInputField.classList.add('checked');
-      allInputField.querySelector('.custom-checkbox').classList.add('checked');
+      allInputField.querySelector('input').checked = true;
       dropdownBtn.textContent = allInputField.querySelector('label').textContent;
     }
   });
 });
-
-
-//Конпки фильтра "Комнаты"
-  document.addEventListener('DOMContentLoaded', function () {
-    const buttons = document.querySelectorAll('.filter__el-btns');
-  
-    buttons.forEach(button => {
-      button.addEventListener('click', function () {
-        // Если кнопка уже активна, снимаем активность
-        if (this.classList.contains('active')) {
-          this.classList.remove('active');
-        } else {
-          // Иначе добавляем активность только для этой кнопки
-          this.classList.add('active');
-        }
-      });
-    });
-  });
