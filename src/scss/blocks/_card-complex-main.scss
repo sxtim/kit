@@ -49,9 +49,8 @@
 	line-height: 114%;
 	text-align: center;
 	color: var(--text-color-white);
-	background-color: var(--green-light);
+	background-color: rgba(73,162,135, 0.8);
 	padding: 12px 16px;
-  z-index: 2;
 
 	@media (max-width: 1200px) {
 		font-size: 12px;

@@ -244,11 +244,22 @@ input[type="number"] {
 }
 
 .filter__dropdown .input_field {
-  padding: 5px;
+	width: 100%;
+	line-height: 32px;
+	padding-left: 4px;
   transition: background-color 0.1s ease;
   display: flex;
   align-items: center;
   cursor: pointer;
+}
+
+.filter__dropdown .input_field label {
+	width: 100%;
+	padding-left: 10px;
+}
+.input_field input:checked + label {
+  color: var(--green-light); /* Выбранный текст становится зелёным */
+  transition: color 0.2s ease-in-out;
 }
 
 .input_field:hover {
@@ -265,8 +276,6 @@ input[type="number"] {
   width: 20px;
   height: 20px;
   border: 2px solid #ccc;
-  border-radius: 4px;
-  margin-right: 10px;
   position: relative;
   cursor: pointer;
   background-color: white;
@@ -274,8 +283,8 @@ input[type="number"] {
 }
 
 .custom-checkbox:checked {
-  background-color: #28a745; /* Зеленый фон */
-  border-color: #28a745;
+  background-color: var(--green-light); /* Зеленый фон */
+  border-color: var(--green-light);
 }
 
 .custom-checkbox:checked::after {

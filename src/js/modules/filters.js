@@ -143,3 +143,20 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+
+//Конпки фильтра "Комнаты"
+document.addEventListener('DOMContentLoaded', function () {
+  const buttons = document.querySelectorAll('.filter__el-btns');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', function () {
+      // Если кнопка уже активна, снимаем активность
+      if (this.classList.contains('active')) {
+        this.classList.remove('active');
+      } else {
+        // Иначе добавляем активность только для этой кнопки
+        this.classList.add('active');
+      }
+    });
+  });
+});
