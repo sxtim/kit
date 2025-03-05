@@ -47,7 +47,9 @@ const swiper = new Swiper(".swiper", {
 //SLIDER TABS APARTMENT
 const swiperTabsNav = new Swiper(".apartment-swiper-tabs-nav", {
 	spaceBetween: 20,
-	slidesPerView: 4,
+	slidesPerView: 3,
+	loop: true,
+	
 })
 
 // Swiper Content

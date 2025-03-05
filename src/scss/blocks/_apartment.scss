@@ -48,7 +48,7 @@
 .apartment-info__columns {
 	display: flex;
 	justify-content: space-between;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	gap: 30px;
 }
 
@@ -71,14 +71,18 @@
 	font-family: "Pangram-bold", sans-serif;
 	font-size: 28px;
 	font-weight: 600;
-	margin-bottom: 10px;
 	gap: 20px;
 }
 
 .apartment-info__price-desc {
 	display: flex;
 	flex-direction: column;
-	gap: 5px;
+	gap: 10px;
+
+	span {
+		margin-bottom: 16px;
+	}
+	
 }
 
 .apartment-info__price-desc span {
@@ -115,9 +119,9 @@
 	gap: 20px;
 }
 
-.apartment-info__icon {
+.apartment-info__icons-item {
+	height: 40px;
 	width: 40px;
-	height: auto;
 }
 
 .apartment-info__slider {
@@ -147,14 +151,14 @@
 	width: auto !important;
 	height: auto !important;
 
-	@media (max-width: 640px) {
-		display: grid !important;
-		grid-template-columns: repeat(2, calc(100% / 2 - 10px / 2 * (2 - 1)));
-		column-gap: 20px;
-		row-gap: 40px;
-		place-content: center;
-		place-items: center;
-	}
+	// @media (max-width: 640px) {
+	// 	display: grid !important;
+	// 	grid-template-columns: repeat(2, calc(100% / 2 - 10px / 2 * (2 - 1)));
+	// 	column-gap: 20px;
+	// 	row-gap: 40px;
+	// 	place-content: center;
+	// 	place-items: center;
+	// }
 }
 
 .apartment-info__slider .swiper-wrapper {
