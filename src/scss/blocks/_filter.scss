@@ -124,16 +124,8 @@
 .filter__btn {
 	min-height: 40px;
 	width: 100%;
-	font-size: 20px;
+	font-size: 16px;
 	margin-top: auto;
-
-	@media (max-width: 1200px) {
-		font-size: 18px;
-	}
-
-	@media (max-width: 768px) {
-		font-size: 16px;
-	}
 }
 
 //Range slider
@@ -211,6 +203,39 @@ input[type="number"] {
   overflow: hidden;
   text-overflow: ellipsis;
   width: 100%;
+	position: relative;
+
+	&:hover::before{
+		filter: brightness(.2);
+		transform: translate(0.1%, 0);
+	}
+}
+
+
+
+
+
+.filter__dropdown-menu-btn::before {
+	filter: brightness(.7);
+  content: "";
+	width: 16px;
+	height: 10px;
+	background-image: url("../../img/icons/arrow.svg");
+	background-position: center;
+	background-repeat: no-repeat;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%) rotate(0deg);
+  transition: transform 0.2s ease-in-out; /* Анимация поворота */
+
+	
+
+}
+
+/* Меняем угол поворота стрелки при открытом меню */
+.filter__dropdown-menu-btn.open::before {
+  transform: translateY(-50%) rotate(180deg);
 }
 
 .filter__dropdown-content {
@@ -251,24 +276,23 @@ input[type="number"] {
   display: flex;
   align-items: center;
   cursor: pointer;
+	transition: color 0.2s ease-in-out;
 }
 
 .filter__dropdown .input_field label {
 	width: 100%;
 	padding-left: 10px;
 }
-.input_field input:checked + label {
-  color: var(--green-light); /* Выбранный текст становится зелёным */
-  transition: color 0.2s ease-in-out;
-}
+
 
 .input_field:hover {
   background: rgba(221, 221, 221, 0.5);
 }
 
-.input_field.checked {
+.input_field.selected {
   color: var(--green-light);
   background: rgba(221, 221, 221, 0.5);
+	
 }
 
 .custom-checkbox {

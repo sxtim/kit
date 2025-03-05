@@ -72,12 +72,13 @@ document.addEventListener('DOMContentLoaded', function () {
       dropdowns.forEach((otherDropdown) => {
         if (otherDropdown !== dropdown) {
           otherDropdown.querySelector('.filter__dropdown-content').classList.remove('active');
+          otherDropdown.querySelector('.filter__dropdown-menu-btn').classList.remove('open');
         }
       });
 
       // Открываем/закрываем текущее меню
       dropdownContent.classList.toggle('active');
-      dropdownBtn.classList.toggle('open')
+      dropdownBtn.classList.toggle('open');
     });
 
     // Закрытие списка при клике вне него
@@ -112,6 +113,18 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     };
 
+    // Функция обновления класса .selected для изменения фона активных чекбоксов
+    const updateSelectedFields = () => {
+      inputFields.forEach((field) => {
+        const checkbox = field.querySelector('input');
+        if (checkbox.checked) {
+          field.classList.add('selected'); // Добавляем серый фон
+        } else {
+          field.classList.remove('selected'); // Убираем серый фон
+        }
+      });
+    };
+
     // Добавляем обработчики событий для чекбоксов
     checkboxes.forEach((checkbox) => {
       checkbox.addEventListener('change', function () {
@@ -127,9 +140,10 @@ document.addEventListener('DOMContentLoaded', function () {
           allInputField.querySelector('input').checked = false;
         }
 
-        // Проверяем, нужно ли включить "Любой" и обновляем текст кнопки
+        // Проверяем, нужно ли включить "Любой", обновляем текст и фон
         checkAndSelectAllInputField();
         updateButtonText();
+        updateSelectedFields(); // Применяем класс .selected к выбранным элементам
       });
     });
 
@@ -141,6 +155,9 @@ document.addEventListener('DOMContentLoaded', function () {
       allInputField.querySelector('input').checked = true;
       dropdownBtn.textContent = allInputField.querySelector('label').textContent;
     }
+
+    // Вызываем функцию обновления фона для активных чекбоксов при загрузке
+    updateSelectedFields();
   });
 });
 
