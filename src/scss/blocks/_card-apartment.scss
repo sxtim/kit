@@ -20,8 +20,10 @@
 
 .card-apartment_header {
 	padding: 15px;
-	//background-color: #f9f9f9;
-	//border-bottom: 1px solid #ddd;
+
+	@media (max-width:1120px) {
+		padding: 5px;
+	}
 }
 
 .card-apartment__info,
@@ -30,6 +32,11 @@
 	justify-content: space-between;
 	font-size: 16px;
 	color: #666;
+
+	@media (max-width:1320px) {
+		font-size: 14px;
+	}
+
 }
 
 .card-apartment__info p span {
@@ -55,6 +62,10 @@
 	font-size: 24px;
 	color: rgb(166, 124, 0);
 
+	@media (max-width:1320px) {
+		font-size: 20px;
+	}
+
 }
 
 .card-apartment__price-disc {
@@ -62,6 +73,10 @@
 	font-size: 20px;
 	color: var(--text-color-black);
   text-decoration: line-through;
+
+	@media (max-width:1320px) {
+		font-size: 14px;
+	}
 
 }
 
@@ -71,6 +86,10 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+
+	@media (max-width:1120px) {
+		padding: 5px;
+	}
 }
 
 .card-apartment__body img {
@@ -102,10 +121,18 @@
 		// flex-direction: column;
 		align-items: flex-start;
 	}
+
+	@media (max-width:1120px) {
+		padding: 5px;
+	}
 }
 
 .card-apartment__address {
 	font-size: 16px;
+
+	@media (max-width:1320px) {
+		font-size: 14px;
+	}
 }
 
 .card-apartment__address span {
@@ -114,6 +141,9 @@
 	font-weight: 600;
 	font-size: 18px;
 	text-transform: uppercase;
+	@media (max-width:1320px) {
+		font-size: 16px;
+	}
 }
 
 .card-apartment__price-wrap {
@@ -122,7 +152,8 @@
   flex-direction: column;
 
 	@media (max-width: 1320px) {
-		width: 100%;
+
+		align-items: flex-end;
 		justify-content: space-between;
 	}
 }

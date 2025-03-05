@@ -80,10 +80,11 @@ var swiperApartmentSimilar = new Swiper(".apartment-similar-swiper", {
 	},
 	breakpoints: {
 		360: {
-			slidesPerView: 1.4,
+			spaceBetween: 5,
+			slidesPerView: 1.2,
 		},
 		768: {
-			slidesPerView: 2,
+			slidesPerView: 2.5,
 		},
 		998: {
 			slidesPerView: 3.2,

@@ -273,7 +273,7 @@
 
 	@media (max-width: 1360px) {
 		display: flex; /* Размещаем элементы в строку */
-    gap: 10px; /* Отступы между элементами */
+     /* Отступы между элементами */
     overflow-x: auto; /* Добавляем горизонтальный скролл */
     white-space: nowrap; /* Запрещаем перенос элементов */
     scroll-snap-type: x mandatory; /* Делаем плавный скроллинг */
@@ -293,6 +293,8 @@
 	overflow: hidden;
 
 	@media (max-width: 1360px) {
+		max-width: 260px;
+		height: auto;
 		flex: 0 0 auto; /* Элементы не сжимаются */
     scroll-snap-align: start; /* Фиксируем элементы при прокрутке */
 	}
