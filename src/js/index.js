@@ -46,10 +46,13 @@ const swiper = new Swiper(".swiper", {
 
 //SLIDER TABS APARTMENT
 const swiperTabsNav = new Swiper(".apartment-swiper-tabs-nav", {
-	spaceBetween: 20,
+	spaceBetween: 2,
 	slidesPerView: 3,
-	loop: true,
-	
+	loop: false,
+	freeMode: true,
+	watchOverflow: true,
+	// longSwipes: true,
+
 })
 
 // Swiper Content
@@ -98,3 +101,16 @@ let sliderOne = new Swiper(".commerce-info__slider", {
 	},
 	loop: true,
 })
+
+//BUTTON SHARE
+document.querySelector(".copy-btn").addEventListener("click", function() {
+	const url = window.location.href; // Получаем текущий URL
+	
+	navigator.clipboard.writeText(url)
+			.then(() => {
+					alert("Ссылка скопирована в буфер обмена!");
+			})
+			.catch(err => {
+					console.error("Ошибка при копировании: ", err);
+			});
+});
