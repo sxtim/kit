@@ -21,7 +21,7 @@
 .card-apartment_header {
 	padding: 15px;
 
-	@media (max-width:1120px) {
+	@media (max-width: 1120px) {
 		padding: 5px;
 	}
 }
@@ -33,10 +33,9 @@
 	font-size: 16px;
 	color: #666;
 
-	@media (max-width:1320px) {
+	@media (max-width: 1320px) {
 		font-size: 14px;
 	}
-
 }
 
 .card-apartment__info p span {
@@ -58,26 +57,34 @@
 }
 
 .card-apartment__price {
+	text-align: right;
 	font-family: "Pangram-bold", sans-serif;
 	font-size: 24px;
 	color: rgb(166, 124, 0);
 
-	@media (max-width:1320px) {
+	@media (max-width: 1320px) {
 		font-size: 20px;
 	}
 
+	@media (max-width: 768px) {
+		font-size: 16px;
+	}
 }
 
 .card-apartment__price-disc {
+	text-align: right;
 	font-family: "Pangram", sans-serif;
 	font-size: 20px;
 	color: var(--text-color-black);
-  text-decoration: line-through;
+	text-decoration: line-through;
 
-	@media (max-width:1320px) {
+	@media (max-width: 1320px) {
 		font-size: 14px;
 	}
 
+	@media (max-width: 768px) {
+		font-size: 12px;
+	}
 }
 
 .card-apartment__body {
@@ -87,7 +94,7 @@
 	flex-direction: column;
 	align-items: center;
 
-	@media (max-width:1120px) {
+	@media (max-width: 1120px) {
 		padding: 5px;
 	}
 }
@@ -122,16 +129,21 @@
 		align-items: flex-start;
 	}
 
-	@media (max-width:1120px) {
+	@media (max-width: 1120px) {
 		padding: 5px;
 	}
 }
 
 .card-apartment__address {
+	flex-basis: 55%;
 	font-size: 16px;
 
-	@media (max-width:1320px) {
+	@media (max-width: 1320px) {
 		font-size: 14px;
+	}
+
+	@media (max-width: 768px) {
+		font-size: 12px;
 	}
 }
 
@@ -141,18 +153,20 @@
 	font-weight: 600;
 	font-size: 18px;
 	text-transform: uppercase;
-	@media (max-width:1320px) {
+	@media (max-width: 1320px) {
 		font-size: 16px;
+	}
+	@media (max-width: 768px) {
+		font-size: 14px;
 	}
 }
 
 .card-apartment__price-wrap {
+	flex-basis: 45%;
 	display: flex;
-	align-items: center;
-  flex-direction: column;
+	flex-direction: column;
 
 	@media (max-width: 1320px) {
-
 		align-items: flex-end;
 		justify-content: space-between;
 	}

@@ -1,7 +1,6 @@
 import mobileNav from "./modules/mobile-nav.js"
 mobileNav()
 
-
 import "./modules/tabs"
 import "./modules/filters"
 
@@ -46,13 +45,18 @@ const swiper = new Swiper(".swiper", {
 
 //SLIDER TABS APARTMENT
 const swiperTabsNav = new Swiper(".apartment-swiper-tabs-nav", {
-	spaceBetween: 2,
-	slidesPerView: 3,
+	spaceBetween: 90,
+	slidesPerView: 4,
 	loop: false,
-	freeMode: true,
-	watchOverflow: true,
-	// longSwipes: true,
-
+	breakpoints: {
+		360: {
+			spaceBetween: 10,
+			slidesPerView: 3.5,
+		},
+		998: {
+			slidesPerView: 4,
+		},
+	},
 })
 
 // Swiper Content
@@ -72,8 +76,6 @@ const swiperTabsContent = new Swiper(".apartment-swiper-tabs-content", {
 
 //SLIDER APARTMENT
 var swiperApartmentSimilar = new Swiper(".apartment-similar-swiper", {
-	slidesPerView: 1.2,
-	spaceBetween: 30,
 	pagination: {
 		el: ".apartment-similar-swiper-pag",
 		clickable: true,
@@ -81,12 +83,22 @@ var swiperApartmentSimilar = new Swiper(".apartment-similar-swiper", {
 	breakpoints: {
 		360: {
 			spaceBetween: 5,
-			slidesPerView: 1.2,
+			slidesPerView: 1.3,
+		},
+		420: {
+			spaceBetween: 5,
+			slidesPerView: 1.5,
+		},
+		568: {
+			spaceBetween: 5,
+			slidesPerView: 2.2,
 		},
 		768: {
-			slidesPerView: 2.5,
+			spaceBetween: 5,
+			slidesPerView: 2.4,
 		},
 		998: {
+			spaceBetween: 5,
 			slidesPerView: 3.2,
 		},
 	},
@@ -104,14 +116,55 @@ let sliderOne = new Swiper(".commerce-info__slider", {
 })
 
 //BUTTON SHARE
-document.querySelector(".copy-btn").addEventListener("click", function() {
-	const url = window.location.href; // Получаем текущий URL
-	
+document.querySelector(".share-copy-btn").addEventListener("click", function() {
+	const button = this;
+	const text = document.querySelector(".share-copy-btn span");
+	const originalText = text.textContent; // Сохраняем оригинальный текст
+	const url = window.location.href;
+
+	if (button.disabled) return; // Если кнопка уже отключена, ничего не делаем
+
+	button.disabled = true; // Отключаем кнопку
+
 	navigator.clipboard.writeText(url)
 			.then(() => {
-					alert("Ссылка скопирована в буфер обмена!");
+					text.style.transition = "all 0.5s ease-in-out"; // Плавность анимации
+					text.style.filter = "blur(2px)"; // Размытие перед изменением
+					text.style.opacity = "0"; // Исчезновение
+
+					setTimeout(() => {
+							text.textContent = "Ссылка скопирована!!!";
+							text.style.color = "green";
+							
+							text.style.filter = "blur(0px)";
+							text.style.opacity = "1"; // Плавное появление
+					}, 500);
+
+					setTimeout(() => {
+							text.style.filter = "blur(2px)";
+							text.style.opacity = "0";
+
+							setTimeout(() => {
+									text.textContent = originalText;
+									
+									text.style.color = "";
+									text.style.filter = "blur(0px)";
+									text.style.opacity = "1";
+									
+							}, 500);
+							button.disabled = false;
+					}, 3500);
 			})
 			.catch(err => {
 					console.error("Ошибка при копировании: ", err);
 			});
 });
+
+
+
+
+
+//URL telegram whatsapp
+const currentLinkPage = window.location.href // Получаем URL текущей страницы
+document.querySelector(".share-current-link-tg").href =`https://t.me/share/url?url=${currentLinkPage}` // Устанавливаем в href
+document.querySelector(".share-current-link-wht").href =`https://wa.me/?text=${currentLinkPage}`

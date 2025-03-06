@@ -1,109 +1,109 @@
 .share-drodown__wr {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}    
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
 
-    .share-drodown {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      display: inline-block;
-    }
+.share-drodown {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	display: inline-block;
+}
 
+/* Кнопка */
+.share-drodown__btn {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
 
-    /* Кнопка */
-    .share-drodown__btn {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-    }
+.share-drodown__btn svg path {
+	fill: #8c8c8c;
+	transition: 0.3s;
+}
 
-    .share-drodown__btn svg path {
-      fill: #8C8C8C;
-      transition: .3s;
-    }
+.share-drodown__btn:hover svg path {
+	fill: #0c4787;
+}
 
-    .share-drodown__btn:hover svg path {
-        fill: #0c4787;
-    }
+/* Скрытый список */
+.share-drodown__menu {
+	font-family: "Pangram", serif;
+	font-size: 14px;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	border: 1px solid var(--text-color-black);
+	// transform: translateX(-100%) translateY(100%);
+	background: white;
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.24);
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	width: 235px;
+	opacity: 0;
+	visibility: hidden;
+	overflow: hidden;
+	transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s;
+}
 
-    /* Скрытый список */
-    .share-drodown__menu {
-      font-family: "Pangram", serif;
-      font-size: 14px;
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      border: 1px solid var(--text-color-black);
-      // transform: translateX(-100%) translateY(100%);
-      background: white;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, .24);
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      width: 235px;
-      opacity: 0;
-      visibility: hidden;
-      overflow: hidden;
-      transition: opacity .5s ease, transform .5s ease, visibility .5s;
-    }
+/* Элементы списка */
+.share-drodown__menu li a {
+	text-align: left;
+	color: var(--text-color-black);
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 20px;
+	padding: 10px;
+	text-align: center;
+	cursor: pointer;
+	transition: background 0.3s;
 
-    /* Элементы списка */
-    .share-drodown__menu li a{
-      text-align: left;
-      color: var(--text-color-black);
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      gap: 20px;
-      padding: 10px;
-      text-align: center;
-      cursor: pointer;
-      transition: background 0.3s;
+	&:hover {
+		color: #0c4787;
+	}
+}
 
-      &:hover {
-        color: #0c4787;
-      }
+.share-drodown__menu li a img {
+	width: 22px;
+	height: 22px;
+	filter: brightness(0) invert(0.122);
+	transition: 0.3s;
+}
 
-    }
+.share-drodown__menu li a:hover img {
+	filter: invert(95%);
+}
 
-    .share-drodown__menu li a img {
-      width: 22px;
-      height: 22px;
-      filter: brightness(0) invert(.122);
-      transition: .3s;
+.share-drodown__menu li:hover {
+	background: #f1f1f1;
+}
 
-    }
+/* Показываем список при наведении */
+.share-drodown:hover .share-drodown__menu {
+	opacity: 1;
+	visibility: visible;
+	height: fit-content; /* Высота, достаточная для 4 элементов */
+	transform: translateX(0%) translateY(-44px);
+}
 
-    .share-drodown__menu li a:hover img {
-           filter: invert(95%);
-    }
+/* Плавное закрытие */
+.share-drodown:not(:hover) .share-drodown__menu {
+	opacity: 0;
+	visibility: hidden;
+	transform: translateX(0%) translateY(-44px);
+	transition-delay: 0.5s;
+}
 
-    
-
-    .share-drodown__menu li:hover {
-      background: #f1f1f1;
-    }
-
-    /* Показываем список при наведении */
-    .share-drodown:hover .share-drodown__menu {
-      opacity: 1;
-      visibility: visible;
-      max-height: 150px; /* Высота, достаточная для 4 элементов */
-      transform: translateX(0%) translateY(-44px);
-      
-    }
-
-    /* Плавное закрытие */
-    .share-drodown:not(:hover) .share-drodown__menu {
-      opacity: 0;
-      visibility: hidden;
-      transform: translateX(0%) translateY(-44px);
-      transition-delay: .5s;
-        
-    }
+.share-copy-btn-msg {
+	color: var(--green-light);
+	text-align: center;
+	opacity: 0;
+	transition: opacity 0.5s ease-in-out;
+}

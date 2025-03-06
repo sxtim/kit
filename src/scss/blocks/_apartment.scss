@@ -66,7 +66,7 @@
 }
 
 .apartment-info__price-wrap {
-  display: flex;
+	display: flex;
 	align-items: flex-end;
 	font-family: "Pangram-bold", sans-serif;
 	font-size: 28px;
@@ -82,7 +82,6 @@
 	span {
 		margin-bottom: 16px;
 	}
-	
 }
 
 .apartment-info__price-desc span {
@@ -142,36 +141,17 @@
 	z-index: 1;
 }
 
-.swiper-container-android .swiper-slide,
-.swiper-wrapper {
-	transform: translate3d(0px, 0, 0);
-}
-
-.apartment-info-tabs-wrapper {
-	width: auto !important;
-	height: auto !important;
-
-	// @media (max-width: 640px) {
-	// 	display: grid !important;
-	// 	grid-template-columns: repeat(2, calc(100% / 2 - 10px / 2 * (2 - 1)));
-	// 	column-gap: 20px;
-	// 	row-gap: 40px;
-	// 	place-content: center;
-	// 	place-items: center;
-	// }
-}
-
 .apartment-info__slider .swiper-wrapper {
 	position: relative;
 	width: 100%;
 	height: 100%;
 	z-index: 1;
 	display: flex;
+	justify-content: space-between;
 	transition-property: transform;
 	box-sizing: content-box;
 
 	@media (max-width: 640px) {
-		justify-content: normal !important;
 		width: 100% !important;
 		gap: 10px;
 	}
@@ -188,15 +168,51 @@
 	transition-property: transform;
 }
 
-.apartment-info__slider .section-tabs .apartment-swiper-tabs-nav {
-	display: flex !important;
-	align-items: center !important;
-	justify-content: center !important;
-	margin-bottom: 20px;
-
+.apartment-info-tabs-wrapper {
 	@media (max-width: 640px) {
-		justify-content: normal !important;
-		width: 100%;
+		// display: grid !important;
+		// grid-template-columns: repeat(2, calc(100% / 2 - 10px / 2 * (2 - 1)));
+		// column-gap: 20px;
+		// row-gap: 40px;
+		// place-content: center;
+		// place-items: center;
+	}
+}
+
+.apartment-info__slider .section-tabs .apartment-swiper-tabs-nav {
+	max-width: 700px;
+	display: flex;
+	align-items: center !important;
+	// justify-content: center !important;
+	// margin-bottom: 20px;
+
+	// @media (max-width: 640px) {
+	// 	justify-content: normal !important;
+	// 	width: 100%;
+	// }
+}
+
+.apartment-info__slider .apartment-swiper-tabs-nav .swiper-slide {
+	width: fit-content !important;
+	text-align: center;
+	font-size: 16px;
+	font-weight: 400;
+	padding-bottom: 6px;
+	border-bottom: 2px solid #f4f6f5;
+	transition: all 0.3s ease-in-out;
+	cursor: pointer;
+	// width: 100% !important;
+	// max-width: 85px !important;
+	// text-align: center;
+	// font-size: 16px;
+	// font-weight: 400;
+	// padding-bottom: 6px;
+	// border-bottom: 2px solid #f4f6f5;
+	// transition: all 0.3s ease-in-out;
+	// cursor: pointer;
+
+	@media (max-width: 560px) {
+		font-size: 14px;
 	}
 }
 
@@ -229,23 +245,6 @@
 	}
 }
 
-.apartment-info__slider .apartment-swiper-tabs-nav .swiper-slide {
-	width: 100% !important;
-	max-width: 85px !important;
-	text-align: center;
-	font-size: 16px;
-	font-weight: 400;
-	padding-bottom: 6px;
-	border-bottom: 2px solid #f4f6f5;
-	transition: all 0.3s ease-in-out;
-	cursor: pointer;
-
-	@media (max-width: 768px) {
-		font-size: 12px;
-		line-height: 20px;
-	}
-}
-
 .apartment-info__slider
 	.apartment-swiper-tabs-nav
 	.swiper-slide.swiper-slide-thumb-active {
@@ -272,18 +271,19 @@
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 
 	@media (max-width: 1360px) {
-		display: flex; /* Размещаем элементы в строку */
-     /* Отступы между элементами */
-    overflow-x: auto; /* Добавляем горизонтальный скролл */
-    white-space: nowrap; /* Запрещаем перенос элементов */
-    scroll-snap-type: x mandatory; /* Делаем плавный скроллинг */
-    padding-bottom: 10px; /* Отступ, чтобы скроллбар не мешал */
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+	@media (max-width: 998px) {
+		grid-template-columns: 1fr 1fr;
 	}
 
-	// @media (max-width: 568px) {
-	// 	display: block;
-	// 	grid-template-columns: none;
-	// }
+	@media (max-width: 568px) {
+		display: flex; /* Размещаем элементы в строку */
+		/* Отступы между элементами */
+		overflow-x: auto; /* Добавляем горизонтальный скролл */
+		white-space: nowrap; /* Запрещаем перенос элементов */
+		scroll-snap-type: x mandatory; /* Делаем плавный скроллинг */
+	}
 }
 
 .apartment-gallery__item {
@@ -292,18 +292,25 @@
 	cursor: pointer;
 	overflow: hidden;
 
-	@media (max-width: 1360px) {
-		max-width: 260px;
-		height: auto;
-		flex: 0 0 auto; /* Элементы не сжимаются */
-    scroll-snap-align: start; /* Фиксируем элементы при прокрутке */
+	@media (max-width: 568px) {
+		max-width: 280px;
+		height: 280px;
+		flex: 1 0 auto; /* Элементы не сжимаются */
+		scroll-snap-align: start; /* Фиксируем элементы при прокрутке */
 	}
-
 }
+
+@media (min-width: 568px) and (max-width: 998px)  {
+	.apartment-gallery__item:nth-last-child(-n + 4) {
+		display: none;
+	}
+}
+
 
 .apartment-gallery__img {
 	width: 100%;
 	height: 100%;
+	object-fit: cover;
 	transition: 0.3s;
 }
 
