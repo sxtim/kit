@@ -348,11 +348,32 @@
 	}
 }
 
-.apartment-tabs__img {
+.apartment-tabs__wrapper {
+	max-width: 1440px;
+	width: 100%;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.apartment-tabs__content {
 	position: relative;
+	width: 100%;
+
+}
+
+.apartment-tabs__img {
+	width: 100%;
+	object-fit: cover;
+
+	@media (max-width: 768px) {
+		min-height: 280px;
+	}
+
 }
 
 .apartment-tabs__link {
+	font-family: "Pangram-bold", sans-serif !important;
+	font-weight: 600 !important;
 	display: block;
 	color: white;
 	position: absolute;
@@ -361,8 +382,8 @@
 
 	@media (max-width: 768px) {
 		max-width: 140px !important;
-
 		max-height: 30px !important;
+		font-size: 14px !important ;
 	}
 }
 
