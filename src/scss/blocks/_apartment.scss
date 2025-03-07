@@ -218,8 +218,13 @@
 
 .apartment-info__slider-img {
 	position: relative;
-	max-height: 430px;
+	height: 500px;
 	width: auto;
+
+	@media (max-width: 560px) {
+		height: 360px;
+	}
+
 }
 
 .apartment-swiper-tabs-content div a:hover .apartment-info__slider-pic-hover {
