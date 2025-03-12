@@ -2,14 +2,14 @@
 .mobile-nav-btn {
 	--time: 0.1s;
 
-	--width: 40px;
+	--width: 30px;
 	--height: 30px;
 
-	--line-height: 4px;
+	--line-height: 3px;
 	--spacing: 6px;
 
 	--color: #000;
-	--radius: 4px;
+	--radius: 3px;
 
 	/* Fixed height and width */
 	/* height: var(--height); */
@@ -84,13 +84,13 @@
 
 
 .nav-icon-black {
-	background-color: var(--text-color-black);
+	background-color: #162C44;
 }
 
 .nav-icon-black::before,
 .nav-icon-black::after {
 
-	background-color: var(--text-color-black);
+	background-color: #162C44;
 
 }
 /* Layout */

@@ -168,7 +168,6 @@
 	}
 }
 
-
 //ABOUT COMPANY CONTENT
 .about-company-content {
 	overflow: hidden;
@@ -178,21 +177,28 @@
 	display: flex;
 	align-items: flex-start;
 	justify-content: space-between;
-	gap: 40px;
 	margin-bottom: 60px;
 
 	@media (max-width: 1100px) {
 		flex-direction: column;
 		align-items: center;
+		gap: 30px;
 	}
 }
 .about-company-content-img {
-	max-width: 600px;
-	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.about-company-content-img img {
+	margin-top: 66px;
+	max-height: 400px;
 
 	@media (max-width: 1100px) {
-		flex-direction: column;
+		margin-top: 0;
 	}
+
 }
 
 .about-company-content-number {
@@ -246,10 +252,17 @@
 }
 
 .about-company-content-item {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding: 0 10px;
+	width: 100%;
+	margin: 0 auto;
+
+	@media (max-width: 1100px) {
+		max-width: 640px;
+	}
+
+}
+
+.about-company-content-item:last-child {
+	flex: 0 0 40%;
 }
 
 .about-company-content-item:first-child {
@@ -258,6 +271,24 @@
 	}
 }
 
+.about-company-content-media {
+	height: 0px;
+	padding-bottom: 56.2%;
+	position: relative;
+}
+
+.about-company-content-media iframe {
+	width: 100%;
+	height: 85%;
+top: 66px;
+	position: absolute;
+
+	@media (max-width: 1100px) {
+		top: 0;
+	}
+}
+
+
 .about-company-text-year {
 	font-family: Pangram-bold, sans-serif;
 	font-size: 30px;
@@ -265,20 +296,20 @@
 
 .about-company-text {
 	max-width: 600px;
+	max-height: 400px;
 	font-family: "Pangram", sans-serif;
-	font-size: 20px;
+	font-size: 18px;
 	text-align: justify;
 
 	@media (max-width: 1200px) {
-		font-size: 18px;
+		font-size: 16px;
 	}
 
 	@media (max-width: 768px) {
-		font-size: 16px;
+		font-size: 14px;
 	}
 }
 
 .about-company-text p:not(:last-child) {
 	margin-bottom: 20px;
 }
-
