@@ -194,11 +194,20 @@
 .construction-feature__item-title {
 	font-size: 24px;
 	color: var(--sand);
+
+  @media (max-width: 768px) {
+		font-size: 18px;
+	}
 }
 
 .construction-feature__item-text {
 	font-size: 18px;
 	color: var(--text-color-black);
+
+  @media (max-width: 768px) {
+		font-size: 16px;
+	}
+
 }
 
 .apartment-form__wrap {
