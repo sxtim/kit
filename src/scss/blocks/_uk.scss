@@ -277,21 +277,21 @@ $primary: #00acc1;
 		}
 
 		&:before {
-			left: $spacing/2 + $plus-size/2;
+			left: calc(#{$spacing} / 2 + #{$plus-size} / 2);
 			top: 50%;
 			height: $plus-thickness;
-			margin-top: -$plus-thickness/2;
+			margin-top: calc(-1 * #{$plus-thickness} / 2);
 			width: $plus-size;
 			background: var(--sand);
 		}
 
 		&:after {
-			left: $spacing/2 + $plus-size;
+			left: calc(#{$spacing} / 2 + #{$plus-size});
 			top: 50%;
 			height: $plus-size;
-			margin-top: -$plus-size/2;
+			margin-top: calc(-1 * #{$plus-size} / 2);
 			width: $plus-thickness;
-			margin-left: -$plus-thickness/2;
+			margin-left: calc(-1 * #{$plus-thickness} / 2);
 			background: var(--sand);
 			transition: all $speed $easing;
 		}

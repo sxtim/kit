@@ -116,7 +116,11 @@ let sliderOne = new Swiper(".commerce-info__slider", {
 })
 
 //BUTTON SHARE
-document.querySelector(".share-copy-btn").addEventListener("click", function() {
+
+const btnShareCopy = document.querySelector(".share-copy-btn")
+if (btnShareCopy) {
+
+	btnShareCopy.addEventListener("click", function() {
 	const button = this;
 	const text = document.querySelector(".share-copy-btn span");
 	const originalText = text.textContent; // Сохраняем оригинальный текст
@@ -168,3 +172,4 @@ document.querySelector(".share-copy-btn").addEventListener("click", function() {
 const currentLinkPage = window.location.href // Получаем URL текущей страницы
 document.querySelector(".share-current-link-tg").href =`https://t.me/share/url?url=${currentLinkPage}` // Устанавливаем в href
 document.querySelector(".share-current-link-wht").href =`https://wa.me/?text=${currentLinkPage}`
+}
