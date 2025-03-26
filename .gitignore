@@ -43,3 +43,8 @@ yarn-error.log
 
 #swagger
 storage/api-docs/api-docs.json
+
+# Cursor IDE
+.cursor/
+
+
