@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>КИТ</title>
+  <link rel="stylesheet" href="./css/main.css" />
+  <link rel="stylesheet" href="./fonts/Montserrat/stylesheet.css" />
+  <link rel="stylesheet" href="./fonts/Oswald/stylesheet.css" />
+  <link rel="stylesheet" href="./fonts/Pangram1/stylesheet.css" />
+</head>
+
+<body>
+  @@include('blocks/header/header.html')
+  <main class="main">
+    @@include('blocks/breadcrumb.html')
+    <div class="container">
+      <h1 class="title">Парковка в ЖК</h1>
+      <section class="section section-parking">
+        <div class="container">
+          <div class="section-parking__image">
+            <img src="./img/parking/parking.jpg" alt="parking">
+          </div>
+          <div class="section-parking__content">
+            <div class="section-parking__content-title">
+              <h2>В этом ЖК вы можете купить парковочное место </h2>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+            </p>
+            <div class="section-parking__content-p">
+              <p><span>Полащадь от</span>12,65<span>до</span>15,65</p>
+              <p><span>Цена от</span>865 000 ₽</p>
+              <p><span>Количество</span>465</p>
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </div>
+    @@include('blocks/section-questions.html')
+  </main>
+  @@include('blocks/footer.html')
+  <script src="./js/index.bundle.js"></script>
+</body>
+
+</html>

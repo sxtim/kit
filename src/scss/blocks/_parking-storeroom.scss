@@ -1,0 +1,42 @@
+.section-parking__content {
+	font-family: "Pangram", sans-serif;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+
+	p {
+		font-family: "Pangram", sans-serif;
+		font-size: 18px;
+		font-weight: 500;
+
+	}
+}
+
+.section-parking__content-title {
+	h2 {
+		font-family: "Pangram-bold", sans-serif;
+		font-size: 24px;
+		font-weight: 700;
+		color: var(--text-color-black);
+	}
+}
+.section-parking__content-p {
+	font-family: "Pangram", sans-serif;
+	font-size: 18px;
+	p {
+		display: flex;
+		align-items: center;
+		margin-bottom: 10px;
+		font-weight: 500;
+
+		span {
+			font-weight: 500;
+			color: var(--text-color-gray);
+
+			&:first-child {
+				margin-left: 0;
+				margin-right: 8px;
+			}
+		}
+	}
+}
