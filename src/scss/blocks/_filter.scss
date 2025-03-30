@@ -18,11 +18,12 @@
 	color: var(--text-color-black);
 	height: 100%;
 	display: flex;
+	gap: 40px;
 	align-items: center;
 	justify-content: space-between;
 
 	@media (max-width: 1200px) {
-		flex-direction: column;
+		flex-wrap: wrap;
 		gap: 30px;
 	}
 }
@@ -153,7 +154,7 @@ input[type="number"] {
 	border: none !important;
 	border-radius: 100px !important;
 	box-shadow: none !important;
-	height: 3px !important;
+	height: 1px !important;
 }
 
 .noUi-handle::after,
@@ -162,21 +163,47 @@ input[type="number"] {
 }
 
 .noUi-handle {
-	cursor: pointer !important;
 	box-shadow: none !important;
-	border-radius: 100% !important;
+	border-radius: 20px !important;
 	background-color: var(--sand) !important;
-	border: 3px solid var(--sand) !important;
+	// border: 3px solid var(--sand) !important;
+
+	::before {
+		content: "";
+    height: 6px;
+    background-color: #774a07;
+    width: 1px;
+    position: absolute;
+    left: 60%;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+	}
+
+	::after {
+		content: "";
+    height: 6px;
+    background-color: #774a07;
+    width: 1px;
+    position: absolute;
+    right: 55%;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+	}
 }
 
+
+
 .noUi-horizontal .noUi-handle {
-	width: 22px !important;
-	height: 22px !important;
-	top: -10px !important;
+	cursor: ew-resize;
+	width: 24px !important;
+	height: 14px !important;
+	top: -7px !important;
 	right: -11px !important;
 }
 
-.noUi-horizontal .noUi-handle-upper {
+.noUi-horizontal .noUi-handle::before {
 	//right: 0 !important;
 }
 

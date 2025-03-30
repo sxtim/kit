@@ -25,6 +25,7 @@
 	font-size: 18px;
 	p {
 		display: flex;
+		gap: 8px;
 		align-items: center;
 		margin-bottom: 10px;
 		font-weight: 500;
@@ -32,11 +33,6 @@
 		span {
 			font-weight: 500;
 			color: var(--text-color-gray);
-
-			&:first-child {
-				margin-left: 0;
-				margin-right: 8px;
-			}
 		}
 	}
 }

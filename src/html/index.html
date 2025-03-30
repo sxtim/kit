@@ -13,8 +13,101 @@
 	<body>
 		@@include('blocks/header/header-main.html')
 		<main class="main">
-			<section class="section">
-			@@include('blocks/filter.html')
+			<section class="filter section">
+				<!-- <form action=""> -->
+				<div class="filter__wrap">
+					<div data-tab-component>
+						<div class="filter__tab-btn-container" role="tablist" aria-label="Tabbed content">
+							<button class="filter__tab-btn" role="tab" aria-selected="true" aria-controls="tab1-content" id="tab1">
+								<h3 class="tab-title">Подобрать квартиру</h3>
+							</button>
+			
+							<button class="filter__tab-btn" role="tab" aria-selected="false" aria-controls="tab2-content" id="tab2">
+								<h3 class="tab-title">Коммерческую недвижимость</h3>
+							</button>
+			
+						</div>
+			
+						<section class="filter__tab-content" id="tab1-content" role="tabpanel" aria-labelledby="tab1" tabindex="0">
+			
+							<div class="filter__wrap">
+								<div class="filter__tab-row">
+									<div class="filter__col">
+										<div class="filter__el">
+											<h4 class="filter__row-title">Комнаты</h4>
+											<div class="filter__row-el-btns-container">
+												<button class="filter__el-btns btn-small">1к</button>
+												<button class="filter__el-btns btn-small">2к</button>
+												<button class="filter__el-btns btn-small">3к</button>
+											</div>
+										</div>
+										
+										
+									</div>
+									<div class="filter__col">
+										<div class="filter__el">
+											<h4 class="filter__row-title">Площадь, м2</h4>
+											<div class="filter-slider__inputs">
+												<label class="filter-slider__label">
+													<span class="filter-slider__text">От</span>
+													<input type="number" min="40" max="120" class="filter-slider__input" id="input-square-min">
+												</label>
+			
+												<label class="filter-slider__label">
+													<span class="filter-slider__text">До</span>
+													<input type="number" min="40" max="120" class="filter-slider__input" id="input-square-max">
+												</label>
+											</div>
+											<div class="filter__range-slider" id="square-slider">
+											</div>
+										</div>
+										
+										
+									</div>
+									<div class="filter__col">
+										<div class="filter__el">
+											<h4 class="filter__row-title">Цена, руб.</h4>
+											<div class="filter-slider__inputs">
+												<label class="filter-slider__label">
+													<span class="filter-slider__text">От</span>
+													<input type="number" min="4000000" max="12000000" class="filter-slider__input" id="input-price-min">
+												</label>
+												<label class="filter-slider__label">
+													<span class="filter-slider__text">До</span>
+													<input type="number" min="4000000" max="12000000" class="filter-slider__input" id="input-price-max">
+												</label>
+											</div>
+											<div class="filter__range-slider" id="price-slider">
+											</div>
+										</div>
+			
+										
+									</div>
+									<div class="filter__col">
+																	
+										<div class="filter__el ">
+											<button class="filter__btn btn btn-green">Показать&nbsp;<span>59934</span>&nbsp;квартир</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+			
+						<section class="filter__tab-content" id="tab2-content" role="tabpanel" aria-labelledby="tab2" tabindex="0"
+							aria-hidden="true">
+			
+							<div class="filter__tab-row">
+			
+							</div>
+							<!--        <p>Quisque id augue sagittis, ullamcorper arcu a, commodo est. Sed dictum fringilla augue sit amet condimentum.-->
+							<!--          Donec sagittis tincidunt mattis. Aliquam eget tellus placerat, luctus odio sit amet, scelerisque ligula.-->
+							<!--          Nullam-->
+							<!--          in magna at erat porttitor lacinia. Donec placerat lacus vitae arcu efficitur sollicitudin. Nunc laoreet ex-->
+							<!--          tempus, fringilla nisl sit amet, varius odio. Nunc vel orci ut neque ullamcorper facilisis.</p>-->
+						</section>
+					</div>
+				</div>
+			<!-- </form> -->
 			</section>
 			@@include('blocks/section-complexes.html')
 			@@include('blocks/section-about.html')
