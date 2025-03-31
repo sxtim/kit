@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>КИТ</title>
-		<link rel="stylesheet" href="./css/main.css" />
-		<link rel="stylesheet" href="./fonts/Montserrat/stylesheet.css"/>
-		<link rel="stylesheet" href="./fonts/Oswald/stylesheet.css"/>
-		<link rel="stylesheet" href="./fonts/Pangram1/stylesheet.css"/>
-	</head>
-	<body>
-		<header class="header-main">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>КИТ</title>
+	<link rel="stylesheet" href="./css/main.css" />
+	<link rel="stylesheet" href="./fonts/Montserrat/stylesheet.css" />
+	<link rel="stylesheet" href="./fonts/Oswald/stylesheet.css" />
+	<link rel="stylesheet" href="./fonts/Pangram1/stylesheet.css" />
+</head>
+
+<body>
+	<header class="header-main">
 	<!--Swiper-->
 	<!--Slider content-->
 	<!-- Slider main container -->
@@ -280,104 +282,225 @@
 		</div>
 	</div>
 </header>
-		<main class="main">
-			<section class="filter section">
-				<!-- <form action=""> -->
-				<div class="filter__wrap">
-					<div data-tab-component>
-						<div class="filter__tab-btn-container" role="tablist" aria-label="Tabbed content">
-							<button class="filter__tab-btn" role="tab" aria-selected="true" aria-controls="tab1-content" id="tab1">
-								<h3 class="tab-title">Подобрать квартиру</h3>
-							</button>
-			
-							<button class="filter__tab-btn" role="tab" aria-selected="false" aria-controls="tab2-content" id="tab2">
-								<h3 class="tab-title">Коммерческую недвижимость</h3>
-							</button>
-			
-						</div>
-			
-						<section class="filter__tab-content" id="tab1-content" role="tabpanel" aria-labelledby="tab1" tabindex="0">
-			
-							<div class="filter__wrap">
-								<div class="filter__tab-row">
-									<div class="filter__col">
-										<div class="filter__el">
-											<h4 class="filter__row-title">Комнаты</h4>
-											<div class="filter__row-el-btns-container">
-												<button class="filter__el-btns btn-small">1к</button>
-												<button class="filter__el-btns btn-small">2к</button>
-												<button class="filter__el-btns btn-small">3к</button>
-											</div>
+	<main class="main">
+		<section class="filter section">
+			<!-- <form action=""> -->
+			<div class="filter__wrap">
+				<div data-tab-component>
+					<div class="filter__search">
+
+							<h3 class="tab-title">Поиск квартир</h3>
+
+
+						<!-- <button class="filter__tab-btn" role="tab" aria-selected="false" aria-controls="tab2-content" id="tab2">
+							<h3 class="tab-title">Коммерческую недвижимость</h3>
+						</button> -->
+
+					</div>
+
+					<section class="filter__tab-content" id="tab1-content" role="tabpanel" aria-labelledby="tab1" tabindex="0">
+
+						<div class="filter__wrap">
+							<div class="filter__tab-row">
+								<div class="filter__col">
+									<div class="filter__el">
+										<h4 class="filter__row-title">Комнаты</h4>
+										<div class="filter__row-el-btns-container">
+											<button class="filter__el-btns btn-small">1к</button>
+											<button class="filter__el-btns btn-small">2к</button>
+											<button class="filter__el-btns btn-small">3к</button>
 										</div>
-										
-										
 									</div>
-									<div class="filter__col">
-										<div class="filter__el">
-											<h4 class="filter__row-title">Площадь, м2</h4>
-											<div class="filter-slider__inputs">
-												<label class="filter-slider__label">
-													<span class="filter-slider__text">От</span>
-													<input type="number" min="40" max="120" class="filter-slider__input" id="input-square-min">
-												</label>
-			
-												<label class="filter-slider__label">
-													<span class="filter-slider__text">До</span>
-													<input type="number" min="40" max="120" class="filter-slider__input" id="input-square-max">
-												</label>
-											</div>
-											<div class="filter__range-slider" id="square-slider">
+									<div class="filter__el">
+										<div class='filter__dropdown'>
+											<label class="filter__dropdown-menu">Сдача</label>
+											<div class="filter__dropdown-menu-btn">Все даты</div>
+											<div class="filter__dropdown-content">
+												<div class="input_field all-input-field">
+													<input type="checkbox" class="custom-checkbox checked" id="all-date">
+													<label for="all-date">Все даты</label>
+												</div>
+												<div class="input_field">
+													<input type="checkbox" class="custom-checkbox" id="address24">
+													<label for="address24">Адрес 2</label>
+												</div>
+												<div class="input_field">
+													<input type="checkbox" class="custom-checkbox" id="address34">
+													<label for="address34">Адрес 3</label>
+												</div>
+												<div class="input_field">
+													<input type="checkbox" class="custom-checkbox" id="address44">
+													<label for="address44">Адрес 4</label>
+												</div>
+												<div class="input_field">
+													<input type="checkbox" class="custom-checkbox" id="address54">
+													<label for="address54">Адрес 5</label>
+												</div>
+												<div class="input_field">
+													<input type="checkbox" class="custom-checkbox" id="address64">
+													<label for="address64">Адрес 6</label>
+												</div>
 											</div>
 										</div>
-										
-										
 									</div>
-									<div class="filter__col">
-										<div class="filter__el">
-											<h4 class="filter__row-title">Цена, руб.</h4>
-											<div class="filter-slider__inputs">
-												<label class="filter-slider__label">
-													<span class="filter-slider__text">От</span>
-													<input type="number" min="4000000" max="12000000" class="filter-slider__input" id="input-price-min">
-												</label>
-												<label class="filter-slider__label">
-													<span class="filter-slider__text">До</span>
-													<input type="number" min="4000000" max="12000000" class="filter-slider__input" id="input-price-max">
-												</label>
-											</div>
-											<div class="filter__range-slider" id="price-slider">
+
+
+								</div>
+								<div class="filter__col">
+									<div class="filter__el">
+										<div class='filter__dropdown'>
+											<label class="filter__dropdown-menu">Проект</label>
+											<div class="filter__dropdown-menu-btn">Любой</div>
+											<div class="filter__dropdown-content">
+												<div class="input_field all-input-field">
+													<input type="checkbox" class="custom-checkbox checked" id="any-address2">
+													<label for="any-address2">Любой</label>
+												</div>
+												<div class="input_field">
+													<input type="checkbox" class="custom-checkbox" id="Проект 2">
+													<label for="Проект 2">Проект 2</label>
+												</div>
+												<div class="input_field">
+													<input type="checkbox" class="custom-checkbox" id="Проект 3">
+													<label for="Проект 3">Проект 3</label>
+												</div>
+												<div class="input_field">
+													<input type="checkbox" class="custom-checkbox" id="Проект 4">
+													<label for="Проект 4">Проект 4</label>
+												</div>
+												<div class="input_field">
+													<input type="checkbox" class="custom-checkbox" id="Проект 5">
+													<label for="Проект 5">Проект 5</label>
+												</div>
+												<div class="input_field">
+													<input type="checkbox" class="custom-checkbox" id="Проект 6">
+													<label for="Проект 6">Проект 6</label>
+												</div>
 											</div>
 										</div>
-			
-										
 									</div>
-									<div class="filter__col">
-																	
-										<div class="filter__el ">
-											<button class="filter__btn btn btn-green">Показать&nbsp;<span>59934</span>&nbsp;квартир</button>
-										</div>
+									<div class="filter__el">
+										<h4 class="filter__row-title">Этаж</h4>
+                <div class="filter-slider__inputs">
+                  <label class="filter-slider__label">
+                    <span class="filter-slider__text">От</span>
+                    <input type="number" min="2" max="16" class="filter-slider__input" id="input-floor-min">
+                  </label>
+
+                  <label class="filter-slider__label">
+                    <span class="filter-slider__text">До</span>
+                    <input type="number" min="2" max="16" class="filter-slider__input" id="input-floor-max">
+                  </label>
+                </div>
+                <div class="filter__range-slider" id="floor-slider">
+                </div>
+
+
+										
 									</div>
 								</div>
+								<div class="filter__col">
+									<div class="filter__el">
+										<h4 class="filter__row-title">Площадь, м2</h4>
+										<div class="filter-slider__inputs">
+											<label class="filter-slider__label">
+												<span class="filter-slider__text">от</span>
+												<input type="number" min="40" max="120" class="filter-slider__input" id="input-square-min">
+											</label>
+
+											<label class="filter-slider__label">
+												<span class="filter-slider__text">до</span>
+												<input type="number" min="40" max="120" class="filter-slider__input" id="input-square-max">
+											</label>
+										</div>
+										<div class="filter__range-slider" id="square-slider">
+										</div>
+									</div>
+									<div class="filter__el">
+										<div class='filter__dropdown'>
+											<label class="filter__dropdown-menu">Адрес</label>
+											<div class="filter__dropdown-menu-btn">Любой</div>
+											<div class="filter__dropdown-content">
+												<div class="input_field all-input-field">
+													<input type="checkbox" class="custom-checkbox checked" id="any-address1">
+													<label for="any-address1">Любой</label>
+												</div>
+												<div class="input_field">
+													<input type="checkbox" class="custom-checkbox" id="address21">
+													<label for="address21">Адрес 2</label>
+												</div>
+												<div class="input_field">
+													<input type="checkbox" class="custom-checkbox" id="address31">
+													<label for="address31">Адрес 3</label>
+												</div>
+												<div class="input_field">
+													<input type="checkbox" class="custom-checkbox" id="address41">
+													<label for="address41">Адрес 4</label>
+												</div>
+												<div class="input_field">
+													<input type="checkbox" class="custom-checkbox" id="address51">
+													<label for="address51">Адрес 5</label>
+												</div>
+												<div class="input_field">
+													<input type="checkbox" class="custom-checkbox" id="address61">
+													<label for="address61">Адрес 6</label>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</div>
+								<div class="filter__col">
+									<div class="filter__el">
+										<h4 class="filter__row-title">Цена, руб.</h4>
+										<div class="filter-slider__inputs">
+											<label class="filter-slider__label">
+												<span class="filter-slider__text">от</span>
+												<input type="number" min="4000000" max="12000000" class="filter-slider__input"
+													id="input-price-min">
+											</label>
+											<label class="filter-slider__label">
+												<span class="filter-slider__text">до</span>
+												<input type="number" min="4000000" max="12000000" class="filter-slider__input"
+													id="input-price-max">
+											</label>
+										</div>
+										<div class="filter__range-slider" id="price-slider">
+										</div>
+									</div>
+									<div class="filter__el ">
+										<button class="filter__btn btn btn-green">Показать&nbsp;<span>59934</span>&nbsp;квартир</button>
+									</div>
+
+
+								</div>
+								<!-- <div class="filter__col">
+
+									<div class="filter__el ">
+										<button class="filter__btn btn btn-green">Показать&nbsp;<span>59934</span>&nbsp;квартир</button>
+									</div>
+								</div> -->
 							</div>
-						</section>
-			
-						<section class="filter__tab-content" id="tab2-content" role="tabpanel" aria-labelledby="tab2" tabindex="0"
-							aria-hidden="true">
-			
-							<div class="filter__tab-row">
-			
-							</div>
-							<!--        <p>Quisque id augue sagittis, ullamcorper arcu a, commodo est. Sed dictum fringilla augue sit amet condimentum.-->
-							<!--          Donec sagittis tincidunt mattis. Aliquam eget tellus placerat, luctus odio sit amet, scelerisque ligula.-->
-							<!--          Nullam-->
-							<!--          in magna at erat porttitor lacinia. Donec placerat lacus vitae arcu efficitur sollicitudin. Nunc laoreet ex-->
-							<!--          tempus, fringilla nisl sit amet, varius odio. Nunc vel orci ut neque ullamcorper facilisis.</p>-->
-						</section>
-					</div>
+						</div>
+					</section>
+
+					<!-- <section class="filter__tab-content" id="tab2-content" role="tabpanel" aria-labelledby="tab2" tabindex="0"
+						aria-hidden="true">
+
+						<div class="filter__tab-row">
+
+						</div>
+						<!--        <p>Quisque id augue sagittis, ullamcorper arcu a, commodo est. Sed dictum fringilla augue sit amet condimentum.-->
+						<!--          Donec sagittis tincidunt mattis. Aliquam eget tellus placerat, luctus odio sit amet, scelerisque ligula.-->
+						<!--          Nullam-->
+						<!--          in magna at erat porttitor lacinia. Donec placerat lacus vitae arcu efficitur sollicitudin. Nunc laoreet ex-->
+						<!--          tempus, fringilla nisl sit amet, varius odio. Nunc vel orci ut neque ullamcorper facilisis.</p>-->
+					<!-- </section> -->
 				</div>
+			</div>
 			<!-- </form> -->
-			</section>
-			<section class="section complexes">
+		</section>
+		<section class="section complexes">
   <div class="container">
     <div class="complexes__title title">ЖИЛЫЕ КОМПЛЕКСЫ</div>
     <div class="cards-wrapper-col3">
@@ -492,7 +615,7 @@
     </div>
   </div>
 </section>
-			<section class="section section-about">
+		<section class="section section-about">
   <div class="container">
     <div class="title about-title">О КОМПАНИИ</div>
     <div data-tab-component>
@@ -641,7 +764,7 @@
     </div>
   </div>
 </section>
-			<section class="section promotions">
+		<section class="section promotions">
   <div class="container">
     <div class="title title-promotions">АКЦИИ</div>
     <div class="promotions__cards-wrapper">
@@ -675,7 +798,7 @@
     </div>
   </div>
 </section>
-			<div class="container banner-rent__container">
+		<div class="container banner-rent__container">
   <div class="banner-rent banner-main">
       <img src="./img/rent/banner-rent.jpg" alt="banner-rent">
 <!--      <source media="(max-width: 768px)" srcset="./img/rent/banner-rent1.jpg">-->
@@ -690,7 +813,7 @@
     </div>
   </div>
 </div>
-			<section class="section-news section">
+		<section class="section-news section">
   <div class="container">
     <div class="title news-title">НОВОСТИ</div>
     <div class="cards-wrapper-col3">
@@ -746,7 +869,7 @@
   </div>
 </section>
 
-			<section class="section-questions">
+		<section class="section-questions">
   <img class="section-questions__img" src="./img/question.jpg" alt="card-img">
   <div class="section-questions__inner container">
     <div class="section-questions__content">
@@ -796,8 +919,8 @@
     </div>
   </div>
 </section>
-		</main>
-		<footer class="footer">
+	</main>
+	<footer class="footer">
   <div class="container">
     <div class="footer__wrapper">
       <div class="footer__logo logo">
@@ -857,6 +980,7 @@
 </footer>
 
 
-		<script src="./js/index.bundle.js"></script>
-	</body>
+	<script src="./js/index.bundle.js"></script>
+</body>
+
 </html>

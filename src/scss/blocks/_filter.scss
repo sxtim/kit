@@ -19,12 +19,17 @@
 	height: 100%;
 	display: flex;
 	gap: 40px;
-	align-items: center;
 	justify-content: space-between;
+	align-items: center;
 
 	@media (max-width: 1200px) {
 		flex-wrap: wrap;
 		gap: 30px;
+	}
+
+	@media (max-width: 998px) {
+		flex-direction: column;
+		width: 100%;
 	}
 }
 
@@ -32,16 +37,22 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: space-between;
 	width: 330px;
-	gap: 40px;
+	height: 150px;
+	gap: 16px;
+	@media (max-width: 1200px) {
+		max-width: 400px;
+		width: 100%;
+	}
 }
 
 .filter__el {
 	width: 100%;
-	height: 72px;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	// height: 70px;
+	justify-content: flex-end;
 
 	@media (max-width: 1200px) {
 		width: 95%;
@@ -68,13 +79,10 @@
 
 .filter-slider__text {
 	color: var(--text-color-gray);
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: 500;
 	line-height: 130%;
 
-	@media (max-width: 998px) {
-		font-size: 18px;
-	}
 }
 
 .filter-slider__inputs {
@@ -91,7 +99,7 @@
 .filter-slider__input {
 	margin-left: 5px;
 	font-weight: 500;
-	font-size: 18px;
+	font-size: 16px;
 	color: var(--text-color-black);
 
 	@media (max-width: 998px) {
@@ -127,7 +135,6 @@
 	min-height: 40px;
 	width: 100%;
 	font-size: 16px;
-	margin-top: auto;
 }
 
 //Range slider
@@ -166,7 +173,7 @@ input[type="number"] {
 	box-shadow: none !important;
 	border-radius: 20px !important;
 	background-color: var(--sand) !important;
-	// border: 3px solid var(--sand) !important;
+	border: 3px solid var(--sand) !important;
 
 	::before {
 		content: "";
