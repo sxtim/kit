@@ -12,7 +12,13 @@
 	background-color: var(--gray) !important;
 }
 
-
+.filter__search-title {
+	font-family: "Pangram", sans-serif;
+	font-size: 32px;
+	font-weight: 500;
+	line-height: 130%;
+	margin-bottom: 20px;
+}
 
 .filter__tab-row {
 	color: var(--text-color-black);
@@ -27,7 +33,7 @@
 		gap: 30px;
 	}
 
-	@media (max-width: 998px) {
+	@media (max-width: 768px) {
 		flex-direction: column;
 		width: 100%;
 	}
@@ -42,7 +48,7 @@
 	height: 150px;
 	gap: 16px;
 	@media (max-width: 1200px) {
-		max-width: 400px;
+		flex-basis: 46%;
 		width: 100%;
 	}
 }
@@ -82,7 +88,6 @@
 	font-size: 16px;
 	font-weight: 500;
 	line-height: 130%;
-
 }
 
 .filter-slider__inputs {
@@ -90,6 +95,7 @@
 	align-items: center;
 	justify-content: space-between;
 	margin-bottom: 10px;
+	padding: 0 30px;
 }
 
 .filter-slider__inputs .filter-slider__label {
@@ -177,30 +183,28 @@ input[type="number"] {
 
 	::before {
 		content: "";
-    height: 6px;
-    background-color: #774a07;
-    width: 1px;
-    position: absolute;
-    left: 60%;
-    top: 0;
-    bottom: 0;
-    margin: auto;
+		height: 6px;
+		background-color: #774a07;
+		width: 1px;
+		position: absolute;
+		left: 60%;
+		top: 0;
+		bottom: 0;
+		margin: auto;
 	}
 
 	::after {
 		content: "";
-    height: 6px;
-    background-color: #774a07;
-    width: 1px;
-    position: absolute;
-    right: 55%;
-    top: 0;
-    bottom: 0;
-    margin: auto;
+		height: 6px;
+		background-color: #774a07;
+		width: 1px;
+		position: absolute;
+		right: 55%;
+		top: 0;
+		bottom: 0;
+		margin: auto;
 	}
 }
-
-
 
 .noUi-horizontal .noUi-handle {
 	cursor: ew-resize;
@@ -216,101 +220,94 @@ input[type="number"] {
 
 //DROPDOWN
 .filter__dropdown {
-  width: 100%;
-  position: relative;
-  display: inline-block;
+	width: 100%;
+	position: relative;
+	display: inline-block;
 }
 
 .filter__dropdown label {
-  font-family: "Pangram", sans-serif;
-  font-size: 16px;
+	font-family: "Pangram", sans-serif;
+	font-size: 16px;
 }
 
 .filter__dropdown-menu-btn {
-  font-family: "Pangram", sans-serif;
-  font-size: 18px;
-  cursor: pointer;
-  padding: 10px;
-  background-color: white;
-  border-bottom: 1px solid #ccc;
-  margin: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  width: 100%;
+	font-family: "Pangram", sans-serif;
+	font-size: 18px;
+	cursor: pointer;
+	padding: 10px;
+	background-color: white;
+	border-bottom: 1px solid #ccc;
+	margin: 0;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: 100%;
 	position: relative;
 
-	&:hover::before{
-		filter: brightness(.2);
+	&:hover::before {
+		filter: brightness(0.2);
 		transform: translate(0.1%, 0);
 	}
 }
 
-
-
-
-
 .filter__dropdown-menu-btn::before {
-	filter: brightness(.7);
-  content: "";
+	filter: brightness(0.7);
+	content: "";
 	width: 16px;
 	height: 10px;
 	background-image: url("../img/icons/arrow.svg");
 	background-position: center;
 	background-repeat: no-repeat;
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%) rotate(0deg);
-  transition: transform 0.2s ease-in-out; /* Анимация поворота */
-
-	
-
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	transform: translateY(-50%) rotate(0deg);
+	transition: transform 0.2s ease-in-out; /* Анимация поворота */
 }
 
 /* Меняем угол поворота стрелки при открытом меню */
 .filter__dropdown-menu-btn.open::before {
-  transform: translateY(-50%) rotate(180deg);
+	transform: translateY(-50%) rotate(180deg);
 }
 
 .filter__dropdown-content {
-  width: 100%;
-  display: none;
-  position: absolute;
-  background-color: white;
-  border: 1px solid #ccc;
-  padding: 4px;
-  z-index: 1;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+	width: 100%;
+	display: none;
+	position: absolute;
+	background-color: white;
+	border: 1px solid #ccc;
+	padding: 4px;
+	z-index: 1;
+	box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .filter__dropdown-content.active {
-  display: block;
-  max-height: 140px;
-  overflow-y: scroll;
+	display: block;
+	max-height: 140px;
+	overflow-y: scroll;
 }
 
 .filter__dropdown-content.active::-webkit-scrollbar {
-  width: 5px;
+	width: 5px;
 }
 
 .filter__dropdown-content.active::-webkit-scrollbar-track {
-  background: #fff;
+	background: #fff;
 }
 
 .filter__dropdown-content.active::-webkit-scrollbar-thumb {
-  background-color: #727b89;
-  border-radius: 2px;
+	background-color: #727b89;
+	border-radius: 2px;
 }
 
 .filter__dropdown .input_field {
 	width: 100%;
 	line-height: 32px;
 	padding-left: 4px;
-  transition: background-color 0.1s ease;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
+	transition: background-color 0.1s ease;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
 	transition: color 0.2s ease-in-out;
 }
 
@@ -319,45 +316,43 @@ input[type="number"] {
 	padding-left: 10px;
 }
 
-
 .input_field:hover {
-  background: rgba(221, 221, 221, 0.5);
+	background: rgba(221, 221, 221, 0.5);
 }
 
 .input_field.selected {
-  color: var(--green-light);
-  background: rgba(221, 221, 221, 0.5);
-	
+	color: var(--green-light);
+	background: rgba(221, 221, 221, 0.5);
 }
 
 .custom-checkbox {
-  appearance: none;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #ccc;
-  position: relative;
-  cursor: pointer;
-  background-color: white;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
+	appearance: none;
+	width: 20px;
+	height: 20px;
+	border: 2px solid #ccc;
+	position: relative;
+	cursor: pointer;
+	background-color: white;
+	transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .custom-checkbox:checked {
-  background-color: var(--green-light); /* Зеленый фон */
-  border-color: var(--green-light);
+	background-color: var(--green-light); /* Зеленый фон */
+	border-color: var(--green-light);
 }
 
 .custom-checkbox:checked::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 6px;
-  height: 12px;
-  border: solid white;
-  border-width: 0 2px 2px 0;
-  transform: translate(-50%, -60%) rotate(45deg);
+	content: "";
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 6px;
+	height: 12px;
+	border: solid white;
+	border-width: 0 2px 2px 0;
+	transform: translate(-50%, -60%) rotate(45deg);
 }
 
 .input_field label {
-  cursor: pointer;
+	cursor: pointer;
 }
