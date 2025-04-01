@@ -18,15 +18,9 @@
 		<section class="filter section">
 			<!-- <form action=""> -->
 			<div class="filter__wrap">
-
 				<div class="filter__search">
-
 					<h3 class="filter__search-title">Поиск квартир</h3>
-
 				</div>
-
-
-
 				<div class="filter__tab-row">
 					<div class="filter__col">
 						<div class="filter__el">
@@ -61,13 +55,10 @@
 								</div>
 							</div>
 						</div>
-
 						<div class="filter__el">
-							<button class="filter__show-all-btn btn btn-green">Показать все фильтры</button>
+							<button class="filter__show-all-btn btn btn-green">Все фильтры</button>
 						</div>
-					</div>
-					<div class="filter__col filter__hidden-elements">
-						<div class="filter__el">
+						<div class="filter__el filter__hidden-elements">
 							<div class='filter__dropdown'>
 								<label class="filter__dropdown-menu">Сдача</label>
 								<div class="filter__dropdown-menu-btn">Все даты</div>
@@ -100,8 +91,8 @@
 							</div>
 						</div>
 					</div>
-					<div class="filter__col filter__hidden-elements">
-						<div class="filter__el">
+					<div class="filter__col">
+						<div class="filter__el filter__hidden-elements">
 							<h4 class="filter__row-title">Комнаты</h4>
 							<div class="filter__row-el-btns-container">
 								<button class="filter__el-btns btn-small">1к</button>
@@ -109,7 +100,7 @@
 								<button class="filter__el-btns btn-small">3к</button>
 							</div>
 						</div>
-						<div class="filter__el">
+						<div class="filter__el filter__hidden-elements">
 							<h4 class="filter__row-title">Этаж</h4>
 							<div class="filter-slider__inputs">
 								<label class="filter-slider__label">
@@ -124,13 +115,10 @@
 							</div>
 							<div class="filter__range-slider" id="floor-slider">
 							</div>
-
-
-
 						</div>
 					</div>
-					<div class="filter__col filter__hidden-elements">
-						<div class="filter__el">
+					<div class="filter__col">
+						<div class="filter__el filter__hidden-elements">
 							<h4 class="filter__row-title">Площадь, м2</h4>
 							<div class="filter-slider__inputs">
 								<label class="filter-slider__label">
@@ -146,7 +134,7 @@
 							<div class="filter__range-slider" id="square-slider">
 							</div>
 						</div>
-						<div class="filter__el">
+						<div class="filter__el filter__hidden-elements">
 							<div class='filter__dropdown'>
 								<label class="filter__dropdown-menu">Адрес</label>
 								<div class="filter__dropdown-menu-btn">Любой</div>
@@ -180,17 +168,19 @@
 						</div>
 
 					</div>
-					<div class="filter__col filter__hidden-elements">
-						<div class="filter__el">
+					<div class="filter__col">
+						<div class="filter__el filter__hidden-elements">
 							<h4 class="filter__row-title">Цена, руб.</h4>
 							<div class="filter-slider__inputs">
 								<label class="filter-slider__label">
 									<span class="filter-slider__text">от</span>
 									<input type="text" min="4000000" max="12000000" class="filter-slider__input" id="input-price-min">
+									<span class="filter-slider__text">₽</span>
 								</label>
 								<label class="filter-slider__label">
 									<span class="filter-slider__text">до</span>
 									<input type="text" min="4000000" max="12000000" class="filter-slider__input" id="input-price-max">
+									<span class="filter-slider__text">₽</span>
 								</label>
 							</div>
 							<div class="filter__range-slider" id="price-slider">

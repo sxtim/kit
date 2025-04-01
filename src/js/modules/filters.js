@@ -15,6 +15,27 @@ function validateInput(value, min, max) {
 	return Math.min(Math.max(numValue, min), max)
 }
 
+// Функция для автоматического изменения ширины поля ввода
+function adjustInputWidth(input) {
+	// Создаем временный элемент для измерения ширины текста
+	const temp = document.createElement("span")
+	temp.style.visibility = "hidden"
+	temp.style.position = "absolute"
+	temp.style.whiteSpace = "nowrap"
+	temp.style.fontSize = window.getComputedStyle(input).fontSize
+	temp.style.fontFamily = window.getComputedStyle(input).fontFamily
+	temp.style.fontWeight = window.getComputedStyle(input).fontWeight
+	temp.innerText = input.value || input.placeholder || "0"
+
+	document.body.appendChild(temp)
+	// Добавляем небольшой отступ для комфортного отображения
+	const width = temp.getBoundingClientRect().width + 8
+	document.body.removeChild(temp)
+
+	// Устанавливаем минимальную ширину
+	input.style.width = `${Math.max(width, 40)}px`
+}
+
 function createSlider(
 	sliderId,
 	idInpMin,
@@ -46,6 +67,9 @@ function createSlider(
 		if (idInpMin === "input-price-min" || idInpMax === "input-price-max") {
 			inputMin.value = formatNumber(startMin)
 			inputMax.value = formatNumber(startMax)
+			// Устанавливаем начальную ширину полей ввода
+			adjustInputWidth(inputMin)
+			adjustInputWidth(inputMax)
 		} else {
 			inputMin.value = startMin
 			inputMax.value = startMax
@@ -56,6 +80,8 @@ function createSlider(
 			// Применяем форматирование только для полей цены
 			if (idInpMin === "input-price-min" || idInpMax === "input-price-max") {
 				inputs[handle].value = formatNumber(value)
+				// Обновляем ширину при изменении значения слайдером
+				adjustInputWidth(inputs[handle])
 			} else {
 				inputs[handle].value = value
 			}
@@ -81,6 +107,8 @@ function createSlider(
 					if (numValue) {
 						const formattedValue = formatNumber(Number(numValue))
 						e.currentTarget.value = formattedValue
+						// Обновляем ширину при ручном вводе значения
+						adjustInputWidth(e.currentTarget)
 					}
 				}
 			})
@@ -276,8 +304,8 @@ if (showAllFiltersBtn) {
 			element.classList.toggle("active")
 		})
 		showAllFiltersBtn.textContent =
-			showAllFiltersBtn.textContent === "Показать все фильтры"
+			showAllFiltersBtn.textContent === "Все фильтры"
 				? "Скрыть фильтры"
-				: "Показать все фильтры"
+				: "Все фильтры"
 	})
 }
