@@ -77,17 +77,12 @@
 	font-weight: 500;
 	line-height: 130%;
 	margin-bottom: 4px;
-
-	@media (max-width: 998px) {
-		font-size: 18px;
-	}
 }
 
 .filter-slider__text {
-	color: var(--text-color-gray);
+	color: var(--text-color-black);
 	font-size: 16px;
 	font-weight: 500;
-	line-height: 130%;
 }
 
 .filter-slider__inputs {
@@ -99,18 +94,23 @@
 }
 
 .filter-slider__inputs .filter-slider__label {
-	text-align: right;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	input {
+		padding: 0;
+		border: none;
+		background-color: transparent;
+		width: 90px;
+	}
 }
 
 .filter-slider__input {
+	font-family: "Pangram-bold", sans-serif;
 	margin-left: 5px;
-	font-weight: 500;
+	font-weight: normal;
 	font-size: 16px;
 	color: var(--text-color-black);
-
-	@media (max-width: 998px) {
-		font-size: 16px;
-	}
 }
 
 .filter__range-slider {
@@ -355,4 +355,32 @@ input[type="number"] {
 
 .input_field label {
 	cursor: pointer;
+}
+
+.filter__show-all-btn {
+	display: none;
+	width: 100%;
+	margin-top: 10px;
+
+	@media (max-width: 768px) {
+		display: block;
+	}
+}
+
+.filter__hidden-elements {
+	@media (max-width: 768px) {
+		display: none;
+		opacity: 0;
+		height: 0;
+		overflow: hidden;
+		transition: opacity 0.3s ease, height 0.3s ease;
+	}
+}
+
+.filter__hidden-elements.active {
+	@media (max-width: 768px) {
+		display: flex;
+		opacity: 1;
+		height: auto;
+	}
 }

@@ -1,6 +1,20 @@
 import noUiSlider from "nouislider"
 import "nouislider/dist/nouislider.css"
 
+// Функция для форматирования чисел с разделителями
+function formatNumber(number) {
+	// Проверяем, что число валидное
+	if (isNaN(number) || number === null) return ""
+	return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")
+}
+
+// Функция для валидации введенного значения
+function validateInput(value, min, max) {
+	const numValue = Number(value.replace(/\s/g, ""))
+	if (isNaN(numValue)) return min
+	return Math.min(Math.max(numValue, min), max)
+}
+
 function createSlider(
 	sliderId,
 	idInpMin,
@@ -28,17 +42,49 @@ function createSlider(
 		const inputMax = document.getElementById(idInpMax)
 		const inputs = [inputMin, inputMax]
 
+		// Устанавливаем начальные значения в поля ввода
+		if (idInpMin === "input-price-min" || idInpMax === "input-price-max") {
+			inputMin.value = formatNumber(startMin)
+			inputMax.value = formatNumber(startMax)
+		} else {
+			inputMin.value = startMin
+			inputMax.value = startMax
+		}
+
 		slider.noUiSlider.on("update", function (values, handle) {
-			inputs[handle].value = Math.round(values[handle])
+			const value = Math.round(values[handle])
+			// Применяем форматирование только для полей цены
+			if (idInpMin === "input-price-min" || idInpMax === "input-price-max") {
+				inputs[handle].value = formatNumber(value)
+			} else {
+				inputs[handle].value = value
+			}
 		})
 
 		const setRangeSlider = (i, value) => {
 			let arr = [null, null]
-			arr[i] = value
+			// Преобразуем строку в число, удаляя пробелы
+			const numValue = Number(value.toString().replace(/\s/g, ""))
+			arr[i] = isNaN(numValue)
+				? rangeMin
+				: Math.min(Math.max(numValue, rangeMin), rangeMax)
 			slider.noUiSlider.set(arr)
 		}
 
+		// Обработка ввода значений
 		inputs.forEach((el, index) => {
+			el.addEventListener("input", e => {
+				const value = e.currentTarget.value
+				// Если это поле цены, форматируем значение при вводе
+				if (idInpMin === "input-price-min" || idInpMax === "input-price-max") {
+					const numValue = value.replace(/\s/g, "")
+					if (numValue) {
+						const formattedValue = formatNumber(Number(numValue))
+						e.currentTarget.value = formattedValue
+					}
+				}
+			})
+
 			el.addEventListener("change", e => {
 				setRangeSlider(index, e.currentTarget.value)
 			})
@@ -220,3 +266,18 @@ document.addEventListener("DOMContentLoaded", function () {
 		})
 	})
 })
+
+// Обработчик для кнопки "Показать все фильтры"
+const showAllFiltersBtn = document.querySelector(".filter__show-all-btn")
+if (showAllFiltersBtn) {
+	showAllFiltersBtn.addEventListener("click", () => {
+		const hiddenElements = document.querySelectorAll(".filter__hidden-elements")
+		hiddenElements.forEach(element => {
+			element.classList.toggle("active")
+		})
+		showAllFiltersBtn.textContent =
+			showAllFiltersBtn.textContent === "Показать все фильтры"
+				? "Скрыть фильтры"
+				: "Показать все фильтры"
+	})
+}
