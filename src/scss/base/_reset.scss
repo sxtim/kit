@@ -11,6 +11,10 @@
 	box-sizing: border-box;
 }
 
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
 /* Links */
 
 a, a:link, a:visited  {
@@ -87,3 +91,15 @@ label {
 legend {
 	display: block;
 }
+
+// Отключаем hover эффекты на мобильных устройствах
+// @media (hover: none) {
+// 	* {
+// 		-webkit-tap-highlight-color: transparent;
+// 		&:hover {
+// 			// background-color: inherit !important;
+// 			color: inherit !important;
+// 			border-color: inherit !important;
+// 		}
+// 	}
+// }
