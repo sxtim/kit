@@ -15,57 +15,11 @@
 <main class="main">
   @@include('blocks/breadcrumb.html')
   <div class="container">
-    <h1 class="title">Коммерция</h1>
+    <h1 class="title">Выбрать коммерческое помещение</h1>
   </div>
-  <section class="filter-apartments-cat">
-    <div class="container">
-      <div class="filter__tab-row">
-        <div class="filter__el">
-          <div>DROPDOWN</div>
-
-        </div>
-        <div class="filter__el">
-          <h4 class="filter__row-title">Цена, руб.</h4>
-          <div class="filter-slider__inputs">
-            <label class="filter-slider__label">
-              <span class="filter-slider__text">От</span>
-              <input type="number" min="4000000" max="12000000" class="filter-slider__input"
-                     id="input-price-min">
-            </label>
-
-            <label class="filter-slider__label">
-              <span class="filter-slider__text">До</span>
-              <input type="number" min="4000000" max="12000000" class="filter-slider__input"
-                     id="input-price-max">
-            </label>
-          </div>
-          <div class="filter__range-slider" id="price-slider">
-          </div>
-        </div>
-        <div class="filter__el">
-          <h4 class="filter__row-title">Площадь, м2</h4>
-          <div class="filter-slider__inputs">
-            <label class="filter-slider__label">
-              <span class="filter-slider__text">От</span>
-              <input type="number" min="40" max="120" class="filter-slider__input"
-                     id="input-square-min">
-            </label>
-
-            <label class="filter-slider__label">
-              <span class="filter-slider__text">До</span>
-              <input type="number" min="40" max="120" class="filter-slider__input"
-                     id="input-square-max">
-            </label>
-          </div>
-          <div class="filter__range-slider" id="square-slider">
-          </div>
-        </div>
-        <div class="filter__el filter__btn-container">
-          <button class="filter__btn btn btn-green">Показать</button>
-        </div>
-      </div>
-    </div>
-    </div>
+  <section class="filter section">
+    
+      @@include('blocks/filter-commerce.html')
   </section>
   <section class="catalog-section section">
     <div class="container">

@@ -29,7 +29,7 @@
 	display: flex;
 	gap: 40px;
 	justify-content: space-between;
-	align-items: center;
+	// align-items: center;
 
 	@media (max-width: 1200px) {
 		flex-wrap: wrap;
@@ -47,13 +47,18 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: flex-start;
 	width: 330px;
-	height: 160px;
+	max-height: 230px;
+	row-gap: 20px;
 
 	@media (max-width: 1200px) {
 		flex-basis: 46%;
 		width: 100%;
+	}
+
+	@media (max-width: 768px) {
+		row-gap: 0;
 	}
 }
 
@@ -395,7 +400,7 @@ input[type="number"] {
 		max-height: 0;
 		opacity: 0;
 		overflow: hidden;
-		transition: max-height 0.4s, opacity 0.2s;
+		transition: max-height 0.4s, opacity 0.4s;
 		pointer-events: none;
 	}
 }

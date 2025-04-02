@@ -3,19 +3,25 @@
 	margin-right: auto;
 	position: relative;
 
+	// Tab container needs positioning and min-height
+	.tab-content-container {
+		position: relative;
+		min-height: 300px; // Adjust this value based on your content
+	}
+
 	/*   // Tab navigation */
 	[role="tablist"] {
 		margin-bottom: 0;
 		padding-left: 0;
 		display: flex;
 		align-items: center;
-    justify-content: space-around;
+		justify-content: space-around;
 
 		gap: 16px;
 
 		@media (max-width: 768px) {
 			flex-wrap: wrap;
-      justify-content: flex-start;
+			justify-content: flex-start;
 		}
 	}
 
@@ -28,7 +34,7 @@
 	/*   // Tab navigation links */
 	[role="tab"] {
 		display: flex;
-    width: fit-content;
+		width: fit-content;
 		background-color: transparent;
 		border: none;
 		color: black;
@@ -67,20 +73,19 @@
 		&[aria-selected="true"] {
 			//background-color: #fff;
 			.tab-title {
-				font-family: "Pangram-bold", sans-serif;
-				font-weight: 700;
-				color: #162c44;
-				border-bottom: 2px solid var(--sand);
+				// font-family: "Pangram-bold", sans-serif;
+				// font-weight: 700;
+				color:  var(--sand);
+				// border-bottom: 1px solid var(--sand);
 
-        @media (max-width: 768px) {
-          border-bottom: none;
-        }
+				// @media (max-width: 768px) {
+				// 	border-bottom: none;
+				// }
 			}
 
 			@media (max-width: 768px) {
-				outline: 2px solid var(--sand); /* Ширина, вид и цвет рамки */
-				outline-offset: -2px;
-        border-bottom: none;
+				border: 1px solid var(--sand); /* Ширина, вид и цвет рамки */
+
 			}
 		}
 	}
@@ -89,9 +94,28 @@
 	[role="tabpanel"] {
 		background-color: #fff;
 		padding: 30px;
+		position: absolute;
+		top: 0;
+		left: 100px;
+		width: 100%;
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity 0.5s ease, left 0.5s ease;
+		z-index: 1;
 
 		&[aria-hidden="true"] {
-			display: none;
+			opacity: 0;
+			visibility: hidden;
+			left: 10px;
+			z-index: 1;
+		}
+
+		&[aria-hidden="false"] {
+			opacity: 1;
+			visibility: visible;
+			position: relative;
+			left: 0;
+			z-index: 2;
 		}
 
 		@media (max-width: 768px) {
