@@ -301,6 +301,7 @@ input[type="number"] {
 	max-height: 140px;
 	opacity: 1; // Полная видимость
 	overflow-y: scroll;
+	z-index: 10;
 }
 
 .filter__dropdown-content.active::-webkit-scrollbar {

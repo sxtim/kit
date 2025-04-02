@@ -151,6 +151,38 @@ createSlider(
 	16
 )
 
+// Инициализация слайдеров для коммерческого фильтра
+createSlider(
+	"commerce-price-slider",
+	"commerce-input-price-min",
+	"commerce-input-price-max",
+	4000000,
+	12000000,
+	500,
+	4000000,
+	12000000
+)
+createSlider(
+	"commerce-square-slider",
+	"commerce-input-square-min",
+	"commerce-input-square-max",
+	40,
+	120,
+	10,
+	40,
+	120
+)
+createSlider(
+	"commerce-floor-slider",
+	"commerce-input-floor-min",
+	"commerce-input-floor-max",
+	2,
+	16,
+	1,
+	2,
+	16
+)
+
 //DROPDOWN FILTER
 document.addEventListener("DOMContentLoaded", function () {
 	// Получаем все элементы с классом .filter__dropdown (списки выбора)
