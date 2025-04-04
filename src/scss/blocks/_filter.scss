@@ -133,7 +133,7 @@
 	align-self: center;
 	cursor: pointer;
 	margin-bottom: 10px;
-	z-index: 0 !important;
+	// z-index: 0 !important;
 }
 
 .filter__el-btns {
@@ -173,9 +173,16 @@ input[type="number"] {
 	-moz-appearance: textfield;
 }
 
+/* Разрешаем вертикальный свайп на всех элементах слайдера */
+.noUi-target,
+.noUi-target * {
+	touch-action: pan-y !important;
+}
+
 .noUi-connect {
 	cursor: pointer;
 	background-color: var(--sand) !important;
+	touch-action: pan-y !important; /* Разрешаем вертикальный свайп */
 }
 
 .noUi-target {
@@ -184,6 +191,7 @@ input[type="number"] {
 	border-radius: 100px !important;
 	box-shadow: none !important;
 	height: 1px !important;
+	touch-action: pan-y !important; /* Разрешаем вертикальный свайп */
 }
 
 .noUi-handle::after,
@@ -196,6 +204,7 @@ input[type="number"] {
 	border-radius: 20px !important;
 	background-color: var(--sand) !important;
 	border: 3px solid var(--sand) !important;
+	touch-action: pan-y !important; /* Разрешаем вертикальный свайп */
 
 	::before {
 		content: "";
@@ -228,6 +237,7 @@ input[type="number"] {
 	height: 14px !important;
 	top: -7px !important;
 	right: -11px !important;
+	touch-action: pan-y !important; /* Разрешаем вертикальный свайп */
 }
 
 .noUi-horizontal .noUi-handle::before {
