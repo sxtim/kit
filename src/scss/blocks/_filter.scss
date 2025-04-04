@@ -49,12 +49,11 @@
 	justify-content: flex-start;
 	width: 330px;
 	max-height: 230px;
-	
+
 	row-gap: 20px;
 
 	@media (max-width: 1200px) {
 		flex-basis: 46%;
-		
 	}
 
 	@media (max-width: 768px) {
@@ -72,6 +71,10 @@
 	@media (max-width: 1200px) {
 		width: 95%;
 	}
+}
+
+.filter__col:last-child .filter__el {
+	margin-top: auto;
 }
 
 .filter__row-el-btns-container {
@@ -292,15 +295,13 @@ input[type="number"] {
 	z-index: 5;
 	box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 
-
 	max-height: 0; // Начальное состояние
-  opacity: 0; // Начальная прозрачность
-  overflow: hidden; // Скрываем переполнение
-  transition: max-height 0.3s, opacity 0.3s; // Плавный переход
+	opacity: 0; // Начальная прозрачность
+	overflow: hidden; // Скрываем переполнение
+	transition: max-height 0.3s, opacity 0.3s; // Плавный переход
 }
 
 .filter__dropdown-content.active {
-
 	max-height: 140px;
 	opacity: 1; // Полная видимость
 	overflow-y: scroll;
@@ -383,7 +384,6 @@ input[type="number"] {
 		display: flex;
 	}
 }
-
 
 .filter__show-all-btn {
 	display: none;
