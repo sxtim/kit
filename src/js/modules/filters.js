@@ -1,187 +1,190 @@
 import noUiSlider from "nouislider"
 import "nouislider/dist/nouislider.css"
 
-// Функция для форматирования чисел с разделителями
-function formatNumber(number) {
-	// Проверяем, что число валидное
-	if (isNaN(number) || number === null) return ""
-	return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")
-}
+/**
+ * Создает слайдер с форматированием значений
+ * @param {Object} config - конфигурация слайдера
+ */
+function createSlider(config) {
+	const {
+		sliderId,
+		inputMinId,
+		inputMaxId,
+		startMin,
+		startMax,
+		step,
+		rangeMin,
+		rangeMax,
+		formatOptions = {
+			style: "decimal",
+			useGrouping: true,
+			minimumFractionDigits: 0,
+			maximumFractionDigits: 0,
+		},
+	} = config
 
-// Функция для валидации введенного значения
-function validateInput(value, min, max) {
-	const numValue = Number(value.replace(/\s/g, ""))
-	if (isNaN(numValue)) return min
-	return Math.min(Math.max(numValue, min), max)
-}
-
-// Функция для автоматического изменения ширины поля ввода
-function adjustInputWidth(input) {
-	// Создаем временный элемент для измерения ширины текста
-	const temp = document.createElement("span")
-	temp.style.visibility = "hidden"
-	temp.style.position = "absolute"
-	temp.style.whiteSpace = "nowrap"
-	temp.style.fontSize = window.getComputedStyle(input).fontSize
-	temp.style.fontFamily = window.getComputedStyle(input).fontFamily
-	temp.style.fontWeight = window.getComputedStyle(input).fontWeight
-	temp.innerText = input.value || input.placeholder || "0"
-
-	document.body.appendChild(temp)
-	// Добавляем небольшой отступ для комфортного отображения
-	const width = temp.getBoundingClientRect().width + 8
-	document.body.removeChild(temp)
-
-	// Устанавливаем минимальную ширину
-	input.style.width = `${Math.max(width, 40)}px`
-}
-
-function createSlider(
-	sliderId,
-	idInpMin,
-	idInpMax,
-	startMin,
-	startMax,
-	step,
-	rangeMin,
-	rangeMax
-) {
 	const slider = document.getElementById(sliderId)
 
-	if (slider) {
-		noUiSlider.create(slider, {
-			start: [startMin, startMax],
-			connect: true,
-			step: step,
-			range: {
-				min: [rangeMin],
-				max: [rangeMax],
-			},
-		})
+	if (!slider) return
 
-		const inputMin = document.getElementById(idInpMin)
-		const inputMax = document.getElementById(idInpMax)
-		const inputs = [inputMin, inputMax]
+	const inputMin = document.getElementById(inputMinId)
+	const inputMax = document.getElementById(inputMaxId)
 
-		// Устанавливаем начальные значения в поля ввода
-		if (idInpMin === "input-price-min" || idInpMax === "input-price-max") {
-			inputMin.value = formatNumber(startMin)
-			inputMax.value = formatNumber(startMax)
-			// Устанавливаем начальную ширину полей ввода
-			adjustInputWidth(inputMin)
-			adjustInputWidth(inputMax)
-		} else {
-			inputMin.value = startMin
-			inputMax.value = startMax
-		}
+	if (!inputMin || !inputMax) return
 
-		slider.noUiSlider.on("update", function (values, handle) {
-			const value = Math.round(values[handle])
-			// Применяем форматирование только для полей цены
-			if (idInpMin === "input-price-min" || idInpMax === "input-price-max") {
-				inputs[handle].value = formatNumber(value)
-				// Обновляем ширину при изменении значения слайдером
-				adjustInputWidth(inputs[handle])
-			} else {
-				inputs[handle].value = value
-			}
-		})
+	const inputs = [inputMin, inputMax]
 
-		const setRangeSlider = (i, value) => {
-			let arr = [null, null]
-			// Преобразуем строку в число, удаляя пробелы
-			const numValue = Number(value.toString().replace(/\s/g, ""))
-			arr[i] = isNaN(numValue)
-				? rangeMin
-				: Math.min(Math.max(numValue, rangeMin), rangeMax)
-			slider.noUiSlider.set(arr)
-		}
-
-		// Обработка ввода значений
-		inputs.forEach((el, index) => {
-			el.addEventListener("input", e => {
-				const value = e.currentTarget.value
-				// Если это поле цены, форматируем значение при вводе
-				if (idInpMin === "input-price-min" || idInpMax === "input-price-max") {
-					const numValue = value.replace(/\s/g, "")
-					if (numValue) {
-						const formattedValue = formatNumber(Number(numValue))
-						e.currentTarget.value = formattedValue
-						// Обновляем ширину при ручном вводе значения
-						adjustInputWidth(e.currentTarget)
-					}
-				}
-			})
-
-			el.addEventListener("change", e => {
-				setRangeSlider(index, e.currentTarget.value)
-			})
-		})
+	// Форматирование числа с разделением разрядов
+	const formatNumber = value => {
+		return Number(value).toLocaleString("ru-RU", formatOptions)
 	}
+
+	// Очистка форматирования для обработки ввода
+	const unformatNumber = value => {
+		return value.replace(/\s+/g, "").replace(",", ".")
+	}
+
+	// Автоподстройка ширины поля по содержимому
+	const adjustInputWidth = input => {
+		const tempSpan = document.createElement("span")
+		tempSpan.style.visibility = "hidden"
+		tempSpan.style.position = "absolute"
+		tempSpan.style.whiteSpace = "pre"
+		tempSpan.style.font = window.getComputedStyle(input).font
+		tempSpan.textContent = input.value || "0"
+
+		document.body.appendChild(tempSpan)
+		const width = tempSpan.getBoundingClientRect().width + 8 // добавляем небольшой отступ
+		document.body.removeChild(tempSpan)
+
+		input.style.width = `${Math.max(40, width)}px`
+	}
+
+	noUiSlider.create(slider, {
+		start: [startMin, startMax],
+		connect: true,
+		step: step,
+		range: {
+			min: [rangeMin],
+			max: [rangeMax],
+		},
+		format: {
+			to: function (value) {
+				return Math.round(value)
+			},
+			from: function (value) {
+				return Number(unformatNumber(value))
+			},
+		},
+	})
+
+	// Обновление значений в инпутах и их ширины
+	slider.noUiSlider.on("update", function (values, handle) {
+		const formattedValue = formatNumber(values[handle])
+		inputs[handle].value = formattedValue
+		adjustInputWidth(inputs[handle])
+	})
+
+	// Функция обновления слайдера при изменении значений в инпутах
+	const setRangeSlider = (i, value) => {
+		let arr = [null, null]
+		arr[i] = value
+		slider.noUiSlider.set(arr)
+	}
+
+	// Обработчики событий для инпутов
+	inputs.forEach((input, index) => {
+		// При фокусе убираем форматирование для удобства редактирования
+		input.addEventListener("focus", function () {
+			this.value = unformatNumber(this.value)
+			adjustInputWidth(this)
+		})
+
+		// При потере фокуса форматируем число
+		input.addEventListener("blur", function () {
+			const value = unformatNumber(this.value)
+			const formattedValue = formatNumber(value)
+			this.value = formattedValue
+			adjustInputWidth(this)
+		})
+
+		// При изменении значения обновляем слайдер
+		input.addEventListener("change", function (e) {
+			const value = unformatNumber(this.value)
+			setRangeSlider(index, value)
+		})
+
+		// Подстраиваем ширину при вводе
+		input.addEventListener("input", function () {
+			adjustInputWidth(this)
+		})
+	})
+
+	// Инициализация ширины полей при загрузке
+	inputs.forEach(input => adjustInputWidth(input))
 }
 
-createSlider(
-	"price-slider",
-	"input-price-min",
-	"input-price-max",
-	4000000,
-	12000000,
-	500,
-	4000000,
-	12000000
-)
-createSlider(
-	"square-slider",
-	"input-square-min",
-	"input-square-max",
-	40,
-	120,
-	10,
-	40,
-	120
-)
-createSlider(
-	"floor-slider",
-	"input-floor-min",
-	"input-floor-max",
-	2,
-	16,
-	1,
-	2,
-	16
-)
+// Создание слайдеров с использованием объекта конфигурации
+document.addEventListener("DOMContentLoaded", function () {
+	// Слайдер цены
+	createSlider({
+		sliderId: "price-slider",
+		inputMinId: "input-price-min",
+		inputMaxId: "input-price-max",
+		startMin: 4000000,
+		startMax: 12000000,
+		step: 500,
+		rangeMin: 4000000,
+		rangeMax: 12000000,
+	})
 
-// Инициализация слайдеров для коммерческого фильтра
-createSlider(
-	"commerce-price-slider",
-	"commerce-input-price-min",
-	"commerce-input-price-max",
-	4000000,
-	12000000,
-	500,
-	4000000,
-	12000000
-)
-createSlider(
-	"commerce-square-slider",
-	"commerce-input-square-min",
-	"commerce-input-square-max",
-	40,
-	120,
-	10,
-	40,
-	120
-)
-createSlider(
-	"commerce-floor-slider",
-	"commerce-input-floor-min",
-	"commerce-input-floor-max",
-	2,
-	16,
-	1,
-	2,
-	16
-)
+	// Слайдер площади
+	createSlider({
+		sliderId: "square-slider",
+		inputMinId: "input-square-min",
+		inputMaxId: "input-square-max",
+		startMin: 40,
+		startMax: 120,
+		step: 10,
+		rangeMin: 40,
+		rangeMax: 120,
+	})
+
+	// Слайдер этажей
+	createSlider({
+		sliderId: "floor-slider",
+		inputMinId: "input-floor-min",
+		inputMaxId: "input-floor-max",
+		startMin: 2,
+		startMax: 16,
+		step: 1,
+		rangeMin: 2,
+		rangeMax: 16,
+	})
+
+	// Слайдеры для коммерческого фильтра
+	createSlider({
+		sliderId: "commerce-price-slider",
+		inputMinId: "commerce-input-price-min",
+		inputMaxId: "commerce-input-price-max",
+		startMin: 12000000,
+		startMax: 160000000,
+		step: 500,
+		rangeMin: 12000000,
+		rangeMax: 160000000,
+	})
+
+	createSlider({
+		sliderId: "commerce-square-slider",
+		inputMinId: "commerce-input-square-min",
+		inputMaxId: "commerce-input-square-max",
+		startMin: 80,
+		startMax: 12000,
+		step: 10,
+		rangeMin: 80,
+		rangeMax: 12000,
+	})
+})
 
 //DROPDOWN FILTER
 document.addEventListener("DOMContentLoaded", function () {
