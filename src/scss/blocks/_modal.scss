@@ -1,0 +1,97 @@
+.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.3s, visibility 0.3s;
+	z-index: 1000;
+
+	&.active {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+.modal__overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	cursor: pointer;
+}
+
+.modal__content {
+	position: relative;
+	background-color: white;
+	padding: 40px;
+	max-width: 500px;
+	width: 100%;
+	border-radius: 8px;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+	z-index: 1001;
+	max-height: 90vh;
+	overflow-y: auto;
+
+	@media (max-width: 576px) {
+		padding: 20px;
+		max-width: 90%;
+	}
+}
+
+.modal__close {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	border: none;
+	background: transparent;
+	cursor: pointer;
+	color: #8c8c8c;
+	transition: color 0.3s;
+
+	&:hover {
+		color: var(--text-color-black);
+	}
+}
+
+.modal__title {
+	font-family: "Pangram-bold", sans-serif;
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 100%;
+	margin-bottom: 20px;
+	color: var(--text-color-black);
+
+	@media (max-width: 576px) {
+		font-size: 20px;
+	}
+}
+
+.modal__form {
+	width: 100%;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+	transition: background-color 0s 600000s, color 0s 600000s !important;
+}
+
+.modal__text {
+	font-family: "Pangram", sans-serif;
+	font-size: 18px;
+	line-height: 1.4;
+	color: var(--text-color-black);
+	margin-bottom: 20px;
+	text-align: center;
+
+	@media (max-width: 576px) {
+		font-size: 16px;
+	}
+}

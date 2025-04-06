@@ -1,8 +1,20 @@
 import mobileNav from "./modules/mobile-nav.js"
 mobileNav()
 
-import "./modules/tabs"
 import "./modules/filters"
+import initFormHandlers from "./modules/formHandler"
+import initModals from "./modules/modal"
+import initPhoneMasks from "./modules/phoneMask"
+import "./modules/tabs"
+
+// Инициализация модальных окон
+initModals()
+
+// Инициализация масок телефонных номеров
+initPhoneMasks()
+
+// Инициализация обработчиков форм
+initFormHandlers()
 
 require("fslightbox")
 
@@ -119,57 +131,56 @@ let sliderOne = new Swiper(".commerce-info__slider", {
 
 const btnShareCopy = document.querySelector(".share-copy-btn")
 if (btnShareCopy) {
+	btnShareCopy.addEventListener("click", function () {
+		const button = this
+		const text = document.querySelector(".share-copy-btn span")
+		const originalText = text.textContent // Сохраняем оригинальный текст
+		const url = window.location.href
 
-	btnShareCopy.addEventListener("click", function() {
-	const button = this;
-	const text = document.querySelector(".share-copy-btn span");
-	const originalText = text.textContent; // Сохраняем оригинальный текст
-	const url = window.location.href;
+		if (button.disabled) return // Если кнопка уже отключена, ничего не делаем
 
-	if (button.disabled) return; // Если кнопка уже отключена, ничего не делаем
+		button.disabled = true // Отключаем кнопку
 
-	button.disabled = true; // Отключаем кнопку
-
-	navigator.clipboard.writeText(url)
+		navigator.clipboard
+			.writeText(url)
 			.then(() => {
-					text.style.transition = "all 0.5s ease-in-out"; // Плавность анимации
-					text.style.filter = "blur(2px)"; // Размытие перед изменением
-					text.style.opacity = "0"; // Исчезновение
+				text.style.transition = "all 0.5s ease-in-out" // Плавность анимации
+				text.style.filter = "blur(2px)" // Размытие перед изменением
+				text.style.opacity = "0" // Исчезновение
+
+				setTimeout(() => {
+					text.textContent = "Ссылка скопирована!!!"
+					text.style.color = "green"
+
+					text.style.filter = "blur(0px)"
+					text.style.opacity = "1" // Плавное появление
+				}, 500)
+
+				setTimeout(() => {
+					text.style.filter = "blur(2px)"
+					text.style.opacity = "0"
 
 					setTimeout(() => {
-							text.textContent = "Ссылка скопирована!!!";
-							text.style.color = "green";
-							
-							text.style.filter = "blur(0px)";
-							text.style.opacity = "1"; // Плавное появление
-					}, 500);
+						text.textContent = originalText
 
-					setTimeout(() => {
-							text.style.filter = "blur(2px)";
-							text.style.opacity = "0";
-
-							setTimeout(() => {
-									text.textContent = originalText;
-									
-									text.style.color = "";
-									text.style.filter = "blur(0px)";
-									text.style.opacity = "1";
-									
-							}, 500);
-							button.disabled = false;
-					}, 3500);
+						text.style.color = ""
+						text.style.filter = "blur(0px)"
+						text.style.opacity = "1"
+					}, 500)
+					button.disabled = false
+				}, 3500)
 			})
 			.catch(err => {
-					console.error("Ошибка при копировании: ", err);
-			});
-});
+				console.error("Ошибка при копировании: ", err)
+			})
+	})
 
-
-
-
-
-//URL telegram whatsapp
-const currentLinkPage = window.location.href // Получаем URL текущей страницы
-document.querySelector(".share-current-link-tg").href =`https://t.me/share/url?url=${currentLinkPage}` // Устанавливаем в href
-document.querySelector(".share-current-link-wht").href =`https://wa.me/?text=${currentLinkPage}`
+	//URL telegram whatsapp
+	const currentLinkPage = window.location.href // Получаем URL текущей страницы
+	document.querySelector(
+		".share-current-link-tg"
+	).href = `https://t.me/share/url?url=${currentLinkPage}` // Устанавливаем в href
+	document.querySelector(
+		".share-current-link-wht"
+	).href = `https://wa.me/?text=${currentLinkPage}`
 }
