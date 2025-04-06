@@ -43,21 +43,30 @@
     </section>
     <section class="about-project section">
       <div class="container">
-        <h3 class="title">О проекте</h3>
+        <h3 class="title">ЖК «Спутник» в Воронеже</h3>
         <div class="about-project__wrap">
           <div class="about-project__col">
             <div class="about-project__text">
-              <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad expedita, repellat eius assumenda aliquam
-              </p> inventore soluta at vitae vero corrupti quidem aut non illo <p> accusamus molestiae accusantium
-                explicabo distinctio tempore.</p>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
-              <p> Necessitatibus officiis fugiat vitae, vel debitis voluptas molestiae ex corporis. Consequuntur dolorum
-                molestias voluptate ex officia cupiditate iure excepturi veniam, error debitis.</p>
+              <p><span> Жилой комплекс «Спутник» находится в центральном районе на севере Воронежа, в экологически
+                  чистом
+                  месте. Рядом заповедник Воронежской нагорной дубравы и лесопарк НИИЛГиС.
+                </span></p>
+              <p> <span> Есть вся необходимая социальная инфраструктура, новый детский сад и Мегашкола. Благодаря
+                  удачному
+                  расположению и просторным квартирам ЖК «Спутник» в Воронеже можно считать одним из лучших мест для
+                  проживания семей с детьми.</span></p>
+              <p>
+              <p><span>Основные параметры:</span></p>
+              <p><span>- комплекс состоит из</span> 10 позиций <span>(блоков) по</span> 16 этажей <span></span></p>
+              <p><span>- квартиры</span> от 1 до 3 комнат,<span> сдаются с отделкой</span></p>
+              <p><span>- просторные планировки с гардеробными</span></p>
+              <p><span>- площадь квартир</span>от 48,7 до 103 м2</p>
+              </p>
             </div>
           </div>
           <div class="about-project__col">
             <div class="about-project__media">
-              <iframe src="https://vk.com/video_ext.php?oid=-22822305&id=456241864&hd=2" width="100%" height="360"
+              <iframe src="https://vk.com/video_ext.php?oid=-225622057&id=456239103&hd=2&" width="100%" height="360"
                 allow="autoplay; encrypted-media; fullscreen; picture-in-picture;" frameborder="0"
                 allowfullscreen></iframe>
             </div>
@@ -65,75 +74,20 @@
         </div>
       </div>
     </section>
-    <section class="section">
+    <section class="filter section">
       <div class="container">
         <h3 class="title">Выбрать квартиру</h3>
       </div>
-      <div class="filter-apartments-cat">
-        <div class="container">
-          <div class="filter__tab-row">
-            <div class="filter__el">
-              <h4 class="filter__row-title">Комнатность</h4>
-              <div class="filter__row-el-btns-container">
-                <button class="filter__el-btns btn-small">1к</button>
-                <button class="filter__el-btns btn-small">2к</button>
-                <button class="filter__el-btns btn-small">3к</button>
-              </div>
-
-            </div>
-            <div class="filter__el">
-              <h4 class="filter__row-title">Цена, руб.</h4>
-              <div class="filter-slider__inputs">
-                <label class="filter-slider__label">
-                  <span class="filter-slider__text">От</span>
-                  <input type="text" min="4000000" max="12000000" class="filter-slider__input" id="input-price-min">
-                </label>
-
-                <label class="filter-slider__label">
-                  <span class="filter-slider__text">До</span>
-                  <input type="text" min="4000000" max="12000000" class="filter-slider__input" id="input-price-max">
-                </label>
-              </div>
-              <div class="filter__range-slider" id="price-slider">
-              </div>
-            </div>
-            <div class="filter__el">
-              <h4 class="filter__row-title">Площадь, м2</h4>
-              <div class="filter-slider__inputs">
-                <label class="filter-slider__label">
-                  <span class="filter-slider__text">От</span>
-                  <input type="number" min="40" max="120" class="filter-slider__input" id="input-square-min">
-                </label>
-
-                <label class="filter-slider__label">
-                  <span class="filter-slider__text">До</span>
-                  <input type="number" min="40" max="120" class="filter-slider__input" id="input-square-max">
-                </label>
-              </div>
-              <div class="filter__range-slider" id="square-slider">
-              </div>
-            </div>
-            <div class="filter__el filter__btn-container">
-              <button class="filter__btn btn btn-green">Показать</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="container">
-        <div class="cards-wrapper-col3">
-          @@include('blocks/cards/card-apartment.html')
-          @@include('blocks/cards/card-apartment.html')
-          @@include('blocks/cards/card-apartment.html')
-          @@include('blocks/cards/card-apartment.html')
-          @@include('blocks/cards/card-apartment.html')
-        </div>
-      </div>
+          
+          @@include('blocks/filter-apartment.html')
+      
+      
     </section>
 
-    <div class="container">
-      <h3 class="title">ОСОБЕННОСТИ ОБЪЕКТА</h3>
-      <div data-tab-component>
+    <section class="section">
+      <div class="container">
+        <h3 class="title">ОСОБЕННОСТИ ОБЪЕКТА</h3>
+        <div data-tab-component>
         <div class="tab-btns-container" role="tablist" aria-label="Tabbed content">
           <button role="tab" aria-selected="true" aria-controls="tab3-content" id="tab3">
             <h3 class="tab-title">Архитектура</h3>
@@ -199,7 +153,8 @@
           </div>
         </section>
       </div>
-    </div>
+      </div>
+    </section>
 
     <section class="construction-feature section">
       <div class="container">
@@ -336,7 +291,7 @@
               <span>&#10230;</span>
             </div>
             <img class="complex-this__item-img" src="./img/complex-single/complex-car.png" alt="">
-            <a class="complex-this__item-link" href="#!"></a>
+            <a class="complex-this__item-link" href="parking.html"></a>
           </div>
           <div class="complex-this__item">
             <div class="complex-this__item-content">
@@ -344,7 +299,7 @@
               <span>&#10230;</span>
             </div>
             <img class="complex-this__item-img" src="./img/complex-single/complex-teh.png" alt="">
-            <a class="complex-this__item-link" href="#!"></a>
+            <a class="complex-this__item-link" href="commerce-catalog.html"></a>
           </div>
           <div class="complex-this__item">
             <div class="complex-this__item-content">

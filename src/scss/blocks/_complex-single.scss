@@ -134,10 +134,25 @@
 
 .about-project__text {
 	font-family: "Pangram", sans-serif;
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: 500;
-	line-height: 130%;
+	line-height: 140%;
 	padding-right: 16px;
+
+	p {
+		font-family: "Pangram-bold", sans-serif;
+		display: flex;
+		gap: 8px;
+		align-items: center;
+		margin-bottom: 6px;
+		font-weight: 500;
+
+		span {
+			font-family: "Pangram", sans-serif;
+			font-weight: 500;
+			color: rgba(27, 27, 27, 0.8);
+		}
+	}
 
   @media (max-width: 768px) {
 		font-size: 14px;
@@ -145,10 +160,6 @@
 
 }
 
-.about-project__text p {
-	text-align: justify;
-	margin-bottom: 20px;
-}
 
 .about-project__media {
 	height: 0px;
