@@ -88,9 +88,15 @@ const swiperTabsContent = new Swiper(".apartment-swiper-tabs-content", {
 
 //SLIDER APARTMENT
 var swiperApartmentSimilar = new Swiper(".apartment-similar-swiper", {
+	slidesPerView: 3,
+	spaceBetween: 30,
 	pagination: {
 		el: ".apartment-similar-swiper-pag",
 		clickable: true,
+	},
+	navigation: {
+		nextEl: ".apartment-similar-swiper-next",
+		prevEl: ".apartment-similar-swiper-prev",
 	},
 	breakpoints: {
 		360: {
@@ -123,6 +129,10 @@ let sliderOne = new Swiper(".commerce-info__slider", {
 	pagination: {
 		el: ".commerce-info__slider-pagination",
 		clickable: true,
+	},
+	navigation: {
+		nextEl: ".commerce-info__slider-next",
+		prevEl: ".commerce-info__slider-prev",
 	},
 	loop: true,
 })

@@ -1,10 +1,74 @@
 .swiper-scrollbar {
-  height: 2px !important;
-  border-radius: 0 !important;
-  background-color: rgba(255, 255, 255, 0.3) !important;
+	height: 2px !important;
+	border-radius: 0 !important;
+	background-color: rgba(255, 255, 255, 0.3) !important;
 }
 
 .swiper-scrollbar-drag {
-  border-radius: 0 !important;
-  background-color: rgb(255, 255, 255) !important;
+	border-radius: 0 !important;
+	background-color: rgb(255, 255, 255) !important;
+}
+
+// Navigation arrows
+.apartment-similar-swiper-prev,
+.apartment-similar-swiper-next,
+.commerce-info__slider-prev,
+.commerce-info__slider-next {
+	position: absolute;
+	// top: 50%;
+	// transform: translateY(-50%);
+	width: 46px;
+	height: 46px;
+	background-color: var(--green);
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	z-index: 20;
+	transition: all 0.3s ease;
+	box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+	top: auto;
+	bottom: 20px;
+	transform: translateY(0);
+
+	&:hover {
+		background-color: #2c6e49;
+		
+	}
+
+	&::after {
+		content: '';
+		width: 12px;
+		height: 12px;
+		border-right: 3px solid #fff;
+		border-bottom: 3px solid #fff;
+		display: block;
+	}
+
+	&.swiper-button-disabled {
+		opacity: 0.5;
+		cursor: default;
+		background-color: rgba(0, 0, 0, 0.3);
+	}
+}
+
+.apartment-similar-swiper-prev,
+.commerce-info__slider-prev {
+	left: 15px;
+
+	&::after {
+		transform: rotate(135deg);
+		margin-right: -4px;
+	}
+}
+
+.apartment-similar-swiper-next,
+.commerce-info__slider-next {
+	right: 15px;
+
+	&::after {
+		transform: rotate(-45deg);
+		margin-left: -4px;
+	}
 }
