@@ -16,7 +16,7 @@ function initPhoneMasks() {
 		const maskOptions = {
 			mask: "+{7} 000 000 00 00",
 			lazy: false,
-			placeholderChar: "_",
+			placeholderChar: " ",
 		}
 
 		const mask = IMask(input, maskOptions)
@@ -51,11 +51,8 @@ function initPhoneMasks() {
 		// Проверяем количество цифр (должно быть 11 с кодом страны)
 		const validLength = digitsOnly.length === 11
 
-		// Проверяем отсутствие символов подстановки "_"
-		const noPlaceholders = !input.value.includes("_")
-
-		// Проверяем полностью заполненный номер
-		const isComplete = validLength && noPlaceholders
+		// Проверяем, что маска полностью заполнена используя unmaskedValue маски
+		const isComplete = validLength && mask.unmaskedValue.length === 11
 
 		// Проверяем, что поле не пустое
 		const hasValue = digitsOnly.length > 0

@@ -22,30 +22,30 @@ function initFormHandlers() {
 		checkFormValidity(form)
 
 		// Обработка отправки формы
-		// form.addEventListener("submit", function (e) {
-		// 	e.preventDefault() // Предотвращаем стандартную отправку формы
+		form.addEventListener("submit", function (e) {
+			e.preventDefault() // Предотвращаем стандартную отправку формы
 
-		// 	// Валидация формы перед отправкой
-		// 	if (isFormValid(form)) {
-		// 		// Здесь будет отправка данных формы на сервер
-		// 		// Можно использовать fetch или XMLHttpRequest
+			// Валидация формы перед отправкой
+			if (isFormValid(form)) {
+				// Здесь будет отправка данных формы на сервер
+				// Можно использовать fetch или XMLHttpRequest
 
-		// 		// Эмуляция отправки формы (в реальном проекте здесь будет запрос на сервер)
-		// 		setTimeout(() => {
-		// 			// Очистка формы
-		// 			form.reset()
+				// Эмуляция отправки формы (в реальном проекте здесь будет запрос на сервер)
+				setTimeout(() => {
+					// Очистка формы
+					form.reset()
 
-		// 			// Закрытие модального окна, если форма находится в модальном окне
-		// 			const parentModal = form.closest(".modal")
-		// 			if (parentModal) {
-		// 				parentModal.classList.remove("active")
-		// 			}
+					// Закрытие модального окна, если форма находится в модальном окне
+					const parentModal = form.closest(".modal")
+					if (parentModal) {
+						parentModal.classList.remove("active")
+					}
 
-		// 			// Показываем модальное окно успешной отправки
-		// 			showSuccessModal()
-		// 		}, 500)
-		// 	}
-		// })
+					// Показываем модальное окно успешной отправки
+					showSuccessModal()
+				}, 500)
+			}
+		})
 	})
 
 	// Функция показа модального окна успешной отправки
@@ -76,9 +76,8 @@ function initFormHandlers() {
 				// Получаем только цифры из введенного номера (игнорируем форматирование)
 				const digitsOnly = input.value.replace(/\D/g, "")
 
-				// Должно быть 11 цифр (с кодом страны) и отсутствие символов-заполнителей "_"
-				const isPhoneComplete =
-					digitsOnly.length === 11 && !input.value.includes("_")
+				// Проверяем только количество цифр (должно быть 11 с кодом страны)
+				const isPhoneComplete = digitsOnly.length === 11
 
 				if (!isPhoneComplete) {
 					isValid = false
