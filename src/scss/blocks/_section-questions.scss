@@ -43,9 +43,13 @@
 
 .section-questions__txt {
   font-weight: 500;
-  font-size: calc(1.3rem + 8*(100vw - 360px) / 1200);
+  font-size: calc(1.2rem + 8*(100vw - 360px) / 1600);
   line-height: 120%;
   margin-top: 15px;
+
+  @media (max-width: 998px) {
+    text-align: center;
+  }
 }
 
 

@@ -1,123 +1,147 @@
 :root {
-  --radial-bg: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.60) 100%);
-  --linear-bg: linear-gradient(181deg, rgba(0, 0, 0, 0.5) 91.91%, rgba(255, 255, 255, 0.00) 116.71%, rgba(255, 255, 255, 0.00) 116.72%);
-  //--radial-bg: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.20) 100%);
-  //--linear-bg: linear-gradient(181deg, rgba(0, 0, 0, 0.20) 0.91%, rgba(255, 255, 255, 0.00) 116.71%, rgba(255, 255, 255, 0.00) 116.72%);
+	--radial-bg: radial-gradient(
+		50% 50% at 50% 50%,
+		rgba(0, 0, 0, 0) 0%,
+		rgba(0, 0, 0, 0.6) 100%
+	);
+	--linear-bg: linear-gradient(
+		181deg,
+		rgba(0, 0, 0, 0.5) 91.91%,
+		rgba(255, 255, 255, 0) 116.71%,
+		rgba(255, 255, 255, 0) 116.72%
+	);
+	//--radial-bg: radial-gradient(50% 50% at 50% 50%, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.20) 100%);
+	//--linear-bg: linear-gradient(181deg, rgba(0, 0, 0, 0.20) 0.91%, rgba(255, 255, 255, 0.00) 116.71%, rgba(255, 255, 255, 0.00) 116.72%);
 }
 
 @mixin background-size {
-  background-position: center center; /* x y */
-  background-size: cover;
-  background-repeat: no-repeat;
+	background-position: center center; /* x y */
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 .slide {
-  height: 70vh;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-color: #555;
+	height: 70vh;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background-color: #555;
 
+	/* x y */
+	background-size: cover !important;
+	background-repeat: no-repeat;
 
-   /* x y */
-  background-size: cover !important;
-  background-repeat: no-repeat;
+	//&--norway {
+	//
+	//  background: var(--radial-bg), var(--linear-bg),
+	//  url('./../img/slider-bg/01.jpg');
+	//
+	//  @include background-size;
+	//}
+	//
+	//&--austria {
+	//  background: var(--radial-bg), var(--linear-bg),
+	//  url('./../img/slider-bg/02.jpg');
+	//  @include background-size;
+	//}
+	//
+	//&--uae {
+	//  background: var(--radial-bg), var(--linear-bg),
+	//  url('./../img/slider-bg/03.jpg');
+	//  @include background-size;
+	//}
+	//
+	//&--thailand {
+	//  background: var(--radial-bg), var(--linear-bg),
+	//  url('./../img/slider-bg/04.jpg');
+	//  @include background-size;
+	//}
+	//
+	//&--morocco {
+	//  background: var(--radial-bg), var(--linear-bg),
+	//  url('./../img/slider-bg/05.jpg');
+	//  @include background-size;
+	//}
 
-  //&--norway {
-  //
-  //  background: var(--radial-bg), var(--linear-bg),
-  //  url('./../img/slider-bg/01.jpg');
-  //
-  //  @include background-size;
-  //}
-  //
-  //&--austria {
-  //  background: var(--radial-bg), var(--linear-bg),
-  //  url('./../img/slider-bg/02.jpg');
-  //  @include background-size;
-  //}
-  //
-  //&--uae {
-  //  background: var(--radial-bg), var(--linear-bg),
-  //  url('./../img/slider-bg/03.jpg');
-  //  @include background-size;
-  //}
-  //
-  //&--thailand {
-  //  background: var(--radial-bg), var(--linear-bg),
-  //  url('./../img/slider-bg/04.jpg');
-  //  @include background-size;
-  //}
-  //
-  //&--morocco {
-  //  background: var(--radial-bg), var(--linear-bg),
-  //  url('./../img/slider-bg/05.jpg');
-  //  @include background-size;
-  //}
+	color: #fff;
 
-  color: #fff;
+	&::before {
+		content: "";
+	}
 
-  &::before {
-    content: '';
-  }
+	cursor: grab;
 
-  cursor: grab;
+	&:active {
+		cursor: grabbing;
+	}
 
-  &:active {
-    cursor: grabbing;
-  }
+	@media (max-width: 1200px) {
+		padding-bottom: 60px;
+		background-position: -1000px center !important;
+	}
 
-  @media (max-width: 1200px) {
-    padding-bottom: 60px;
-    background-position: -1000px center !important;
-  }
-
-  @media (max-width: 767px) {
-    padding-top: 100px;
-    padding-bottom: 40px;
-  }
+	@media (max-width: 767px) {
+		padding-top: 100px;
+		padding-bottom: 40px;
+	}
 }
 
 .slide__header {
-  text-align: center;
+	text-align: center;
 }
 
 .slide__tagline {
-  font-family: "Oswald", sans-serif;
-  font-weight: 300;
-  font-size: 2.56vw;
-  line-height: 1.23;
-  letter-spacing: 0.55em;
-  color: rgba(255, 255, 255, 0.7);
+	font-family: "pangram-bold", sans-serif;
+	font-weight: 300;
+	font-size: 44px;
+	line-height: 140%;
+	// letter-spacing: 0.15em;
+	color: rgb(255, 255, 255);
+  text-transform: lowercase;
 
-  @media(max-width: 767px) {
-    font-size: 3vw;
-  }
-
+	@media (max-width: 1400px) {
+		font-size: 60px;
+	}
+  @media (max-width: 998px) {
+		font-size: 40px;
+	}
+  @media (max-width: 768px) {
+		font-size: 24px;
+	}
+  @media (max-width: 420px) {
+		font-size: 20px;
+	}
 }
 
 .slide__title {
-  font-family: "Oswald", sans-serif;
-  font-size: 6vw;
-  font-weight: 700;
-  line-height: 140%;
+	font-family: "pangram-bold", sans-serif;
+	font-size: 120px;
+	font-weight: 500;
+	line-height: 140%;
 
-  padding: 0 10px;
-  background: linear-gradient(180deg, #ffffff 25%, #646464 100%);
-  //background: linear-gradient(47.06deg, #000000 -3.87%, rgba(255, 255, 255, 0) 20.89%), #FFFFFF;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+	padding: 0 10px;
+	// background: linear-gradient(180deg, #ffffff 25%, #646464 100%);
+	background: white;
+	//background: linear-gradient(47.06deg, #000000 -3.87%, rgba(255, 255, 255, 0) 20.89%), #FFFFFF;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 
+	@media (max-width: 1400px) {
+		font-size: 130px;
+	}
+  @media (max-width: 998px) {
+		font-size: 94px;
+	}
+  @media (max-width: 768px) {
+		font-size: 60px;
+	}
+  @media (max-width: 420px) {
+		font-size: 40px;
+	}
 
-  @media(max-width: 767px) {
-    margin-top: 0;
-    font-size: 17vw;
-  }
-
-  & span {
-
-  }
+	& span {
+	}
 }
 
 //.slide__locations {
@@ -132,10 +156,10 @@
 //    row-gap: 20px;
 //  }
 
-  //@media(max-width: 767px) {
-  //  //margin-left: 70px;
-  //
-  //}
+//@media(max-width: 767px) {
+//  //margin-left: 70px;
+//
+//}
 //}
 
 //.locations {
@@ -194,22 +218,21 @@
 //}
 
 .slide__btn-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 70px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 70px;
 }
 
 .slide__btn {
-  font-family: "Pangram", sans-serif;
-  max-width: 260px;
-  // max-height: 40px;
-  font-size: 16px;
+	font-family: "Pangram", sans-serif;
+	width: 280px;
+	height: 60px;
+	font-size: 22px;
 
-  @media (max-width: 768px) {
-    font-size: 16px;
-    max-width: 200px;
-    max-height: 36px;
-  }
-
+	@media (max-width: 768px) {
+		font-size: 16px;
+		max-width: 200px;
+		max-height: 36px;
+	}
 }

@@ -2,8 +2,26 @@
  * Модуль для работы с модальными окнами
  */
 function initModals() {
-	const modals = document.querySelectorAll(".modal")
-	if (!modals.length) return
+	// Функция для инициализации обработчиков модального окна
+	function initModalHandlers(modal) {
+		// Закрытие по клику на оверлей
+		const overlay = modal.querySelector(".modal__overlay")
+		if (overlay) {
+			overlay.addEventListener("click", () => closeModal(modal))
+		}
+
+		// Закрытие по клику на кнопку закрытия
+		const closeButton = modal.querySelector(".modal__close")
+		if (closeButton) {
+			closeButton.addEventListener("click", () => closeModal(modal))
+		}
+
+		// Предотвращение всплытия события при клике на контент модального окна
+		const content = modal.querySelector(".modal__content")
+		if (content) {
+			content.addEventListener("click", e => e.stopPropagation())
+		}
+	}
 
 	// Открытие модального окна
 	function openModal(modalId) {
@@ -31,34 +49,39 @@ function initModals() {
 		}
 	})
 
-	// Закрытие модальных окон
-	modals.forEach(modal => {
-		// Закрытие по клику на оверлей
-		const overlay = modal.querySelector(".modal__overlay")
-		if (overlay) {
-			overlay.addEventListener("click", () => closeModal(modal))
-		}
-
-		// Закрытие по клику на кнопку закрытия
-		const closeButton = modal.querySelector(".modal__close")
-		if (closeButton) {
-			closeButton.addEventListener("click", () => closeModal(modal))
-		}
-
-		// Закрытие по нажатию Esc
-		document.addEventListener("keydown", function (e) {
-			if (e.key === "Escape" && modal.classList.contains("active")) {
-				closeModal(modal)
+	// Закрытие по нажатию Esc
+	document.addEventListener("keydown", function (e) {
+		if (e.key === "Escape") {
+			const activeModal = document.querySelector(".modal.active")
+			if (activeModal) {
+				closeModal(activeModal)
 			}
+		}
+	})
+
+	// Инициализация существующих модальных окон
+	const modals = document.querySelectorAll(".modal")
+	modals.forEach(modal => initModalHandlers(modal))
+
+	// Наблюдатель за изменениями DOM для обработки новых модальных окон
+	const observer = new MutationObserver(mutations => {
+		mutations.forEach(mutation => {
+			mutation.addedNodes.forEach(node => {
+				if (
+					node.nodeType === 1 &&
+					node.classList &&
+					node.classList.contains("modal")
+				) {
+					initModalHandlers(node)
+				}
+			})
 		})
 	})
 
-	// Предотвращение всплытия события при клике на контент модального окна
-	modals.forEach(modal => {
-		const content = modal.querySelector(".modal__content")
-		if (content) {
-			content.addEventListener("click", e => e.stopPropagation())
-		}
+	// Начинаем наблюдение за изменениями в body
+	observer.observe(document.body, {
+		childList: true,
+		subtree: true,
 	})
 }
 
