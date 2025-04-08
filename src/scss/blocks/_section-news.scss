@@ -21,7 +21,10 @@
 .section-news {
 	&__btn-container {
 		display: flex;
-		justify-content: center;
+		justify-content: flex-end;
 		margin-top: 40px;
+		@media (max-width: 768px) {
+			justify-content: center;
+		}
 	}
 }

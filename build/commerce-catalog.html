@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8"/>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>КИТ</title>
-  <link rel="stylesheet" href="./css/main.css"/>
-  <link rel="stylesheet" href="./fonts/Montserrat/stylesheet.css"/>
-  <link rel="stylesheet" href="./fonts/Oswald/stylesheet.css"/>
-  <link rel="stylesheet" href="./fonts/Pangram1/stylesheet.css"/>
+  <link rel="stylesheet" href="./css/main.css" />
+  <link rel="stylesheet" href="./fonts/Montserrat/stylesheet.css" />
+  <link rel="stylesheet" href="./fonts/Oswald/stylesheet.css" />
+  <link rel="stylesheet" href="./fonts/Pangram1/stylesheet.css" />
 </head>
+
 <body>
-<header class="header">
+  <header class="header">
   <div class="container">
   <div class="header__nav">
     <nav class="nav">
@@ -135,8 +137,8 @@
   </div>
   </div>
 </header>
-<main class="main">
-  <nav class="nav-breadcrumb">
+  <main class="main">
+    <nav class="nav-breadcrumb">
   <div class="container">
     <ul class="breadcrumb">
       <li><a href="index.html">Главная</a></li>
@@ -146,11 +148,11 @@
     </ul>
   </div>
 </nav>
-  <div class="container">
-    <h1 class="title">Выбрать коммерческое помещение</h1>
-  </div>
-  <section class="filter section">
-    
+    <div class="container">
+      <h1 class="title">Выбрать коммерческое помещение</h1>
+    </div>
+    <section class="filter section">
+
       <!-- <form action=""> -->
 <div class="filter__wrap">
   <!-- <div class="filter__search">
@@ -388,11 +390,11 @@
   </div>
 </div>
 <!-- </form> -->
-  </section>
-  <section class="catalog-section section">
-    <div class="container">
-      <div class="cards-wrapper-col3">
-        <article class="card-commerce card-box">
+    </section>
+    <section class="catalog-section section">
+      <div class="container">
+        <div class="cards-wrapper-col3">
+          <article class="card-commerce card-box">
   <div class="card-commerce__picture">
 
     <!--      <div class="card-zhk-main__status">@@status</div>-->
@@ -423,7 +425,7 @@
   </div>
   <a href="commerce.html" class="card-commerce__link"></a>
 </article>
-        <article class="card-commerce card-box">
+          <article class="card-commerce card-box">
   <div class="card-commerce__picture">
 
     <!--      <div class="card-zhk-main__status">@@status</div>-->
@@ -454,7 +456,7 @@
   </div>
   <a href="commerce.html" class="card-commerce__link"></a>
 </article>
-        <article class="card-commerce card-box">
+          <article class="card-commerce card-box">
   <div class="card-commerce__picture">
 
     <!--      <div class="card-zhk-main__status">@@status</div>-->
@@ -485,7 +487,7 @@
   </div>
   <a href="commerce.html" class="card-commerce__link"></a>
 </article>
-        <article class="card-commerce card-box">
+          <article class="card-commerce card-box">
   <div class="card-commerce__picture">
 
     <!--      <div class="card-zhk-main__status">@@status</div>-->
@@ -516,7 +518,7 @@
   </div>
   <a href="commerce.html" class="card-commerce__link"></a>
 </article>
-        <article class="card-commerce card-box">
+          <article class="card-commerce card-box">
   <div class="card-commerce__picture">
 
     <!--      <div class="card-zhk-main__status">@@status</div>-->
@@ -547,10 +549,10 @@
   </div>
   <a href="commerce.html" class="card-commerce__link"></a>
 </article>
+        </div>
       </div>
-    </div>
-  </section>
-  <section class="section-questions">
+    </section>
+    <section class="section-questions">
   <img class="section-questions__img" src="./img/question.jpg" alt="card-img">
   <div class="section-questions__inner container">
     <div class="section-questions__content">
@@ -600,8 +602,8 @@
     </div>
   </div>
 </section>
-</main>
-<footer class="footer">
+  </main>
+  <footer class="footer">
   <div class="container">
     <div class="footer__wrapper">
       <div class="footer__logo logo">
@@ -667,6 +669,21 @@
 </footer>
 
 
-<script src="./js/index.bundle.js"></script>
+  <script src="./js/index.bundle.js"></script>
+  <!-- Модальное окно успешной отправки формы -->
+<div class="modal" id="modal-success">
+  <div class="modal__overlay"></div>
+  <div class="modal__content">
+    <button class="modal__close" aria-label="Закрыть модальное окно">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </button>
+    <div class="modal__title">Спасибо!</div>
+    <div class="modal__text">Наш менеджер свяжется с вами в ближайшее время</div>
+  </div>
+</div>
 </body>
+
 </html>

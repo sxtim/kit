@@ -57,3 +57,12 @@
 		}
 	}
 }
+
+.complexes__btn-container {
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 40px;
+	@media (max-width: 768px) {
+		justify-content: center;
+	}
+}

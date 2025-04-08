@@ -3,7 +3,7 @@
 }
 
 .about-company__tabpanel {
-  padding: 30px 0 !important;
+  padding: 30px 0 0 0 !important;
 }
 
 .about-company__btns-container {
@@ -17,7 +17,7 @@
 
 
 .tab-about__inner {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Pangram", sans-serif;
   position: relative;
   color: var(--text-color-white);
   border-radius: 4px;
@@ -36,7 +36,7 @@
     bottom: 0;
     background: linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, #000 100%);
     opacity: 1;
-    transition: 0.3s;
+    // transition: 0.3s;
 
     @media (max-width: 998px) {
       background: rgba(1, 1,1, 0.5);
@@ -115,3 +115,14 @@
     margin-bottom: 15px;
   }
 }
+
+.about-company__btn-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 40px;
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
+
+}
+
