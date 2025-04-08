@@ -16,6 +16,7 @@ initPhoneMasks()
 // Инициализация обработчиков форм
 initFormHandlers()
 
+// Подключение галереи
 require("fslightbox")
 
 //SLIDER MAIN
@@ -90,6 +91,8 @@ const swiperTabsContent = new Swiper(".apartment-swiper-tabs-content", {
 var swiperApartmentSimilar = new Swiper(".apartment-similar-swiper", {
 	slidesPerView: 3,
 	spaceBetween: 30,
+	loop: true,
+	freeMode: true,
 	pagination: {
 		el: ".apartment-similar-swiper-pag",
 		clickable: true,
@@ -115,9 +118,13 @@ var swiperApartmentSimilar = new Swiper(".apartment-similar-swiper", {
 			spaceBetween: 5,
 			slidesPerView: 2.4,
 		},
-		998: {
-			spaceBetween: 5,
+		1400: {
+			spaceBetween: 10,
 			slidesPerView: 3.2,
+		},
+		1420: {
+			spaceBetween: 10,
+			slidesPerView: 4,
 		},
 	},
 })

@@ -64,7 +64,8 @@
 .card-apartment__price {
 	text-align: right;
 	font-family: "Pangram-bold", sans-serif;
-	font-size: 24px;
+	line-height: 22px;
+	font-size: 22px;
 	color: rgb(166, 124, 0);
 
 	@media (max-width: 1320px) {
@@ -79,7 +80,7 @@
 .card-apartment__price-disc {
 	text-align: right;
 	font-family: "Pangram", sans-serif;
-	font-size: 20px;
+	font-size: 18px;
 	color: var(--text-color-black);
 	text-decoration: line-through;
 
@@ -153,6 +154,7 @@
 	color: #206a5d;
 	font-weight: 600;
 	font-size: 18px;
+	line-height: 18px;
 	text-transform: uppercase;
 	@media (max-width: 1320px) {
 		font-size: 16px;
