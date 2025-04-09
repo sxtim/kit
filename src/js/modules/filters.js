@@ -206,54 +206,110 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
 	// Получаем все элементы с классом .filter__dropdown (списки выбора)
 	const dropdowns = document.querySelectorAll(".filter__dropdown")
+	// Пустой массив для хранения всех контейнеров содержимого дропдаунов
+	const allDropdownContents = []
 
 	dropdowns.forEach(dropdown => {
 		// Кнопка, которая открывает выпадающее меню
 		const dropdownBtn = dropdown.querySelector(".filter__dropdown-menu-btn")
-		// Контейнер с чекбоксами
+		// Контейнер с содержимым
 		const dropdownContent = dropdown.querySelector(".filter__dropdown-content")
-		// Все элементы чекбоксов внутри списка
-		const inputFields = dropdownContent.querySelectorAll(".input_field")
-		// Отдельный элемент "Любой" (если он есть)
-		const allInputField = dropdownContent.querySelector(
-			".input_field.all-input-field"
-		)
-		// Все чекбоксы внутри выпадающего списка
-		const checkboxes = dropdownContent.querySelectorAll(
-			'input[type="checkbox"]'
-		)
 
-		// Сохраняем начальный текст кнопки
-		const initialText = dropdownBtn.textContent
+		// Добавляем контейнер в общий массив для закрытия всех при клике вне
+		if (dropdownContent) {
+			allDropdownContents.push({
+				content: dropdownContent,
+				button: dropdownBtn,
+			})
+		}
 
-		// Открытие/закрытие выпадающего списка при клике на кнопку
-		dropdownBtn.addEventListener("click", function (event) {
-			event.stopPropagation() // Предотвращаем всплытие события (чтобы не закрывался сразу)
+		// Если это дропдаун сортировки
+		if (dropdown.classList.contains("catalog-sort__dropdown")) {
+			const sortItems = dropdownContent.querySelectorAll(".sort-item")
 
-			// Закрываем другие открытые списки
-			dropdowns.forEach(otherDropdown => {
-				if (otherDropdown !== dropdown) {
-					otherDropdown
-						.querySelector(".filter__dropdown-content")
-						.classList.remove("active")
-					otherDropdown
-						.querySelector(".filter__dropdown-menu-btn")
-						.classList.remove("open")
-				}
+			// Открытие/закрытие выпадающего списка при клике на кнопку
+			dropdownBtn.addEventListener("click", function (event) {
+				event.stopPropagation() // Предотвращаем всплытие события
+
+				// Закрываем все другие открытые дропдауны
+				allDropdownContents.forEach(item => {
+					if (item.content !== dropdownContent) {
+						item.content.classList.remove("active")
+						if (item.button) item.button.classList.remove("open")
+					}
+				})
+
+				// Открываем/закрываем текущее меню
+				dropdownContent.classList.toggle("active")
+				dropdownBtn.classList.toggle("open")
 			})
 
-			// Открываем/закрываем текущее меню
-			dropdownContent.classList.toggle("active")
-			dropdownBtn.classList.toggle("open")
-		})
+			// Обработка выбора элемента сортировки
+			sortItems.forEach(item => {
+				item.addEventListener("click", function (event) {
+					// Находим radio-input внутри элемента и проверяем его
+					const radioInput = this.querySelector('input[type="radio"]')
+					if (radioInput) {
+						radioInput.checked = true
+					}
 
-		// Закрытие списка при клике вне него
-		document.addEventListener("click", function (event) {
-			if (!dropdownContent.contains(event.target)) {
-				dropdownContent.classList.remove("active")
-				dropdownBtn.classList.remove("open")
-			}
-		})
+					// Убираем активный класс у всех элементов
+					sortItems.forEach(sortItem => sortItem.classList.remove("selected"))
+					// Добавляем активный класс выбранному элементу
+					this.classList.add("selected")
+					// Обновляем текст кнопки
+					dropdownBtn.textContent = this.querySelector("label").textContent
+					// Закрываем дропдаун
+					dropdownContent.classList.remove("active")
+					dropdownBtn.classList.remove("open")
+
+					// Здесь можно добавить логику для сортировки элементов
+					const sortType = this.dataset.sort
+					console.log("Сортировка по:", sortType)
+
+					// Предотвращаем всплытие события
+					event.stopPropagation()
+				})
+			})
+
+			return // Пропускаем остальной код для дропдауна фильтра
+		}
+
+		// Для обычных дропдаунов фильтра
+		// Все элементы чекбоксов внутри списка
+		const inputFields = dropdownContent
+			? dropdownContent.querySelectorAll(".input_field")
+			: []
+		// Отдельный элемент "Любой" (если он есть)
+		const allInputField = dropdownContent
+			? dropdownContent.querySelector(".input_field.all-input-field")
+			: null
+		// Все чекбоксы внутри выпадающего списка
+		const checkboxes = dropdownContent
+			? dropdownContent.querySelectorAll('input[type="checkbox"]')
+			: []
+
+		// Сохраняем начальный текст кнопки
+		const initialText = dropdownBtn ? dropdownBtn.textContent : ""
+
+		// Открытие/закрытие выпадающего списка при клике на кнопку
+		if (dropdownBtn && dropdownContent) {
+			dropdownBtn.addEventListener("click", function (event) {
+				event.stopPropagation() // Предотвращаем всплытие события
+
+				// Закрываем все другие открытые дропдауны
+				allDropdownContents.forEach(item => {
+					if (item.content !== dropdownContent) {
+						item.content.classList.remove("active")
+						if (item.button) item.button.classList.remove("open")
+					}
+				})
+
+				// Открываем/закрываем текущее меню
+				dropdownContent.classList.toggle("active")
+				dropdownBtn.classList.toggle("open")
+			})
+		}
 
 		// Функция обновления текста кнопки в зависимости от выбранных чекбоксов
 		const updateButtonText = () => {
@@ -264,17 +320,21 @@ document.addEventListener("DOMContentLoaded", function () {
 				.join(", ")
 
 			// Если ничего не выбрано, оставляем исходный текст
-			dropdownBtn.textContent = selectedValues || initialText
+			if (dropdownBtn) {
+				dropdownBtn.textContent = selectedValues || initialText
+			}
 		}
 
 		// Функция проверки, нужно ли автоматически выбрать "Любой"
 		const checkAndSelectAllInputField = () => {
+			if (!allInputField) return
+
 			const isAnyChecked = Array.from(inputFields).some(
 				field => field !== allInputField && field.querySelector("input").checked
 			)
 
 			// Если ни один чекбокс (кроме "Любой") не выбран, включаем его
-			if (!isAnyChecked && allInputField) {
+			if (!isAnyChecked) {
 				allInputField.querySelector("input").checked = true
 			}
 		}
@@ -283,7 +343,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		const updateSelectedFields = () => {
 			inputFields.forEach(field => {
 				const checkbox = field.querySelector("input")
-				if (checkbox.checked) {
+				if (checkbox && checkbox.checked) {
 					field.classList.add("selected") // Добавляем серый фон
 				} else {
 					field.classList.remove("selected") // Убираем серый фон
@@ -294,38 +354,58 @@ document.addEventListener("DOMContentLoaded", function () {
 		// Добавляем обработчики событий для чекбоксов
 		checkboxes.forEach(checkbox => {
 			checkbox.addEventListener("change", function () {
-				// Если пользователь выбрал "Любой", снимаем отметку с остальных чекбоксов
-				if (this === allInputField.querySelector("input")) {
-					if (this.checked) {
-						checkboxes.forEach(cb => {
-							if (cb !== this) cb.checked = false
-						})
+				// Если это обычный дропдаун фильтра с чекбоксами
+				if (allInputField) {
+					// Если пользователь выбрал "Любой", снимаем отметку с остальных чекбоксов
+					if (this === allInputField.querySelector("input")) {
+						if (this.checked) {
+							checkboxes.forEach(cb => {
+								if (cb !== this) cb.checked = false
+							})
+						}
+					} else {
+						// Если пользователь выбрал любой другой вариант, снимаем отметку с "Любой"
+						allInputField.querySelector("input").checked = false
 					}
-				} else {
-					// Если пользователь выбрал любой другой вариант, снимаем отметку с "Любой"
-					allInputField.querySelector("input").checked = false
-				}
 
-				// Проверяем, нужно ли включить "Любой", обновляем текст и фон
-				checkAndSelectAllInputField()
-				updateButtonText()
-				updateSelectedFields() // Применяем класс .selected к выбранным элементам
+					// Проверяем, нужно ли включить "Любой", обновляем текст и фон
+					checkAndSelectAllInputField()
+					updateButtonText()
+					updateSelectedFields() // Применяем класс .selected к выбранным элементам
+				}
 			})
 		})
 
 		// Проверяем, есть ли выбранные элементы при загрузке страницы
 		const hasChecked = Array.from(inputFields).some(
-			field => field.querySelector("input").checked
+			field =>
+				field.querySelector("input") && field.querySelector("input").checked
 		)
 
 		// Если ничего не выбрано, включаем "Любой" по умолчанию
-		if (!hasChecked && allInputField) {
+		if (!hasChecked && allInputField && dropdownBtn) {
 			allInputField.querySelector("input").checked = true
 			dropdownBtn.textContent = allInputField.querySelector("label").textContent
 		}
 
 		// Вызываем функцию обновления фона для активных чекбоксов при загрузке
 		updateSelectedFields()
+	})
+
+	// Закрытие всех дропдаунов при клике вне
+	document.addEventListener("click", function (event) {
+		allDropdownContents.forEach(item => {
+			const { content, button } = item
+			if (
+				content &&
+				button &&
+				!content.contains(event.target) &&
+				!button.contains(event.target)
+			) {
+				content.classList.remove("active")
+				button.classList.remove("open")
+			}
+		})
 	})
 })
 

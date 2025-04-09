@@ -405,6 +405,40 @@
     </section>
     <section class="catalog-section section">
       <div class="container">
+
+        <div class="catalog-sort">
+          <div class="catalog-sort__dropdown filter__dropdown">
+            <label class="filter__dropdown-menu">Сортировать</label>
+            <div class="filter__dropdown-menu-btn">Сначала дешевле</div>
+            <div class="filter__dropdown-content">
+              <div class="input_field sort-item" data-sort="price-desc">
+                <input type="radio" name="sort" id="sort-price-desc">
+                <label for="sort-price-desc">Сначала дороже</label>
+              </div>
+              <div class="input_field sort-item" data-sort="date-desc">
+                <input type="radio" name="sort" id="sort-date-desc">
+                <label for="sort-date-desc">Срок сдачи (позже)</label>
+              </div>
+              <div class="input_field sort-item" data-sort="date-asc">
+                <input type="radio" name="sort" id="sort-date-asc">
+                <label for="sort-date-asc">Срок сдачи (раньше)</label>
+              </div>
+              <div class="input_field sort-item" data-sort="area-desc">
+                <input type="radio" name="sort" id="sort-area-desc">
+                <label for="sort-area-desc">Площадь (больше)</label>
+              </div>
+              <div class="input_field sort-item" data-sort="area-asc">
+                <input type="radio" name="sort" id="sort-area-asc">
+                <label for="sort-area-asc">Площадь (меньше)</label>
+              </div>
+              <div class="input_field sort-item selected" data-sort="price-asc">
+                <input type="radio" name="sort" id="sort-price-asc" checked>
+                <label for="sort-price-asc">Сначала дешевле</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="cards-wrapper-col3">
           <article class="card-apartment">
 	<div class="card-apartment_header">
