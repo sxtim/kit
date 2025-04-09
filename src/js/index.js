@@ -4,6 +4,7 @@ mobileNav()
 import "./modules/filters"
 import initFormHandlers from "./modules/formHandler"
 import initModals from "./modules/modal"
+import "./modules/mortgageCalculator"
 import initPhoneMasks from "./modules/phoneMask"
 import "./modules/tabs"
 
@@ -161,9 +162,9 @@ if (btnShareCopy) {
 		navigator.clipboard
 			.writeText(url)
 			.then(() => {
-				text.style.transition = "all 0.5s ease-in-out" // Плавность анимации
-				text.style.filter = "blur(2px)" // Размытие перед изменением
-				text.style.opacity = "0" // Исчезновение
+				text.style.transition = "all 0.5s ease-in-out"
+				text.style.filter = "blur(2px)"
+				text.style.opacity = "0"
 
 				setTimeout(() => {
 					text.textContent = "Ссылка скопирована!!!"
