@@ -57,6 +57,9 @@
 		font-weight: 900;
 		font-size: 20px;
 		line-height: 1;
+		@media (max-width: 768px) {
+			top: 48%;
+		}
 	}
 
 	&:hover {

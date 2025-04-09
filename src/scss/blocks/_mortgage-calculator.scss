@@ -1,25 +1,37 @@
 .mortgage-calculator {
-	margin-bottom: 40px;
+	background-color: var(--gray);
 
 	&__title {
-		margin-bottom: 24px;
+		font-family: "Pangram", sans-serif;
+		margin-bottom: 16px;
 		font-size: 30px;
-		font-weight: 600;
+		font-weight: 500;
 		font-style: normal;
 		line-height: 1.2;
-		color: var(--text-color-gray);
+		color: var(--text-color-black);
 
 		@media (max-width: 480px) {
 			font-size: 24px;
 		}
 	}
 
+	&__sub-title {
+		font-size: 22px;
+		font-weight: 400;
+		color: var(--text-color-black);
+		margin-bottom: 40px;
+		@media (max-width: 767px) {
+			font-size: 16px;
+			margin-bottom: 20px;
+		}
+	}
+
 	&__content {
-		padding: 20px;
+		// padding: 0 10px;
 		background-color: var(--white);
 
 		@media (max-width: 767px) {
-			padding: 18px 12px;
+			// padding: 18px 12px;
 		}
 	}
 
@@ -35,8 +47,9 @@
 	}
 
 	&__type-item {
-		padding: 12px 20px;
-		background-color: #e6e6e6;
+		padding: 6px 10px;
+		background-color: rgba(221, 221, 221, 0.5);
+
 		cursor: pointer;
 		transition: background-color 0.1s;
 		display: flex;
@@ -44,15 +57,19 @@
 		align-items: center;
 
 		&:hover {
-			background-color: var(--text-color-gray);
+			background-color: #162c44;
+			color: white;
+			.mortgage-calculator__type-rate {
+				color: var(--green-light);
+			}
 		}
 
 		&--active {
-			background-color: var(--text-color-gray);
+			background-color: #162c44;
 			color: white;
 
 			.mortgage-calculator__type-rate {
-				color: rgba(161, 41, 41, 0.8);
+				color: var(--green-light);
 			}
 		}
 
@@ -63,13 +80,19 @@
 
 	&__type-name {
 		font-weight: 500;
-		font-size: 16px;
+		font-size: 18px;
+		@media (max-width: 767px) {
+			font-size: 16px;
+		}
 	}
 
 	&__type-rate {
-		font-weight: 400;
-		font-size: 14px;
+		font-weight: 500;
+		font-size: 16px;
 		color: rgba(0, 0, 0, 0.6);
+		@media (max-width: 767px) {
+			font-size: 14px;
+		}
 	}
 
 	&__row {
@@ -93,6 +116,11 @@
 
 		@media (max-width: 767px) {
 			min-width: 100%;
+			margin-bottom: 24px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
 		}
 	}
 
@@ -103,14 +131,23 @@
 	&__row-title {
 		font-size: 16px;
 		font-weight: 500;
-		margin-bottom: 16px;
-		color: var(--black);
+		color: var(--text-color-black);
+
+		@media (max-width: 767px) {
+			text-align: left;
+			margin-bottom: 12px;
+		}
 	}
 
 	&__inputs {
 		display: flex;
 		align-items: center;
-		margin-bottom: 16px;
+		margin-bottom: 8px;
+
+		@media (max-width: 767px) {
+			justify-content: flex-start;
+			margin-bottom: 16px;
+		}
 	}
 
 	&__input {
@@ -119,11 +156,17 @@
 		height: 40px;
 		font-size: 16px;
 		outline: none;
+		background: transparent !important;
 		border: none !important;
 		padding: 0 !important;
 
 		&:focus {
 			border-color: var(--accent);
+		}
+
+		@media (max-width: 767px) {
+			text-align: left;
+			font-size: 18px;
 		}
 	}
 
@@ -133,11 +176,15 @@
 	}
 
 	&__range-slider {
+		padding: 0 8px;
 		height: 6px;
 		border-radius: 3px;
 
+		@media (max-width: 767px) {
+			padding: 0;
+		}
+
 		.noUi-connect {
-			background-color: var(--accent);
 		}
 
 		.noUi-handle {
@@ -146,7 +193,7 @@
 			right: -9px;
 			top: -7px;
 			border-radius: 50%;
-			background-color: var(--accent);
+
 			box-shadow: none;
 			border: none;
 
@@ -157,9 +204,24 @@
 		}
 
 		.noUi-target {
-			background-color: #f2f2f2;
+			background-color: #d8d8d8;
 			border: none;
 			box-shadow: none;
+		}
+
+		.noUi-base {
+			background-color: #d8d8d8;
+		}
+
+		@media (max-width: 767px) {
+			margin: 0 auto;
+			width: 90%;
+			max-width: 380px;
+
+			.noUi-base,
+			.noUi-connects {
+				width: 100%;
+			}
 		}
 	}
 
@@ -169,31 +231,43 @@
 		gap: 24px;
 
 		@media (max-width: 767px) {
-			gap: 20px;
+			gap: 12px;
 		}
 	}
 
 	&__result-item {
 		flex: 1;
 		min-width: 150px;
-		background-color: #f9f9f9;
-		padding: 16px;
+		// background-color: #f9f9f9;
+
+		@media (max-width: 1200px) {
+			min-width: calc(33.33% - 16px);
+			flex-basis: calc(33.33% - 16px);
+			flex-grow: 0;
+		}
+
+		@media (max-width: 991px) {
+			min-width: calc(50% - 12px);
+			flex-basis: calc(50% - 12px);
+		}
 
 		@media (max-width: 767px) {
 			min-width: 100%;
+			flex-basis: 100%;
 		}
 	}
 
 	&__result-label {
 		font-size: 14px;
 		color: rgba(0, 0, 0, 0.6);
-		margin-bottom: 8px;
+		margin-bottom: 4px;
 	}
 
 	&__result-value {
+		font-family: "Pangram", sans-serif;
 		font-size: 20px;
-		font-weight: 600;
-		color: var(--black);
+		font-weight: 500;
+		color: var(--text-color-black);
 
 		@media (max-width: 767px) {
 			font-size: 18px;

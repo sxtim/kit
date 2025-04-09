@@ -848,7 +848,87 @@
     </div>
   </div>
 </section>
-		<div class="container banner-rent__container">
+		<section class="section mortgage-calculator">
+  <div class="container">
+    <h3 class="title">Ипотечный калькулятор</h3>
+    <h4 class="mortgage-calculator__sub-title">Выберите подходящие условия ипотеки, введите параметры и получите
+      предварительный расчет:
+      <h4 />
+      <div class="mortgage-calculator__content">
+        <div class="mortgage-calculator__type-selector">
+          <div class="mortgage-calculator__type-item mortgage-calculator__type-item--active" data-type="standard"
+            data-rate="19.8">
+            <span class="mortgage-calculator__type-name">Стандартная</span>
+            <span class="mortgage-calculator__type-rate">19.8%</span>
+          </div>
+          <div class="mortgage-calculator__type-item" data-type="family" data-rate="6.0">
+            <span class="mortgage-calculator__type-name">Семейная</span>
+            <span class="mortgage-calculator__type-rate">6.0%</span>
+          </div>
+          <div class="mortgage-calculator__type-item" data-type="it" data-rate="5.0">
+            <span class="mortgage-calculator__type-name">IT-ипотека</span>
+            <span class="mortgage-calculator__type-rate">5.0%</span>
+          </div>
+        </div>
+        <div class="mortgage-calculator__row">
+          <div class="mortgage-calculator__col">
+            <div class="mortgage-calculator__el">
+              <h4 class="mortgage-calculator__row-title">Стоимость квартиры</h4>
+              <div class="mortgage-calculator__inputs">
+                <input type="text" class="mortgage-calculator__input" id="input-apartment-price">
+                <span class="mortgage-calculator__text">₽</span>
+              </div>
+              <div class="mortgage-calculator__range-slider" id="apartment-price-slider"></div>
+            </div>
+          </div>
+          <div class="mortgage-calculator__col">
+            <div class="mortgage-calculator__el">
+              <h4 class="mortgage-calculator__row-title">Первоначальный взнос</h4>
+              <div class="mortgage-calculator__inputs">
+                <input type="text" class="mortgage-calculator__input" id="input-down-payment">
+                <span class="mortgage-calculator__text">₽</span>
+              </div>
+              <div class="mortgage-calculator__range-slider" id="down-payment-slider"></div>
+            </div>
+          </div>
+          <div class="mortgage-calculator__col">
+            <div class="mortgage-calculator__el">
+              <h4 class="mortgage-calculator__row-title">Срок кредита</h4>
+              <div class="mortgage-calculator__inputs">
+                <input type="text" class="mortgage-calculator__input" id="input-loan-term">
+                <span class="mortgage-calculator__text">лет</span>
+              </div>
+              <div class="mortgage-calculator__range-slider" id="loan-term-slider"></div>
+            </div>
+          </div>
+        </div>
+        <div class="mortgage-calculator__results">
+          <div class="mortgage-calculator__result-item">
+            <div class="mortgage-calculator__result-label">Ежемесячный платеж</div>
+            <div class="mortgage-calculator__result-value" id="monthly-payment">0 ₽</div>
+          </div>
+          <div class="mortgage-calculator__result-item">
+            <div class="mortgage-calculator__result-label">Процентная ставка</div>
+            <div class="mortgage-calculator__result-value" id="interest-rate">19.8%</div>
+          </div>
+          <div class="mortgage-calculator__result-item">
+            <div class="mortgage-calculator__result-label">Сумма кредита</div>
+            <div class="mortgage-calculator__result-value" id="loan-amount">0 ₽</div>
+          </div>
+          <div class="mortgage-calculator__result-item">
+            <div class="mortgage-calculator__result-label">Переплата по кредиту</div>
+            <div class="mortgage-calculator__result-value" id="overpayment">0 ₽</div>
+          </div>
+          <div class="mortgage-calculator__result-item">
+            <div class="mortgage-calculator__result-label">Общая сумма выплат</div>
+            <div class="mortgage-calculator__result-value" id="total-payment">0 ₽</div>
+          </div>
+        </div>
+      </div>
+  </div>
+</section>
+		<section class="section">
+			<div class="container banner-rent__container">
   <div class="banner-rent banner-main">
       <img src="./img/rent/banner-rent.jpg" alt="banner-rent">
 <!--      <source media="(max-width: 768px)" srcset="./img/rent/banner-rent1.jpg">-->
@@ -863,74 +943,7 @@
     </div>
   </div>
 </div>
-		<section class="mortgage-calculator">
-  <div class="container">
-    <div class="mortgage-calculator__title">Калькулятор ипотеки</div>
-    <div class="mortgage-calculator__content">
-      <div class="mortgage-calculator__type-selector">
-        <div class="mortgage-calculator__type-item mortgage-calculator__type-item--active" data-type="standard"
-          data-rate="8.5">
-          <span class="mortgage-calculator__type-name">Стандартная</span>
-          <span class="mortgage-calculator__type-rate">8.5%</span>
-        </div>
-        <div class="mortgage-calculator__type-item" data-type="family" data-rate="6.0">
-          <span class="mortgage-calculator__type-name">Семейная</span>
-          <span class="mortgage-calculator__type-rate">6.0%</span>
-        </div>
-        <div class="mortgage-calculator__type-item" data-type="it" data-rate="5.0">
-          <span class="mortgage-calculator__type-name">IT-ипотека</span>
-          <span class="mortgage-calculator__type-rate">5.0%</span>
-        </div>
-      </div>
-      <div class="mortgage-calculator__row">
-        <div class="mortgage-calculator__col">
-          <div class="mortgage-calculator__el">
-            <h4 class="mortgage-calculator__row-title">Стоимость квартиры, руб.</h4>
-            <div class="mortgage-calculator__inputs">
-              <input type="text" class="mortgage-calculator__input" id="input-apartment-price">
-              <span class="mortgage-calculator__text">₽</span>
-            </div>
-            <div class="mortgage-calculator__range-slider" id="apartment-price-slider"></div>
-          </div>
-        </div>
-        <div class="mortgage-calculator__col">
-          <div class="mortgage-calculator__el">
-            <h4 class="mortgage-calculator__row-title">Первоначальный взнос, руб.</h4>
-            <div class="mortgage-calculator__inputs">
-              <input type="text" class="mortgage-calculator__input" id="input-down-payment">
-              <span class="mortgage-calculator__text">₽</span>
-            </div>
-            <div class="mortgage-calculator__range-slider" id="down-payment-slider"></div>
-          </div>
-        </div>
-        <div class="mortgage-calculator__col">
-          <div class="mortgage-calculator__el">
-            <h4 class="mortgage-calculator__row-title">Срок кредита, лет</h4>
-            <div class="mortgage-calculator__inputs">
-              <input type="text" class="mortgage-calculator__input" id="input-loan-term">
-              <span class="mortgage-calculator__text">лет</span>
-            </div>
-            <div class="mortgage-calculator__range-slider" id="loan-term-slider"></div>
-          </div>
-        </div>
-      </div>
-      <div class="mortgage-calculator__results">
-        <div class="mortgage-calculator__result-item">
-          <div class="mortgage-calculator__result-label">Ежемесячный платеж</div>
-          <div class="mortgage-calculator__result-value" id="monthly-payment">0 ₽</div>
-        </div>
-        <div class="mortgage-calculator__result-item">
-          <div class="mortgage-calculator__result-label">Процентная ставка</div>
-          <div class="mortgage-calculator__result-value" id="interest-rate">8.5%</div>
-        </div>
-        <div class="mortgage-calculator__result-item">
-          <div class="mortgage-calculator__result-label">Общая сумма выплат</div>
-          <div class="mortgage-calculator__result-value" id="total-payment">0 ₽</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+		</section>
 		<section class="section-news section">
   <div class="container">
     <div class="title news-title">НОВОСТИ</div>

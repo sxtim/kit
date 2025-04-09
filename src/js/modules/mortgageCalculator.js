@@ -5,9 +5,9 @@ class MortgageCalculator {
 	constructor() {
 		// Значения по умолчанию
 		this.apartmentPrice = 4000000
-		this.downPayment = 800000
+		this.downPayment = 800000 // 20% от цены квартиры
 		this.loanTerm = 20
-		this.interestRate = 8.5
+		this.interestRate = 19.8
 		this.mortgageType = "standard"
 
 		// Флаг для предотвращения рекурсивных вызовов
@@ -22,6 +22,7 @@ class MortgageCalculator {
 			const cleanPrice = priceText.replace(/\s+/g, "").replace(/[^\d]/g, "")
 			if (cleanPrice && !isNaN(Number(cleanPrice))) {
 				this.apartmentPrice = Number(cleanPrice)
+				this.downPayment = this.apartmentPrice * 0.2 // 20% от цены
 			}
 		}
 
@@ -83,8 +84,8 @@ class MortgageCalculator {
 				// Обновляем максимальное значение для первоначального взноса
 				const downPaymentSlider = document.getElementById("down-payment-slider")
 				if (downPaymentSlider && downPaymentSlider.noUiSlider) {
-					const maxDownPayment = Math.min(value * 0.9, 15000000)
-					const minDownPayment = Math.min(400000, value * 0.1)
+					const maxDownPayment = Math.min(value * 0.99, 25000000) // 99% от стоимости квартиры
+					const minDownPayment = value * 0.2 // 20% от стоимости квартиры
 
 					if (!this.isCalculating) {
 						this.isCalculating = true
@@ -122,8 +123,8 @@ class MortgageCalculator {
 			inputId: "input-down-payment",
 			start: this.downPayment,
 			step: 50000,
-			rangeMin: Math.min(400000, this.apartmentPrice * 0.1),
-			rangeMax: Math.min(this.apartmentPrice * 0.9, 15000000),
+			rangeMin: this.apartmentPrice * 0.2, // 20% от стоимости
+			rangeMax: Math.min(this.apartmentPrice * 0.99, 25000000), // 99% от стоимости, но не более 25 млн
 			formatOptions: {
 				style: "decimal",
 				useGrouping: true,
@@ -142,7 +143,7 @@ class MortgageCalculator {
 			inputId: "input-loan-term",
 			start: this.loanTerm,
 			step: 1,
-			rangeMin: 5,
+			rangeMin: 1,
 			rangeMax: 30,
 			formatOptions: {
 				style: "decimal",
@@ -194,7 +195,7 @@ class MortgageCalculator {
 			tempSpan.textContent = input.value || "0"
 
 			document.body.appendChild(tempSpan)
-			const width = tempSpan.getBoundingClientRect().width + 2
+			const width = tempSpan.getBoundingClientRect().width + 6
 			document.body.removeChild(tempSpan)
 
 			input.style.width = `${Math.max(1, width)}px`
@@ -258,18 +259,18 @@ class MortgageCalculator {
 
 		this.isCalculating = true
 
-		// Проверяем, чтобы первоначальный взнос не превышал стоимость квартиры
-		if (this.downPayment >= this.apartmentPrice) {
-			this.downPayment = this.apartmentPrice * 0.9 // Устанавливаем 90% от стоимости
+		// Проверяем, чтобы первоначальный взнос не превышал стоимость квартиры (99%)
+		if (this.downPayment >= this.apartmentPrice * 0.99) {
+			this.downPayment = this.apartmentPrice * 0.99 // Устанавливаем 99% от стоимости
 			const downPaymentSlider = document.getElementById("down-payment-slider")
 			if (downPaymentSlider && downPaymentSlider.noUiSlider) {
 				downPaymentSlider.noUiSlider.set(this.downPayment)
 			}
 		}
 
-		// Также проверяем минимальное значение (10% от стоимости)
-		if (this.downPayment < this.apartmentPrice * 0.1) {
-			this.downPayment = this.apartmentPrice * 0.1
+		// Также проверяем минимальное значение (20% от стоимости)
+		if (this.downPayment < this.apartmentPrice * 0.2) {
+			this.downPayment = this.apartmentPrice * 0.2
 			const downPaymentSlider = document.getElementById("down-payment-slider")
 			if (downPaymentSlider && downPaymentSlider.noUiSlider) {
 				downPaymentSlider.noUiSlider.set(this.downPayment)
@@ -283,6 +284,8 @@ class MortgageCalculator {
 		// Проверяем, что сумма кредита положительная
 		if (loanAmount <= 0) {
 			document.getElementById("monthly-payment").textContent = "0 ₽"
+			document.getElementById("loan-amount").textContent = "0 ₽"
+			document.getElementById("overpayment").textContent = "0 ₽"
 			document.getElementById("total-payment").textContent = "0 ₽"
 			this.isCalculating = false
 			return
@@ -295,10 +298,19 @@ class MortgageCalculator {
 			(Math.pow(1 + monthlyRate, numberOfPayments) - 1)
 
 		const totalPayment = monthlyPayment * numberOfPayments
+		const overpayment = totalPayment - loanAmount
 
 		// Обновление результатов
 		document.getElementById("monthly-payment").textContent = `${Math.round(
 			monthlyPayment
+		).toLocaleString("ru-RU")} ₽`
+
+		document.getElementById("loan-amount").textContent = `${Math.round(
+			loanAmount
+		).toLocaleString("ru-RU")} ₽`
+
+		document.getElementById("overpayment").textContent = `${Math.round(
+			overpayment
 		).toLocaleString("ru-RU")} ₽`
 
 		document.getElementById("total-payment").textContent = `${Math.round(

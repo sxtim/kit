@@ -184,6 +184,22 @@ document.addEventListener("DOMContentLoaded", function () {
 		rangeMin: 80,
 		rangeMax: 12000,
 	})
+
+	// Обработчик для кнопки "Показать все фильтры"
+	const showAllFiltersBtn = document.querySelector(".filter__show-all-btn")
+	if (showAllFiltersBtn) {
+		showAllFiltersBtn.addEventListener("click", function (event) {
+			event.preventDefault() // Предотвращаем отправку формы
+			const hiddenElements = document.querySelectorAll(
+				".filter__hidden-elements"
+			)
+			hiddenElements.forEach(element => {
+				element.classList.toggle("active")
+			})
+			this.textContent =
+				this.textContent === "Все фильтры" ? "Скрыть фильтры" : "Все фильтры"
+		})
+	}
 })
 
 //DROPDOWN FILTER
@@ -329,18 +345,3 @@ document.addEventListener("DOMContentLoaded", function () {
 		})
 	})
 })
-
-// Обработчик для кнопки "Показать все фильтры"
-const showAllFiltersBtn = document.querySelector(".filter__show-all-btn")
-if (showAllFiltersBtn) {
-	showAllFiltersBtn.addEventListener("click", () => {
-		const hiddenElements = document.querySelectorAll(".filter__hidden-elements")
-		hiddenElements.forEach(element => {
-			element.classList.toggle("active")
-		})
-		showAllFiltersBtn.textContent =
-			showAllFiltersBtn.textContent === "Все фильтры"
-				? "Скрыть фильтры"
-				: "Все фильтры"
-	})
-}
