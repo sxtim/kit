@@ -201,7 +201,7 @@ input[type="number"] {
 
 .noUi-handle {
 	box-shadow: none !important;
-	border-radius: 20px !important;
+	border-radius: 8px !important;
 	background-color: var(--sand) !important;
 	border: 3px solid var(--sand) !important;
 	touch-action: pan-y !important; /* Разрешаем вертикальный свайп */
@@ -212,7 +212,7 @@ input[type="number"] {
 		background-color: #774a07;
 		width: 1px;
 		position: absolute;
-		left: 60%;
+		left: 43%;
 		top: 0;
 		bottom: 0;
 		margin: auto;
@@ -224,7 +224,7 @@ input[type="number"] {
 		background-color: #774a07;
 		width: 1px;
 		position: absolute;
-		right: 55%;
+		right: 43%;
 		top: 0;
 		bottom: 0;
 		margin: auto;
@@ -232,10 +232,10 @@ input[type="number"] {
 }
 
 .noUi-horizontal .noUi-handle {
-	cursor: ew-resize;
-	width: 24px !important;
-	height: 14px !important;
-	top: -7px !important;
+	cursor: pointer;
+	width: 32px !important;
+	height: 16px !important;
+	top: -8px !important;
 	right: -11px !important;
 	touch-action: pan-y !important; /* Разрешаем вертикальный свайп */
 }
@@ -358,6 +358,11 @@ input[type="number"] {
 
 .catalog-sort__dropdown {
 	max-width: 330px;
+	// margin: 5px 0 25px 6px;
+	margin-bottom: 25px;
+	.filter__dropdown-menu-btn {
+		border: 1px solid rgba(221, 221, 221);
+	}
 }
 
 .custom-checkbox {

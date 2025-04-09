@@ -66,3 +66,27 @@
 		justify-content: center;
 	}
 }
+
+.cards-wrapper-col4 {
+	display: grid;
+	place-content: center;
+	place-items: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 32px;
+
+	@media (max-width: 1320px) {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+
+	@media (max-width: 940px) {
+		grid-template-columns: 1fr 1fr;
+		row-gap: 24px;
+		place-content: normal;
+	}
+	@media (max-width: 610px) {
+		grid-template-columns: 1fr;
+		row-gap: 24px;
+		place-content: normal;
+	}
+}
