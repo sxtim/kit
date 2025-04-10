@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ипотека - покупка квартиры в ипотеку</title>
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+  @@include('blocks/header/header.html')
+  <main>
+    <section class="mortgage section">
+      <div class="container">
+        <div class="mortgage__header">
+          <h1 class="mortgage__title title">Ипотека</h1>
+          <p class="mortgage__subtitle">Реальная возможность приобрести качественное жильё напрямую от застройщика и
+            улучшить жилищные условия</p>
+        </div>
+
+        <div class="mortgage__advantages">
+          <div class="mortgage__advantage">
+            <div class="mortgage__advantage-number">1</div>
+            <div class="mortgage__advantage-text">Ставка от 5%</div>
+          </div>
+          <div class="mortgage__advantage">
+            <div class="mortgage__advantage-number">2</div>
+            <div class="mortgage__advantage-text">Первоначальный взнос от 20,1%</div>
+          </div>
+          <div class="mortgage__advantage">
+            <div class="mortgage__advantage-number">3</div>
+            <div class="mortgage__advantage-text">15 банков-партнёров</div>
+          </div>
+          <div class="mortgage__advantage">
+            <div class="mortgage__advantage-number">4</div>
+            <div class="mortgage__advantage-text">Рассрочка без удорожания</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Переиспользуем существующий компонент калькулятора ипотеки -->
+    @@include('blocks/mortgage-calculator.html')
+
+    <section class="section mortgage-types">
+      <div class="container">
+        <h2 class="title">Виды ипотечных программ</h2>
+
+        <div class="mortgage-types__tabs tabs">
+          <div class="mortgage-types__tabs-nav tabs__nav">
+            <button class="mortgage-types__tab-btn tabs__nav-btn tabs__nav-btn--active" data-tab="base">Ипотека</button>
+            <button class="mortgage-types__tab-btn tabs__nav-btn" data-tab="military">Военная ипотека</button>
+            <button class="mortgage-types__tab-btn tabs__nav-btn" data-tab="family">Семейная ипотека</button>
+            <button class="mortgage-types__tab-btn tabs__nav-btn" data-tab="maternal">Материнский капитал</button>
+            <button class="mortgage-types__tab-btn tabs__nav-btn" data-tab="it">Ипотека IT</button>
+          </div>
+
+          <div class="mortgage-types__content tabs__content">
+            <div class="mortgage-types__tab-content tabs__content-item tabs__content-item--active"
+              data-tab-content="base">
+              <h3 class="mortgage-types__subtitle">Условия кредитования</h3>
+              <ul class="mortgage-types__list">
+                <li class="mortgage-types__list-item">валюта кредита - Рубли РФ;</li>
+                <li class="mortgage-types__list-item">сумма кредита - 500 тыс. – 30 млн ₽;</li>
+                <li class="mortgage-types__list-item">срок кредита - от 3 до 30 лет;</li>
+                <li class="mortgage-types__list-item">первоначальный взнос - от 15%;</li>
+                <li class="mortgage-types__list-item">можно использовать материнский капитал.</li>
+              </ul>
+
+              <h3 class="mortgage-types__subtitle">Субсидированная ипотека от застройщика</h3>
+              <p class="mortgage-types__text">Мы активно работаем с банками по любым ипотечным программам. На отдельные
+                объекты застройщик субсидирует <strong>снижение</strong> ипотечной ставки для покупателя.</p>
+
+              <h3 class="mortgage-types__subtitle">Обеспечение по кредиту</h3>
+              <ul class="mortgage-types__list">
+                <li class="mortgage-types__list-item">залог кредитуемого или иного жилого помещения;</li>
+                <li class="mortgage-types__list-item">до оформления залога нужно оформить залог имущественных прав или
+                  поручительство физлиц.</li>
+              </ul>
+
+              <div class="mortgage-types__info">
+                <div class="mortgage-types__info-title">Страхование</div>
+                <div class="mortgage-types__info-text">Обязательно для залогового имущества</div>
+              </div>
+            </div>
+
+            <div class="mortgage-types__tab-content tabs__content-item" data-tab-content="military">
+              <h3 class="mortgage-types__subtitle">Военная ипотека</h3>
+              <ul class="mortgage-types__list">
+                <li class="mortgage-types__list-item">для военнослужащих - участников накопительно-ипотечной системы;
+                </li>
+                <li class="mortgage-types__list-item">сумма кредита до 3,93 млн ₽;</li>
+                <li class="mortgage-types__list-item">срок кредита - до 20 лет;</li>
+                <li class="mortgage-types__list-item">первоначальный взнос - от 15%.</li>
+              </ul>
+
+              <div class="mortgage-types__info">
+                <div class="mortgage-types__info-title">Преимущества</div>
+                <div class="mortgage-types__info-text">Возможность приобрести жилье в начале военной карьеры</div>
+              </div>
+            </div>
+
+            <div class="mortgage-types__tab-content tabs__content-item" data-tab-content="family">
+              <h3 class="mortgage-types__subtitle">Семейная ипотека</h3>
+              <ul class="mortgage-types__list">
+                <li class="mortgage-types__list-item">ставка от 5% годовых;</li>
+                <li class="mortgage-types__list-item">для семей с ребенком, рожденным после 01.01.2018;</li>
+                <li class="mortgage-types__list-item">сумма кредита до 6 млн ₽;</li>
+                <li class="mortgage-types__list-item">срок кредита - до 30 лет;</li>
+                <li class="mortgage-types__list-item">первоначальный взнос - от 15%.</li>
+              </ul>
+
+              <div class="mortgage-types__info">
+                <div class="mortgage-types__info-title">Особенности</div>
+                <div class="mortgage-types__info-text">Возможность использования материнского капитала в качестве
+                  первоначального взноса</div>
+              </div>
+            </div>
+
+            <div class="mortgage-types__tab-content tabs__content-item" data-tab-content="maternal">
+              <h3 class="mortgage-types__subtitle">Материнский капитал</h3>
+              <ul class="mortgage-types__list">
+                <li class="mortgage-types__list-item">возможность использования в качестве первоначального взноса;</li>
+                <li class="mortgage-types__list-item">частичное или полное досрочное погашение ипотеки;</li>
+                <li class="mortgage-types__list-item">сочетание с программой "Семейная ипотека";</li>
+                <li class="mortgage-types__list-item">доступность для всех видов новостроек.</li>
+              </ul>
+
+              <div class="mortgage-types__info">
+                <div class="mortgage-types__info-title">Документы</div>
+                <div class="mortgage-types__info-text">Сертификат на материнский капитал и справка об остатке средств
+                </div>
+              </div>
+            </div>
+
+            <div class="mortgage-types__tab-content tabs__content-item" data-tab-content="it">
+              <h3 class="mortgage-types__subtitle">Ипотека для IT-специалистов</h3>
+              <ul class="mortgage-types__list">
+                <li class="mortgage-types__list-item">ставка от 5% годовых;</li>
+                <li class="mortgage-types__list-item">для сотрудников аккредитованных IT-компаний;</li>
+                <li class="mortgage-types__list-item">сумма кредита до 18 млн ₽ (в зависимости от региона);</li>
+                <li class="mortgage-types__list-item">срок кредита - до 30 лет;</li>
+                <li class="mortgage-types__list-item">первоначальный взнос - от 15%.</li>
+              </ul>
+
+              <div class="mortgage-types__info">
+                <div class="mortgage-types__info-title">Требования к заемщику</div>
+                <div class="mortgage-types__info-text">Возраст от 22 до 45 лет, стаж работы в IT-компании не менее 3
+                  месяцев</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mortgage-types__requirements">
+          <h3 class="mortgage-types__requirements-title">Требования к заёмщикам</h3>
+          <ul class="mortgage-types__list">
+            <li class="mortgage-types__list-item">возраст на момент предоставления кредита - от 21 до 60 лет
+              включительно на дату подачи заявки;</li>
+            <li class="mortgage-types__list-item">возраст на момент погашения кредита - 75 лет;</li>
+            <li class="mortgage-types__list-item">стаж работы - не менее 3 месяцев на текущем месте работы;</li>
+            <li class="mortgage-types__list-item">гражданство - Российская Федерация.</li>
+          </ul>
+
+          <div class="mortgage-types__note">
+            * Ипотека предоставляется Банками, согласно Законодательству РФ. Вся информация носит справочный характер.
+            Итоговые условия уточняйте непосредственно у кредитных организаций.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section mortgage-process">
+      <div class="container">
+        <h2 class="title">Как купить квартиру в ипотеку?</h2>
+        <div class="mortgage-process__steps">
+          <div class="mortgage-process__step">
+            <div class="mortgage-process__step-number">1</div>
+            <div class="mortgage-process__step-title">Расчет условий ипотеки</div>
+            <div class="mortgage-process__step-description">Внесите необходимые данные и наш калькулятор автоматически
+              подсчитает сумму ежемесячного платежа, процентную ставку, срок кредита по самым выгодным ипотечным
+              предложениям от банков.</div>
+          </div>
+          <div class="mortgage-process__step">
+            <div class="mortgage-process__step-number">2</div>
+            <div class="mortgage-process__step-title">Отправка заявки</div>
+            <div class="mortgage-process__step-description">Мы передаем ваш запрос во множество банков. Это повышает
+              ваши шансы на получение одобрения по наиболее выгодным условиям.</div>
+          </div>
+          <div class="mortgage-process__step">
+            <div class="mortgage-process__step-number">3</div>
+            <div class="mortgage-process__step-title">Заключение сделки</div>
+            <div class="mortgage-process__step-description">Когда все документы будут подписаны, а заявка одобрена, вы
+              официально станете владельцем своей собственной квартиры!</div>
+          </div>
+          <div class="mortgage-process__step">
+            <div class="mortgage-process__step-number">4</div>
+            <div class="mortgage-process__step-title">Получение ключей и заселение</div>
+            <div class="mortgage-process__step-description">Теперь перед вами открыты двери в новую главу вашей жизни,
+              где вы сможете воплотить свои мечты и наслаждаться независимостью и комфортом.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section mortgage-documents">
+      <div class="container">
+        <h2 class="title">Какие документы нужны для подачи заявки на ипотеку?</h2>
+        <div class="mortgage-documents__items">
+          <div class="mortgage-documents__item">
+            <div class="mortgage-documents__item-icon">
+              <img src="./img/icons/passport.svg" alt="Паспорт">
+            </div>
+            <div class="mortgage-documents__item-text">
+              <p>Паспорт. Оригинал паспорта заемщика вместе с ксерокопиями всех страниц документа</p>
+            </div>
+          </div>
+          <div class="mortgage-documents__item">
+            <div class="mortgage-documents__item-icon">
+              <img src="./img/icons/snils.svg" alt="СНИЛС">
+            </div>
+            <div class="mortgage-documents__item-text">
+              <p>СНИЛС. Страховой номер индивидуального лицевого счета гражданина</p>
+            </div>
+          </div>
+          <div class="mortgage-documents__item">
+            <div class="mortgage-documents__item-icon">
+              <img src="./img/icons/inn.svg" alt="ИНН">
+            </div>
+            <div class="mortgage-documents__item-text">
+              <p>ИНН. Идентификационный номер налогоплательщика</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Используем существующий компонент для вопросов и ответов -->
+    <section class="mortgage-faq details-group section">
+      <div class="container">
+        <h2 class="title">Вопросы и ответы</h2>
+
+        <details class="details">
+          <summary class="details__summary">
+            Как подать заявку на покупки квартиры в ипотеку?
+          </summary>
+          <div class="details__content">
+            <p>Вы можете оставить заявку на оформление ипотеки на сайте. Ипотечный специалист свяжется с вами и
+              проконсультирует по вопросу. Также вы можете обратиться в любой офис продаж.</p>
+          </div>
+        </details>
+
+        <details class="details">
+          <summary class="details__summary">Какой стаж работы необходим для оформления ипотеки на квартиру?</summary>
+          <div class="details__content">
+            <p>Для большинства банков условием считается стаж работы на одном месте от 6 месяцев. Есть ряд банков, в
+              которых не требуется подтверждение опыта работы.</p>
+          </div>
+        </details>
+
+        <details class="details">
+          <summary class="details__summary">Какой первоначальный взнос нужен по ипотеке? Есть ли ипотека без
+            первоначального взноса?</summary>
+          <div class="details__content">
+            <p>Чаще всего размер первоначального взноса начинается от 20,1% от общей стоимости квартиры. Периодически
+              появляются программы, которые позволяют оформить ипотеку без первоначального взноса. О них мы
+              дополнительно сообщаем на сайте. Вы можете подписаться на нашу рассылку и первыми узнать о специальных
+              условиях.</p>
+          </div>
+        </details>
+
+        <details class="details">
+          <summary class="details__summary">Как узнать ежемесячный платеж по ипотеке?</summary>
+          <div class="details__content">
+            <p>Сумма ежемесячного платежа зависит от нескольких факторов: суммы первоначального взноса, процентной
+              ставки, срока кредита. Наш ипотечный специалист всегда подберет наиболее выгодные условия именно для вас.
+            </p>
+          </div>
+        </details>
+
+        <details class="details">
+          <summary class="details__summary">Какая процентная ставка по ипотеке?</summary>
+          <div class="details__content">
+            <p>Банки предлагают разные процентные ставки. Данный параметр может меняться из месяца в месяц. О самых
+              выгодных ставках мы всегда сообщаем дополнительно на сайте.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section class="section mortgage-options">
+      <div class="container">
+        <h2 class="title">Другие варианты покупки</h2>
+        <div class="mortgage-options__items">
+          <a href="#" class="mortgage-options__item">
+            <div class="mortgage-options__item-icon">
+              <img src="./img/icons/insurance.svg" alt="Страхование">
+            </div>
+            <div class="mortgage-options__item-title">Страхование</div>
+          </a>
+          <a href="#" class="mortgage-options__item">
+            <div class="mortgage-options__item-icon">
+              <img src="./img/icons/mother-capital.svg" alt="Материнский капитал">
+            </div>
+            <div class="mortgage-options__item-title">Материнский капитал</div>
+          </a>
+          <a href="#" class="mortgage-options__item">
+            <div class="mortgage-options__item-icon">
+              <img src="./img/icons/military.svg" alt="Военная ипотека">
+            </div>
+            <div class="mortgage-options__item-title">Военная ипотека</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Используем существующий компонент с формой для вопросов -->
+    @@include('blocks/section-questions.html')
+  </main>
+  @@include('blocks/footer.html')
+  <script src="./js/index.bundle.js"></script>
+</body>
+
+</html>

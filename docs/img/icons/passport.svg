@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <title>Passport</title>
+    <g id="Passport" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M33,5 L33,35 L7,35 L7,5 L33,5 Z M31,7 L9,7 L9,33 L31,33 L31,7 Z" id="Rectangle" fill="#333333"></path>
+        <path d="M20,11 C22.7614,11 25,13.2386 25,16 C25,18.7614 22.7614,21 20,21 C17.2386,21 15,18.7614 15,16 C15,13.2386 17.2386,11 20,11 Z M20,22 C24.0501,22 27.5,24.134 27.5,28 L12.5,28 C12.5,24.134 15.9499,22 20,22 Z" id="Combined-Shape" fill="#333333"></path>
+    </g>
+</svg> 
