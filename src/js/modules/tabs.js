@@ -1,6 +1,6 @@
 "use strict"
 
-/**
+/** MAIN TABS
  * @function Tabs()
  *
  * Simple tabbed content UI component
@@ -142,3 +142,42 @@ window.onload = function () {
 
 	var tabs = new Tabs()
 }
+
+// Табы на странице ипотеки
+function initMortgageTabs() {
+	const tabBtns = document.querySelectorAll(".mortgage-types__tab-btn")
+	if (!tabBtns.length) return
+
+	const tabContents = document.querySelectorAll(".mortgage-types__tab-content")
+
+	tabBtns.forEach(btn => {
+		btn.addEventListener("click", () => {
+			// Убираем активный класс у всех кнопок
+			tabBtns.forEach(item => {
+				item.classList.remove("tabs__nav-btn--active")
+			})
+
+			// Добавляем активный класс текущей кнопке
+			btn.classList.add("tabs__nav-btn--active")
+
+			// Скрываем все контенты табов
+			tabContents.forEach(content => {
+				content.classList.remove("tabs__content-item--active")
+			})
+
+			// Показываем нужный таб
+			const tabId = btn.getAttribute("data-tab")
+			const activeContent = document.querySelector(
+				`[data-tab-content="${tabId}"]`
+			)
+			if (activeContent) {
+				activeContent.classList.add("tabs__content-item--active")
+			}
+		})
+	})
+}
+
+// Запускаем инициализацию табов на странице ипотеки
+document.addEventListener("DOMContentLoaded", () => {
+	initMortgageTabs()
+})

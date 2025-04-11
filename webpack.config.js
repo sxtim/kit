@@ -2,7 +2,7 @@ const config = {
 	mode: 'production',
 	entry: {
 		index: './src/js/index.js',
-		uk: './src/js/uk.js'
+		accordion: './src/js/accordion.js'
 		// contacts: './src/js/contacts.js',
 		// about: './src/js/about.js',
 	},

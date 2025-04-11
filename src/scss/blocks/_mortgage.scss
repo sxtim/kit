@@ -148,7 +148,6 @@
 
 .mortgage-types {
 	padding: 60px 0;
-	background-color: #f8f8f8;
 
 	&__tabs {
 		margin-top: 40px;
@@ -156,7 +155,6 @@
 
 	&__tabs-nav {
 		display: flex;
-		border-bottom: 1px solid #e0e0e0;
 		overflow-x: auto;
 		margin-bottom: 30px;
 
@@ -262,10 +260,8 @@
 	&__info {
 		background-color: #fff;
 		padding: 20px;
-		border-radius: 8px;
 		border-left: 4px solid #00b67a;
 		margin-bottom: 30px;
-		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 	}
 
 	&__info-title {
@@ -284,8 +280,6 @@
 	&__requirements {
 		background-color: #fff;
 		padding: 30px;
-		border-radius: 8px;
-		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 		margin-top: 20px;
 	}
 

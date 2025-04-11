@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ипотека - покупка квартиры в ипотеку</title>
   <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./fonts/Montserrat/stylesheet.css" />
+  <link rel="stylesheet" href="./fonts/Oswald/stylesheet.css" />
+  <link rel="stylesheet" href="./fonts/Pangram1/stylesheet.css" />
 </head>
 
 <body>
@@ -41,11 +44,13 @@
     </section>
 
     <!-- Переиспользуем существующий компонент калькулятора ипотеки -->
-    @@include('blocks/mortgage-calculator.html')
+    <section class="section mortgage-calculator">
+      @@include('blocks/mortgage-calculator.html')
+    </section>
 
     <section class="section mortgage-types">
       <div class="container">
-        <h2 class="title">Виды ипотечных программ</h2>
+        <h2 class="title title-no-line">Варианты приобретения жилья</h2>
 
         <div class="mortgage-types__tabs tabs">
           <div class="mortgage-types__tabs-nav tabs__nav">
@@ -64,7 +69,7 @@
                 <li class="mortgage-types__list-item">валюта кредита - Рубли РФ;</li>
                 <li class="mortgage-types__list-item">сумма кредита - 500 тыс. – 30 млн ₽;</li>
                 <li class="mortgage-types__list-item">срок кредита - от 3 до 30 лет;</li>
-                <li class="mortgage-types__list-item">первоначальный взнос - от 15%;</li>
+                <li class="mortgage-types__list-item">первоначальный взнос - от 19.8%;</li>
                 <li class="mortgage-types__list-item">можно использовать материнский капитал.</li>
               </ul>
 
@@ -80,68 +85,123 @@
               </ul>
 
               <div class="mortgage-types__info">
-                <div class="mortgage-types__info-title">Страхование</div>
-                <div class="mortgage-types__info-text">Обязательно для залогового имущества</div>
+                <div class="mortgage-types__info-title">Требования к заёмщикам</div>
+                <div class="mortgage-types__info-text">возраст на момент предоставления кредита - от 21 до 60 лет
+                  включительно на дату подачи заявки;</div>
+                <div class="mortgage-types__info-text">возраст на момент погашения кредита - 75 лет;</div>
+                <div class="mortgage-types__info-text">стаж работы - не менее 3 месяцев на текущем месте работы;</div>
+                <div class="mortgage-types__info-text">гражданство - Российская Федерация.</div>
               </div>
             </div>
 
             <div class="mortgage-types__tab-content tabs__content-item" data-tab-content="military">
-              <h3 class="mortgage-types__subtitle">Военная ипотека</h3>
+              <h3 class="mortgage-types__subtitle">Для военнослужащих</h3>
               <ul class="mortgage-types__list">
-                <li class="mortgage-types__list-item">для военнослужащих - участников накопительно-ипотечной системы;
-                </li>
-                <li class="mortgage-types__list-item">сумма кредита до 3,93 млн ₽;</li>
-                <li class="mortgage-types__list-item">срок кредита - до 20 лет;</li>
-                <li class="mortgage-types__list-item">первоначальный взнос - от 15%.</li>
+
+                <li class="mortgage-types__list-item">валюта кредита - Рубли РФ;</li>
+                <li class="mortgage-types__list-item">мин. сумма кредита - 300 000 ₽;</li>
+                <li class="mortgage-types__list-item">макс. сумма кредита - в зависимости от банка кредитора;</li>
+                <li class="mortgage-types__list-item">срок кредита - до 25 лет;</li>
+                <li class="mortgage-types__list-item">первоначальный взнос - от 15,1%;</li>
+                <li class="mortgage-types__list-item">обеспечение по кредиту - залог кредитуемого жилого помещения;</li>
+                <li class="mortgage-types__list-item">страхование - обязательно для залогового имущества.</li>
               </ul>
 
               <div class="mortgage-types__info">
-                <div class="mortgage-types__info-title">Преимущества</div>
-                <div class="mortgage-types__info-text">Возможность приобрести жилье в начале военной карьеры</div>
+                <div class="mortgage-types__info-title">Требования к заёмщикам</div>
+                <div class="mortgage-types__info-text">возраст на момент предоставления кредита - не менее 21 года;
+                </div>
+                <div class="mortgage-types__info-text">возраст на момент погашения кредита - 75 лет;</div>
+                <div class="mortgage-types__info-text">военнослужащий со свидетельством участника НИС;</div>
+                <div class="mortgage-types__info-text">гражданство - Российская Федерация.</div>
               </div>
             </div>
 
             <div class="mortgage-types__tab-content tabs__content-item" data-tab-content="family">
               <h3 class="mortgage-types__subtitle">Семейная ипотека</h3>
               <ul class="mortgage-types__list">
-                <li class="mortgage-types__list-item">ставка от 5% годовых;</li>
-                <li class="mortgage-types__list-item">для семей с ребенком, рожденным после 01.01.2018;</li>
-                <li class="mortgage-types__list-item">сумма кредита до 6 млн ₽;</li>
-                <li class="mortgage-types__list-item">срок кредита - до 30 лет;</li>
-                <li class="mortgage-types__list-item">первоначальный взнос - от 15%.</li>
+                <li class="mortgage-types__list-item">первоначальный взнос - от 20,1%;</li>
+                <li class="mortgage-types__list-item">двалюта кредита - Рубли РФ;</li>
+                <li class="mortgage-types__list-item">мин. сумма кредита - 300 000 ₽;</li>
+                <li class="mortgage-types__list-item">срок кредита - до 30 лет.</li>
               </ul>
 
               <div class="mortgage-types__info">
-                <div class="mortgage-types__info-title">Особенности</div>
-                <div class="mortgage-types__info-text">Возможность использования материнского капитала в качестве
-                  первоначального взноса</div>
+                <div class="mortgage-types__info-title">Требования к заёмщикам</div>
+                <div class="mortgage-types__info-text">от 21 до 60 лет включительно на дату подачи заявки и
+                  предоставления кредита;</div>
+                <div class="mortgage-types__info-text">до 75 лет включительно на дату погашения кредита;</div>
+                <div class="mortgage-types__info-text">стаж работы - не менее 3 месяцев на текущем месте работы;</div>
+                <div class="mortgage-types__info-text">ребенок, гражданин РФ, не достигший возраста 7 лет на дату
+                  кредитного договора;</div>
+                <div class="mortgage-types__info-text">ребенок с категорией «ребенок-инвалид», являющийся гражданином
+                  РФ.</div>
               </div>
             </div>
 
             <div class="mortgage-types__tab-content tabs__content-item" data-tab-content="maternal">
-              <h3 class="mortgage-types__subtitle">Материнский капитал</h3>
+              <h3 class="mortgage-types__subtitle">Материнский (семейный) капитал – мера государственной поддержки
+                семей.</h3>
               <ul class="mortgage-types__list">
-                <li class="mortgage-types__list-item">возможность использования в качестве первоначального взноса;</li>
-                <li class="mortgage-types__list-item">частичное или полное досрочное погашение ипотеки;</li>
+                <li class="mortgage-types__list-item">в период с 1 января 2007 года по 31 декабря 2030 года родился или
+                  был усыновлен второй (третий и последующий) ребенок;</li>
+                <li class="mortgage-types__list-item">либо начиная с 1 января 2020 года родился (был усыновлен) первый
+                  ребенок.</li>
                 <li class="mortgage-types__list-item">сочетание с программой "Семейная ипотека";</li>
-                <li class="mortgage-types__list-item">доступность для всех видов новостроек.</li>
+                <li class="mortgage-types__list-item">Программа материнского капитала действует по 31 декабря 2026 года
+                  (ч. 1 ст. 13 Федерального закона от 29 декабря 2006 г. № 256-ФЗ "О дополнительных мерах
+                  государственной поддержки семей, имеющих детей"</li>
+              </ul>
+
+              <h3 class="mortgage-types__subtitle">Маткапитал в 2025 году</h3>
+              <ul class="mortgage-types__list">
+                <li class="mortgage-types__list-item">690 266,95 рубля на первого ребенка, рожденного или усыновленного
+                  с 2020 года, или на второго ребенка, если он появился раньше 2020 года;</li>
+                <li class="mortgage-types__list-item">912 162,09 рубля получат семьи, где второй ребенок родился или
+                  усыновлен с 2020 года, а до его появления права на маткапитал у семьи не было;</li>
+                <li class="mortgage-types__list-item">221 895,14 рубля - при рождении второго ребенка, если и первый, и
+                  второй появились с 2020 года.</li>
+                <li class="mortgage-types__list-item">Программа материнского капитала действует по 31 декабря 2026 года
+                  (ч. 1 ст. 13 Федерального закона от 29 декабря 2006 г. № 256-ФЗ "О дополнительных мерах
+                  государственной поддержки семей, имеющих детей"</li>
+              </ul>
+
+              <h3 class="mortgage-types__subtitle">Получить выплату могут:</h3>
+              <ul class="mortgage-types__list">
+                <li class="mortgage-types__list-item">женщины, которые родили или усыновили первого ребенка после 1
+                  января 2020 года;</li>
+                <li class="mortgage-types__list-item">женщины, которые родили или усыновили второго или последующего ребенка после 1 января 2007 года;</li>
+                <li class="mortgage-types__list-item">мужчины, которые являются единственными усыновителями первого ребенка, если решение суда вступило в силу после 1 января 2020 года;</li>
+                <li class="mortgage-types__list-item">мужчинам, которые являются единственными усыновителями второго или последующего ребенка, если решение суда вступило в силу после 1 января 2007 года.</li>
               </ul>
 
               <div class="mortgage-types__info">
-                <div class="mortgage-types__info-title">Документы</div>
-                <div class="mortgage-types__info-text">Сертификат на материнский капитал и справка об остатке средств
-                </div>
+                <div class="mortgage-types__info-title">На что можно направить средства</div>
+                <div class="mortgage-types__info-text">на улучшение жилищных условий;</div>
+                <div class="mortgage-types__info-text">на образование детей;</div>
+                <div class="mortgage-types__info-text">на формирование накопительной пенсии мамы;</div>
+                <div class="mortgage-types__info-text">на приобретение товаров и услуг, предназначенных для социальной адаптации и интеграции в общество детей с инвалидностью;</div>
+                
               </div>
+              
             </div>
 
             <div class="mortgage-types__tab-content tabs__content-item" data-tab-content="it">
-              <h3 class="mortgage-types__subtitle">Ипотека для IT-специалистов</h3>
+              <h3 class="mortgage-types__subtitle">Условия кредитования</h3>
               <ul class="mortgage-types__list">
-                <li class="mortgage-types__list-item">ставка от 5% годовых;</li>
-                <li class="mortgage-types__list-item">для сотрудников аккредитованных IT-компаний;</li>
-                <li class="mortgage-types__list-item">сумма кредита до 18 млн ₽ (в зависимости от региона);</li>
+                <li class="mortgage-types__list-item">валюта кредита - Рубли РФ;</li>
+                <li class="mortgage-types__list-item">первоначальный взнос - от 20,1%;</li>
+                <li class="mortgage-types__list-item">мин. сумма кредита - 300 000 ₽;</li>
+                <li class="mortgage-types__list-item">макс. сумма кредита: <br> до 9 000 000 рублей — Можно оформить ипотечный кредит и до 18 млн рублей. Но, в таком случае, в части кредита выше установленного госпрограммой лимита (9 млн рублей) будет действовать рыночная процентная ставка. </li>
                 <li class="mortgage-types__list-item">срок кредита - до 30 лет;</li>
-                <li class="mortgage-types__list-item">первоначальный взнос - от 15%.</li>
+              </ul>
+
+              <h3 class="mortgage-types__subtitle">Условия кредитования</h3>
+              <ul class="mortgage-types__list">
+                <li class="mortgage-types__list-item">для готового жилья: <br> - залог кредитуемой квартиры </li>
+                <li class="mortgage-types__list-item">для строящегося жилья: <br> - залог прав требования на строящееся жильё; <br> - если залог прав требования невозможен, нужен залог другой недвижимости или поручительство физлица на период строительства. </li>
+                <li class="mortgage-types__list-item">Обязательно нужно застраховать недвижимость. Исключение, если у вас участок.</li>
+                
               </ul>
 
               <div class="mortgage-types__info">
@@ -154,14 +214,14 @@
         </div>
 
         <div class="mortgage-types__requirements">
-          <h3 class="mortgage-types__requirements-title">Требования к заёмщикам</h3>
+          <!-- <h3 class="mortgage-types__requirements-title">Требования к заёмщикам</h3>
           <ul class="mortgage-types__list">
             <li class="mortgage-types__list-item">возраст на момент предоставления кредита - от 21 до 60 лет
               включительно на дату подачи заявки;</li>
             <li class="mortgage-types__list-item">возраст на момент погашения кредита - 75 лет;</li>
             <li class="mortgage-types__list-item">стаж работы - не менее 3 месяцев на текущем месте работы;</li>
             <li class="mortgage-types__list-item">гражданство - Российская Федерация.</li>
-          </ul>
+          </ul> -->
 
           <div class="mortgage-types__note">
             * Ипотека предоставляется Банками, согласно Законодательству РФ. Вся информация носит справочный характер.
@@ -289,37 +349,14 @@
       </div>
     </section>
 
-    <section class="section mortgage-options">
-      <div class="container">
-        <h2 class="title">Другие варианты покупки</h2>
-        <div class="mortgage-options__items">
-          <a href="#" class="mortgage-options__item">
-            <div class="mortgage-options__item-icon">
-              <img src="./img/icons/insurance.svg" alt="Страхование">
-            </div>
-            <div class="mortgage-options__item-title">Страхование</div>
-          </a>
-          <a href="#" class="mortgage-options__item">
-            <div class="mortgage-options__item-icon">
-              <img src="./img/icons/mother-capital.svg" alt="Материнский капитал">
-            </div>
-            <div class="mortgage-options__item-title">Материнский капитал</div>
-          </a>
-          <a href="#" class="mortgage-options__item">
-            <div class="mortgage-options__item-icon">
-              <img src="./img/icons/military.svg" alt="Военная ипотека">
-            </div>
-            <div class="mortgage-options__item-title">Военная ипотека</div>
-          </a>
-        </div>
-      </div>
-    </section>
+
 
     <!-- Используем существующий компонент с формой для вопросов -->
     @@include('blocks/section-questions.html')
   </main>
   @@include('blocks/footer.html')
   <script src="./js/index.bundle.js"></script>
+  <script src="./js/accordion.bundle.js"></script>
 </body>
 
 </html>

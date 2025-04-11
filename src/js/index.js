@@ -1,12 +1,12 @@
 import mobileNav from "./modules/mobile-nav.js"
 mobileNav()
 
-import "./modules/filters"
-import initFormHandlers from "./modules/formHandler"
-import initModals from "./modules/modal"
-import "./modules/mortgageCalculator"
-import initPhoneMasks from "./modules/phoneMask"
-import "./modules/tabs"
+import "./modules/filters.js"
+import initFormHandlers from "./modules/formHandler.js"
+import initModals from "./modules/modal.js"
+import "./modules/mortgageCalculator.js"
+import initPhoneMasks from "./modules/phoneMask.js"
+import "./modules/tabs.js"
 
 // Инициализация модальных окон
 initModals()
@@ -19,45 +19,6 @@ initFormHandlers()
 
 // Подключение галереи
 require("fslightbox")
-
-// Табы на странице ипотеки
-function initMortgageTabs() {
-	const tabBtns = document.querySelectorAll(".mortgage-types__tab-btn")
-	if (!tabBtns.length) return
-
-	const tabContents = document.querySelectorAll(".mortgage-types__tab-content")
-
-	tabBtns.forEach(btn => {
-		btn.addEventListener("click", () => {
-			// Убираем активный класс у всех кнопок
-			tabBtns.forEach(item => {
-				item.classList.remove("tabs__nav-btn--active")
-			})
-
-			// Добавляем активный класс текущей кнопке
-			btn.classList.add("tabs__nav-btn--active")
-
-			// Скрываем все контенты табов
-			tabContents.forEach(content => {
-				content.classList.remove("tabs__content-item--active")
-			})
-
-			// Показываем нужный таб
-			const tabId = btn.getAttribute("data-tab")
-			const activeContent = document.querySelector(
-				`[data-tab-content="${tabId}"]`
-			)
-			if (activeContent) {
-				activeContent.classList.add("tabs__content-item--active")
-			}
-		})
-	})
-}
-
-// Запускаем инициализацию табов на странице ипотеки
-document.addEventListener("DOMContentLoaded", () => {
-	initMortgageTabs()
-})
 
 //SLIDER MAIN
 // import Swiper bundle with all modules installed
