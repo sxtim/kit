@@ -170,7 +170,7 @@
 						<li><a href="apartments-catalog.html">Квартиры</a></li>
 						<li><a href="promotions.html">Акции</a></li>
 						<li><a href="news.html">Новости</a></li>
-						<li><a href="#!">Ипотека</a></li>
+						<li><a href="mortgage.html">Ипотека</a></li>
 						<li><a href="commerce-catalog.html">Коммерция</a></li>
 						<li><a href="uk.html">УК</a></li>
 						<li><a href="contacts.html">Контакты</a></li>
@@ -235,10 +235,16 @@
 			<li><a href="apartments-catalog.html">Квартиры</a></li>
 			<li><a href="promotions.html">Акции</a></li>
 			<li><a href="news.html">Новости</a></li>
-			<li><a href="#!">Ипотека</a></li>
+			<li><a href="mortgage.html">Ипотека</a></li>
 			<li><a href="commerce.html">Коммерция</a></li>
 			<li><a href="uk.html">УК</a></li>
 			<li><a href="contacts.html">Контакты</a></li>
+			<div class="footer__btn-container">
+				<a href="apartments-catalog.html" class="btn btn-transparent-white">Выбрать квартиру</a>
+			</div>
+			<div class="footer__btn-container">
+				<a href="commerce-catalog.html" class="btn btn-transparent-white">Выбрать коммерцию</a>
+			</div>
 			<a class="header__phone phone header__phone-white" href="tel:+7 (473) 274-38-84">+7 (473) 274-38-84</a>
 			<!--              <li><a class="header__address" href="#!">г. Воронеж, ул. Владимира Невского, 17Б</a></li>-->
 		</ul>
@@ -924,9 +930,116 @@
             <div class="mortgage-calculator__result-value" id="total-payment">0 ₽</div>
           </div>
         </div>
+        <div class="mortgage-calculator__consultation">
+          <button class="mortgage-calculator__consultation-btn btn btn-green"
+            data-modal="mortgage-consultation-modal">Получить консультацию</button>
+        </div>
+        <!-- Добавляем блок с банками-партнерами -->
+        <div class="mortgage-calculator__banks">
+          <h4 class="mortgage-calculator__row-title">Банки-партнеры</h4>
+          <div class="mortgage-calculator__banks-container">
+            <div class="mortgage-calculator__bank-card">
+              <div class="mortgage-calculator__bank-logo">
+                <img src="img/banks/psb-logo.svg" alt="Промсвязьбанк">
+              </div>
+              <div class="mortgage-calculator__bank-name">Промсвязьбанк</div>
+              <div class="mortgage-calculator__bank-rate">от 8,9%</div>
+            </div>
+            <div class="mortgage-calculator__bank-card">
+              <div class="mortgage-calculator__bank-logo">
+                <img src="img/banks/sber-logo.svg" alt="Сбербанк">
+              </div>
+              <div class="mortgage-calculator__bank-name">Сбербанк</div>
+              <div class="mortgage-calculator__bank-rate">от 9,4%</div>
+            </div>
+            <div class="mortgage-calculator__bank-card">
+              <div class="mortgage-calculator__bank-logo">
+                <img src="img/banks/metalinvest-logo.svg" alt="Металинвест Банк">
+              </div>
+              <div class="mortgage-calculator__bank-name">Металинвест Банк</div>
+              <div class="mortgage-calculator__bank-rate">от 8,7%</div>
+            </div>
+            <div class="mortgage-calculator__bank-card">
+              <div class="mortgage-calculator__bank-logo">
+                <img src="img/banks/vtb-logo.svg" alt="ВТБ">
+              </div>
+              <div class="mortgage-calculator__bank-name">ВТБ</div>
+              <div class="mortgage-calculator__bank-rate">от 9,2%</div>
+            </div>
+            <div class="mortgage-calculator__bank-card">
+              <div class="mortgage-calculator__bank-logo">
+                <img src="img/banks/rshb-logo.svg" alt="Россельхоз Банк">
+              </div>
+              <div class="mortgage-calculator__bank-name">Россельхоз Банк</div>
+              <div class="mortgage-calculator__bank-rate">от 8,5%</div>
+            </div>
+          </div>
+        </div>
+
+
+
       </div>
   </div>
 </section>
+
+<!-- Модальное окно с формой консультации по ипотеке -->
+<div class="modal" id="mortgage-consultation-modal">
+  <div class="modal__overlay"></div>
+  <div class="modal__content">
+    <button class="modal__close" aria-label="Закрыть">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </button>
+    <div class="modal__body">
+      <h3 class="modal__title">Консультация по ипотеке</h3>
+      <p class="modal__text">Оставьте свои контактные данные, и наш специалист свяжется с вами для консультации по
+        ипотечным программам</p>
+
+      <div class="form-contact__container">
+        <form class="form-contact">
+          <div class="form-contact__row">
+            <label class="form-contact__label" for="mortgage-name">Ваше имя</label>
+            <input type="text" id="mortgage-name" class="form-contact__input" placeholder="Имя" required>
+          </div>
+
+          <div class="form-contact__row">
+            <label class="form-contact__label" for="mortgage-phone">Телефон</label>
+            <input type="tel" id="mortgage-phone" class="form-contact__input" placeholder="+7 999 999 99 99" required>
+          </div>
+
+          <button class="form-contact__btn btn btn-green" type="submit">Отправить заявку</button>
+
+          <div class="form-agreement-container">
+            <input class="custom-checkbox" type="checkbox" id="mortgage-agreement" required>
+            <label for="mortgage-agreement">Я ознакомлен(-а) с <a href="personal-agreement.html"
+                target="_blank">Политикой обработки персональных данных</a> и даю свое <a href="agreement-opd.html"
+                target="_blank">согласие на обработку</a> персональных данных.</label>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Модальное окно успешной отправки формы -->
+<div class="modal" id="modal-success">
+  <div class="modal__overlay"></div>
+  <div class="modal__content">
+    <button class="modal__close" aria-label="Закрыть">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </button>
+    <div class="modal__body">
+      <h3 class="modal__title">Спасибо за вашу заявку!</h3>
+      <p class="modal__text">Наш специалист свяжется с вами в ближайшее время для консультации по ипотечным программам
+      </p>
+    </div>
+  </div>
+</div>
 		<section class="section">
 			<div class="container banner-rent__container">
   <div class="banner-rent banner-main">

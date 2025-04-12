@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg">
-    <title>Insurance</title>
-    <g id="Insurance" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <path d="M20,5 C22.6324,9.36302 26.6324,11.4186 32,11.1667 C32,23.6111 27.75,31.0278 20,33.4167 C12.25,31.0278 8,23.6111 8,11.1667 C13.3676,11.4186 17.3676,9.36302 20,5 Z" id="Shield" stroke="#333333" stroke-width="2" fill-rule="nonzero"></path>
-        <path d="M16.5,20.5 L19,23 L24,18" id="Path" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-    </g>
-</svg> 

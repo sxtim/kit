@@ -29,6 +29,7 @@ class MortgageCalculator {
 		this.initializeTypeSelector()
 		this.initializeSliders()
 		this.calculateMortgage()
+		this.initModalForm()
 	}
 
 	initializeTypeSelector() {
@@ -318,6 +319,108 @@ class MortgageCalculator {
 		).toLocaleString("ru-RU")} ₽`
 
 		this.isCalculating = false
+	}
+
+	// Метод для инициализации формы консультации
+	initModalForm() {
+		// Инициализация маски для телефона
+		const phoneInput = document.getElementById("mortgage-phone")
+		if (phoneInput) {
+			phoneInput.addEventListener("input", function (e) {
+				let value = e.target.value.replace(/\D/g, "")
+
+				// Ограничиваем ввод до 11 цифр
+				if (value.length > 11) {
+					value = value.slice(0, 11)
+				}
+
+				// Форматируем телефон
+				if (value.length > 0) {
+					if (value[0] === "7" || value[0] === "8") {
+						value = "7" + value.slice(1)
+					} else if (value[0] !== "7") {
+						value = "7" + value
+					}
+
+					let formattedPhone = "+"
+
+					if (value.length > 0) {
+						formattedPhone += value[0]
+					}
+					if (value.length > 1) {
+						formattedPhone += " " + value.substring(1, 4)
+					}
+					if (value.length > 4) {
+						formattedPhone += " " + value.substring(4, 7)
+					}
+					if (value.length > 7) {
+						formattedPhone += " " + value.substring(7, 9)
+					}
+					if (value.length > 9) {
+						formattedPhone += " " + value.substring(9, 11)
+					}
+
+					e.target.value = formattedPhone
+				}
+			})
+		}
+
+		// Обработка отправки формы
+		const mortgageForm = document.querySelector(
+			"#mortgage-consultation-modal .form-contact"
+		)
+		if (mortgageForm) {
+			mortgageForm.addEventListener("submit", function (e) {
+				e.preventDefault()
+
+				// Проверка заполнения обязательных полей
+				const nameInput = document.getElementById("mortgage-name")
+				const phoneInput = document.getElementById("mortgage-phone")
+				const agreementCheckbox = document.getElementById("mortgage-agreement")
+
+				if (!nameInput.value.trim()) {
+					nameInput.focus()
+					return
+				}
+
+				if (
+					!phoneInput.value.trim() ||
+					phoneInput.value.replace(/\D/g, "").length < 11
+				) {
+					phoneInput.focus()
+					phoneInput.classList.add("invalid-phone")
+					return
+				} else {
+					phoneInput.classList.remove("invalid-phone")
+				}
+
+				if (!agreementCheckbox.checked) {
+					agreementCheckbox.focus()
+					return
+				}
+
+				// Здесь можно добавить код для отправки формы на сервер
+				// Для демонстрации просто показываем сообщение об успехе
+
+				// Закрываем модальное окно с формой
+				const modal = document.getElementById("mortgage-consultation-modal")
+				if (modal) {
+					modal.classList.remove("active")
+				}
+
+				// Показываем модальное окно с благодарностью
+				const successModal = document.getElementById("modal-success")
+				if (successModal) {
+					setTimeout(() => {
+						successModal.classList.add("active")
+						document.body.classList.add("no-scroll")
+					}, 300)
+				}
+
+				// Сбрасываем форму
+				mortgageForm.reset()
+			})
+		}
 	}
 }
 
