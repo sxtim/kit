@@ -11,6 +11,10 @@
     display: none;
   }
 
+  @media (orientation: landscape) and (max-width: 1400px) {
+    display: none;
+	}
+
 }
 
 .slider__arr-hover {

@@ -104,6 +104,9 @@
 	@media (max-height: 600px) {
 		top: 40%;
 	}
+	@media (orientation: landscape) and (max-width: 1400px) {
+		top: 50%;
+	}
 	pointer-events: all;
 }
 

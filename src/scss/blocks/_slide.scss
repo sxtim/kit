@@ -24,8 +24,9 @@
 	height: 70vh;
 	overflow: hidden;
 	display: flex;
+	align-items: center;
 	flex-direction: column;
-	justify-content: space-between;
+	justify-content: center;
 	background-color: #555;
 
 	/* x y */
@@ -85,42 +86,56 @@
 		padding-top: 100px;
 		padding-bottom: 40px;
 	}
+	@media (orientation: landscape) and (max-width: 1400px) {
+    padding-top: 80px;
+	}
 }
 
 .slide__header {
-	text-align: center;
+	max-width: 1000px;
+	width: 100%;
+	padding: 0 20px;
+	// margin-top:200px;
+	text-align: left;
+	@media (max-width: 1400px) {
+		max-width: 600px;
+		text-align: center;
+	}
 }
 
 .slide__tagline {
-	font-family: "pangram-bold", sans-serif;
+	font-family: "Pangram", sans-serif;
 	font-weight: 300;
 	font-size: 44px;
 	line-height: 140%;
 	// letter-spacing: 0.15em;
 	color: rgb(255, 255, 255);
-  text-transform: lowercase;
 
 	@media (max-width: 1400px) {
-		font-size: 60px;
+		font-size: 36px;
 	}
   @media (max-width: 998px) {
-		font-size: 40px;
+		font-size: 28px;
 	}
   @media (max-width: 768px) {
-		font-size: 24px;
+		font-size: 22px;
 	}
   @media (max-width: 420px) {
-		font-size: 20px;
+		font-size: 18px;
+	}
+
+	@media (orientation: landscape) and (max-width: 1200px) {
+		font-size: 30px;
 	}
 }
 
 .slide__title {
-	font-family: "pangram-bold", sans-serif;
-	font-size: 120px;
+	font-family: "Pangram-bold", sans-serif;
+	font-size: 90px;
 	font-weight: 500;
-	line-height: 140%;
+	line-height: 130%;
 
-	padding: 0 10px;
+
 	// background: linear-gradient(180deg, #ffffff 25%, #646464 100%);
 	background: white;
 	//background: linear-gradient(47.06deg, #000000 -3.87%, rgba(255, 255, 255, 0) 20.89%), #FFFFFF;
@@ -128,16 +143,20 @@
 	-webkit-text-fill-color: transparent;
 
 	@media (max-width: 1400px) {
-		font-size: 130px;
+		font-size: 70px;
 	}
   @media (max-width: 998px) {
-		font-size: 94px;
-	}
-  @media (max-width: 768px) {
 		font-size: 60px;
 	}
-  @media (max-width: 420px) {
+  @media (max-width: 768px) {
 		font-size: 40px;
+	}
+  @media (max-width: 420px) {
+		font-size: 30px;
+	}
+
+	@media (orientation: landscape) and (max-width: 1200px) {
+		font-size: 60px;
 	}
 
 	& span {
@@ -220,19 +239,36 @@
 .slide__btn-container {
 	display: flex;
 	align-items: center;
-	justify-content: center;
-	margin-bottom: 70px;
+	margin-top: 50px;
+	margin-bottom: 100px;
+	max-width: 1000px;
+	padding: 0 20px;
+	
+		
+		width: 100%;
+		// margin-top:200px;
+
+
+		@media (max-width: 1400px) {
+			max-width: 600px;
+			justify-content: center;
+		}
+	
 }
 
 .slide__btn {
 	font-family: "Pangram", sans-serif;
-	width: 280px;
-	height: 60px;
-	font-size: 22px;
+	max-width: 295px;
+	width: 100%;
+
+	// width: 280px;
+	// height: 60px;
+	// font-size: 22px;
 
 	@media (max-width: 768px) {
 		font-size: 16px;
 		max-width: 200px;
 		max-height: 36px;
 	}
+
 }
