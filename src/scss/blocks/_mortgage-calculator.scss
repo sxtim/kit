@@ -98,6 +98,7 @@
 		flex-wrap: wrap;
 		gap: 32px;
 		margin-bottom: 32px;
+		padding-left: 16px;
 
 		@media (max-width: 991px) {
 			gap: 24px;
@@ -227,6 +228,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: 24px;
+		padding-left: 16px;
 
 		@media (max-width: 767px) {
 			gap: 12px;

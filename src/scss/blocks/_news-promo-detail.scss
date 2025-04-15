@@ -1,25 +1,26 @@
 .news-detail__inner {
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
+	align-items: flex-start;
 	gap: 40px;
 
 	@media (max-width: 1200px) {
 		flex-direction: column-reverse;
+		align-items: center;
 	}
+}
+
+.news-detail__inner-item {
+	flex: 1;
 }
 
 .news-detail__img {
-	max-width: 700px;
+	max-width: 800px;
+	width: 100%;
 	height: auto;
-
-	@media (max-width: 1200px) {
-		max-width: 550px;
-	}
 }
 
 .news-detail__content {
-	max-width: 550px;
 	margin-right: 10px;
 }
 

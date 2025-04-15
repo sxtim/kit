@@ -1,52 +1,56 @@
 .header-socials {
-  display: flex;
-  flex-direction: column;
-  row-gap: 28px;
-  align-items: center;
+	display: flex;
+	flex-direction: column;
+	row-gap: 28px;
+	align-items: center;
 }
 
 .socials-footer {
-  display: flex;
-  column-gap: 28px;
-  align-items: center;
+	display: flex;
+	column-gap: 28px;
+	align-items: center;
 }
 
 .section-questions__socials {
-  margin-left: 16px;
+	margin-left: 16px;
 }
 
-.section-questions__socials li{
-  display: inline-block;
+.section-questions__socials li {
+	display: inline-block;
 }
 
 .section-questions__socials img {
-  width: 25px;
-  height: 25px;
+	width: 25px;
+	height: 25px;
 }
 
 .section-questions__socials a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 100%;
-  width: 45px;
-  height: 45px;
-  background-color: #162C44;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 100%;
+	width: 45px;
+	height: 45px;
+	background-color: #162c44;
 }
 
 .socials a svg path {
-  fill: white;
-  transition: .3s;
+	fill: white;
+	transition: 0.3s;
 }
 
 .socials-black a svg path {
-  fill: black;
-  transition: .3s;
+	fill: black;
+	transition: 0.3s;
 }
 
 .socials a:hover svg path {
-  fill: var(--green-light);
+	@media (min-width: 1380px) {
+		fill: var(--green-light);
+	}
 }
 .socials-black a:hover svg path {
-  fill: var(--green-light);
+	@media (min-width: 1380px) {
+		fill: var(--green-light);
+	}
 }

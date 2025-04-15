@@ -20,7 +20,6 @@
 	@media (max-width: 1320px) {
 		// max-width: 344px;
 	}
-
 }
 
 .card-apartment_header {
@@ -35,13 +34,10 @@
 .card-apartment__delivery {
 	display: flex;
 	justify-content: space-between;
-	// font-size: 16px;
+	align-items: flex-start;
 	font-size: 14px;
 	color: #666;
 
-	@media (max-width: 1320px) {
-		// font-size: 14px;
-	}
 }
 
 .card-apartment__info p span {
@@ -184,12 +180,28 @@
 	height: auto;
 	//color: #ccc;
 	cursor: pointer;
+	z-index: 4;
 }
 
 .card-apartment__favorite:hover path {
-	stroke: red;
-	fill: red;
+	stroke: rgb(199, 0, 0);
+
 }
+
+.card-favorite {
+	width: 22px;
+	height: auto;
+	//color: #ccc;
+	cursor: pointer;
+	z-index: 4;
+}
+
+.card-favorite:hover path {
+	stroke: rgb(199, 0, 0);
+	// fill: rgb(199, 0, 0);
+}
+
+
 
 .card-apartment__link {
 	position: absolute;
