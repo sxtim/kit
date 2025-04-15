@@ -41,7 +41,7 @@
 .btn-transparent {
 	font-family: "Pangram", sans-serif;
 	background-color: transparent;
-	border: none;
+	border: 1px solid var(--text-color-black);
 	color: var(--text-color-black);
 	font-weight: 500;
 	font-size: 20px;
@@ -52,13 +52,13 @@
 		content: "⟶";
 		position: absolute;
 		right: 10px;
-		top: 50%;
+		top: 48%;
 		transform: translateY(-50%);
 		font-weight: 900;
 		font-size: 20px;
 		line-height: 1;
 		@media (max-width: 768px) {
-			top: 48%;
+			top: 46%;
 		}
 	}
 

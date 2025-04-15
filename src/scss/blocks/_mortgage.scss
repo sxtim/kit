@@ -70,8 +70,8 @@
 		width: 50px;
 		height: 50px;
 		background-color: #fff;
-		border: 2px solid #00b67a;
-		color: #00b67a;
+		border: 2px solid var(--green-light);
+		color: var(--green-light);
 		border-radius: 50%;
 		font-weight: bold;
 		margin-right: 15px;
@@ -169,12 +169,12 @@
 		white-space: nowrap;
 
 		&:hover {
-			color: #00b67a;
+			color: var(--green-light);
 		}
 
 		&.tabs__nav-btn--active {
-			color: #00b67a;
-			border-bottom-color: #00b67a;
+			color: var(--green-light);
+			border-bottom-color: var(--green-light);
 		}
 
 		@media (max-width: 576px) {
@@ -227,7 +227,7 @@
 			top: 10px;
 			width: 6px;
 			height: 6px;
-			background-color: #00b67a;
+			background-color: var(--green-light);
 			border-radius: 50%;
 		}
 
@@ -250,7 +250,7 @@
 	&__info {
 		background-color: #fff;
 		padding: 20px;
-		border-left: 4px solid #00b67a;
+		border-left: 4px solid var(--green-light);
 		margin-bottom: 30px;
 	}
 
