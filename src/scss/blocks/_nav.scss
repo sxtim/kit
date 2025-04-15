@@ -9,7 +9,7 @@
     align-items: center;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 998px) {
     column-gap: 25px;
   }
 }
@@ -17,7 +17,7 @@
 .nav__logo {
   pointer-events: all;
 
-  @media (max-width: 768px) {
+  @media (max-width: 998px) {
     max-width: 80px;
     height: auto;
   }
