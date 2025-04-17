@@ -95,3 +95,51 @@ input:-webkit-autofill:focus {
 		font-size: 16px;
 	}
 }
+
+/* Стили для модальных окон банков */
+.bank-modal__logo {
+	text-align: center;
+	margin-bottom: 30px;
+
+	img {
+		max-width: 150px;
+		height: auto;
+		margin-bottom: 10px;
+	}
+
+	p {
+		font-family: "Pangram-bold", sans-serif;
+		font-size: 18px;
+		font-weight: 700;
+		color: var(--text-color-black);
+	}
+}
+
+.bank-modal__contacts {
+	p {
+		font-family: "Pangram", sans-serif;
+		font-size: 16px;
+		line-height: 1.5;
+		margin-bottom: 8px;
+		color: var(--text-color-black);
+
+		&:first-child {
+			font-family: "Pangram-bold", sans-serif;
+			font-weight: 700;
+			margin-bottom: 15px;
+		}
+	}
+
+	a {
+		font-family: "Pangram", sans-serif;
+		font-size: 16px;
+		color: var(--color-green);
+		text-decoration: none;
+		transition: color 0.3s;
+
+		&:hover {
+			color: var(--color-dark-green);
+			text-decoration: underline;
+		}
+	}
+}

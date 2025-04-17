@@ -27,22 +27,37 @@ function initFormHandlers() {
 
 			// Валидация формы перед отправкой
 			if (isFormValid(form)) {
-				// Здесь будет отправка данных формы на сервер
-				// Можно использовать fetch или XMLHttpRequest
+				// Получаем ссылку на родительское модальное окно до очистки формы
+				const parentModal = form.closest(".modal")
+
+				// Отключаем кнопку отправки формы для предотвращения повторных отправок
+				const submitButton = form.querySelector(".form-contact__btn")
+				if (submitButton) {
+					submitButton.disabled = true
+					submitButton.classList.add("disabled")
+				}
 
 				// Эмуляция отправки формы (в реальном проекте здесь будет запрос на сервер)
 				setTimeout(() => {
 					// Очистка формы
 					form.reset()
 
-					// Закрытие модального окна, если форма находится в модальном окне
-					const parentModal = form.closest(".modal")
+					// Сначала закрываем модальное окно, если форма находится в нём
 					if (parentModal) {
 						parentModal.classList.remove("active")
+						document.body.classList.remove("no-scroll")
 					}
 
-					// Показываем модальное окно успешной отправки
-					showSuccessModal()
+					// После небольшой задержки показываем модальное окно успешной отправки
+					setTimeout(() => {
+						showSuccessModal()
+
+						// Возвращаем активное состояние кнопки
+						if (submitButton) {
+							submitButton.disabled = false
+							submitButton.classList.remove("disabled")
+						}
+					}, 300)
 				}, 500)
 			}
 		})

@@ -179,126 +179,126 @@
     <h3 class="title">Ипотечный калькулятор</h3>
     <h4 class="mortgage-calculator__sub-title">Выберите подходящие условия ипотеки, введите параметры и получите
       предварительный расчет:
-      </h4>
-      <div class="mortgage-calculator__content">
-        <div class="mortgage-calculator__type-selector">
-          <div class="mortgage-calculator__type-item mortgage-calculator__type-item--active" data-type="standard"
-            data-rate="19.8">
-            <span class="mortgage-calculator__type-name">Стандартная</span>
-            <span class="mortgage-calculator__type-rate">19.8%</span>
-          </div>
-          <div class="mortgage-calculator__type-item" data-type="family" data-rate="6.0">
-            <span class="mortgage-calculator__type-name">Семейная</span>
-            <span class="mortgage-calculator__type-rate">6.0%</span>
-          </div>
-          <div class="mortgage-calculator__type-item" data-type="it" data-rate="5.0">
-            <span class="mortgage-calculator__type-name">IT-ипотека</span>
-            <span class="mortgage-calculator__type-rate">5.0%</span>
-          </div>
+    </h4>
+    <div class="mortgage-calculator__content">
+      <div class="mortgage-calculator__type-selector">
+        <div class="mortgage-calculator__type-item mortgage-calculator__type-item--active" data-type="standard"
+          data-rate="19.8">
+          <span class="mortgage-calculator__type-name">Стандартная</span>
+          <span class="mortgage-calculator__type-rate">19.8%</span>
         </div>
-        <div class="mortgage-calculator__row">
-          <div class="mortgage-calculator__col">
-            <div class="mortgage-calculator__el">
-              <h4 class="mortgage-calculator__row-title">Стоимость квартиры</h4>
-              <div class="mortgage-calculator__inputs">
-                <input type="text" class="mortgage-calculator__input" id="input-apartment-price">
-                <span class="mortgage-calculator__text">₽</span>
-              </div>
-              <div class="mortgage-calculator__range-slider" id="apartment-price-slider"></div>
-            </div>
-          </div>
-          <div class="mortgage-calculator__col">
-            <div class="mortgage-calculator__el">
-              <h4 class="mortgage-calculator__row-title">Первоначальный взнос</h4>
-              <div class="mortgage-calculator__inputs">
-                <input type="text" class="mortgage-calculator__input" id="input-down-payment">
-                <span class="mortgage-calculator__text">₽</span>
-              </div>
-              <div class="mortgage-calculator__range-slider" id="down-payment-slider"></div>
-            </div>
-          </div>
-          <div class="mortgage-calculator__col">
-            <div class="mortgage-calculator__el">
-              <h4 class="mortgage-calculator__row-title">Срок кредита</h4>
-              <div class="mortgage-calculator__inputs">
-                <input type="text" class="mortgage-calculator__input" id="input-loan-term">
-                <span class="mortgage-calculator__text">лет</span>
-              </div>
-              <div class="mortgage-calculator__range-slider" id="loan-term-slider"></div>
-            </div>
-          </div>
+        <div class="mortgage-calculator__type-item" data-type="family" data-rate="6.0">
+          <span class="mortgage-calculator__type-name">Семейная</span>
+          <span class="mortgage-calculator__type-rate">6.0%</span>
         </div>
-        <div class="mortgage-calculator__results">
-          <div class="mortgage-calculator__result-item">
-            <div class="mortgage-calculator__result-label">Ежемесячный платеж</div>
-            <div class="mortgage-calculator__result-value" id="monthly-payment">0 ₽</div>
-          </div>
-          <div class="mortgage-calculator__result-item">
-            <div class="mortgage-calculator__result-label">Процентная ставка</div>
-            <div class="mortgage-calculator__result-value" id="interest-rate">19.8%</div>
-          </div>
-          <div class="mortgage-calculator__result-item">
-            <div class="mortgage-calculator__result-label">Сумма кредита</div>
-            <div class="mortgage-calculator__result-value" id="loan-amount">0 ₽</div>
-          </div>
-          <div class="mortgage-calculator__result-item">
-            <div class="mortgage-calculator__result-label">Переплата по кредиту</div>
-            <div class="mortgage-calculator__result-value" id="overpayment">0 ₽</div>
-          </div>
-          <div class="mortgage-calculator__result-item">
-            <div class="mortgage-calculator__result-label">Общая сумма выплат</div>
-            <div class="mortgage-calculator__result-value" id="total-payment">0 ₽</div>
-          </div>
+        <div class="mortgage-calculator__type-item" data-type="it" data-rate="5.0">
+          <span class="mortgage-calculator__type-name">IT-ипотека</span>
+          <span class="mortgage-calculator__type-rate">5.0%</span>
         </div>
-        <div class="mortgage-calculator__consultation">
-          <button class="mortgage-calculator__consultation-btn btn btn-transparent"
-            data-modal="mortgage-consultation-modal">Получить консультацию</button>
-        </div>
-        <!-- Добавляем блок с банками-партнерами -->
-        <div class="mortgage-calculator__banks">
-          <h4 class="mortgage-calculator__row-title">Банки-партнеры</h4>
-          <div class="mortgage-calculator__banks-container">
-            <div class="mortgage-calculator__bank-card">
-              <div class="mortgage-calculator__bank-logo">
-                <img src="img/banks/uralsib.png" alt="Уралсиб">
-              </div>
-              <div class="mortgage-calculator__bank-name">Промсвязьбанк</div>
-              <!-- <div class="mortgage-calculator__bank-rate">от 8,9%</div> -->
-            </div>
-            <div class="mortgage-calculator__bank-card">
-              <div class="mortgage-calculator__bank-logo">
-                <img src="img/banks/sber.png" alt="Сбербанк">
-              </div>
-              <div class="mortgage-calculator__bank-name">Сбербанк</div>
-              <!-- <div class="mortgage-calculator__bank-rate">от 9,4%</div> -->
-            </div>
-            <div class="mortgage-calculator__bank-card">
-              <div class="mortgage-calculator__bank-logo">
-                <img src="img/banks/metall.jpg" alt="Металинвест Банк">
-              </div>
-              <div class="mortgage-calculator__bank-name">Металинвест Банк</div>
-              <!-- <div class="mortgage-calculator__bank-rate">от 8,7%</div> -->
-            </div>
-            <div class="mortgage-calculator__bank-card">
-              <div class="mortgage-calculator__bank-logo">
-                <img src="img/banks/vtb.png" alt="ВТБ">
-              </div>
-              <div class="mortgage-calculator__bank-name">ВТБ</div>
-              <!-- <div class="mortgage-calculator__bank-rate">от 9,2%</div> -->
-            </div>
-            <div class="mortgage-calculator__bank-card">
-              <div class="mortgage-calculator__bank-logo">
-                <img src="img/banks/alfa.png" alt="Альфа Банк">
-              </div>
-              <div class="mortgage-calculator__bank-name">Альфа Банк</div>
-              <!-- <div class="mortgage-calculator__bank-rate">от 8,5%</div> -->
-            </div>
-          </div>
-        </div>
-
-
-
       </div>
+      <div class="mortgage-calculator__row">
+        <div class="mortgage-calculator__col">
+          <div class="mortgage-calculator__el">
+            <h4 class="mortgage-calculator__row-title">Стоимость квартиры</h4>
+            <div class="mortgage-calculator__inputs">
+              <input type="text" class="mortgage-calculator__input" id="input-apartment-price">
+              <span class="mortgage-calculator__text">₽</span>
+            </div>
+            <div class="mortgage-calculator__range-slider" id="apartment-price-slider"></div>
+          </div>
+        </div>
+        <div class="mortgage-calculator__col">
+          <div class="mortgage-calculator__el">
+            <h4 class="mortgage-calculator__row-title">Первоначальный взнос</h4>
+            <div class="mortgage-calculator__inputs">
+              <input type="text" class="mortgage-calculator__input" id="input-down-payment">
+              <span class="mortgage-calculator__text">₽</span>
+            </div>
+            <div class="mortgage-calculator__range-slider" id="down-payment-slider"></div>
+          </div>
+        </div>
+        <div class="mortgage-calculator__col">
+          <div class="mortgage-calculator__el">
+            <h4 class="mortgage-calculator__row-title">Срок кредита</h4>
+            <div class="mortgage-calculator__inputs">
+              <input type="text" class="mortgage-calculator__input" id="input-loan-term">
+              <span class="mortgage-calculator__text">лет</span>
+            </div>
+            <div class="mortgage-calculator__range-slider" id="loan-term-slider"></div>
+          </div>
+        </div>
+      </div>
+      <div class="mortgage-calculator__results">
+        <div class="mortgage-calculator__result-item">
+          <div class="mortgage-calculator__result-label">Ежемесячный платеж</div>
+          <div class="mortgage-calculator__result-value" id="monthly-payment">0 ₽</div>
+        </div>
+        <div class="mortgage-calculator__result-item">
+          <div class="mortgage-calculator__result-label">Процентная ставка</div>
+          <div class="mortgage-calculator__result-value" id="interest-rate">19.8%</div>
+        </div>
+        <div class="mortgage-calculator__result-item">
+          <div class="mortgage-calculator__result-label">Сумма кредита</div>
+          <div class="mortgage-calculator__result-value" id="loan-amount">0 ₽</div>
+        </div>
+        <div class="mortgage-calculator__result-item">
+          <div class="mortgage-calculator__result-label">Переплата по кредиту</div>
+          <div class="mortgage-calculator__result-value" id="overpayment">0 ₽</div>
+        </div>
+        <div class="mortgage-calculator__result-item">
+          <div class="mortgage-calculator__result-label">Общая сумма выплат</div>
+          <div class="mortgage-calculator__result-value" id="total-payment">0 ₽</div>
+        </div>
+      </div>
+      <div class="mortgage-calculator__consultation">
+        <button class="mortgage-calculator__consultation-btn btn btn-transparent"
+          data-modal="mortgage-consultation-modal">Получить консультацию</button>
+      </div>
+      <!-- Добавляем блок с банками-партнерами -->
+      <div class="mortgage-calculator__banks">
+        <h4 class="mortgage-calculator__row-title">Банки-партнеры</h4>
+        <div class="mortgage-calculator__banks-container">
+          <div class="mortgage-calculator__bank-card">
+            <div class="mortgage-calculator__bank-logo">
+              <img src="img/banks/uralsib.png" alt="Уралсиб">
+            </div>
+            <div class="mortgage-calculator__bank-name">Уралсиб</div>
+            <!-- <div class="mortgage-calculator__bank-rate">от 8,9%</div> -->
+          </div>
+          <div class="mortgage-calculator__bank-card">
+            <div class="mortgage-calculator__bank-logo">
+              <img src="img/banks/sber.png" alt="Сбербанк">
+            </div>
+            <div class="mortgage-calculator__bank-name">Сбербанк</div>
+            <!-- <div class="mortgage-calculator__bank-rate">от 9,4%</div> -->
+          </div>
+          <div class="mortgage-calculator__bank-card">
+            <div class="mortgage-calculator__bank-logo">
+              <img src="img/banks/metall.png" alt="Металинвест Банк">
+            </div>
+            <div class="mortgage-calculator__bank-name">Металинвест Банк</div>
+            <!-- <div class="mortgage-calculator__bank-rate">от 8,7%</div> -->
+          </div>
+          <div class="mortgage-calculator__bank-card">
+            <div class="mortgage-calculator__bank-logo">
+              <img src="img/banks/vtb.png" alt="ВТБ">
+            </div>
+            <div class="mortgage-calculator__bank-name">ВТБ</div>
+            <!-- <div class="mortgage-calculator__bank-rate">от 9,2%</div> -->
+          </div>
+          <div class="mortgage-calculator__bank-card">
+            <div class="mortgage-calculator__bank-logo">
+              <img src="img/banks/alfa.png" alt="Альфа Банк">
+            </div>
+            <div class="mortgage-calculator__bank-name">Альфа Банк</div>
+            <!-- <div class="mortgage-calculator__bank-rate">от 8,5%</div> -->
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
   </div>
 </section>
 
@@ -343,7 +343,141 @@
   </div>
 </div>
 
+<!-- Модальные окна банков -->
+<!-- Модальное окно Сбербанк -->
+<div class="modal" id="modal-bank-сбербанк">
+  <div class="modal__overlay"></div>
+  <div class="modal__content">
+    <button class="modal__close" aria-label="Закрыть">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </button>
+    <div class="modal__body">
+      <div class="bank-modal__logo">
+        <img src="img/banks/sber.png" alt="Сбербанк">
+        <p>Сбер ДомКлик</p>
+      </div>
+      <div class="bank-modal__contacts">
+        <p>Контакты:</p>
+        <p>Чернятина Надежда Геннадьевна</p>
+        <p>900</p>
+        <p>сот. +7 951 879-87-65</p>
+        <p>chernyatina.na.ge@sberbank.ru</p>
+        <a href="https://voronezh.domclick.ru/" target="_blank">https://voronezh.domclick.ru/</a>
+      </div>
+    </div>
+  </div>
+</div>
 
+<!-- Модальное окно Уралсиб -->
+<div class="modal" id="modal-bank-уралсиб">
+  <div class="modal__overlay"></div>
+  <div class="modal__content">
+    <button class="modal__close" aria-label="Закрыть">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </button>
+    <div class="modal__body">
+      <div class="bank-modal__logo">
+        <img src="img/banks/uralsib.png" alt="Уралсиб">
+        <p>Уралсиб Банк</p>
+      </div>
+      <div class="bank-modal__contacts">
+        <p>Контакты:</p>
+        <p>Петров Иван Сергеевич</p>
+        <p>8 800 250-57-57</p>
+        <p>сот. +7 915 556-78-90</p>
+        <p>petrov.i.s@uralsib.ru</p>
+        <a href="https://www.uralsib.ru/mortgage/" target="_blank">https://www.uralsib.ru/mortgage/</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Модальное окно Металинвест Банк -->
+<div class="modal" id="modal-bank-металинвест-банк">
+  <div class="modal__overlay"></div>
+  <div class="modal__content">
+    <button class="modal__close" aria-label="Закрыть">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </button>
+    <div class="modal__body">
+      <div class="bank-modal__logo">
+        <img src="img/banks/metall.png" alt="Металинвест Банк">
+        <p>Металинвест Банк</p>
+      </div>
+      <div class="bank-modal__contacts">
+        <p>Контакты:</p>
+        <p>Смирнова Анна Александровна</p>
+        <p>8 800 250-97-97</p>
+        <p>сот. +7 920 456-78-21</p>
+        <p>smirnova.a.a@metallinvest.ru</p>
+        <a href="https://metallinvestbank.ru/mortgage/" target="_blank">https://metallinvestbank.ru/mortgage/</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Модальное окно ВТБ -->
+<div class="modal" id="modal-bank-втб">
+  <div class="modal__overlay"></div>
+  <div class="modal__content">
+    <button class="modal__close" aria-label="Закрыть">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </button>
+    <div class="modal__body">
+      <div class="bank-modal__logo">
+        <img src="img/banks/vtb.png" alt="ВТБ">
+        <p>ВТБ</p>
+      </div>
+      <div class="bank-modal__contacts">
+        <p>Контакты:</p>
+        <p>Иванов Алексей Петрович</p>
+        <p>1000</p>
+        <p>сот. +7 916 234-56-78</p>
+        <p>ivanov.a.p@vtb.ru</p>
+        <a href="https://www.vtb.ru/personal/ipoteka/" target="_blank">https://www.vtb.ru/personal/ipoteka/</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Модальное окно Альфа Банк -->
+<div class="modal" id="modal-bank-альфа-банк">
+  <div class="modal__overlay"></div>
+  <div class="modal__content">
+    <button class="modal__close" aria-label="Закрыть">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </button>
+    <div class="modal__body">
+      <div class="bank-modal__logo">
+        <img src="img/banks/alfa.png" alt="Альфа Банк">
+        <p>Альфа Банк</p>
+      </div>
+      <div class="bank-modal__contacts">
+        <p>Контакты:</p>
+        <p>Соколова Мария Дмитриевна</p>
+        <p>8 800 200-00-00</p>
+        <p>сот. +7 925 345-67-89</p>
+        <p>sokolova.m.d@alfabank.ru</p>
+        <a href="https://alfabank.ru/get-money/mortgage/" target="_blank">https://alfabank.ru/get-money/mortgage/</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 
     <section class="section mortgage-types">
@@ -773,6 +907,20 @@
 </footer>
 
 
+  <!-- Модальное окно успешной отправки формы -->
+<div class="modal" id="modal-success">
+  <div class="modal__overlay"></div>
+  <div class="modal__content">
+    <button class="modal__close" aria-label="Закрыть модальное окно">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </button>
+    <div class="modal__title">Спасибо!</div>
+    <div class="modal__text">Наш менеджер свяжется с вами в ближайшее время</div>
+  </div>
+</div>
   <script src="./js/index.bundle.js"></script>
   <script src="./js/accordion.bundle.js"></script>
 </body>
