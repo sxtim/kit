@@ -93,7 +93,6 @@ var swiperApartmentSimilar = new Swiper(".apartment-similar-swiper", {
 	slidesPerView: 3,
 	spaceBetween: 30,
 	loop: true,
-	freeMode: true,
 	pagination: {
 		el: ".apartment-similar-swiper-pag",
 		clickable: true,
@@ -202,3 +201,7 @@ if (btnShareCopy) {
 		".share-current-link-wht"
 	).href = `https://wa.me/?text=${currentLinkPage}`
 }
+
+//FAVORITES
+
+

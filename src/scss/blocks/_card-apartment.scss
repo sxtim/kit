@@ -64,7 +64,7 @@
 	line-height: 22px;
 	// font-size: 22px;
 	font-size: 20px;
-	color: rgb(166, 124, 0);
+	color: var(--sand);
 
 	@media (max-width: 1320px) {
 		// font-size: 20px;
@@ -199,8 +199,10 @@
 
 .card-favorite:hover path {
 	stroke: rgb(199, 0, 0);
-	// fill: rgb(199, 0, 0);
+	fill: rgb(199, 0, 0);
 }
+
+
 
 
 
