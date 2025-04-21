@@ -172,7 +172,7 @@
     </section>
     <section class="about-project section">
       <div class="container">
-        
+
         <div class="about-project__wrap">
           <div class="about-project__col">
             <div class="about-project__text">
@@ -649,11 +649,26 @@
         <div class="apartment-form__wrap">
           <div class="apartment-form__content">
             <h3>Получите персональную подборку планировок</h3>
-            <form class="apartment-form">
-              <input type="text" id="name" placeholder="Имя" required>
-              <input type="tel" id="phone" placeholder="+7 999 999 99 99" required>
-              <button class="btn btn-green" type="submit">Отправить</button>
-            </form>
+            <div class="form-contact__container">
+              <div class="form-contact__container">
+  <form class="form-contact">
+    <label class="form-contact__label" for="name">Ваше имя</label>
+    <input type="text" id="name" placeholder="Имя" required>
+
+    <label class="form-contact__label" for="phone">Телефон</label>
+    <input type="tel" id="phone" placeholder="+7 999 999 99 99" required>
+
+    <button class="form-contact__btn btn btn-green" type="submit">Отправить</button>
+
+    <div class="form-agreement-container">
+      <input class="custom-checkbox" type="checkbox" id="agreement" required>
+      <label for="agreement">Я ознакомлен(-а) с <a href="personal-agreement.html" target="_blank">Политикой обработки персональных данных</a> и даю свое <a href="agreement-opd.html" target="_blank">согласие на обработку</a> персональных данных.</label>
+    </div>
+  </form>
+</div>
+
+
+            </div>
           </div>
           <div class="apartment-form__image"></div>
         </div>
@@ -686,11 +701,15 @@
               <span>&#10230;</span>
             </div>
             <img class="complex-this__item-img" src="./img/complex-single/complex-by.png" alt="">
-            <a class="complex-this__item-link" href="#!"></a>
+            <a class="complex-this__item-link" href="storeroom.html"></a>
           </div>
         </div>
       </div>
     </section>
+    <div class="map-container container">
+      <script type="text/javascript" charset="utf-8" async
+        src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A250a37a3774c7b81ae2b810e296e742f9cae9be7858e53393c2c93b09405aef5&amp;width=100%&amp;height=500&amp;lang=ru_RU&amp;scroll=true"></script>
+    </div>
   </main>
   <footer class="footer">
   <div class="container">

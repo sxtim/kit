@@ -22,6 +22,7 @@ input[type="text"],
 input[type="tel"],
 .form-contact__input,
 .form-contact__textarea {
+	color: var(--text-color-black);
 	padding: 10px;
 	font-size: 16px;
 	border: 1px solid #ccc;
@@ -64,11 +65,10 @@ input[type="tel"],
 	line-height: 1.4;
 }
 
-// Стили для некорректно заполненных полей телефона
+
 .invalid-phone {
 	border: 1px solid #ff4d4d !important;
 	box-shadow: 0 0 5px rgba(255, 77, 77, 0.7) !important;
-	background-color: rgba(255, 77, 77, 0.05) !important;
 	transition: all 0.3s ease !important;
 }
 
@@ -83,7 +83,7 @@ input[type="tel"],
 	pointer-events: none; /* Блокирует взаимодействие */
 }
 
-// Стили для модальной формы консультации по ипотеке
+
 #mortgage-consultation-modal {
 	.modal__body {
 		padding: 0 15px;

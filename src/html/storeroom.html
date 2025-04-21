@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>КИТ</title>
+  <link rel="stylesheet" href="./css/main.css" />
+  <link rel="stylesheet" href="./fonts/Montserrat/stylesheet.css" />
+  <link rel="stylesheet" href="./fonts/Oswald/stylesheet.css" />
+  <link rel="stylesheet" href="./fonts/Pangram/stylesheet.css" />
+</head>
+
+<body>
+  @@include('blocks/header/header.html')
+  <main class="main">
+    @@include('blocks/breadcrumb.html')
+    <div class="container">
+      <h1 class="title">Кладовые в ЖК</h1>
+      <section class="section section-storeroom">
+        <div class="container">
+          <div class="section-storeroom__image">
+            <img src="./img/storeroom/storeroom.jpg" alt="storeroom">
+          </div>
+          <div class="section-storeroom__content">
+            <div class="section-storeroom__content-title">
+              <h2>В этом ЖК вы можете купить кладовое помещение</h2>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+            </p>
+            <div class="section-storeroom__content-p">
+              <p><span>Полащадь от</span>3,5<span>до</span>7,2</p>
+              <p><span>Цена от</span>385 000 ₽</p>
+              <p><span>Количество</span>145</p>
+              <p><span>Фома собственности</span>продажа</p>
+              <p><span>Этаж от</span> -1 <span>до</span> -1</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    @@include('blocks/section-questions.html')
+  </main>
+  @@include('blocks/footer.html')
+  <script src="./js/index.bundle.js"></script>
+  @@include('blocks/modal-success.html')
+</body>
+
+</html>

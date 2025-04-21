@@ -8,7 +8,9 @@
 		font-family: "Pangram", sans-serif;
 		font-size: 18px;
 		font-weight: 500;
-
+		@media (max-width: 768px) {
+			font-size: 14px;
+		}
 	}
 }
 
@@ -18,6 +20,9 @@
 		font-size: 24px;
 		font-weight: 700;
 		color: var(--text-color-black);
+		@media (max-width: 768px) {
+			font-size: 18px;
+		}
 	}
 }
 .section-parking__content-p {
@@ -30,9 +35,68 @@
 		margin-bottom: 10px;
 		font-weight: 500;
 
+		@media (max-width: 768px) {
+			font-size: 14px;
+		}
 		span {
 			font-weight: 500;
 			color: var(--text-color-gray);
+			@media (max-width: 768px) {
+				font-size: 14px;
+			}
+		}
+	}
+}
+
+
+.section-storeroom__content {
+	font-family: "Pangram", sans-serif;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+
+	p {
+		font-family: "Pangram", sans-serif;
+		font-size: 18px;
+		font-weight: 500;
+		@media (max-width: 768px) {
+			font-size: 14px;
+		}
+	}
+}
+
+.section-storeroom__content-title {
+	h2 {
+		margin-top: 20px;
+		font-family: "Pangram-bold", sans-serif;
+		font-size: 24px;
+		font-weight: 700;
+		color: var(--text-color-black);
+		@media (max-width: 768px) {
+			font-size: 18px;
+		}
+	}
+}
+
+.section-storeroom__content-p {
+	font-family: "Pangram", sans-serif;
+	font-size: 18px;
+	p {
+		display: flex;
+		gap: 8px;
+		align-items: center;
+		margin-bottom: 10px;
+		font-weight: 500;
+		@media (max-width: 768px) {
+			font-size: 14px;
+		}
+
+		span {
+			font-weight: 500;
+			color: var(--text-color-gray);
+			@media (max-width: 768px) {
+				font-size: 14px;
+			}
 		}
 	}
 }

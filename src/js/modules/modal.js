@@ -38,9 +38,9 @@ function initModals() {
 		document.body.classList.remove("no-scroll")
 	}
 
-	// Обработчики событий для открытия модальных окон
+
 	document.addEventListener("click", function (e) {
-		// Проверяем, является ли элемент или его родитель кнопкой открытия модального окна
+	
 		const openButton = e.target.closest("[data-modal]")
 		if (openButton) {
 			e.preventDefault()
