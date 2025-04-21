@@ -57,6 +57,10 @@ input[type="tel"],
 .form-agreement-container input {
 	width: 34px;
 	margin-top: 2px;
+
+	@media (max-width: 400px) {
+		width: 42px;
+	}
 }
 
 .form-agreement-container label {

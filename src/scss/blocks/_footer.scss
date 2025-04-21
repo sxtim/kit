@@ -55,6 +55,11 @@
 	color: var(--text-color-white);
 	font-size: 16px;
 	line-height: 200%;
+	transition: all 0.3s ease;
+}
+
+.footer__list-link:hover {
+	color: var(--green-light);
 }
 
 .footer__col-phone-item {
@@ -86,10 +91,15 @@
 	color: var(--text-color-white);
 	font-size: 16px;
 	line-height: 200%;
+	transition: all 0.3s ease;
 
 	@media (max-width: 768px) {
 		line-height: 130%;
 	}
 
+}
+
+.footer__phone:hover {
+	color: var(--green-light);
 }
 

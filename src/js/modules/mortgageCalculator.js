@@ -30,6 +30,7 @@ class MortgageCalculator {
 		this.initializeSliders()
 		this.calculateMortgage()
 		this.initModalForm()
+		this.initBankCards()
 	}
 
 	initializeTypeSelector() {
@@ -319,6 +320,26 @@ class MortgageCalculator {
 		).toLocaleString("ru-RU")} ₽`
 
 		this.isCalculating = false
+	}
+
+	// Метод для инициализации карточек банков
+	initBankCards() {
+		const bankCards = document.querySelectorAll(
+			".mortgage-calculator__bank-card"
+		)
+
+		bankCards.forEach(card => {
+			const modalId = card.getAttribute("data-modal-id")
+			if (modalId) {
+				card.addEventListener("click", () => {
+					const modal = document.getElementById(modalId)
+					if (modal) {
+						modal.classList.add("active")
+						document.body.classList.add("no-scroll")
+					}
+				})
+			}
+		})
 	}
 
 	// Метод для инициализации формы консультации
