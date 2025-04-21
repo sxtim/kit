@@ -203,5 +203,19 @@ if (btnShareCopy) {
 }
 
 //FAVORITES
+document.addEventListener("DOMContentLoaded", function () {
+	const cardFavorite = document.querySelectorAll(".card-favorite")
+	const cardApartmentFavorite = document.querySelectorAll(".card-apartment__favorite")
 
+	cardApartmentFavorite.forEach(tab => {
+		tab.addEventListener("click", function () {
+			tab.classList.toggle("active")
+		})
+	})
 
+	cardFavorite.forEach(tab => {
+		tab.addEventListener("click", function () {
+			tab.classList.toggle("active")
+		})
+	})
+})

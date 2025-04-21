@@ -185,7 +185,11 @@
 
 .card-apartment__favorite:hover path {
 	stroke: rgb(199, 0, 0);
+}
 
+.card-apartment__favorite.active path {
+	stroke: rgb(199, 0, 0);
+	fill: rgb(199, 0, 0);
 }
 
 .card-favorite {
@@ -198,6 +202,11 @@
 }
 
 .card-favorite:hover path {
+	stroke: rgb(199, 0, 0);
+	// fill: rgb(199, 0, 0);
+}
+
+.card-favorite.active path {
 	stroke: rgb(199, 0, 0);
 	fill: rgb(199, 0, 0);
 }

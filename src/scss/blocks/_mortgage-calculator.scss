@@ -222,6 +222,82 @@
 				width: 100%;
 			}
 		}
+
+		// Стили IOS
+		input[type="range"] {
+			-webkit-appearance: none;
+			appearance: none;
+			width: 100%;
+			background: transparent;
+			margin: 0;
+		}
+
+		input[type="range"]::-webkit-slider-runnable-track {
+			width: 100%;
+			height: 6px;
+			border-radius: 3px;
+			background-color: #d8d8d8;
+			border: none;
+		}
+
+		input[type="range"]::-webkit-slider-thumb {
+			-webkit-appearance: none;
+			appearance: none;
+			width: 18px;
+			height: 18px;
+			border-radius: 50%;
+			background-color: #fff;
+			box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+			border: none;
+			margin-top: -6px; /* (высота ползунка - высота трека) / 2 */
+		}
+
+		// Firefox
+		input[type="range"]::-moz-range-track {
+			width: 100%;
+			height: 6px;
+			border-radius: 3px;
+			background-color: #d8d8d8;
+			border: none;
+		}
+
+		input[type="range"]::-moz-range-thumb {
+			width: 18px;
+			height: 18px;
+			border-radius: 50%;
+			background-color: #fff;
+			box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+			border: none;
+		}
+
+		// IE/Edge
+		input[type="range"]::-ms-track {
+			width: 100%;
+			height: 6px;
+			background: transparent;
+			border: none;
+			color: transparent;
+		}
+
+		input[type="range"]::-ms-fill-lower {
+			background-color: #d8d8d8;
+			border-radius: 3px;
+		}
+
+		input[type="range"]::-ms-fill-upper {
+			background-color: #d8d8d8;
+			border-radius: 3px;
+		}
+
+		input[type="range"]::-ms-thumb {
+			width: 18px;
+			height: 18px;
+			border-radius: 50%;
+			background-color: #fff;
+			box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+			border: none;
+			margin-top: 0;
+		}
 	}
 
 	&__results {
@@ -339,7 +415,6 @@
 		align-items: center;
 		justify-content: center;
 		margin-bottom: 12px;
-		
 
 		img {
 			border-radius: 20%;
