@@ -1,6 +1,7 @@
 import mobileNav from "./modules/mobile-nav.js"
 mobileNav()
 
+import initBankApi from "./modules/bankApi.js"
 import "./modules/filters.js"
 import initFormHandlers from "./modules/formHandler.js"
 import initModals from "./modules/modal.js"
@@ -10,6 +11,9 @@ import "./modules/tabs.js"
 
 // Инициализация модальных окон
 initModals()
+
+// Инициализация API банков
+initBankApi()
 
 // Инициализация масок телефонных номеров
 initPhoneMasks()
@@ -205,7 +209,9 @@ if (btnShareCopy) {
 //FAVORITES
 document.addEventListener("DOMContentLoaded", function () {
 	const cardFavorite = document.querySelectorAll(".card-favorite")
-	const cardApartmentFavorite = document.querySelectorAll(".card-apartment__favorite")
+	const cardApartmentFavorite = document.querySelectorAll(
+		".card-apartment__favorite"
+	)
 
 	cardApartmentFavorite.forEach(tab => {
 		tab.addEventListener("click", function () {

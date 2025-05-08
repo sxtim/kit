@@ -38,9 +38,7 @@ function initModals() {
 		document.body.classList.remove("no-scroll")
 	}
 
-
 	document.addEventListener("click", function (e) {
-	
 		const openButton = e.target.closest("[data-modal]")
 		if (openButton) {
 			e.preventDefault()
@@ -48,25 +46,6 @@ function initModals() {
 			openModal(modalId)
 		}
 	})
-
-	// Инициализация обработчиков для карточек банков
-	function initBankCards() {
-		const bankCards = document.querySelectorAll(
-			".mortgage-calculator__bank-card"
-		)
-
-		bankCards.forEach(card => {
-			card.addEventListener("click", function () {
-				const bankName = this.querySelector(
-					".mortgage-calculator__bank-name"
-				).textContent.trim()
-				const modalId = `modal-bank-${bankName
-					.toLowerCase()
-					.replace(/\s+/g, "-")}`
-				openModal(modalId)
-			})
-		})
-	}
 
 	// Закрытие по нажатию Esc
 	document.addEventListener("keydown", function (e) {
@@ -81,11 +60,6 @@ function initModals() {
 	// Инициализация существующих модальных окон
 	const modals = document.querySelectorAll(".modal")
 	modals.forEach(modal => initModalHandlers(modal))
-
-	// Инициализация карточек банков
-	if (document.querySelector(".mortgage-calculator__bank-card")) {
-		initBankCards()
-	}
 
 	// Наблюдатель за изменениями DOM для обработки новых модальных окон
 	const observer = new MutationObserver(mutations => {
