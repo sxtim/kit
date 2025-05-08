@@ -1272,21 +1272,21 @@
       <div class="form-contact__container">
   <form class="form-contact">
     <label class="form-contact__label" for="name">Ваше имя</label>
-    <input type="text" id="name" placeholder="Имя" required>
+    <input type="text" id="name" name="name" placeholder="Имя" required>
 
     <label class="form-contact__label" for="phone">Телефон</label>
-    <input type="tel" id="phone" placeholder="+7 999 999 99 99" required>
+    <input type="tel" id="phone" name="phone" placeholder="+7 999 999 99 99" required>
 
     <button class="form-contact__btn btn btn-green" type="submit">Отправить</button>
 
     <div class="form-agreement-container">
-      <input class="custom-checkbox" type="checkbox" id="agreement" required>
-      <label for="agreement">Я ознакомлен(-а) с <a href="personal-agreement.html" target="_blank">Политикой обработки персональных данных</a> и даю свое <a href="agreement-opd.html" target="_blank">согласие на обработку</a> персональных данных.</label>
+      <input class="custom-checkbox" type="checkbox" id="agreement" name="agreement" required>
+      <label for="agreement">Я ознакомлен(-а) с <a href="personal-agreement.html" target="_blank">Политикой обработки
+          персональных данных</a> и даю свое <a href="agreement-opd.html" target="_blank">согласие на обработку</a>
+        персональных данных.</label>
     </div>
   </form>
 </div>
-
-
     </div>
   </div>
 </section>
@@ -1370,8 +1370,22 @@
     <div class="modal__text">Наш менеджер свяжется с вами в ближайшее время</div>
   </div>
 </div>
+	<div class="modal" id="modal-error">
+  <div class="modal__overlay"></div>
+  <div class="modal__content">
+    <button class="modal__close" aria-label="Закрыть модальное окно">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </button>
+    <div class="modal__title">Ошибка!</div>
+    <div class="modal__text">Не удалось отправить форму. Пожалуйста, попробуйте снова или свяжитесь с нами по телефону.
+    </div>
+  </div>
+</div>
 	<script src="./js/index.bundle.js"></script>
-	
+
 </body>
 
 </html>

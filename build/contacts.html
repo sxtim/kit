@@ -208,7 +208,8 @@
             <div class="contacts-column-txt"><img src="./img/icons/geoPoint.svg" alt="">
               <p>г. Воронеж, ул. Владимира Невского, д. 17-Б</p>
             </div>
-            <div class="contacts-column-txt"><img src="./img/icons/phone-border.svg" alt="ic"><a href="tel:+74732743884">Тел.:
+            <div class="contacts-column-txt"><img src="./img/icons/phone-border.svg" alt="ic"><a
+                href="tel:+74732743884">Тел.:
                 (473) 274-38-84,</a><a href="tel:+74732252484"> 225-24-84</a></div>
             <div class="contacts-column-txt"><img src="./img/icons/mail-border.svg" alt="ic">
               <p>E-mail: kitcomnn@yandex.ru</p>
@@ -226,7 +227,8 @@
           </div>
           <div class="contacts-column">
             <h2 class="contacts-column-title">Коммерческая недвижимость</h2>
-            <div class="contacts-column-txt"><img src="./img/icons/phone-border.svg" alt="ic"><a href="tel:+79038585255">Тел.:
+            <div class="contacts-column-txt"><img src="./img/icons/phone-border.svg" alt="ic"><a
+                href="tel:+79038585255">Тел.:
                 8-903-858-52-55</a></div>
             <h3 class="contacts-column-subtitle">График работы:</h3>
             <div class="contacts-column-txt">
@@ -253,7 +255,8 @@
             <div class="contacts-column-txt"><img src="./img/icons/geoPoint.svg" alt="">
               <p>Ул. Академика Конопатова, дом17, первый этаж</p>
             </div>
-            <div class="contacts-column-txt"><img src="./img/icons/phone-border.svg" alt="ic"><a href="tel:+74732517343">Тел.: +7
+            <div class="contacts-column-txt"><img src="./img/icons/phone-border.svg" alt="ic"><a
+                href="tel:+74732517343">Тел.: +7
                 (473) 251-73-43</a></div>
           </div>
         </div>
@@ -293,21 +296,21 @@
       <div class="form-contact__container">
   <form class="form-contact">
     <label class="form-contact__label" for="name">Ваше имя</label>
-    <input type="text" id="name" placeholder="Имя" required>
+    <input type="text" id="name" name="name" placeholder="Имя" required>
 
     <label class="form-contact__label" for="phone">Телефон</label>
-    <input type="tel" id="phone" placeholder="+7 999 999 99 99" required>
+    <input type="tel" id="phone" name="phone" placeholder="+7 999 999 99 99" required>
 
     <button class="form-contact__btn btn btn-green" type="submit">Отправить</button>
 
     <div class="form-agreement-container">
-      <input class="custom-checkbox" type="checkbox" id="agreement" required>
-      <label for="agreement">Я ознакомлен(-а) с <a href="personal-agreement.html" target="_blank">Политикой обработки персональных данных</a> и даю свое <a href="agreement-opd.html" target="_blank">согласие на обработку</a> персональных данных.</label>
+      <input class="custom-checkbox" type="checkbox" id="agreement" name="agreement" required>
+      <label for="agreement">Я ознакомлен(-а) с <a href="personal-agreement.html" target="_blank">Политикой обработки
+          персональных данных</a> и даю свое <a href="agreement-opd.html" target="_blank">согласие на обработку</a>
+        персональных данных.</label>
     </div>
   </form>
 </div>
-
-
     </div>
   </div>
 </section>
@@ -390,6 +393,20 @@
     </button>
     <div class="modal__title">Спасибо!</div>
     <div class="modal__text">Наш менеджер свяжется с вами в ближайшее время</div>
+  </div>
+</div>
+  <div class="modal" id="modal-error">
+  <div class="modal__overlay"></div>
+  <div class="modal__content">
+    <button class="modal__close" aria-label="Закрыть модальное окно">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </button>
+    <div class="modal__title">Ошибка!</div>
+    <div class="modal__text">Не удалось отправить форму. Пожалуйста, попробуйте снова или свяжитесь с нами по телефону.
+    </div>
   </div>
 </div>
 </body>

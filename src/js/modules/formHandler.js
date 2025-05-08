@@ -37,28 +37,59 @@ function initFormHandlers() {
 					submitButton.classList.add("disabled")
 				}
 
-				// Эмуляция отправки формы (в реальном проекте здесь будет запрос на сервер)
-				setTimeout(() => {
-					// Очистка формы
-					form.reset()
+				// Создаем объект с данными формы
+				const formData = new FormData(form)
+				const formDataObj = {}
+				formData.forEach((value, key) => {
+					formDataObj[key] = value
+				})
 
-					// Сначала закрываем модальное окно, если форма находится в нём
-					if (parentModal) {
-						parentModal.classList.remove("active")
-						document.body.classList.remove("no-scroll")
-					}
+				// Отправка данных на API
+				fetch("/api/contact", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+					},
+					body: JSON.stringify(formDataObj),
+				})
+					.then(response => response.json())
+					.then(data => {
+						// Очистка формы
+						form.reset()
 
-					// После небольшой задержки показываем модальное окно успешной отправки
-					setTimeout(() => {
-						showSuccessModal()
+						// Сначала закрываем модальное окно, если форма находится в нём
+						if (parentModal) {
+							parentModal.classList.remove("active")
+							document.body.classList.remove("no-scroll")
+						}
+
+						// После небольшой задержки показываем модальное окно с результатом
+						setTimeout(() => {
+							if (data.success) {
+								showSuccessModal()
+							} else {
+								showErrorModal()
+							}
+
+							// Возвращаем активное состояние кнопки
+							if (submitButton) {
+								submitButton.disabled = false
+								submitButton.classList.remove("disabled")
+							}
+						}, 300)
+					})
+					.catch(error => {
+						console.error("Ошибка при отправке данных:", error)
+
+						// Показываем модальное окно с ошибкой
+						showErrorModal()
 
 						// Возвращаем активное состояние кнопки
 						if (submitButton) {
 							submitButton.disabled = false
 							submitButton.classList.remove("disabled")
 						}
-					}, 300)
-				}, 500)
+					})
 			}
 		})
 	})
@@ -74,6 +105,22 @@ function initFormHandlers() {
 			// Автоматическое закрытие через 5 секунд
 			setTimeout(() => {
 				successModal.classList.remove("active")
+				document.body.classList.remove("no-scroll")
+			}, 5000)
+		}
+	}
+
+	// Функция показа модального окна с ошибкой
+	function showErrorModal() {
+		const errorModal = document.getElementById("modal-error")
+		if (errorModal) {
+			// Показываем модальное окно
+			errorModal.classList.add("active")
+			document.body.classList.add("no-scroll")
+
+			// Автоматическое закрытие через 5 секунд
+			setTimeout(() => {
+				errorModal.classList.remove("active")
 				document.body.classList.remove("no-scroll")
 			}, 5000)
 		}
