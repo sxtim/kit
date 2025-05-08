@@ -19,7 +19,7 @@ function createSlider(config) {
 			style: "decimal",
 			useGrouping: true,
 			minimumFractionDigits: 0,
-			maximumFractionDigits: 0,
+			maximumFractionDigits: step % 1 !== 0 ? 1 : 0, // Если шаг дробный, показываем 1 знак после запятой
 		},
 	} = config
 
@@ -41,7 +41,11 @@ function createSlider(config) {
 
 	// Очистка форматирования для обработки ввода
 	const unformatNumber = value => {
-		return value.replace(/\s+/g, "").replace(",", ".")
+		// Сначала убираем все пробелы
+		let cleanValue = value.replace(/\s+/g, "")
+		// Заменяем запятую на точку для правильной обработки JavaScript
+		cleanValue = cleanValue.replace(",", ".")
+		return cleanValue
 	}
 
 	// Автоподстройка ширины поля по содержимому
@@ -70,18 +74,34 @@ function createSlider(config) {
 		},
 		format: {
 			to: function (value) {
-				return Math.round(value)
+				// Округляем с учетом шага (для дробных значений)
+				return step % 1 !== 0
+					? parseFloat(parseFloat(value).toFixed(1))
+					: Math.round(value)
 			},
 			from: function (value) {
-				return Number(unformatNumber(value))
+				// Убеждаемся, что value - всегда строка, затем конвертируем её в число
+				return Number(unformatNumber(String(value)))
 			},
 		},
 	})
 
 	// Обновление значений в инпутах и их ширины
 	slider.noUiSlider.on("update", function (values, handle) {
+		// Форматируем значение для отображения с учетом локали
 		const formattedValue = formatNumber(values[handle])
-		inputs[handle].value = formattedValue
+
+		// Если инпут имеет type="number", нам нужно заменить запятую на точку
+		// для совместимости с требованиями HTML
+		if (inputs[handle].type === "number") {
+			// Для числовых инпутов используем значение с точкой
+			const valueWithDot = String(values[handle]).replace(",", ".")
+			inputs[handle].value = valueWithDot
+		} else {
+			// Для текстовых инпутов можно использовать форматированное значение с запятой
+			inputs[handle].value = formattedValue
+		}
+
 		adjustInputWidth(inputs[handle])
 	})
 
@@ -94,17 +114,31 @@ function createSlider(config) {
 
 	// Обработчики событий для инпутов
 	inputs.forEach((input, index) => {
-		// При фокусе убираем форматирование для удобства редактирования
+		// При фокусе показываем необработанное значение
 		input.addEventListener("focus", function () {
-			this.value = unformatNumber(this.value)
+			if (input.type === "number") {
+				// Для числовых инпутов уже используется точка, просто убираем форматирование
+				this.value = this.value
+			} else {
+				// Для текстовых инпутов преобразуем запятую в точку
+				this.value = unformatNumber(this.value)
+			}
 			adjustInputWidth(this)
 		})
 
 		// При потере фокуса форматируем число
 		input.addEventListener("blur", function () {
 			const value = unformatNumber(this.value)
-			const formattedValue = formatNumber(value)
-			this.value = formattedValue
+
+			if (input.type === "number") {
+				// Для числовых инпутов сохраняем значение с точкой
+				this.value = value
+			} else {
+				// Для текстовых инпутов форматируем с запятой
+				const formattedValue = formatNumber(value)
+				this.value = formattedValue
+			}
+
 			adjustInputWidth(this)
 		})
 
@@ -126,64 +160,110 @@ function createSlider(config) {
 
 // Создание слайдеров с использованием объекта конфигурации
 document.addEventListener("DOMContentLoaded", function () {
-	// Слайдер цены
-	createSlider({
-		sliderId: "price-slider",
-		inputMinId: "input-price-min",
-		inputMaxId: "input-price-max",
-		startMin: 4000000,
-		startMax: 12000000,
-		step: 500,
-		rangeMin: 4000000,
-		rangeMax: 12000000,
-	})
+	// Динамическая инициализация слайдера цены
+	const priceSlider = document.getElementById("price-slider")
+	if (priceSlider) {
+		// Получаем минимальное и максимальное значения из атрибутов data-*
+		const minValue = parseInt(priceSlider.dataset.min)
+		const maxValue = parseInt(priceSlider.dataset.max)
+		const stepValue = parseFloat(priceSlider.dataset.step)
 
-	// Слайдер площади
-	createSlider({
-		sliderId: "square-slider",
-		inputMinId: "input-square-min",
-		inputMaxId: "input-square-max",
-		startMin: 40,
-		startMax: 120,
-		step: 10,
-		rangeMin: 40,
-		rangeMax: 120,
-	})
+		// Инициализируем слайдер с динамическими значениями
+		createSlider({
+			sliderId: "price-slider",
+			inputMinId: "input-price-min",
+			inputMaxId: "input-price-max",
+			startMin: minValue,
+			startMax: maxValue,
+			step: stepValue,
+			rangeMin: minValue,
+			rangeMax: maxValue,
+		})
+	}
 
-	// Слайдер этажей
-	createSlider({
-		sliderId: "floor-slider",
-		inputMinId: "input-floor-min",
-		inputMaxId: "input-floor-max",
-		startMin: 2,
-		startMax: 16,
-		step: 1,
-		rangeMin: 2,
-		rangeMax: 16,
-	})
+	// Динамическая инициализация слайдера площади
+	const squareSlider = document.getElementById("square-slider")
+	if (squareSlider) {
+		// Получаем минимальное и максимальное значения из атрибутов data-*
+		const minValue = parseInt(squareSlider.dataset.min)
+		const maxValue = parseInt(squareSlider.dataset.max)
+		const stepValue = parseFloat(squareSlider.dataset.step)
 
-	// Слайдеры для коммерческого фильтра
-	createSlider({
-		sliderId: "commerce-price-slider",
-		inputMinId: "commerce-input-price-min",
-		inputMaxId: "commerce-input-price-max",
-		startMin: 12000000,
-		startMax: 160000000,
-		step: 500,
-		rangeMin: 12000000,
-		rangeMax: 160000000,
-	})
+		// Инициализируем слайдер с динамическими значениями
+		createSlider({
+			sliderId: "square-slider",
+			inputMinId: "input-square-min",
+			inputMaxId: "input-square-max",
+			startMin: minValue,
+			startMax: maxValue,
+			step: stepValue,
+			rangeMin: minValue,
+			rangeMax: maxValue,
+		})
+	}
 
-	createSlider({
-		sliderId: "commerce-square-slider",
-		inputMinId: "commerce-input-square-min",
-		inputMaxId: "commerce-input-square-max",
-		startMin: 80,
-		startMax: 12000,
-		step: 10,
-		rangeMin: 80,
-		rangeMax: 12000,
-	})
+	// Динамическая инициализация слайдера этажей
+	const floorSlider = document.getElementById("floor-slider")
+	if (floorSlider) {
+		// Получаем минимальное и максимальное значения из атрибутов data-*
+		const minValue = parseInt(floorSlider.dataset.min)
+		const maxValue = parseInt(floorSlider.dataset.max)
+		const stepValue = parseFloat(floorSlider.dataset.step)
+
+		// Инициализируем слайдер с динамическими значениями
+		createSlider({
+			sliderId: "floor-slider",
+			inputMinId: "input-floor-min",
+			inputMaxId: "input-floor-max",
+			startMin: minValue,
+			startMax: maxValue,
+			step: stepValue,
+			rangeMin: minValue,
+			rangeMax: maxValue,
+		})
+	}
+
+	// Динамическая инициализация слайдера цены коммерческих помещений
+	const commercePriceSlider = document.getElementById("commerce-price-slider")
+	if (commercePriceSlider) {
+		// Получаем минимальное и максимальное значения из атрибутов data-*
+		const minValue = parseInt(commercePriceSlider.dataset.min)
+		const maxValue = parseInt(commercePriceSlider.dataset.max)
+		const stepValue = parseFloat(commercePriceSlider.dataset.step)
+
+		// Инициализируем слайдер с динамическими значениями
+		createSlider({
+			sliderId: "commerce-price-slider",
+			inputMinId: "commerce-input-price-min",
+			inputMaxId: "commerce-input-price-max",
+			startMin: minValue,
+			startMax: maxValue,
+			step: stepValue,
+			rangeMin: minValue,
+			rangeMax: maxValue,
+		})
+	}
+
+	// Динамическая инициализация слайдера площади коммерческих помещений
+	const commerceSquareSlider = document.getElementById("commerce-square-slider")
+	if (commerceSquareSlider) {
+		// Получаем минимальное и максимальное значения из атрибутов data-*
+		const minValue = parseInt(commerceSquareSlider.dataset.min)
+		const maxValue = parseInt(commerceSquareSlider.dataset.max)
+		const stepValue = parseFloat(commerceSquareSlider.dataset.step)
+
+		// Инициализируем слайдер с динамическими значениями
+		createSlider({
+			sliderId: "commerce-square-slider",
+			inputMinId: "commerce-input-square-min",
+			inputMaxId: "commerce-input-square-max",
+			startMin: minValue,
+			startMax: maxValue,
+			step: stepValue,
+			rangeMin: minValue,
+			rangeMax: maxValue,
+		})
+	}
 
 	// Обработчик для кнопки "Показать все фильтры"
 	const showAllFiltersBtn = document.querySelector(".filter__show-all-btn")
