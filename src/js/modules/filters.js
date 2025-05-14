@@ -2,6 +2,20 @@ import noUiSlider from "nouislider"
 import "nouislider/dist/nouislider.css"
 
 /**
+ * Очистка форматирования для обработки ввода из слайдеров и других полей
+ */
+function unformatNumber(value) {
+	if (!value && value !== 0) return ""
+	// Преобразуем к строке, если value не строка
+	const strValue = String(value)
+	// Сначала убираем все пробелы
+	let cleanValue = strValue.replace(/\s+/g, "")
+	// Заменяем запятую на точку для правильной обработки JavaScript
+	cleanValue = cleanValue.replace(",", ".")
+	return cleanValue
+}
+
+/**
  * Создает слайдер с форматированием значений
  * @param {Object} config - конфигурация слайдера
  */
@@ -37,15 +51,6 @@ function createSlider(config) {
 	// Форматирование числа с разделением разрядов
 	const formatNumber = value => {
 		return Number(value).toLocaleString("ru-RU", formatOptions)
-	}
-
-	// Очистка форматирования для обработки ввода
-	const unformatNumber = value => {
-		// Сначала убираем все пробелы
-		let cleanValue = value.replace(/\s+/g, "")
-		// Заменяем запятую на точку для правильной обработки JavaScript
-		cleanValue = cleanValue.replace(",", ".")
-		return cleanValue
 	}
 
 	// Автоподстройка ширины поля по содержимому
@@ -504,4 +509,442 @@ document.addEventListener("DOMContentLoaded", function () {
 			}
 		})
 	})
+})
+
+/**
+ * Универсальный обработчик фильтров
+ * Собирает данные со всех фильтров и отправляет на сервер
+ */
+document.addEventListener("DOMContentLoaded", function () {
+	// Находим все формы фильтров
+	const filterForms = document.querySelectorAll(".filter__form")
+
+	filterForms.forEach(form => {
+		// Добавляем кнопку применения фильтра, если её ещё нет
+		let submitButton = form.querySelector(".filter__submit-button")
+
+		if (!submitButton) {
+			// Создаем кнопку "Применить", если её нет в разметке
+			const buttonWrapper = document.createElement("div")
+			buttonWrapper.className = "filter__button-wrapper"
+
+			submitButton = document.createElement("button")
+			submitButton.type = "button"
+			submitButton.className = "filter__submit-button"
+			submitButton.textContent = "Применить"
+
+			buttonWrapper.appendChild(submitButton)
+			form.appendChild(buttonWrapper)
+		}
+
+		// Обработчик нажатия на кнопку фильтра
+		submitButton.addEventListener("click", function () {
+			// Получаем форму, с которой работаем
+			const form = this.closest(".filter__form")
+			if (!form) return
+
+			const filterData = collectFilterData(form)
+			sendFilterData(filterData, form)
+		})
+	})
+
+	/**
+	 * Собирает данные со всех фильтров
+	 * @param {HTMLElement} filterForm - форма фильтра
+	 * @return {Object} - объект с данными фильтров
+	 */
+	function collectFilterData(filterForm) {
+		const filterData = {}
+
+		// Обработка слайдеров (диапазоны цен, площади, этажей)
+		collectRangeSliderData(filterForm, filterData)
+
+		// Обработка чекбоксов (комнат, типов и других категорий)
+		collectCheckboxData(filterForm, filterData)
+
+		// Обработка кнопок-переключателей (rooms)
+		collectButtonsData(filterForm, filterData)
+
+		// Обработка дропдаунов (сортировка и другие выпадающие списки)
+		collectDropdownData(filterForm, filterData)
+
+		return filterData
+	}
+
+	/**
+	 * Собирает данные из слайдеров диапазонов
+	 */
+	function collectRangeSliderData(filterForm, filterData) {
+		// Обработка слайдера цены
+		collectSingleRangeData(
+			filterForm,
+			"price-slider",
+			"input-price-min",
+			"input-price-max",
+			"price",
+			filterData
+		)
+
+		// Обработка слайдера площади
+		collectSingleRangeData(
+			filterForm,
+			"square-slider",
+			"input-square-min",
+			"input-square-max",
+			"square",
+			filterData
+		)
+
+		// Обработка слайдера этажей
+		collectSingleRangeData(
+			filterForm,
+			"floor-slider",
+			"input-floor-min",
+			"input-floor-max",
+			"floor",
+			filterData
+		)
+
+		// Обработка слайдера цены коммерческих помещений
+		collectSingleRangeData(
+			filterForm,
+			"commerce-price-slider",
+			"commerce-input-price-min",
+			"commerce-input-price-max",
+			"commercePrice",
+			filterData
+		)
+
+		// Обработка слайдера площади коммерческих помещений
+		collectSingleRangeData(
+			filterForm,
+			"commerce-square-slider",
+			"commerce-input-square-min",
+			"commerce-input-square-max",
+			"commerceSquare",
+			filterData
+		)
+	}
+
+	/**
+	 * Собирает данные из одного слайдера диапазона
+	 */
+	function collectSingleRangeData(
+		filterForm,
+		sliderId,
+		minInputId,
+		maxInputId,
+		dataKey,
+		filterData
+	) {
+		const slider = filterForm.querySelector(`#${sliderId}`)
+		if (!slider) return
+
+		const minInput = filterForm.querySelector(`#${minInputId}`)
+		const maxInput = filterForm.querySelector(`#${maxInputId}`)
+		if (!minInput || !maxInput) return
+
+		// Получаем значения без форматирования
+		const minValueStr = unformatNumber(minInput.value)
+		const maxValueStr = unformatNumber(maxInput.value)
+
+		// Преобразуем строки в числа
+		let minValue = minValueStr ? parseFloat(minValueStr) : ""
+		let maxValue = maxValueStr ? parseFloat(maxValueStr) : ""
+
+		// Проверяем, являются ли преобразованные значения числами
+		if (isNaN(minValue)) minValue = ""
+		if (isNaN(maxValue)) maxValue = ""
+
+		filterData[dataKey] = {
+			min: minValue,
+			max: maxValue,
+		}
+	}
+
+	/**
+	 * Собирает данные из чекбоксов
+	 */
+	function collectCheckboxData(filterForm, filterData) {
+		// Собираем все группы чекбоксов по их атрибутам data-filter-group
+		const checkboxGroups = filterForm.querySelectorAll("[data-filter-group]")
+
+		const groups = {}
+		checkboxGroups.forEach(group => {
+			const groupName = group.dataset.filterGroup
+			if (!groups[groupName]) {
+				groups[groupName] = []
+			}
+			groups[groupName].push(group)
+		})
+
+		// Обрабатываем каждую группу чекбоксов
+		for (const [groupName, elements] of Object.entries(groups)) {
+			const checkedValues = []
+
+			elements.forEach(el => {
+				const checkbox = el.querySelector('input[type="checkbox"]')
+				if (
+					checkbox &&
+					checkbox.checked &&
+					!checkbox.closest(".all-input-field")
+				) {
+					// Получаем значение из атрибута data-value или value
+					const value = checkbox.dataset.value || checkbox.value
+
+					// Пытаемся преобразовать значение в число, если возможно
+					if (value && !isNaN(value) && value.trim() !== "") {
+						const numValue = Number(value)
+						// Добавляем числовое значение, если это действительно число
+						checkedValues.push(
+							Number.isInteger(numValue) ? parseInt(value, 10) : numValue
+						)
+					} else {
+						// Иначе добавляем строковое значение
+						checkedValues.push(value)
+					}
+				}
+			})
+
+			// Если есть выбранные значения, добавляем их в результат
+			if (checkedValues.length > 0) {
+				filterData[groupName] = checkedValues
+			}
+		}
+	}
+
+	/**
+	 * Собирает данные из кнопок выбора (например, кнопки комнат)
+	 */
+	function collectButtonsData(filterForm, filterData) {
+		// Проверяем наличие группы кнопок с комнатами
+		const roomButtons = filterForm.querySelectorAll(
+			".filter__el-btns[data-room]"
+		)
+		if (roomButtons.length > 0) {
+			const selectedRooms = []
+
+			roomButtons.forEach(button => {
+				if (button.classList.contains("active")) {
+					const roomValue = button.dataset.room
+					if (roomValue) {
+						// Пытаемся преобразовать к числу, если это возможно
+						const roomNumValue = parseInt(roomValue, 10)
+						// Если преобразование успешно - добавляем число, иначе - строку
+						selectedRooms.push(isNaN(roomNumValue) ? roomValue : roomNumValue)
+					}
+				}
+			})
+
+			if (selectedRooms.length > 0) {
+				filterData.rooms = selectedRooms
+			}
+		}
+	}
+
+	/**
+	 * Собирает данные из выпадающих списков
+	 */
+	function collectDropdownData(filterForm, filterData) {
+		const dropdowns = filterForm.querySelectorAll(".filter__dropdown")
+
+		dropdowns.forEach(dropdown => {
+			const dropdownKey = dropdown.dataset.filterKey
+			if (!dropdownKey) return
+
+			// Для сортировки собираем выбранное radio
+			if (dropdown.classList.contains("catalog-sort__dropdown")) {
+				const selectedRadio = dropdown.querySelector(
+					'input[type="radio"]:checked'
+				)
+				if (selectedRadio) {
+					filterData[dropdownKey] = selectedRadio.value
+				}
+				return
+			}
+
+			// Для обычных дропдаунов собираем выбранные чекбоксы
+			const checkboxes = dropdown.querySelectorAll(
+				'input[type="checkbox"]:checked'
+			)
+
+			// Проверяем, выбрана ли опция "Любой"
+			const anyOption = dropdown.querySelector(
+				'.all-input-field input[type="checkbox"]:checked'
+			)
+
+			if (anyOption) {
+				// Если выбрана опция "Любой", передаем специальное значение
+				filterData[dropdownKey] = ["any"]
+			} else {
+				// Иначе собираем выбранные значения
+				const selectedValues = []
+
+				checkboxes.forEach(checkbox => {
+					// Пропускаем опцию "Любой" для обычного сбора значений
+					if (!checkbox.closest(".all-input-field")) {
+						const value = checkbox.dataset.value || checkbox.value
+						selectedValues.push(value)
+					}
+				})
+
+				if (selectedValues.length > 0) {
+					filterData[dropdownKey] = selectedValues
+				}
+			}
+		})
+	}
+
+	/**
+	 * Отправляет данные фильтра на сервер
+	 * @param {Object} filterData - объект с данными фильтров
+	 * @param {HTMLElement} form - форма, из которой были отправлены данные
+	 */
+	function sendFilterData(filterData, form) {
+		// Выводим данные в консоль для отладки
+		console.log("Отправляемые данные фильтра:", filterData)
+
+		// Преобразуем данные в строку JSON для консоли
+		console.log("JSON данные:", JSON.stringify(filterData, null, 2))
+
+		// Если форма не передана, пытаемся определить из активного элемента
+		if (!form) {
+			form =
+				document.activeElement.closest(".filter__form") ||
+				document.querySelector(".filter__form")
+		}
+
+		// Обертываем в try-catch для обработки возможных ошибок
+		try {
+			// Здесь можно добавить логику для отправки данных на сервер
+			// Для демонстрации работы без реального сервера просто выводим в консоль
+			// и симулируем успешный ответ
+
+			// Закомментируем реальный запрос до готовности API
+			fetch("/api/filter", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(filterData),
+			})
+				.then(response => {
+					if (!response.ok) {
+						throw new Error(`HTTP error! Status: ${response.status}`)
+					}
+
+					// Проверяем, содержит ли ответ JSON
+					const contentType = response.headers.get("content-type")
+					if (contentType && contentType.includes("application/json")) {
+						return response.json()
+					}
+					return { success: true, message: "Фильтр применен" }
+				})
+				.then(data => {
+					console.log("Ответ сервера:", data)
+					// Здесь можно добавить обработку ответа (например, обновление списка)
+				})
+				.catch(error => {
+					console.error("Ошибка при отправке фильтра:", error)
+				})
+
+			// Симуляция успешного ответа для демонстрации
+			console.log("Симуляция ответа сервера:", {
+				success: true,
+				message: "Фильтр применен",
+				results: {
+					total: 42,
+					filtered: 12,
+				},
+			})
+
+			// Здесь можно добавить дополнительные действия, например:
+			// - Обновление URL с параметрами фильтра для возможности поделиться ссылкой
+			// - Обновление счетчика найденных объектов
+			// - Подсветка примененных фильтров
+
+			// Передаем форму в функцию обновления URL
+			updateUrlWithFilters(filterData, form)
+		} catch (error) {
+			console.error("Ошибка при обработке фильтра:", error)
+		}
+	}
+
+	/**
+	 * Обновляет URL с параметрами фильтра
+	 * @param {Object} filterData - объект с данными фильтров
+	 * @param {HTMLElement} form - форма, из которой были отправлены данные
+	 */
+	function updateUrlWithFilters(filterData, form) {
+		// Создаем объект URLSearchParams для формирования строки запроса
+		const searchParams = new URLSearchParams()
+
+		// Добавляем параметры из filterData
+		for (const [key, value] of Object.entries(filterData)) {
+			if (typeof value === "object" && !Array.isArray(value)) {
+				// Для диапазонов (например, цены)
+				for (const [subKey, subValue] of Object.entries(value)) {
+					searchParams.append(`${key}[${subKey}]`, subValue)
+				}
+			} else if (Array.isArray(value)) {
+				// Для массивов (например, комнаты)
+				value.forEach(item => searchParams.append(`${key}[]`, item))
+			} else {
+				// Для обычных значений
+				searchParams.append(key, value)
+			}
+		}
+
+		// Получаем базовый URL из атрибута action формы или используем текущий путь
+		let baseUrl = window.location.pathname
+
+		if (form && form.getAttribute("action")) {
+			// Получаем URL из атрибута action
+			const actionUrl = form.getAttribute("action")
+
+			// Если URL абсолютный (начинается с http:// или /), используем его
+			// иначе считаем его относительным от текущего пути
+			if (actionUrl.startsWith("http") || actionUrl.startsWith("/")) {
+				baseUrl = actionUrl
+			} else {
+				// Получаем директорию текущего пути
+				const currentPath = window.location.pathname
+				const lastSlashIndex = currentPath.lastIndexOf("/")
+				const directory =
+					lastSlashIndex !== -1
+						? currentPath.substring(0, lastSlashIndex + 1)
+						: "/"
+
+				// Комбинируем с относительным путем из action
+				baseUrl = directory + actionUrl
+			}
+
+			// Удаляем уже имеющиеся GET-параметры из URL формы
+			const questionMarkIndex = baseUrl.indexOf("?")
+			if (questionMarkIndex !== -1) {
+				baseUrl = baseUrl.substring(0, questionMarkIndex)
+			}
+		}
+
+		// Формируем новый URL с параметрами
+		const queryString = searchParams.toString()
+		const newUrl = queryString ? `${baseUrl}?${queryString}` : baseUrl
+
+		// Обновляем URL без перезагрузки страницы
+		window.history.pushState({}, "", newUrl)
+
+		// Устанавливаем атрибут data-url только для формы, из которой были отправлены данные
+		if (form) {
+			form.setAttribute("data-url", newUrl)
+			console.log("Установлен атрибут data-url для формы:", form.className)
+		} else {
+			// Если форма не определена, устанавливаем для всех форм
+			const filterForms = document.querySelectorAll(".filter__form")
+			filterForms.forEach(formElement => {
+				formElement.setAttribute("data-url", newUrl)
+			})
+		}
+
+		console.log("URL обновлен с параметрами фильтра:", newUrl)
+	}
 })
