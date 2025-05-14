@@ -8,7 +8,6 @@ function initBankApi() {
 		try {
 			// Прямой запрос к API
 			const apiUrl = `https://co81879.tw1.ru/bank/info/${bankId}`
-			console.log("Отправка запроса на API:", apiUrl)
 
 			const response = await fetch(apiUrl, {
 				method: "GET",
@@ -24,7 +23,6 @@ function initBankApi() {
 			}
 
 			const bankData = await response.json()
-			console.log("Полученные данные банка:", bankData)
 			return bankData
 		} catch (error) {
 			console.error("Ошибка при загрузке данных банка:", error)
@@ -106,11 +104,9 @@ function initBankApi() {
 		bankCards.forEach(card => {
 			card.addEventListener("click", async function (e) {
 				e.preventDefault()
-				console.log("Клик по карточке банка")
 
 				// Получаем ID банка из атрибута data-bank-id
 				const bankId = this.getAttribute("data-bank-id")
-				console.log("ID банка:", bankId)
 
 				if (!bankId) {
 					console.error("ID банка не указан")
@@ -118,12 +114,7 @@ function initBankApi() {
 				}
 
 				// Загружаем данные банка
-				console.log(
-					"Отправка запроса на API:",
-					`https://co81879.tw1.ru/bank/info/${bankId}`
-				)
 				const bankData = await loadBankInfo(bankId)
-				console.log("Полученные данные банка:", bankData)
 
 				if (bankData) {
 					// Заполняем модальное окно данными
@@ -131,11 +122,9 @@ function initBankApi() {
 
 					// Открываем модальное окно
 					const modal = document.getElementById("modal-bank")
-					console.log("Модальное окно банка:", modal)
 					if (modal) {
 						modal.classList.add("active")
 						document.body.classList.add("no-scroll")
-						console.log("Модальное окно открыто")
 					} else {
 						console.error('Модальное окно с ID "modal-bank" не найдено')
 					}

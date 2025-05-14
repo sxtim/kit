@@ -517,35 +517,26 @@ document.addEventListener("DOMContentLoaded", function () {
  */
 document.addEventListener("DOMContentLoaded", function () {
 	// Находим все формы фильтров
-	const filterForms = document.querySelectorAll(".filter__form")
+	const filterForms = document.querySelectorAll(
+		".filter__form, [data-type='filter']"
+	)
 
 	filterForms.forEach(form => {
-		// Добавляем кнопку применения фильтра, если её ещё нет
-		let submitButton = form.querySelector(".filter__submit-button")
+		// Находим существующую кнопку фильтра
+		const submitButton = form.querySelector(".filter__submit-button")
 
-		if (!submitButton) {
-			// Создаем кнопку "Применить", если её нет в разметке
-			const buttonWrapper = document.createElement("div")
-			buttonWrapper.className = "filter__button-wrapper"
+		if (submitButton) {
+			// Обработчик нажатия на кнопку фильтра
+			submitButton.addEventListener("click", async function () {
+				// Получаем форму, с которой работаем
+				const form =
+					this.closest(".filter__form") || this.closest("[data-type='filter']")
+				if (!form) return
 
-			submitButton = document.createElement("button")
-			submitButton.type = "button"
-			submitButton.className = "filter__submit-button"
-			submitButton.textContent = "Применить"
-
-			buttonWrapper.appendChild(submitButton)
-			form.appendChild(buttonWrapper)
+				const filterData = collectFilterData(form)
+				await sendFilterData(filterData, form)
+			})
 		}
-
-		// Обработчик нажатия на кнопку фильтра
-		submitButton.addEventListener("click", function () {
-			// Получаем форму, с которой работаем
-			const form = this.closest(".filter__form")
-			if (!form) return
-
-			const filterData = collectFilterData(form)
-			sendFilterData(filterData, form)
-		})
 	})
 
 	/**
@@ -555,6 +546,16 @@ document.addEventListener("DOMContentLoaded", function () {
 	 */
 	function collectFilterData(filterForm) {
 		const filterData = {}
+
+		// Проверяем, является ли форма фильтром
+		const isFilterForm =
+			filterForm.classList.contains("filter__form") ||
+			filterForm.getAttribute("data-type") === "filter"
+
+		if (!isFilterForm) {
+			console.warn("Переданная форма не является фильтром")
+			return filterData
+		}
 
 		// Обработка слайдеров (диапазоны цен, площади, этажей)
 		collectRangeSliderData(filterForm, filterData)
@@ -800,70 +801,75 @@ document.addEventListener("DOMContentLoaded", function () {
 	 * @param {Object} filterData - объект с данными фильтров
 	 * @param {HTMLElement} form - форма, из которой были отправлены данные
 	 */
-	function sendFilterData(filterData, form) {
-		// Выводим данные в консоль для отладки
-		console.log("Отправляемые данные фильтра:", filterData)
-
-		// Преобразуем данные в строку JSON для консоли
-		console.log("JSON данные:", JSON.stringify(filterData, null, 2))
-
+	async function sendFilterData(filterData, form) {
 		// Если форма не передана, пытаемся определить из активного элемента
 		if (!form) {
 			form =
 				document.activeElement.closest(".filter__form") ||
-				document.querySelector(".filter__form")
+				document.activeElement.closest("[data-type='filter']") ||
+				document.querySelector(".filter__form") ||
+				document.querySelector("[data-type='filter']")
 		}
+
+		// Получаем URL из атрибута action формы
+		let url = "/api/filter" // URL по умолчанию, если атрибут action не указан
+
+		if (form && form.getAttribute("action")) {
+			url = form.getAttribute("action")
+		}
+
+		// Создаем объект URLSearchParams для формирования строки запроса
+		const searchParams = new URLSearchParams()
+
+		// Добавляем параметры из filterData
+		for (const [key, value] of Object.entries(filterData)) {
+			if (typeof value === "object" && !Array.isArray(value)) {
+				// Для диапазонов (например, цены)
+				for (const [subKey, subValue] of Object.entries(value)) {
+					searchParams.append(`${key}[${subKey}]`, subValue)
+				}
+			} else if (Array.isArray(value)) {
+				// Для массивов (например, комнаты)
+				value.forEach(item => searchParams.append(`${key}[]`, item))
+			} else {
+				// Для обычных значений
+				searchParams.append(key, value)
+			}
+		}
+
+		// Формируем URL для запроса с параметрами
+		const getUrl = `${url}?${searchParams.toString()}`
 
 		// Обертываем в try-catch для обработки возможных ошибок
 		try {
-			// Здесь можно добавить логику для отправки данных на сервер
-			// Для демонстрации работы без реального сервера просто выводим в консоль
-			// и симулируем успешный ответ
-
-			// Закомментируем реальный запрос до готовности API
-			fetch("/api/filter", {
+			// Отправка данных с использованием POST запроса
+			const response = await fetch(url, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
 				},
 				body: JSON.stringify(filterData),
 			})
-				.then(response => {
-					if (!response.ok) {
-						throw new Error(`HTTP error! Status: ${response.status}`)
-					}
 
-					// Проверяем, содержит ли ответ JSON
-					const contentType = response.headers.get("content-type")
-					if (contentType && contentType.includes("application/json")) {
-						return response.json()
-					}
-					return { success: true, message: "Фильтр применен" }
-				})
-				.then(data => {
-					console.log("Ответ сервера:", data)
-					// Здесь можно добавить обработку ответа (например, обновление списка)
-				})
-				.catch(error => {
-					console.error("Ошибка при отправке фильтра:", error)
-				})
+			if (!response.ok) {
+				throw new Error(`HTTP error! Status: ${response.status}`)
+			}
 
-			// Симуляция успешного ответа для демонстрации
-			console.log("Симуляция ответа сервера:", {
-				success: true,
-				message: "Фильтр применен",
-				results: {
-					total: 42,
-					filtered: 12,
-				},
-			})
+			// Проверяем, содержит ли ответ JSON
+			const contentType = response.headers.get("content-type")
+			let data
 
-			// Здесь можно добавить дополнительные действия, например:
-			// - Обновление URL с параметрами фильтра для возможности поделиться ссылкой
-			// - Обновление счетчика найденных объектов
-			// - Подсветка примененных фильтров
+			if (contentType && contentType.includes("application/json")) {
+				data = await response.json()
+			} else {
+				data = { success: true, message: "Фильтр применен" }
+			}
 
-			// Передаем форму в функцию обновления URL
+			// Обработка полученных данных и обновление UI
+			updateFilterResults(data)
+			updateFilterOptions(data)
+
+			// Обновляем URL в браузере и атрибут data-url формы
 			updateUrlWithFilters(filterData, form)
 		} catch (error) {
 			console.error("Ошибка при обработке фильтра:", error)
@@ -936,15 +942,14 @@ document.addEventListener("DOMContentLoaded", function () {
 		// Устанавливаем атрибут data-url только для формы, из которой были отправлены данные
 		if (form) {
 			form.setAttribute("data-url", newUrl)
-			console.log("Установлен атрибут data-url для формы:", form.className)
 		} else {
 			// Если форма не определена, устанавливаем для всех форм
-			const filterForms = document.querySelectorAll(".filter__form")
+			const filterForms = document.querySelectorAll(
+				".filter__form, [data-type='filter']"
+			)
 			filterForms.forEach(formElement => {
 				formElement.setAttribute("data-url", newUrl)
 			})
 		}
-
-		console.log("URL обновлен с параметрами фильтра:", newUrl)
 	}
 })
