@@ -815,22 +815,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		// Формируем URL с данными в виде одного параметра
 		const getUrl = `${url}?data=${encodedData}`
 
-		try {
-			const response = await fetch(getUrl, {
-				method: "GET",
-				headers: {
-					Accept: "application/json",
-				},
-			})
-
-			if (!response.ok) {
-				throw new Error(`HTTP error! Status: ${response.status}`)
-			}
-
-			// Заменяем текущий URL и перезагружаем страницу
-			window.location.href = getUrl
-		} catch (error) {
-			console.error("Ошибка при обработке фильтра:", error)
-		}
+		// Переходим на URL с фильтрами
+		window.location.href = getUrl
 	}
 })
