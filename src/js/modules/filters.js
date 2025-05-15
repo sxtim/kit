@@ -737,9 +737,8 @@ document.addEventListener("DOMContentLoaded", function () {
 				}
 			})
 
-			if (selectedRooms.length > 0) {
-				filterData.rooms = selectedRooms
-			}
+			// Если ничего не выбрано, устанавливаем значение "any"
+			filterData.rooms = selectedRooms.length > 0 ? selectedRooms : ["any"]
 		}
 	}
 
@@ -796,160 +795,42 @@ document.addEventListener("DOMContentLoaded", function () {
 		})
 	}
 
+	// Добавляем обработчик для кнопки "назад"
+	window.addEventListener("popstate", function (event) {
+		// При нажатии кнопки "назад" перезагружаем страницу
+		window.location.reload()
+	})
+
 	/**
 	 * Отправляет данные фильтра на сервер
 	 * @param {Object} filterData - объект с данными фильтров
 	 * @param {HTMLElement} form - форма, из которой были отправлены данные
 	 */
 	async function sendFilterData(filterData, form) {
-		// Если форма не передана, пытаемся определить из активного элемента
-		if (!form) {
-			form =
-				document.activeElement.closest(".filter__form") ||
-				document.activeElement.closest("[data-type='filter']") ||
-				document.querySelector(".filter__form") ||
-				document.querySelector("[data-type='filter']")
-		}
+		let url = form.getAttribute("action")
 
-		// Получаем URL из атрибута action формы
-		let url = "/api/filter" // URL по умолчанию, если атрибут action не указан
+		// Кодируем объект filterData в JSON и затем в URL-safe строку
+		const encodedData = encodeURIComponent(JSON.stringify(filterData))
 
-		if (form && form.getAttribute("action")) {
-			url = form.getAttribute("action")
-		}
+		// Формируем URL с данными в виде одного параметра
+		const getUrl = `${url}?data=${encodedData}`
 
-		// Создаем объект URLSearchParams для формирования строки запроса
-		const searchParams = new URLSearchParams()
-
-		// Добавляем параметры из filterData
-		for (const [key, value] of Object.entries(filterData)) {
-			if (typeof value === "object" && !Array.isArray(value)) {
-				// Для диапазонов (например, цены)
-				for (const [subKey, subValue] of Object.entries(value)) {
-					searchParams.append(`${key}[${subKey}]`, subValue)
-				}
-			} else if (Array.isArray(value)) {
-				// Для массивов (например, комнаты)
-				value.forEach(item => searchParams.append(`${key}[]`, item))
-			} else {
-				// Для обычных значений
-				searchParams.append(key, value)
-			}
-		}
-
-		// Формируем URL для запроса с параметрами
-		const getUrl = `${url}?${searchParams.toString()}`
-
-		// Обертываем в try-catch для обработки возможных ошибок
 		try {
-			// Отправка данных с использованием POST запроса
-			const response = await fetch(url, {
-				method: "POST",
+			const response = await fetch(getUrl, {
+				method: "GET",
 				headers: {
-					"Content-Type": "application/json",
+					Accept: "application/json",
 				},
-				body: JSON.stringify(filterData),
 			})
 
 			if (!response.ok) {
 				throw new Error(`HTTP error! Status: ${response.status}`)
 			}
 
-			// Проверяем, содержит ли ответ JSON
-			const contentType = response.headers.get("content-type")
-			let data
-
-			if (contentType && contentType.includes("application/json")) {
-				data = await response.json()
-			} else {
-				data = { success: true, message: "Фильтр применен" }
-			}
-
-			// Обработка полученных данных и обновление UI
-			updateFilterResults(data)
-			updateFilterOptions(data)
-
-			// Обновляем URL в браузере и атрибут data-url формы
-			updateUrlWithFilters(filterData, form)
+			// Заменяем текущий URL и перезагружаем страницу
+			window.location.href = getUrl
 		} catch (error) {
 			console.error("Ошибка при обработке фильтра:", error)
-		}
-	}
-
-	/**
-	 * Обновляет URL с параметрами фильтра
-	 * @param {Object} filterData - объект с данными фильтров
-	 * @param {HTMLElement} form - форма, из которой были отправлены данные
-	 */
-	function updateUrlWithFilters(filterData, form) {
-		// Создаем объект URLSearchParams для формирования строки запроса
-		const searchParams = new URLSearchParams()
-
-		// Добавляем параметры из filterData
-		for (const [key, value] of Object.entries(filterData)) {
-			if (typeof value === "object" && !Array.isArray(value)) {
-				// Для диапазонов (например, цены)
-				for (const [subKey, subValue] of Object.entries(value)) {
-					searchParams.append(`${key}[${subKey}]`, subValue)
-				}
-			} else if (Array.isArray(value)) {
-				// Для массивов (например, комнаты)
-				value.forEach(item => searchParams.append(`${key}[]`, item))
-			} else {
-				// Для обычных значений
-				searchParams.append(key, value)
-			}
-		}
-
-		// Получаем базовый URL из атрибута action формы или используем текущий путь
-		let baseUrl = window.location.pathname
-
-		if (form && form.getAttribute("action")) {
-			// Получаем URL из атрибута action
-			const actionUrl = form.getAttribute("action")
-
-			// Если URL абсолютный (начинается с http:// или /), используем его
-			// иначе считаем его относительным от текущего пути
-			if (actionUrl.startsWith("http") || actionUrl.startsWith("/")) {
-				baseUrl = actionUrl
-			} else {
-				// Получаем директорию текущего пути
-				const currentPath = window.location.pathname
-				const lastSlashIndex = currentPath.lastIndexOf("/")
-				const directory =
-					lastSlashIndex !== -1
-						? currentPath.substring(0, lastSlashIndex + 1)
-						: "/"
-
-				// Комбинируем с относительным путем из action
-				baseUrl = directory + actionUrl
-			}
-
-			// Удаляем уже имеющиеся GET-параметры из URL формы
-			const questionMarkIndex = baseUrl.indexOf("?")
-			if (questionMarkIndex !== -1) {
-				baseUrl = baseUrl.substring(0, questionMarkIndex)
-			}
-		}
-
-		// Формируем новый URL с параметрами
-		const queryString = searchParams.toString()
-		const newUrl = queryString ? `${baseUrl}?${queryString}` : baseUrl
-
-		// Обновляем URL без перезагрузки страницы
-		window.history.pushState({}, "", newUrl)
-
-		// Устанавливаем атрибут data-url только для формы, из которой были отправлены данные
-		if (form) {
-			form.setAttribute("data-url", newUrl)
-		} else {
-			// Если форма не определена, устанавливаем для всех форм
-			const filterForms = document.querySelectorAll(
-				".filter__form, [data-type='filter']"
-			)
-			filterForms.forEach(formElement => {
-				formElement.setAttribute("data-url", newUrl)
-			})
 		}
 	}
 })
