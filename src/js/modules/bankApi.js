@@ -7,7 +7,7 @@ function initBankApi() {
 	async function loadBankInfo(bankId) {
 		try {
 			// Прямой запрос к API
-			const apiUrl = `https://co81879.tw1.ru/bank/info/${bankId}`
+			const apiUrl = ` https://oooipkit.ru/bank/info/${bankId}`
 
 			const response = await fetch(apiUrl, {
 				method: "GET",

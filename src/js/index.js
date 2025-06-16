@@ -2,6 +2,7 @@ import mobileNav from "./modules/mobile-nav.js"
 mobileNav()
 
 import initBankApi from "./modules/bankApi.js"
+import initCookieConsent from "./modules/cookieConsent.js"
 import "./modules/filters.js"
 import initFormHandlers from "./modules/formHandler.js"
 import initModals from "./modules/modal.js"
@@ -20,6 +21,9 @@ initPhoneMasks()
 
 // Инициализация обработчиков форм
 initFormHandlers()
+
+// Инициализация уведомления о cookie
+initCookieConsent()
 
 // Подключение галереи
 require("fslightbox")
