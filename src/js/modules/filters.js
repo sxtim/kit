@@ -173,13 +173,21 @@ document.addEventListener("DOMContentLoaded", function () {
 		const maxValue = parseInt(priceSlider.dataset.max)
 		const stepValue = parseFloat(priceSlider.dataset.step)
 
+		// Получаем начальные значения диапазона, если они заданы
+		const startMin = priceSlider.hasAttribute("data-start-min")
+			? parseInt(priceSlider.dataset.startMin)
+			: minValue
+		const startMax = priceSlider.hasAttribute("data-start-max")
+			? parseInt(priceSlider.dataset.startMax)
+			: maxValue
+
 		// Инициализируем слайдер с динамическими значениями
 		createSlider({
 			sliderId: "price-slider",
 			inputMinId: "input-price-min",
 			inputMaxId: "input-price-max",
-			startMin: minValue,
-			startMax: maxValue,
+			startMin: startMin,
+			startMax: startMax,
 			step: stepValue,
 			rangeMin: minValue,
 			rangeMax: maxValue,
@@ -194,13 +202,21 @@ document.addEventListener("DOMContentLoaded", function () {
 		const maxValue = parseInt(squareSlider.dataset.max)
 		const stepValue = parseFloat(squareSlider.dataset.step)
 
+		// Получаем начальные значения диапазона, если они заданы
+		const startMin = squareSlider.hasAttribute("data-start-min")
+			? parseFloat(squareSlider.dataset.startMin)
+			: minValue
+		const startMax = squareSlider.hasAttribute("data-start-max")
+			? parseFloat(squareSlider.dataset.startMax)
+			: maxValue
+
 		// Инициализируем слайдер с динамическими значениями
 		createSlider({
 			sliderId: "square-slider",
 			inputMinId: "input-square-min",
 			inputMaxId: "input-square-max",
-			startMin: minValue,
-			startMax: maxValue,
+			startMin: startMin,
+			startMax: startMax,
 			step: stepValue,
 			rangeMin: minValue,
 			rangeMax: maxValue,
@@ -215,13 +231,21 @@ document.addEventListener("DOMContentLoaded", function () {
 		const maxValue = parseInt(floorSlider.dataset.max)
 		const stepValue = parseFloat(floorSlider.dataset.step)
 
+		// Получаем начальные значения диапазона, если они заданы
+		const startMin = floorSlider.hasAttribute("data-start-min")
+			? parseInt(floorSlider.dataset.startMin)
+			: minValue
+		const startMax = floorSlider.hasAttribute("data-start-max")
+			? parseInt(floorSlider.dataset.startMax)
+			: maxValue
+
 		// Инициализируем слайдер с динамическими значениями
 		createSlider({
 			sliderId: "floor-slider",
 			inputMinId: "input-floor-min",
 			inputMaxId: "input-floor-max",
-			startMin: minValue,
-			startMax: maxValue,
+			startMin: startMin,
+			startMax: startMax,
 			step: stepValue,
 			rangeMin: minValue,
 			rangeMax: maxValue,
@@ -236,13 +260,21 @@ document.addEventListener("DOMContentLoaded", function () {
 		const maxValue = parseInt(commercePriceSlider.dataset.max)
 		const stepValue = parseFloat(commercePriceSlider.dataset.step)
 
+		// Получаем начальные значения диапазона, если они заданы
+		const startMin = commercePriceSlider.hasAttribute("data-start-min")
+			? parseInt(commercePriceSlider.dataset.startMin)
+			: minValue
+		const startMax = commercePriceSlider.hasAttribute("data-start-max")
+			? parseInt(commercePriceSlider.dataset.startMax)
+			: maxValue
+
 		// Инициализируем слайдер с динамическими значениями
 		createSlider({
 			sliderId: "commerce-price-slider",
 			inputMinId: "commerce-input-price-min",
 			inputMaxId: "commerce-input-price-max",
-			startMin: minValue,
-			startMax: maxValue,
+			startMin: startMin,
+			startMax: startMax,
 			step: stepValue,
 			rangeMin: minValue,
 			rangeMax: maxValue,
@@ -257,13 +289,21 @@ document.addEventListener("DOMContentLoaded", function () {
 		const maxValue = parseInt(commerceSquareSlider.dataset.max)
 		const stepValue = parseFloat(commerceSquareSlider.dataset.step)
 
+		// Получаем начальные значения диапазона, если они заданы
+		const startMin = commerceSquareSlider.hasAttribute("data-start-min")
+			? parseFloat(commerceSquareSlider.dataset.startMin)
+			: minValue
+		const startMax = commerceSquareSlider.hasAttribute("data-start-max")
+			? parseFloat(commerceSquareSlider.dataset.startMax)
+			: maxValue
+
 		// Инициализируем слайдер с динамическими значениями
 		createSlider({
 			sliderId: "commerce-square-slider",
 			inputMinId: "commerce-input-square-min",
 			inputMaxId: "commerce-input-square-max",
-			startMin: minValue,
-			startMax: maxValue,
+			startMin: startMin,
+			startMax: startMax,
 			step: stepValue,
 			rangeMin: minValue,
 			rangeMax: maxValue,
@@ -496,17 +536,94 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //Конпки фильтра "Комнаты"
 document.addEventListener("DOMContentLoaded", function () {
-	const buttons = document.querySelectorAll(".filter__el-btns")
+	// Найдем все кнопки фильтра комнат на странице
+	const buttons = document.querySelectorAll(".filter__el-btns[data-room]")
 
+	// Создаем глобальную переменную для хранения активных значений комнат
+	window.activeRooms = new Set()
+
+	// Проверка URL при загрузке для инициализации activeRooms
+	const urlParams = new URLSearchParams(window.location.search)
+	const dataParam = urlParams.get("data")
+
+	if (dataParam) {
+		try {
+			const decodedData = JSON.parse(decodeURIComponent(dataParam))
+
+			// Если в URL есть данные о комнатах, инициализируем activeRooms
+			if (
+				decodedData.rooms &&
+				Array.isArray(decodedData.rooms) &&
+				!(decodedData.rooms.length === 1 && decodedData.rooms[0] === "any")
+			) {
+				// Очищаем текущие значения
+				window.activeRooms.clear()
+
+				// Добавляем значения из URL
+				decodedData.rooms.forEach(value => {
+					window.activeRooms.add(value)
+				})
+			}
+		} catch (e) {
+			// Ошибка декодирования игнорируется
+		}
+	}
+
+	// Инициализируем activeRooms исходя из текущих активных кнопок на странице
+	// (только если activeRooms пуст и не был инициализирован из URL)
+	if (window.activeRooms.size === 0) {
+		buttons.forEach(button => {
+			if (button.classList.contains("active")) {
+				const roomValue = button.dataset.room
+				const roomNumValue = parseInt(roomValue, 10)
+				window.activeRooms.add(isNaN(roomNumValue) ? roomValue : roomNumValue)
+			}
+		})
+	}
+
+	// Синхронизируем состояние кнопок с activeRooms
 	buttons.forEach(button => {
-		button.addEventListener("click", function () {
-			// Если кнопка уже активна, снимаем активность
+		const roomValue = button.dataset.room
+		const roomNumValue = parseInt(roomValue, 10)
+		const value = isNaN(roomNumValue) ? roomValue : roomNumValue
+
+		// Устанавливаем состояние кнопки в соответствии с activeRooms
+		if (window.activeRooms.has(value)) {
+			button.classList.add("active")
+		} else {
+			button.classList.remove("active")
+		}
+	})
+
+	// Добавляем обработчики для кнопок
+	buttons.forEach(button => {
+		button.addEventListener("click", function (event) {
+			event.preventDefault() // Предотвращаем стандартное поведение кнопки
+
+			// Получаем значение комнат
+			const roomValue = this.dataset.room
+			const roomNumValue = parseInt(roomValue, 10)
+			const value = isNaN(roomNumValue) ? roomValue : roomNumValue
+
+			// Переключаем класс активности для кнопки
 			if (this.classList.contains("active")) {
 				this.classList.remove("active")
+				window.activeRooms.delete(value) // Удаляем значение из набора
 			} else {
-				// Иначе добавляем активность только для этой кнопки
 				this.classList.add("active")
+				window.activeRooms.add(value) // Добавляем значение в набор
 			}
+
+			// Синхронизируем все кнопки с одинаковым значением
+			document
+				.querySelectorAll(`.filter__el-btns[data-room="${roomValue}"]`)
+				.forEach(btn => {
+					if (window.activeRooms.has(value)) {
+						btn.classList.add("active")
+					} else {
+						btn.classList.remove("active")
+					}
+				})
 		})
 	})
 })
@@ -533,7 +650,16 @@ document.addEventListener("DOMContentLoaded", function () {
 					this.closest(".filter__form") || this.closest("[data-type='filter']")
 				if (!form) return
 
+				// Проверяем, есть ли глобальная переменная с состоянием комнат
+				if (typeof window.activeRooms === "undefined") {
+					// Если не определена, создаем пустую
+					window.activeRooms = new Set()
+				}
+
+				// Собираем данные фильтра
 				const filterData = collectFilterData(form)
+
+				// Отправляем на сервер
 				await sendFilterData(filterData, form)
 			})
 		}
@@ -718,27 +844,16 @@ document.addEventListener("DOMContentLoaded", function () {
 	 * Собирает данные из кнопок выбора (например, кнопки комнат)
 	 */
 	function collectButtonsData(filterForm, filterData) {
-		// Проверяем наличие группы кнопок с комнатами
-		const roomButtons = filterForm.querySelectorAll(
-			".filter__el-btns[data-room]"
-		)
-		if (roomButtons.length > 0) {
-			const selectedRooms = []
+		// Используем глобальную переменную activeRooms для определения выбранных комнат
+		if (window.activeRooms && window.activeRooms.size > 0) {
+			// Преобразуем Set в массив для отправки на сервер
+			const selectedRooms = Array.from(window.activeRooms)
 
-			roomButtons.forEach(button => {
-				if (button.classList.contains("active")) {
-					const roomValue = button.dataset.room
-					if (roomValue) {
-						// Пытаемся преобразовать к числу, если это возможно
-						const roomNumValue = parseInt(roomValue, 10)
-						// Если преобразование успешно - добавляем число, иначе - строку
-						selectedRooms.push(isNaN(roomNumValue) ? roomValue : roomNumValue)
-					}
-				}
-			})
-
-			// Если ничего не выбрано, устанавливаем значение "any"
-			filterData.rooms = selectedRooms.length > 0 ? selectedRooms : ["any"]
+			// Добавляем выбранные комнаты в данные фильтра
+			filterData.rooms = selectedRooms
+		} else {
+			// Если нет выбранных комнат, отправляем специальное значение "any"
+			filterData.rooms = ["any"]
 		}
 	}
 
@@ -812,8 +927,11 @@ document.addEventListener("DOMContentLoaded", function () {
 		// Кодируем объект filterData в JSON и затем в URL-safe строку
 		const encodedData = encodeURIComponent(JSON.stringify(filterData))
 
-		// Формируем URL с данными в виде одного параметра
-		const getUrl = `${url}?data=${encodedData}`
+		// Добавляем случайный параметр для предотвращения кэширования
+		const timestamp = new Date().getTime()
+
+		// Формируем URL с данными и timestamp для предотвращения кэширования
+		const getUrl = `${url}?data=${encodedData}&_=${timestamp}`
 
 		// Переходим на URL с фильтрами
 		window.location.href = getUrl
